@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhmh_com=self.webpackChunkhmh_com||[]).push([[1903],{1912:h=>{h.exports=JSON.parse('{"blogBasePath":"/hmh.com/blog","blogTitle":"Blog","authorsListPath":"/hmh.com/blog/authors"}')}}]);
