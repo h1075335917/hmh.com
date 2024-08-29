@@ -82,7 +82,7 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar', // 默认从docs目录中生成
+            sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Java',
           },
@@ -154,6 +154,12 @@ const config = {
         appId: 'WZKDOGRNUN',
         apiKey: '7bf03af7c1e8bf9a9460bd56598602f7',
         indexName: 'YOUR_INDEX_NAME',
+      },
+      //可隐藏侧边栏
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
       },
     }),
 }

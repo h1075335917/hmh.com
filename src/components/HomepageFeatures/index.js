@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link'
 const FeatureList = [
   {
     title: 'Java',
-    to: '/docs/intro',
+    to: '/docs/category/java',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -15,12 +15,12 @@ const FeatureList = [
     ),
   },
   {
-    title: 'JavaScript',
-    to: '#',
+    title: '前端',
+    to: '/docs/category/前端',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        我的<code>JavaScript</code>笔记.
+        我的<code>前端</code>笔记.
       </>
     ),
   },

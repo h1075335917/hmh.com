@@ -81,14 +81,14 @@
 <!-- el-dropdown-item定义菜单项 -->
 <!-- router-link组件用于创建导航链接。通过 to 属性指定要导航到的目标路由路径 -->
 <el-dropdown-menu class="user-dropdown" slot="dropdown">
-    <router-link class="inlineBlock" to="/">
-        <el-dropdown-item>
-            首页
-        </el-dropdown-item>
-    </router-link>
-    <el-dropdown-item divided>
-        <span @click="logout" style="display:block;">退出</span>
+  <router-link class="inlineBlock" to="/">
+    <el-dropdown-item>
+      首页
     </el-dropdown-item>
+  </router-link>
+  <el-dropdown-item divided>
+    <span @click="logout" style="display:block;">退出</span>
+  </el-dropdown-item>
 </el-dropdown-menu>
 ```
 
