@@ -45,7 +45,7 @@
 
 
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/rocketmq%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/rocketmq%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" width="50%" />
 
 ##### RocketMQ启动
 

@@ -108,11 +108,11 @@
 
 #### UML类图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/SimpleFactory.jpg" alt="../_images/SimpleFactory.jpg" style="zoom: 80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/SimpleFactory.jpg" alt="../_images/SimpleFactory.jpg" width="50%" />
 
 #### 时序图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_SimpleFactory.jpg" alt="../_images/seq_SimpleFactory.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_SimpleFactory.jpg" alt="../_images/seq_SimpleFactory.jpg" width="50%" />
 
 #### 示例
 
@@ -163,11 +163,11 @@ Cipher cp=Cipher.getInstance("DESede");
 
 #### UML类图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/FactoryMethod.jpg" alt="../_images/FactoryMethod.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/FactoryMethod.jpg" alt="../_images/FactoryMethod.jpg" width="50%" />
 
 #### 时序图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_FactoryMethod.jpg" alt="../_images/seq_FactoryMethod.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_FactoryMethod.jpg" alt="../_images/seq_FactoryMethod.jpg" width="50%" />
 
 #### 示例
 
@@ -218,11 +218,11 @@ ResultSet rs = statement.executeQuery("select * from UserInfo");
 
 #### UML类图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/AbatractFactory.jpg" alt="../_images/AbatractFactory.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/AbatractFactory.jpg" alt="../_images/AbatractFactory.jpg" width="50%" />
 
 #### 时序图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_AbatractFactory.jpg" alt="../_images/seq_AbatractFactory.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_AbatractFactory.jpg" alt="../_images/seq_AbatractFactory.jpg" width="50%" />
 
 
 
@@ -238,11 +238,11 @@ ResultSet rs = statement.executeQuery("select * from UserInfo");
 
 #### UML类图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/State.jpg" alt="../_images/State.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/State.jpg" alt="../_images/State.jpg" width="50%" />
 
 #### 时序图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_State.jpg" alt="../_images/seq_State.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_State.jpg" alt="../_images/seq_State.jpg" width="50%" />
 
 #### 示例
 
@@ -271,11 +271,11 @@ ResultSet rs = statement.executeQuery("select * from UserInfo");
 
 #### UML类图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/Strategy.jpg" alt="../_images/Strategy.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/Strategy.jpg" alt="../_images/Strategy.jpg" width="50%" />
 
 #### 时序图
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_Strategy.jpg" alt="../_images/seq_Strategy.jpg" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seq_Strategy.jpg" alt="../_images/seq_Strategy.jpg" width="50%" />
 
 #### 示例
 

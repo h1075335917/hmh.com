@@ -15,7 +15,7 @@ Maven自动化构建是通过约定目录结构，如自动编译时，Maven需�
 1. 通过配置的形式明确告诉它
 2. 基于第三方工具或框架的约定 Maven 对工程目录结构的要求
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/9047db3f3ca3d60fe05d0273aac2b221.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/9047db3f3ca3d60fe05d0273aac2b221.png" alt="img" width="50%" />
 
 #### 构建
 
@@ -23,11 +23,11 @@ Java 项目开发过程中，构建指的是使用『**原材料生产产品**�
 
 Thymeleaf 是一个现代服务器端 Java 模板引擎，用于渲染 HTML 页面。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/9cd19792d4acce68c3c441ca9cce9dc4.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/9cd19792d4acce68c3c441ca9cce9dc4.png" alt="img" width="50%" />
 
 构建过程主要包含以下环节：
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/2552072c09fddeb2066afa9916b47267.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/2552072c09fddeb2066afa9916b47267.png" alt="img" width="50%" />
 
 
 
@@ -303,7 +303,7 @@ A 依赖 B，B 依赖 C， A 没有配置对 C 的依赖。在这前提下，C �
 
 两者可以结合使用，例如，一个聚合项目（父项目）同时也是一个父 POM 项目，子模块既是聚合项目的一部分，也继承了父项目的配置。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/2867fdc4081dad6809640909b971f99e.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/2867fdc4081dad6809640909b971f99e.png" alt="img" width="50%" />
 
 ---
 
@@ -648,19 +648,19 @@ project标签下除了modelVersion和坐标标签之外，其它标签都可以�
 
 在 idea 中可以看到，因此，当你需要打包哪一个环境的就勾选即可：
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/473d1775d428923914d894f9897fc8ed.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/473d1775d428923914d894f9897fc8ed.png" alt="img" width="50%" />
 
 同时，SpringBoot 天然支持多环境配置，一般来说，`application.yml`存放公共的配置，`application-dev.yml`、`application-test.yml`、`application.prod.yml`分别存放三个环境的配置。
 
 `application.yml` 中配置`spring.profiles.active=prod`（或者 dev、test）指定使用的配置文件，如下：
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/b7664f084d16cc81e2b340815fe5888f.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/b7664f084d16cc81e2b340815fe5888f.png" alt="img" width="50%" />
 
 注：`profileActive`，就是上面我们自定义的标签。
 
 然后当我们勾选哪一个环境，打包的配置文件就是那一个环境：
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/a7af3b95a7f6acd547191a3b86e34431.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/a7af3b95a7f6acd547191a3b86e34431.png" alt="img" width="50%" />
 
 同时我们再在 resource 标签下看到 includes 和 excludes 标签。它们的作用是：
 
@@ -683,11 +683,11 @@ Maven 的版本仲裁机制只是在没有人为干预的情况下，自主决�
 
 - **最短路径优先**
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/fe79c25283d7cb9dd7edd6bf10c030db.png" alt="image-20220607101311677" style="zoom:80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/fe79c25283d7cb9dd7edd6bf10c030db.png" alt="image-20220607101311677" width="50%" />
 
 - **路径相同时先声明者优先**
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/00ebf1d7c7540813cfed91d540a5cfb3.png" alt="image-20220607101401799" style="zoom: 80%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/00ebf1d7c7540813cfed91d540a5cfb3.png" alt="image-20220607101401799" width="50%" />
 
 ---
 
@@ -718,7 +718,7 @@ Maven 的版本仲裁机制只是在没有人为干预的情况下，自主决�
 - **离线工作**：在网络访问受限或没有网络连接的情况下，使用 `internal` 可以确保能够创建新项目。
 - **特定版本控制**：当你需要确保使用特定版本的原型而不想被远程仓库中的更新干扰时，使用 `internal` 是一个好选择。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/9dff15c559567e2addbb9ea737d44435.png" alt="在这里插入图片描述" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/9dff15c559567e2addbb9ea737d44435.png" alt="在这里插入图片描述" width="50%" />
 
 ### application读取
 
@@ -1168,7 +1168,7 @@ Gradle官方文档：https://docs.gradle.org
 
 项目创建完成后，一个非常简单的Gradle项目目录结构如下，需要注意的是`build.gradle`和`settings.gradle`这两个文件。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/gradle_start_05-062a77fa.png" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/gradle_start_05-062a77fa.png" alt="img" width="50%" />
 
 Maven项目转Gradle非常简单，只需要把`pom.xml`中的依赖转为`build.gradle`中的依赖即可：
 

@@ -1,20 +1,20 @@
-# docusaurus
+## docusaurus
 
-## 部署
+### 部署
 
-### 地址 
+#### 地址 
 
 文档：https://docusaurus.io/zh-CN/
 
 代码：https://github.com/h1075335917/hmh.com
 
-### 脚手架
+#### 脚手架
 
 ```sh
 npx create-docusaurus@latest my-website classic
 ```
 
-### 目录结构
+#### 目录结构
 
 ```bash
 my-website
@@ -51,7 +51,7 @@ my-website
 - `/package.json`- Docusaurus 网站是一个 React 应用程序。您可以在其中安装和使用您喜欢的任何 npm 软件包
 - `/sidebars.js`- 文档使用它来指定侧边栏中文档的顺序
 
-### 更新Docusaurus版本
+#### 更新Docusaurus版本
 
 有多种方法可以更新 Docusaurus 版本。一种有保证的方法是手动将版本号更改`package.json`为所需的版本。请注意，所有`@docusaurus/`命名空间包应使用相同的版本。
 
@@ -59,11 +59,11 @@ my-website
 
 检查更新是否成功：`npx docusaurus --version`。
 
-## 配置
+### 配置
 
 `docusaurus.config.js`
 
-## 部署到Github
+### 部署到Github
 
 1. 配置文件中设置：
 
@@ -89,7 +89,7 @@ projectName: 'hmh.com',
 
      访问Github Pages地址
 
-## 集成搜索引擎Algolia
+### 集成搜索引擎Algolia
 
 配置
 
@@ -116,7 +116,7 @@ themeConfig: {
     },
 }
 ```
-## Markdown 和 JSX
+### Markdown 和 JSX
 Docusaurus v3使用MDX v3。
 
 MDX语法主要与CommonMark兼容，但更严格，因为您的.mdx文件可以使用 JSX 并编译成真正的 React 组件（检查 Playground ）。

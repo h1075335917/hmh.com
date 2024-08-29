@@ -50,7 +50,7 @@ ws://example.com:80/some/path
 （6）协议标识符是ws（如果加密，则为wss），服务器网址就是 URL。
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/webSocket.jpg" alt="img" style="zoom:50%;" />
+<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/webSocket.jpg" alt="img" width="50%" />
 
 #### Netty-websocket
 
