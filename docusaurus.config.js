@@ -4,24 +4,24 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '贺敏华的官方网站',
-  tagline: '一个本人自用的笔记网站',
+  tagline: '贺敏华自用的笔记网站',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://mhuahe.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/hmh.com/',
+  baseUrl: '/mhuahe.com/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'mhuahe', // Usually your GitHub org/user name.
-  projectName: 'hmh.com', // Usually your repo name.
+  projectName: 'mhuahe.com', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -44,7 +44,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/mhuahe/hmh.com/tree/master/',
+            'https://github.com/mhuahe/mhuahe.com/tree/master/',
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +55,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/mhuahe/hmh.com/tree/master/',
+            'https://github.com/mhuahe/mhuahe.com/tree/master/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -69,7 +69,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
@@ -84,11 +84,11 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar', // 默认从docs目录中生成
             position: 'left',
-            label: 'Tutorial',
+            label: 'Java',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/mhuahe/hmh.com',
+            href: 'https://github.com/mhuahe/mhuahe.com',
             label: 'GitHub',
             position: 'right',
           },
@@ -111,16 +111,16 @@ const config = {
             title: '社区',
             items: [
               {
-                label: 'Stack Overflow',
-                href: '#',
+                label: '博客园',
+                href: 'https://www.cnblogs.com/minhua',
               },
               {
-                label: 'Discord',
-                href: '#',
+                label: '掘金',
+                href: 'https://juejin.cn/user/2331397363880808',
               },
               {
                 label: 'Twitter',
-                href: '#',
+                href: 'https://x.com/mihuahe',
               },
             ],
           },
@@ -133,19 +133,30 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/mhuahe/hmh.com',
+                href: 'https://github.com/mhuahe',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright:
+          `&copy;<a href="/mhuahe.com">mhuahe.com</a>
+            - <a href="https://github.com/mhuahe/mhuahe.com" target="_blank">GitHub</a>
+            - <a href="/mhuahe.com/license/README">License</a>
+            - Built with Docusaurus.`
       },
       //黑亮主题
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      //algolia文档搜索
+      algolia: {
+        appId: 'WZKDOGRNUN',
+        apiKey: '7bf03af7c1e8bf9a9460bd56598602f7',
+        indexName: 'YOUR_INDEX_NAME',
+      },
     }),
-};
+}
 
-export default config;
+export default config
