@@ -1,3 +1,5 @@
+# JAVA-Maven依赖
+
 ### maven-gpg-plugin
 
 maven-gpg-plugin 是 Maven 插件的一部分，主要用于对 Maven 构建的工件（例如 JAR 文件、POM 文件等）进行签名。签名的作用是验证这些工件的来源和完整性，确保它们没有在传输过程中被篡改。通常，在发布到公共 Maven 仓库（如 Maven Central）时，需要对工件进行签名，以便其他用户可以验证下载的工件是由你创建的，并且未被篡改。
