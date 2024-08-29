@@ -102,8 +102,8 @@ const config = {
             title: '文档',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: '开发文档',
+                to: 'https://docusaurus.io/',
               },
             ],
           },
@@ -138,11 +138,10 @@ const config = {
             ],
           },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
         copyright:
           `&copy;<a href="/mhuahe.com">mhuahe.com</a>
             - <a href="https://github.com/mhuahe/mhuahe.com" target="_blank">GitHub</a>
-            - <a href="/mhuahe.com/license/README">License</a>
+            - <a href="/mhuahe.com/license/README" target="_blank">License</a>
             - Built with Docusaurus.`
       },
       //黑亮主题
