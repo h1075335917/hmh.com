@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmhuahe_com=self.webpackChunkmhuahe_com||[]).push([[9317],{1508:a=>{a.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"Java","slug":"/category/java","permalink":"/mhuahe.com/docs/category/java","sidebar":"tutorialSidebar","navigation":{"next":{"title":"JAVA-\u7b97\u6cd5","permalink":"/mhuahe.com/docs/java/JAVA-Algorithm"}}}}')}}]);
