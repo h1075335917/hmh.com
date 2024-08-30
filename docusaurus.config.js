@@ -149,12 +149,6 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-      //algolia文档搜索
-      algolia: {
-        appId: 'WZKDOGRNUN',
-        apiKey: '7bf03af7c1e8bf9a9460bd56598602f7',
-        indexName: 'YOUR_INDEX_NAME',
-      },
       //可隐藏侧边栏
       docs: {
         sidebar: {
@@ -162,6 +156,27 @@ const config = {
         },
       },
     }),
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        language: ["en", "zh"],
+        // 在目标页面上突出显示搜索词。
+        highlightSearchTermsOnTargetPage: true,
+        // 搜索结果限制
+        searchResultLimits: 10,
+        // 是否使用搜索栏快捷方式
+        searchBarShortcut: true,
+        // 是否显示搜索栏快捷方式
+        searchBarShortcutHint: true,
+        // 搜索栏位置："auto" | "left" | "right"
+        searchBarPosition: "auto",
+      }),
+    ],
+  ],
 }
 
 export default config

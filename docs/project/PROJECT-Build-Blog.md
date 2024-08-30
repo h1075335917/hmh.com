@@ -99,25 +99,49 @@ projectName: 'hmh.com',
 themeConfig: {
     //algolia文档搜索
     algolia: {
-    appId: 'YOUR_APP_ID',
-    apiKey: 'YOUR_SEARCH_API_KEY',
-    indexName: 'YOUR_INDEX_NAME',
-    // 上下文搜索：它确保搜索结果与当前语言和版本相关
-    contextualSearch: true,
-    externalUrlRegex: 'external\\.com|domain\\.com',
-    replaceSearchResultPathname: {
-      from: '/docs/', // or as RegExp: /\/docs\//
-      to: '/',
-    },
-    // Optional: Algolia search parameters
-    searchParameters: {},
-    // Optional: path for search page that enabled by default (`false` to disable it)
-    searchPagePath: 'search',
-    // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-    insights: false,
+        appId: 'YOUR_APP_ID',
+        apiKey: 'YOUR_SEARCH_API_KEY',
+        indexName: 'YOUR_INDEX_NAME',
+        // 上下文搜索：它确保搜索结果与当前语言和版本相关
+        contextualSearch: true,
+        externalUrlRegex: 'external\\.com|domain\\.com',
+        replaceSearchResultPathname: {
+          from: '/docs/', // or as RegExp: /\/docs\//
+          to: '/',
+        },
+        // Optional: Algolia search parameters
+        searchParameters: {},
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+        // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+        insights: false,
     },
 }
 ```
+### 集成本地搜索引擎docusaurus-search-local
+
+配置
+
+```js
+themes: [
+  [
+    require.resolve('@easyops-cn/docusaurus-search-local'),
+    /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+    ({
+      // `hashed` is recommended as long-term-cache of index file is possible.
+      hashed: true,
+      // language: ["en", "zh"],
+    }),
+  ],
+],
+```
+启动搜索
+
+```
+yarn run build
+yarn run serve
+```
+
 ### Markdown 和 JSX
 Docusaurus v3使用MDX v3。
 
