@@ -82,9 +82,27 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'java',
             position: 'left',
             label: 'Java',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'web',
+            position: 'left',
+            label: '前端',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tool',
+            position: 'left',
+            label: '工具',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'project',
+            position: 'left',
+            label: '项目',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
