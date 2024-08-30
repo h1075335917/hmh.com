@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer'
 const config = {
   title: '贺敏华的官方网站',
   tagline: '贺敏华自用的笔记网站',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/mhuahe.ico',
 
   // Set the production url of your site here
   url: 'https://mhuahe.github.io/',
@@ -77,7 +77,7 @@ const config = {
         title: '贺敏华的官方网站',
         logo: {
           alt: 'Hmh Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/mhuahe.svg',
         },
         items: [
           {

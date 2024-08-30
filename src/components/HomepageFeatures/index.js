@@ -7,7 +7,7 @@ const FeatureList = [
   {
     title: 'Java',
     to: '/docs/category/java',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/java.svg').default,
     description: (
       <>
         我的<code>Java</code>笔记.
@@ -17,7 +17,7 @@ const FeatureList = [
   {
     title: '前端',
     to: '/docs/category/前端',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/web.svg').default,
     description: (
       <>
         我的<code>前端</code>笔记.
@@ -27,7 +27,7 @@ const FeatureList = [
   {
     title: 'Blog',
     to: '/blog',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/blog.svg').default,
     description: (
       <>
         我的<code>Blog</code>.
