@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link'
 const FeatureList = [
   {
     title: 'Java',
-    to: '/docs/category/java',
+    to: '/docs/java',
     Svg: require('@site/static/img/java.svg').default,
     description: (
       <>
@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: '前端',
-    to: '/docs/category/前端',
+    to: '/docs/web',
     Svg: require('@site/static/img/web.svg').default,
     description: (
       <>

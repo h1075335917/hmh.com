@@ -1,6 +1,10 @@
+---
+sidebar_position: 1
+---
+
 # JAVA
 
-### 0.新闻
+### 新闻
 
 #### 移除Netflix
 
@@ -93,7 +97,7 @@ CGLIB已经不维护了，建议使用ByteBuddy。
 
 ---
 
-### 1.基础知识点
+### 基础知识点
 
 #### 多态
 
@@ -429,7 +433,7 @@ spring.profiles.include:
 按照顺序，后面的覆盖前面的。
 ```
 
-### 2.JSqlParser
+### JSqlParser
 
 > 依赖了JSqlParser
 >
@@ -475,7 +479,7 @@ if (statement instanceof Select) {
 }
 ```
 
-### 4.IO
+### IO
 
 > [!tip]
 >
@@ -850,7 +854,7 @@ Files.write(Path.of("/path/to/file.txt"), lines);
 
 ---
 
-### 5.stream
+### stream
 
 ```sql
 -- Stream（流）是一个来自数据源的元素队列，它可以支持聚合操作。
@@ -971,7 +975,7 @@ stream是顺序流，由主线程按顺序对流执行操作，而parallelStream
 
 ---
 
-### 6.泛型
+### 泛型
 
 > [!tip]
 >
@@ -1316,7 +1320,7 @@ public class Main {
 }
 ```
 
-### 7.注解 
+### 注解 
 
 #### @Inherited
 
@@ -1692,11 +1696,11 @@ public Validator validator() {
 }
 ```
 
-### 9.敏感词脱敏
+### 敏感词脱敏
 
 https://mp.weixin.qq.com/s/vVhB8uJBz4WMlOZHJ2Zbog
 
-### 10.Jenkins自动化部署
+### Jenkins自动化部署
 
 ```sql
 -- 部署后端
@@ -1705,7 +1709,7 @@ https://www.macrozheng.com/mall/reference/jenkins.html
 https://www.macrozheng.com/mall/reference/jenkins_vue.html
 ```
 
-### 11.SPI机制
+### SPI机制
 
 ```java
 //SPI ，全称为 Service Provider Interface，是一种服务发现机制。它通过在ClassPath路径下的META-INF/services文件夹查找文件，自动加载文件里所定义的类。
@@ -1755,7 +1759,7 @@ SpiImpl2.execute()
 总结：Java中的SPI提供了一种比较特别的服务发现和调用机制，通过接口灵活的将服务调用与服务提供者分离，用于提供给第三方实现扩展时还是很方便的。但是也有缺点，比方说一旦加载一个接口，就会把所有实现类都加载进来，可能会加载到不需要的冗余服务。不过站在整体角度上，还是给我们提供了一种非常不错的框架扩展、集成的思路。
 ```
 
-### 12.JNA JNI
+### JNA JNI
 
 ```sql
 -- JNA(Java Native Access "JNA(Java Native Access)"
@@ -1765,7 +1769,7 @@ SpiImpl2.execute()
 即 Java 本地接口，它建立了 Java 与其他编程语言的桥梁，允许 Java 程序调用其他语言（尤其是 C/C++ ）编写的程序或者代码库。并且， JDK 本身的实现也大量用到 JNI 技术来调用本地 C 程序库。
 ```
 
-### 14.AOP
+### AOP
 
 ```sql
 -- AOP为Aspect Oriented Programming的缩写
@@ -1832,7 +1836,7 @@ execution(* com.macro.mall.tiny.service..*.*(..))
 execution(* com.macro.mall.tiny.service.PmsBrandService.*(..))
 ```
 
-### 15.接口文档
+### 接口文档
 
 #### springfox
 
@@ -1976,7 +1980,7 @@ springfox:
 	documentation:
 		enabled: true
 ```
-### 16.反应式编程
+### 反应式编程
 
 反应式编程是关于非阻塞应用程序的，这些应用程序是异步的、事件驱动的，并且需要少量的线程来垂直伸缩(即在 JVM 中)，而不是水平伸缩(即通过集群)
 
@@ -2064,7 +2068,7 @@ public interface Disposable {
 2. Disposables.composite(…)可以将多个Disposable合并起来，在后面统一做处理
 ```
 
-### 18.事务
+### 事务
 
 #### 分布式事务
 
@@ -2110,7 +2114,7 @@ public void test() {
   JDBC 事务的一个缺点是事务的范围局限于一个数据库连接。一个 JDBC 事务不能跨越多个数据库。
 - JDBC定义了SavePoint接口，提供在一个更细粒度的事务控制机制。当设置了一个保存点后，可以rollback到该保存点处的状态，而不是rollback整个事务。
 
-### 23.MinIO
+### MinIO
 
 ```sql
 -- 下载地址
@@ -2137,7 +2141,7 @@ http://localhost:9000
 </dependency>
 ```
 
-### 24.PageHelper
+### PageHelper
 
 使用文档：https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md
 
@@ -2157,7 +2161,7 @@ List<PmsBrand> brandList = brandMapper.selectByExample(new PmsBrandExample());
 //通过构造PageInfo对象获取分页信息，如当前页码，总页数，总条数
 PageInfo<PmsBrand> pageInfo = new PageInfo<>(list);
 ```
-### 26.跨域
+### 跨域
 
 跨域（Cross-Origin Resource Sharing, CORS）是指一个网页发起的请求，其资源位于不同的域、协议或端口。例如，`http://example.com` 的网页试图访问 `http://api.example.com`，这就是一次跨域请求。
 
@@ -2311,11 +2315,11 @@ public class ProxyController {
 
 
 
-### 29.Dubbo+zookeeper
+### Dubbo+zookeeper
 
-### 30.Gaea实现读写分离
+### Gaea实现读写分离
 
-### 32.Charles（抓包工具）
+### Charles（抓包工具）
 
 ```sql
 -- 网络抓包
@@ -2327,7 +2331,7 @@ www.charlesproxy.com/
 https://www.zzzmode.com/mytools/charles/
 ```
 
-### 35.任务调度
+### 任务调度
 
 #### Quartz
 
@@ -2348,7 +2352,7 @@ Quartz可用于创建简单或复杂的任务调度，用以执行数以万计�
 
 
 
-### 36.HTTP
+### HTTP
 
 #### 身份认证
 
@@ -2507,7 +2511,7 @@ public static String sendRedEnvelope(String url, String param) throws Exception 
 }
 ```
 
-### 38.MapStruct
+### MapStruct
 
 MapStruct是一款基于Java注解的对象属性映射工具
 
@@ -2708,7 +2712,7 @@ public interface ProductExceptionMapper {
 >
 > Mapper-struct存在问题，跟lombok在配合的时候会出现问题，如果mapperStruct的依赖放在lombok的依赖上面就会出现在对象复制的时候，会将原有数据全变为null的情况，所以一定要将lombok的依赖放在mapperStruct上面？
 
-### 41.本地缓存
+### 本地缓存
 
 #### Guava Cache
 
@@ -2759,7 +2763,7 @@ public Object getIPLimiter(String ipAddr) throws ExecutionException {
 - put(Long key, String value)：设置缓存值。
 - remove(Long key)：移除缓存值。
 
-### 47.Java内存模型
+### Java内存模型
 
 内存模型限制的是共享变量，也就是存储在堆内存中的变量，在 Java 语言中，所有的实例变量、静态变量和数组元素都存储在堆内存之中。方法参数、异常处理参数这些局部变量存储在方法栈帧之中，因此不会在线程之间共享，不会受到内存模型影响，也不存在内存可见性问题。
 
@@ -2767,7 +2771,7 @@ public Object getIPLimiter(String ipAddr) throws ExecutionException {
 
 线程 A 把在本地内存更新后的共享变量副本的值，刷新到主内存中。线程 B 在使用到该共享变量时，到主内存中去读取线程 A 更新后的共享变量的值，并更新线程 B 本地内存的值。
 
-### 57.WebClient
+### WebClient
 
 #### WebClient和RestTemplate
 
@@ -2793,16 +2797,16 @@ public Flux<Tweet> getTweetsNonBlocking() {
 }
 ```
 
-### 61.jmeter
+### jmeter
 
 1. 添加线程组
 2. 添加HTTP请求
 3. 添加察看结果树
 4. HTTP信息头管理器 -- 设置发送application/json请求
 
-### 81.k8s(kubernetes)
+### k8s(kubernetes)
 
-### 84.多线程
+### 多线程
 
 #### 手动创建线程池
 
@@ -2886,7 +2890,7 @@ public class CountDownLatchTest {
 }
 ```
 
-### 85.BPMN
+### BPMN
 
 #### 事件（Events）
 

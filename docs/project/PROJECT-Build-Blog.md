@@ -153,3 +153,13 @@ MDX语法主要与CommonMark兼容，但更严格，因为您的.mdx文件可以
 - 自动链接 (`<http://localhost:3000>`)：使用常规链接语法 (`[http://localhost:3000](http://localhost:3000)`)
 - HTML 语法 (`<p style="color: red;">`)：使用JSX代替 (`<p style={{color: 'red'}}>`)
 - 未转义的`{`and `<`：用( `\{`and `\<`)转义
+
+### category索引约定
+
+Docusaurus 可以自动给一个类别关联一篇索引文档。
+
+类别索引文档的文件名符合下列条件之一（不区分大小写）：
+
+- 命名为`index`: docs/Guides/index.md
+- 命名为`README`: docs/Guides/README.mdx
+- 跟父目录同名: docs/Guides/Guides.md

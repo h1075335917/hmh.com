@@ -94,6 +94,30 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'c',
+            position: 'left',
+            label: 'C语言',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'linux',
+            position: 'left',
+            label: 'Linux',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'mysql',
+            position: 'left',
+            label: 'MySQL',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'python',
+            position: 'left',
+            label: 'Python',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'tool',
             position: 'left',
             label: '工具',
@@ -103,6 +127,12 @@ const config = {
             sidebarId: 'project',
             position: 'left',
             label: '项目',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'other',
+            position: 'left',
+            label: '其他',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {

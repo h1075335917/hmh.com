@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+sidebar_label: 工具-Nginx
+---
+
 # Nginx
 
 ```sql
