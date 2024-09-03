@@ -1,22 +1,22 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from 'prism-react-renderer'
+import type { Config } from '@docusaurus/types'
+import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: '贺敏华的官方网站',
+  tagline: '贺敏华自用的笔记网站',
+  favicon: 'img/mhuahe.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://mhuahe.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/mhuahe.com/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'mhuahe', // Usually your GitHub org/user name.
+  projectName: 'mhuahe.com', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -25,8 +25,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
@@ -35,10 +35,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master/',
         },
         blog: {
           showReadingTime: true,
@@ -46,10 +44,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -66,21 +62,69 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: '贺敏华的官方网站',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Hmh Site Logo',
+        src: 'img/mhuahe.svg',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'java',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Java',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          type: 'docSidebar',
+          sidebarId: 'web',
+          position: 'left',
+          label: '前端',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'c',
+          position: 'left',
+          label: 'C语言',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'linux',
+          position: 'left',
+          label: 'Linux',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'mysql',
+          position: 'left',
+          label: 'MySQL',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'python',
+          position: 'left',
+          label: 'Python',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'tool',
+          position: 'left',
+          label: '工具',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'project',
+          position: 'left',
+          label: '项目',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'other',
+          position: 'left',
+          label: '其他',
+        },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        {
+          href: 'https://github.com/mhuahe/mhuahe.com',
           label: 'GitHub',
           position: 'right',
         },
@@ -90,28 +134,28 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: '开发文档',
+              to: 'https://docusaurus.io/',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '社区',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: '博客园',
+              href: 'https://www.cnblogs.com/minhua',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: '掘金',
+              href: 'https://juejin.cn/user/2331397363880808',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://x.com/mihuahe',
             },
           ],
         },
@@ -124,7 +168,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/mhuahe',
             },
           ],
         },
@@ -135,7 +179,36 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    //可隐藏侧边栏
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
   } satisfies Preset.ThemeConfig,
-};
 
-export default config;
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        language: ['en', 'zh'],
+        // 在目标页面上突出显示搜索词。
+        highlightSearchTermsOnTargetPage: true,
+        // 搜索结果限制
+        searchResultLimits: 10,
+        // 是否使用搜索栏快捷方式
+        searchBarShortcut: true,
+        // 是否显示搜索栏快捷方式
+        searchBarShortcutHint: true,
+        // 搜索栏位置："auto" | "left" | "right"
+        searchBarPosition: 'auto',
+      }),
+    ],
+  ],
+
+}
+
+export default config
