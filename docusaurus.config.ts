@@ -36,7 +36,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master/',
+          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master-ts/',
         },
         blog: {
           showReadingTime: true,
@@ -45,7 +45,7 @@ const config: Config = {
             xslt: true,
           },
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master/',
+          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master-ts/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
