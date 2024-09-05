@@ -1,6 +1,6 @@
-# Website
+# mhuahe.com
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This mhuahe.com is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
