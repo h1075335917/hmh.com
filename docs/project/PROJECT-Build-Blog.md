@@ -163,3 +163,119 @@ Docusaurus 可以自动给一个类别关联一篇索引文档。
 - 命名为`index`: docs/Guides/index.md
 - 命名为`README`: docs/Guides/README.mdx
 - 跟父目录同名: docs/Guides/Guides.md
+
+### 集成giscus评论系统
+
+#### 配置giscus
+
+1. 登录github账号安装giscus应用 [giscus app](https://github.com/apps/giscus)。
+
+2. 然后到 [giscus的官网](https://giscus.app/zh-CN) 配置语言、github仓库、页面与discussion映射关系、discussion分类、特性、主题等。
+
+注意：选择 giscus 连接到的仓库。请确保：
+- 该仓库是公开的，否则访客将无法查看 discussion。
+- giscus app 已安装，否则访客将无法评论和回应。
+- Discussions 功能已在你的仓库中启用：General → Features → Discussions 
+
+页面 ↔️ discussion 映射关系 一般选择Pathname就行。实际生成的评论的时候，会以你的博客请求路径创建一个类似话题的讨论。
+
+得到 `<script> `标签, 类似：
+```js
+<script src="https://giscus.app/client.js"
+        data-repo="xxxxx"
+        data-repo-id="xxxx"
+        data-category="xxxx"
+        data-category-id="xxxxx"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+```
+3. Docusaurus 项目安装依赖：
+`yarn swizzle @docusaurus/theme-classic BlogPostPage`
+- 选择 Eject (Unsafe) 回车
+- 选择 YES: I know what I am doing! 回车
+
+这时项目目录下src/theme/BlogPostPage生成了自定义主题的文件
+> 注意：这里生成的文件只对你的Blog目录下的文章插入评论系统 如果你要在docs目录下也插入评论系统，则还需要执行命令：`yarn swizzle @docusaurus/theme-classic DocItem/Layout`
+
+修改代码：src/theme/BlogPostPage/index.js
+
+```js title="src/theme/BlogPostPage/index.js"
+function BlogPostPageContent({sidebar, children}) {
+  //开始
+  const commentElement = useRef(null);
+  useEffect(() => {
+    // Update the document title using the browser API
+    let s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.setAttribute("data-repo", "[你的仓库]");
+    s.setAttribute("data-repo-id", "[你的仓库 ID]=");
+    s.setAttribute("data-category", "[你的分类名]");
+    s.setAttribute("data-category-id", "[你的分类 ID]");
+    s.setAttribute("data-mapping", "pathname");
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-emit-metadata", "0");
+    s.setAttribute("data-input-position", "bottom");
+    s.setAttribute("data-theme", "light");
+    s.setAttribute("data-lang", "zh-CN");
+    s.setAttribute("data-loading", "lazy");
+    s.setAttribute("crossorigin", "anonymous");
+    s.async = true;
+    commentElement.current.appendChild(s);
+  }, []);
+  //结束
+  return (
+    <BlogLayout>
+      //开始
+      <div style={{marginTop:'20px'}} ref={commentElement}></div>
+      //结束
+    </BlogLayout>
+  );
+}
+```
+
+doc添加评论功能修改代码：src/theme/DocItem/Layout/index.js
+```js title="src/theme/DocItem/Layout/index.js"
+export default function DocItemLayout({children}) {
+  //开始
+  const commentElement = useRef(null);
+  useEffect(() => {
+    // Update the document title using the browser API
+    let s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.setAttribute("data-repo", "MingGH/996-ninja-giscus");
+    s.setAttribute("data-repo-id", "R_kgDOL5y6Fw");
+    s.setAttribute("data-category", "General");
+    s.setAttribute("data-category-id", "DIC_kwDOL5y6F84CfRWy");
+    s.setAttribute("data-mapping", "pathname");
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-emit-metadata", "0");
+    s.setAttribute("data-input-position", "bottom");
+    s.setAttribute("data-theme", "preferred_color_scheme");
+    s.setAttribute("data-lang", "zh-CN");
+    s.setAttribute("data-loading", "lazy");
+    s.setAttribute("crossorigin", "anonymous");
+    s.async = true;
+    commentElement.current.appendChild(s);
+  }, []);
+  //结束
+  return (
+    <div>
+      <div>
+        <div>
+          <article>
+            //开始
+            <div style={{marginTop: '20px'}} ref={commentElement}></div>
+            //结束
+          </article>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
