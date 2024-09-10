@@ -70,6 +70,12 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
+          sidebarId: 'example',
+          position: 'left',
+          label: '示例',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'java',
           position: 'left',
           label: 'Java',
