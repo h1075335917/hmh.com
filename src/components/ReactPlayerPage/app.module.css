@@ -1,0 +1,108 @@
+:root {
+    --column-width: 640px;
+    --gutter-width: 20px;
+    --column-height: 360px;
+    --button-color: rgba(0, 0, 0, .1)
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 两列相等宽度 */
+    grid-template-rows: auto auto auto; /* 三行 */
+    gap: 20px; /* 每个网格之间的间距 */
+}
+
+.playerWrapperSection {
+    text-align: left;
+    background-color: #666666; /*播放器颜色*/
+    grid-column: 1; /* 位于第一列 */
+    grid-row: 1; /* 位于第一行 */
+
+}
+
+.sectionVideo {
+    text-align: left;
+    grid-column: 2; /* 位于第二列 */
+    grid-row: 1; /* 位于第一行 */
+}
+
+.section {
+    margin-top: var(--gutter-width);
+    padding-right: var(--gutter-width);
+    text-align: left;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+/* 布局第二行 */
+.sectionControl {
+    grid-column: 1; /* 位于第一列 */
+    grid-row: 2; /* 位于第二行 */
+}
+.sectionState {
+    grid-column: 2; /* 位于第二列 */
+    grid-row: 2; /* 位于第二行 */
+}
+
+.footer {
+    text-align: center;
+    float: none;
+    margin-top: var(--gutter-width);
+
+    grid-column: 1 / span 2; /* 跨越两列，居中显示 */
+    grid-row: 3; /* 位于第三行 */
+    justify-self: center; /* 内容水平居中 */
+}
+
+.reactPlayer {
+    margin-bottom: var(--gutter-width);
+    background: var(--button-color);
+}
+
+.faded {
+    color: rgba(0, 0, 0, .5);
+}
+
+.em {
+    font-size: smaller;
+}
+
+/*下拉按钮*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: var(--button-color);
+    border: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+}
+
+.dropdownContent button {
+    width: 70px;
+    text-align: center;
+}
+
+.dropdownContent button:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
