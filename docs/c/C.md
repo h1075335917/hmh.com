@@ -1,5 +1,7 @@
 # C语言
 
+文章主要通过这篇教程学习记录的：https://wangdoc.com/clang
+
 ### GCC简介
 
 ```sql

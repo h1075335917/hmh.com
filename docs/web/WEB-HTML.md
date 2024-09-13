@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # WEB-HTML
@@ -13,18 +13,18 @@ sidebar_position: 2
         <tr><td>HTML</td><td>表格标签</td></tr>
     </thead>
     <tfoot>
-        <tr><td>`&lt;tfoot&gt;`</td><td>定义表格的页脚</td></tr>
+        <tr><td>tfoot</td><td>定义表格的页脚</td></tr>
     </tfoot>
     <tbody>
-        <tr><td>`&lt;table&gt;`</td><td>定义表格</td></tr>
-        <tr><td>`&lt;th&gt;`</td><td>定义表格的表头</td></tr>
-        <tr><td>`&lt;tr&gt;`</td><td>定义表格的行</td></tr>
-        <tr><td>`&lt;td&gt;`</td><td>定义表格单元</td></tr>
-        <tr><td>`&lt;caption&gt;`</td><td>定义表格标题</td></tr>
-        <tr><td>`&lt;colgroup&gt;`</td><td>定义表格列的组</td></tr>
-        <tr><td>`&lt;col&gt;`</td><td>定义用于表格列的属性</td></tr>
-        <tr><td>`&lt;thead&gt;`</td><td>定义表格的页眉</td></tr>
-        <tr><td>`&lt;tbody&gt;`</td><td>定义表格的主体</td></tr>
+        <tr><td>table</td><td>定义表格</td></tr>
+        <tr><td>th</td><td>定义表格的表头</td></tr>
+        <tr><td>tr</td><td>定义表格的行</td></tr>
+        <tr><td>td</td><td>定义表格单元</td></tr>
+        <tr><td>caption</td><td>定义表格标题</td></tr>
+        <tr><td>colgroup</td><td>定义表格列的组</td></tr>
+        <tr><td>col</td><td>定义用于表格列的属性</td></tr>
+        <tr><td>thead</td><td>定义表格的页眉</td></tr>
+        <tr><td>tbody</td><td>定义表格的主体</td></tr>
     </tbody>
 </table>
 
@@ -47,6 +47,16 @@ sidebar_position: 2
 上面代码中，最外层的`<div>`元素就是容器，内层的三个`<div>`元素就是项目。
 
 注意：项目只能是容器的顶层子元素，不包含项目的子元素，比如上面代码的`<p>`元素就不是项目。`Grid`布局只对项目生效。
+
+### 容器属性
+
+Grid 布局的属性分成两类。一类定义在容器上面，称为容器属性；另一类定义在项目上面，称为项目属性。这部分先介绍容器属性。
+
+#### display 属性
+
+`display:grid`指定一个容器采用网格布局（块级元素）。设置行内元素使用`display:inline-grid`。
+> 查看区别：[行内元素和块级元素](WEB-CSS#行内元素和块级元素)
+
 
 
 
