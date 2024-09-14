@@ -5,7 +5,11 @@ sidebar_position: 2
 # WEB-CSS
 
 ## 行内元素和块级元素
+```mdx-code-block
+import Copyright from '@site/src/components/Copyright';
 
+<Copyright behavior="Study" description="行内元素和块级元素" url="https://www.cnblogs.com/yc8930143/p/7237456.html" />
+```
 ### 驾轻就熟
 
 区别：

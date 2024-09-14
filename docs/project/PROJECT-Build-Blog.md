@@ -87,7 +87,7 @@ projectName: 'hmh.com',
 
      设置变量 && 部署到Github pages
 
-   - https://mhuahe.github.io/hmh.com/  
+   - https://mhuahe.github.io/mhuahe.com/  
 
      访问Github Pages地址
 

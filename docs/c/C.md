@@ -1,7 +1,9 @@
 # C语言
+```mdx-code-block
+import Copyright from '@site/src/components/Copyright';
 
-文章主要通过这篇教程学习记录的：https://wangdoc.com/clang
-
+<Copyright behavior="Study" description="C 语言教程" url="https://wangdoc.com/clang" />
+```
 ### GCC简介
 
 ```sql
