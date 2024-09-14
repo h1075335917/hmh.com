@@ -279,3 +279,29 @@ export default function DocItemLayout({children}) {
   );
 }
 ```
+
+### prism代码高亮
+
+```ts title="docusaurus.config.ts"
+export default {
+  themeConfig: {
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  },
+}
+```
+
+### 目录层级设置
+
+```ts title="docusaurus.config.ts"
+export default {
+  themeConfig: {
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 5,
+    },
+  },
+};
+```

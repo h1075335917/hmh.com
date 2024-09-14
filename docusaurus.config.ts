@@ -191,6 +191,11 @@ const config: Config = {
         hideable: true,
       },
     },
+    //目录层级
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 6,
+    },
   } satisfies Preset.ThemeConfig,
 
   themes: [

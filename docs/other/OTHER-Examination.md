@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # 其他-考试
 
 ### 1.JOptionPane
