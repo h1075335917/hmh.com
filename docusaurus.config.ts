@@ -184,6 +184,18 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      //自定义高亮
+      magicComments: [
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line', //只适用于下一行
+          block: { start: 'highlight-start', end: 'highlight-end' }, //适用在区间
+        },
+        {
+          className: 'code-block-error-line',
+          line: 'This will error',
+        },
+      ],
     },
     //可隐藏侧边栏
     docs: {
@@ -199,7 +211,10 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   themes: [
+    //交互代码编辑器
+    require.resolve('@docusaurus/theme-live-codeblock'),
     [
+      //本地搜索功能
       require.resolve('@easyops-cn/docusaurus-search-local'),
       /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
       ({
