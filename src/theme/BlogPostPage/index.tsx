@@ -22,7 +22,7 @@ function BlogPostPageContent ({
 }: {
   sidebar: BlogSidebar;
   children: ReactNode;
-}): JSX.Element {
+}): React.ReactElement {
   const { metadata, toc } = useBlogPost()
   const { nextItem, prevItem, frontMatter } = metadata
   const {
@@ -77,7 +77,7 @@ function BlogPostPageContent ({
   )
 }
 
-export default function BlogPostPage (props: Props): JSX.Element {
+export default function BlogPostPage (props: Props): React.ReactElement {
   const BlogPostContent = props.content
   return (
     <BlogPostProvider content={props.content} isBlogPostPage>

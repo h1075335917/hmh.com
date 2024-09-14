@@ -1,0 +1,101 @@
+.notFoundMain {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: cursive;
+}
+
+.notFoundMain h1 {
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 0 0 5px #c3d168a2;
+}
+
+.notFoundMain div {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.notFoundMain div span {
+    font-size: 5rem;
+    line-height: 6rem;
+    text-shadow: 0 0 7px #c3d168a2;
+}
+
+.notFoundCircle {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    display: inline-block;
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    text-shadow: none;
+    background: #e6f1a3 radial-gradient(#f9ffd2, #ecff70);
+    color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 7px #e7f1a3a2;
+}
+
+.notFoundCircle:after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 10rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid #fafafa;
+    border-top: 0px solid #fafafa;
+    border-bottom: 4px solid #fafafa;
+    z-index: 2
+}
+
+.notFoundCircle:before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    background: #124;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    transform-origin: 2.5rem 0;
+    transform: translate(-2.5rem, 0) rotate(0deg);
+    animation: circle-around 5s infinite linear;
+}
+
+@keyframes circle-around {
+    0% {
+        transform: translate(-2.5rem, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-2.5rem, 0) rotate(360deg);
+    }
+}
+
+.notFoundMain p {
+    margin-top: 3rem;
+    text-align: center;
+    text-shadow: 0 0 5px #c3d168a2;
+}
+
+.notFoundMain link {
+    padding: 0.55rem 1.2rem;
+    border: none;
+    outline: none;
+    appearance: none;
+    border-radius: 1rem;
+    background: rgb(17, 141, 44);
+    color: #fafafa;
+    box-shadow: 0 0 4px #e1f17859;
+}
+
+.notFoundMain link:hover {
+    cursor: pointer;
+}

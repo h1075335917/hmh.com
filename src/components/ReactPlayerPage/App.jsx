@@ -4,7 +4,7 @@ import screenfull from 'screenfull'
 import packageJson from '@site/package.json'
 import ReactPlayer from 'react-player'
 import Duration from './Duration'
-import appStyles from './app.module.css'
+import appStyles from './styles.module.css'
 
 class App extends Component {
 
@@ -164,7 +164,7 @@ class App extends Component {
     console.log('ref =========', this.ref.seekTo)
 
     return (
-      <div className={appStyles.container}>
+      <div className={appStyles.reactPlayerContainer}>
 
         <div className={appStyles.playerWrapperSection}>
           <ReactPlayer
@@ -196,7 +196,7 @@ class App extends Component {
           />
         </div>
 
-        <div className={appStyles.sectionVideo}>
+        <div className={appStyles.reactPlayerSectionVideo}>
           <table>
             <tbody>
             <tr>
@@ -230,15 +230,15 @@ class App extends Component {
           </table>
         </div>
 
-        <div className={`${appStyles.section} ${appStyles.sectionControl}`}>
+        <div className={`${appStyles.reactPlayerSection} ${appStyles.reactPlayerSectionControl}`}>
           <table>
             <tbody>
             <tr>
               <th>播放</th>
               <td>
-                <div className={appStyles.dropdown}>
-                  <button className={appStyles.dropbtn}>控件</button>
-                  <div className={appStyles.dropdownContent}>
+                <div className={appStyles.reactPlayerDropdown}>
+                  <button className={appStyles.reactPlayerDropButton}>控件</button>
+                  <div className={appStyles.reactPlayerDropdownContent}>
                     <button onClick={this.handleStop}>停止</button>
                     <button onClick={this.handlePlayPause}>{playing ? '暂停' : '播放'}</button>
                     <button onClick={this.handleClickFullscreen}>全屏</button>
@@ -282,7 +282,7 @@ class App extends Component {
               </th>
               <td>
                 <input id="controls" type="checkbox" checked={controls} onChange={this.handleToggleControls}/>
-                <em className={appStyles.em}>&nbsp; 注：将会重新加载</em>
+                <em className={appStyles.reactPlayerEm}>&nbsp; 注：将会重新加载</em>
               </td>
             </tr>
             <tr>
@@ -325,12 +325,12 @@ class App extends Component {
           </table>
         </div>
 
-        <div className={`${appStyles.section} ${appStyles.sectionState}`}>
+        <div className={`${appStyles.reactPlayerSection} ${appStyles.reactPlayerSectionState}`}>
             <table>
               <tbody>
               <tr>
                 <th>url</th>
-                <td className={!url ? appStyles.faded : ''}>
+                <td className={!url ? appStyles.reactPlayerFaded : ''}>
                   {(url instanceof Array ? 'Multiple' : url) || 'null'}
                 </td>
               </tr>
@@ -370,7 +370,7 @@ class App extends Component {
             </table>
           </div>
 
-        <div className={appStyles.footer}>
+        <div className={appStyles.reactPlayerFooter}>
           Version <strong>{version}</strong>
           {SEPARATOR}
           <a href="https://github.com/CookPete/react-player">GitHub</a>
