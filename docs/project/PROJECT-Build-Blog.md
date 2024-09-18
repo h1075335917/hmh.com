@@ -79,7 +79,7 @@ url: 'https://mhuahe.github.io/',
 baseUrl: '/hmh.com/',
 
 organizationName: 'mhuahe',
-projectName: 'hmh.com',
+projectName: 'mhuahe.com',
 ```
 
 2. 设置Github配置Setting>Pages
@@ -532,3 +532,98 @@ const Greeting = () => <p>Hello {project}!</p>;
 
 render(<Greeting />);
 ```
+
+### 告示语法
+
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#告示语法).
+
+:::
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#命令式渲染).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#交互代码编辑器).
+
+:::
+
+:::warning
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#自定义高亮).
+
+:::
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger[自定义]
+
+Some **content** with some _Markdown_ `syntax`.
+
+:::
+
+:::::info[第一层嵌套]
+
+第一层嵌套内容
+
+::::danger[第二层嵌套]
+
+第二层嵌套内容
+
+:::tip[第三层嵌套]
+
+第三层嵌套内容
+
+:::
+
+::::
+
+:::::
+
+
+```mdx-code-block
+:::tip[Use tabs in admonitions]
+
+<Tabs>
+  <TabItem value="apple" label="Apple">This is an apple 🍎</TabItem>
+  <TabItem value="orange" label="Orange">This is an orange 🍊</TabItem>
+  <TabItem value="banana" label="Banana">This is a banana 🍌</TabItem>
+</Tabs>
+
+:::
+```
+
+```mdx-code-block
+import Admonition from '@theme/Admonition';
+
+<Admonition type="tip" icon="💡" title="Did you know...">
+  Use plugins to introduce shorter syntax for the most commonly used JSX
+  elements in your project.
+</Admonition>
+```
+
+### 资源
+
+```mdx-code-block
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+<ThemedImage
+  width="50%"
+  alt="img"
+  sources={{
+    light: useBaseUrl('/img/java.svg'),
+    dark: useBaseUrl('/img/web.svg'),
+  }}
+/>
+```
+

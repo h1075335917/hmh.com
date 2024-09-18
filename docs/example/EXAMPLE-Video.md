@@ -5,12 +5,12 @@
 ```mdx-code-block
 import ReactPlayer from 'react-player'
 
-<ReactPlayer playing forceAudio controls height='100px' url='https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/video/sample-15s.mp3' />
+<ReactPlayer playing={false} forceAudio controls height='100px' url='https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/video/sample-15s.mp3' />
 ```
 <br></br>
 ## 视频示例
 ```mdx-code-block
-<ReactPlayer playing controls url='https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/video/sample-5s.mp4' />
+<ReactPlayer playing={false} controls url='https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/video/sample-5s.mp4' />
 ```
 
 <br></br>

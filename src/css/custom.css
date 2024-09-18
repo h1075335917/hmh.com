@@ -38,3 +38,18 @@
   padding: 0 var(--ifm-pre-padding);
   border-left: 3px solid #ff000080;
 }
+
+/* 为 h2-h5 标题添加分割线 */
+.markdown h2::after,
+.markdown h3::after,
+.markdown h4::after,
+.markdown h5::after
+{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--ifm-color-primary-lightest);
+  margin: 10px 0; /* 调整分割线和标题的间距 */
+}
+

@@ -64,7 +64,7 @@ const config: Config = {
     navbar: {
       title: '贺敏华的官方网站',
       logo: {
-        alt: 'Hmh Site Logo',
+        alt: 'mhuahe site logo',
         src: 'img/mhuahe.svg',
       },
       items: [
