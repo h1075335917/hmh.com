@@ -233,9 +233,9 @@ Docusaurus 可以自动给一个类别关联一篇索引文档。
 > 注意：这里生成的文件只对你的Blog目录下的文章插入评论系统 如果你要在docs目录下也插入评论系统，则还需要执行命令：
 `yarn swizzle @docusaurus/theme-classic DocItem/Layout`
 
-修改代码：src/theme/BlogPostPage/index.tsx
+修改代码：src/theme/BlogPostPage/index.jsx
 
-```js title="src/theme/BlogPostPage/index.tsx"
+```js title="src/theme/BlogPostPage/index.jsx"
 function BlogPostPageContent ({ sidebar, children }) {
   //开始
   const commentElement = useRef(null);
@@ -269,9 +269,9 @@ function BlogPostPageContent ({ sidebar, children }) {
 }
 ```
 
-doc添加评论功能修改代码：src/theme/DocItem/Layout/index.tsx
+doc添加评论功能修改代码：src/theme/DocItem/Layout/index.jsx
 
-```js title="src/theme/DocItem/Layout/index.tsx"
+```js title="src/theme/DocItem/Layout/index.jsx"
 export default function DocItemLayout ({ children }) {
   //开始
   const commentElement = useRef(null);

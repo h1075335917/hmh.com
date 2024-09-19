@@ -1,108 +1,65 @@
 :root {
-    --column-width: 640px;
-    --gutter-width: 20px;
-    --column-height: 360px;
-    --button-color: rgba(0, 0, 0, .1)
+  --column-width: 640px;
+  --gap-width: 10px;
+  --player-color: #666666;
 }
 
-.reactPlayerContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 两列相等宽度 */
-    grid-template-rows: auto auto auto; /* 三行 */
-    gap: 20px; /* 每个网格之间的间距 */
+/* 通用样式：下的直接子元素（不包含更深的元素） */
+.playerContainer > div {
+  text-align: left;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.playerWrapperSection {
-    text-align: left;
-    background-color: #666666; /*播放器颜色*/
-    grid-column: 1; /* 位于第一列 */
-    grid-row: 1; /* 位于第一行 */
+.playerContainer th {
+  min-width: 90px;
+}
+
+.playerContainer em {
+  font-size: smaller;
+}
+
+.playerContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 定义两列，左边大右边小 */
+  grid-template-rows: repeat(3, auto); /* 定义三行，高度自动 */
+  gap: var(--gap-width); /* 定义各区域的间距 */
+  box-sizing: border-box;
+}
+
+.playerWrapper {
+  background-color: var(--player-color); /*播放器颜色*/
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  max-width: var(--column-width);
+}
+
+.playerSectionVideo {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.playerSectionControl {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.playerSectionState {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  max-width: var(--column-width);
 
 }
 
-.reactPlayerSectionVideo {
-    text-align: left;
-    grid-column: 2; /* 位于第二列 */
-    grid-row: 1; /* 位于第一行 */
+.playerSectionState td {
+  width: 550px;
+  white-space: nowrap; /* 不换行 */
+  overflow-x: auto; /* 当内容过长时显示水平滚动条 */
 }
 
-.reactPlayerSection {
-    margin-top: var(--gutter-width);
-    padding-right: var(--gutter-width);
-    text-align: left;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-}
-/* 布局第二行 */
-.reactPlayerSectionControl {
-    grid-column: 1; /* 位于第一列 */
-    grid-row: 2; /* 位于第二行 */
-}
-.reactPlayerSectionState {
-    grid-column: 2; /* 位于第二列 */
-    grid-row: 2; /* 位于第二行 */
-}
-
-.reactPlayerFooter {
-    text-align: center;
-    float: none;
-    margin-top: var(--gutter-width);
-
-    grid-column: 1 / span 2; /* 跨越两列，居中显示 */
-    grid-row: 3; /* 位于第三行 */
-    justify-self: center; /* 内容水平居中 */
-}
-
-.reactPlayer {
-    margin-bottom: var(--gutter-width);
-    background: var(--button-color);
-}
-
-.reactPlayerFaded {
-    color: rgba(0, 0, 0, .5);
-}
-
-.reactPlayerEm {
-    font-size: smaller;
-}
-
-/*下拉按钮*/
-.reactPlayerDropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.reactPlayerDropButton {
-    background-color: var(--button-color);
-    border: none;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    width: 70px;
-    height: 30px;
-    text-align: center;
-}
-
-.reactPlayerDropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-}
-
-.reactPlayerDropdownContent button {
-    width: 70px;
-    text-align: center;
-}
-
-.reactPlayerDropdownContent button:hover {
-    background-color: #f1f1f1
-}
-
-.reactPlayerDropdown:hover .reactPlayerDropdownContent {
-    display: block;
-}
-
-.reactPlayerDropdown:hover .reactPlayerDropButton {
-    background-color: #3e8e41;
+.playerFooter {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  justify-self: center;
 }
 
 

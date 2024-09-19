@@ -6,21 +6,13 @@ import ReactPlayer from 'react-player'
 import Duration from './Duration'
 import appStyles from './styles.module.css'
 
-class App extends Component {
+class PlayerPage extends Component {
 
   state = {
-    url: null,
-    pip: false,
-    playing: true,
-    controls: false,
-    light: false,
-    volume: 0.8,
-    muted: false,
-    played: 0,
-    loaded: 0,
-    duration: 0,
-    playbackRate: 1.0,
-    loop: false
+    url: null, pip: false, playing: true,
+    controls: true, light: false, volume: 0.8,
+    muted: false, played: 0, loaded: 0,
+    duration: 0, playbackRate: 1.0, loop: false
   }
 
   load = url => {
@@ -46,10 +38,6 @@ class App extends Component {
       controls: !this.state.controls,
       url: null
     }, () => this.load(url))
-  }
-
-  handleToggleLight = () => {
-    this.setState({ light: !this.state.light })
   }
 
   handleToggleLoop = () => {
@@ -128,7 +116,7 @@ class App extends Component {
   }
 
   handleClickFullscreen = () => {
-    screenfull.request(document.querySelector('.reactPlayer'))
+    screenfull.request(document.querySelector('.reactPlayer')).then(r => {console.log(r)})
   }
 
   renderLoadButton = (url, label) => {
@@ -145,28 +133,18 @@ class App extends Component {
 
   render () {
     const {
-      url,
-      playing,
-      controls,
-      light,
-      volume,
-      muted,
-      loop,
-      played,
-      loaded,
-      duration,
-      playbackRate,
-      pip
+      url, playing, controls,
+      light, volume, muted,
+      loop, played, loaded,
+      duration, playbackRate, pip
     } = this.state
     const SEPARATOR = ' · '
     const version = packageJson.version
 
-    console.log('ref =========', this.ref.seekTo)
-
     return (
-      <div className={appStyles.reactPlayerContainer}>
+      <div className={appStyles.playerContainer}>
 
-        <div className={appStyles.playerWrapperSection}>
+        <div className={appStyles.playerWrapper}>
           <ReactPlayer
             ref={this.ref} //使用ref调用播放器上的实例方法
             className="reactPlayer"
@@ -196,7 +174,7 @@ class App extends Component {
           />
         </div>
 
-        <div className={appStyles.reactPlayerSectionVideo}>
+        <div className={appStyles.playerSectionVideo}>
           <table>
             <tbody>
             <tr>
@@ -208,7 +186,7 @@ class App extends Component {
               </td>
             </tr>
             <tr>
-              <th>Files</th>
+              <th>文件</th>
               <td>
                 {this.renderLoadButton('https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4', 'mp4')}
                 {this.renderLoadButton('https://test-videos.co.uk/vids/bigbuckbunny/webm/vp8/360/Big_Buck_Bunny_360_10s_1MB.webm', 'webm')}
@@ -220,7 +198,7 @@ class App extends Component {
               </td>
             </tr>
             <tr>
-              <th>Custom URL</th>
+              <th>自定义</th>
               <td>
                 <input ref={input => { this.urlInput = input }} type="text" placeholder="Enter URL"/>
                 <button onClick={() => this.setState({ url: this.urlInput.value })}>Load</button>
@@ -230,24 +208,19 @@ class App extends Component {
           </table>
         </div>
 
-        <div className={`${appStyles.reactPlayerSection} ${appStyles.reactPlayerSectionControl}`}>
+        <div className={`${appStyles.playerSectionControl}`}>
           <table>
             <tbody>
             <tr>
               <th>播放</th>
               <td>
-                <div className={appStyles.reactPlayerDropdown}>
-                  <button className={appStyles.reactPlayerDropButton}>控件</button>
-                  <div className={appStyles.reactPlayerDropdownContent}>
-                    <button onClick={this.handleStop}>停止</button>
-                    <button onClick={this.handlePlayPause}>{playing ? '暂停' : '播放'}</button>
-                    <button onClick={this.handleClickFullscreen}>全屏</button>
-                    {light &&
-                      <button onClick={() => this.player.showPreview()}>Show preview</button>}
-                    {ReactPlayer.canEnablePIP(url) &&
-                      <button onClick={this.handleTogglePIP}>{pip ? 'Disable PiP' : 'Enable PiP'}</button>}
-                  </div>
-                </div>
+                <button onClick={this.handleStop}>停止</button>
+                <button onClick={this.handlePlayPause}>{playing ? '暂停' : '播放'}</button>
+                <button onClick={this.handleClickFullscreen}>全屏</button>
+                {light &&
+                  <button onClick={() => this.player.showPreview()}>Show preview</button>}
+                {ReactPlayer.canEnablePIP(url) &&
+                  <button onClick={this.handleTogglePIP}>{pip ? 'Disable PiP' : 'Enable PiP'}</button>}
               </td>
             </tr>
             <tr>
@@ -256,6 +229,20 @@ class App extends Component {
                 <button onClick={this.handleSetPlaybackRate} value={1}>1x</button>
                 <button onClick={this.handleSetPlaybackRate} value={1.5}>1.5x</button>
                 <button onClick={this.handleSetPlaybackRate} value={2}>2x</button>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <label htmlFor="muted">静音</label>
+              </th>
+              <td>
+                <input id="muted" type="checkbox" checked={muted} onChange={this.handleToggleMuted}/>
+              </td>
+            </tr>
+            <tr>
+              <th>声音</th>
+              <td>
+                <input type="range" min={0} max={1} step="any" value={volume} onChange={this.handleVolumeChange}/>
               </td>
             </tr>
             <tr>
@@ -271,26 +258,12 @@ class App extends Component {
               </td>
             </tr>
             <tr>
-              <th>声音</th>
-              <td>
-                <input type="range" min={0} max={1} step="any" value={volume} onChange={this.handleVolumeChange}/>
-              </td>
-            </tr>
-            <tr>
               <th>
                 <label htmlFor="controls">播放控件</label>
               </th>
               <td>
                 <input id="controls" type="checkbox" checked={controls} onChange={this.handleToggleControls}/>
-                <em className={appStyles.reactPlayerEm}>&nbsp; 注：将会重新加载</em>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <label htmlFor="muted">静音</label>
-              </th>
-              <td>
-                <input id="muted" type="checkbox" checked={muted} onChange={this.handleToggleMuted}/>
+                <em>&nbsp; 注：将会重新加载</em>
               </td>
             </tr>
             <tr>
@@ -302,21 +275,13 @@ class App extends Component {
               </td>
             </tr>
             <tr>
-              <th>
-                <label htmlFor="light">Light mode</label>
-              </th>
-              <td>
-                <input id="light" type="checkbox" checked={light} onChange={this.handleToggleLight}/>
-              </td>
-            </tr>
-            <tr>
-              <th>播放进度条</th>
+              <th>播放进度</th>
               <td>
                 <progress max={1} value={played}/>
               </td>
             </tr>
             <tr>
-              <th>加载进度条</th>
+              <th>加载进度</th>
               <td>
                 <progress max={1} value={loaded}/>
               </td>
@@ -325,13 +290,13 @@ class App extends Component {
           </table>
         </div>
 
-        <div className={`${appStyles.reactPlayerSection} ${appStyles.reactPlayerSectionState}`}>
+        <div className={`${appStyles.playerSectionState}`}>
           <table>
             <tbody>
             <tr>
               <th>url</th>
-              <td className={!url ? appStyles.reactPlayerFaded : ''}>
-                {(url instanceof Array ? 'Multiple' : url) || 'null'}
+              <td>
+                {(url instanceof Array ? 'Multiple' : url) || ''}
               </td>
             </tr>
             <tr>
@@ -340,7 +305,7 @@ class App extends Component {
             </tr>
             <tr>
               <th>声音</th>
-              <td>{(volume * 100).toFixed(0)}</td>
+              <td>{(volume * 100).toFixed(0)}%</td>
             </tr>
             <tr>
               <th>倍速</th>
@@ -348,11 +313,11 @@ class App extends Component {
             </tr>
             <tr>
               <th>播放进度</th>
-              <td>{played.toFixed(3)}</td>
+              <td>{(played * 100).toFixed(1)}%</td>
             </tr>
             <tr>
               <th>加载进度</th>
-              <td>{loaded.toFixed(3)}</td>
+              <td>{(loaded * 100).toFixed(1)}%</td>
             </tr>
             <tr>
               <th>总时长</th>
@@ -370,7 +335,7 @@ class App extends Component {
           </table>
         </div>
 
-        <div className={appStyles.reactPlayerFooter}>
+        <div className={appStyles.playerFooter}>
           Version <strong>{version}</strong>
           {SEPARATOR}
           <a href="https://github.com/CookPete/react-player">GitHub</a>
@@ -382,4 +347,8 @@ class App extends Component {
   }
 }
 
-export default App
+export default function ReactPlayerPage () {
+  return (
+    <PlayerPage/>
+  )
+}
