@@ -43,13 +43,20 @@
 .markdown h2::after,
 .markdown h3::after,
 .markdown h4::after,
-.markdown h5::after
-{
+.markdown h5::after {
   content: "";
   display: block;
   width: 100%;
   height: 1px;
   background-color: var(--ifm-color-primary-lightest);
   margin: 10px 0; /* 调整分割线和标题的间距 */
+}
+
+.pagination-nav__link--next .pagination-nav__label:after {
+  content: " 👉" !important;
+}
+
+.pagination-nav__link--prev .pagination-nav__label:before {
+  content: "👈 " !important;
 }
 

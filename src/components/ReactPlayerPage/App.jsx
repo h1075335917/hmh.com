@@ -326,49 +326,49 @@ class App extends Component {
         </div>
 
         <div className={`${appStyles.reactPlayerSection} ${appStyles.reactPlayerSectionState}`}>
-            <table>
-              <tbody>
-              <tr>
-                <th>url</th>
-                <td className={!url ? appStyles.reactPlayerFaded : ''}>
-                  {(url instanceof Array ? 'Multiple' : url) || 'null'}
-                </td>
-              </tr>
-              <tr>
-                <th>状态</th>
-                <td>{playing ? 'true' : 'false'}</td>
-              </tr>
-              <tr>
-                <th>声音</th>
-                <td>{(volume * 100).toFixed(0)}</td>
-              </tr>
-              <tr>
-                <th>倍速</th>
-                <td>{playbackRate}</td>
-              </tr>
-              <tr>
-                <th>播放进度</th>
-                <td>{played.toFixed(3)}</td>
-              </tr>
-              <tr>
-                <th>加载进度</th>
-                <td>{loaded.toFixed(3)}</td>
-              </tr>
-              <tr>
-                <th>总时长</th>
-                <td><Duration seconds={duration}/></td>
-              </tr>
-              <tr>
-                <th>播放时长</th>
-                <td><Duration seconds={duration * played}/></td>
-              </tr>
-              <tr>
-                <th>剩余时长</th>
-                <td><Duration seconds={duration * (1 - played)}/></td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
+          <table>
+            <tbody>
+            <tr>
+              <th>url</th>
+              <td className={!url ? appStyles.reactPlayerFaded : ''}>
+                {(url instanceof Array ? 'Multiple' : url) || 'null'}
+              </td>
+            </tr>
+            <tr>
+              <th>状态</th>
+              <td>{playing ? 'true' : 'false'}</td>
+            </tr>
+            <tr>
+              <th>声音</th>
+              <td>{(volume * 100).toFixed(0)}</td>
+            </tr>
+            <tr>
+              <th>倍速</th>
+              <td>{playbackRate}</td>
+            </tr>
+            <tr>
+              <th>播放进度</th>
+              <td>{played.toFixed(3)}</td>
+            </tr>
+            <tr>
+              <th>加载进度</th>
+              <td>{loaded.toFixed(3)}</td>
+            </tr>
+            <tr>
+              <th>总时长</th>
+              <td><Duration seconds={duration}/></td>
+            </tr>
+            <tr>
+              <th>播放时长</th>
+              <td><Duration seconds={duration * played}/></td>
+            </tr>
+            <tr>
+              <th>剩余时长</th>
+              <td><Duration seconds={duration * (1 - played)}/></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div className={appStyles.reactPlayerFooter}>
           Version <strong>{version}</strong>
