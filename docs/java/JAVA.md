@@ -784,6 +784,12 @@ try (Writer writer = new OutputStreamWriter(new FileOutputStream("readme.txt"), 
 }
 ```
 
+:::tip
+
+如果你读取的是字节流文件，如pdf，图片等，使用InputStream和OutputStream；
+
+:::
+
 #### PrintStream和PrintWriter
 
 > `PrintStream`是一种`FilterOutputStream`，它在`OutputStream`的接口上，额外提供了一些写入各种数据类型的方法：
