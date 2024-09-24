@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # 工具-IDEA技巧
 
 ## 插件

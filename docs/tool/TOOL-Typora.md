@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # 工具-Typora技巧
 
 ### 链接
