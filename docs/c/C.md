@@ -2,7 +2,7 @@
 ```mdx-code-block
 import Copyright from '@site/src/components/Copyright';
 
-<Copyright behavior="Study" description="C 语言教程" url="https://wangdoc.com/clang" />
+<Copyright behavior="参考" description="C 语言教程" url="https://wangdoc.com/clang" />
 ```
 ### GCC简介
 

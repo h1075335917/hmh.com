@@ -14,3 +14,11 @@ css:
   label: CSS教程
   permalink: /css
   description: CSS tag description
+cursor:
+  label: Cursor
+  permalink: /cursor
+  description: 一款非常好用的AI开发工具
+travel:
+  label: Travel
+  permalink: /travel
+  description: 旅游

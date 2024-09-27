@@ -32,7 +32,7 @@ sidebar_position: 3
 ```mdx-code-block
 import Copyright from '@site/src/components/Copyright';
 
-<Copyright behavior="Study" description="CSS Grid 网格布局教程" url="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" />
+<Copyright behavior="参考" description="CSS Grid 网格布局教程" url="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" />
 ```
 ### 基本概念
 
@@ -302,7 +302,7 @@ justify-self属性设置单元格内容的水平位置（左中右），align-se
 
 ## Flex 布局
 ```mdx-code-block
-<Copyright behavior="Study" description="Flex 网格布局教程" url="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" />
+<Copyright behavior="参考" description={["Flex 网格布局教程", "CSS Flexbox"]} url={["https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html", "https://www.w3school.com.cn/css/css3_flexbox.asp"]} />
 ```
 
 布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。
@@ -332,15 +332,15 @@ Webkit 内核的浏览器，必须加上-webkit前缀。
   display: flex;
 }
 ```
-注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
-
-### 基本概念
+> 注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
 
 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"。
 
 容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
 
 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+
+![flex-container](/img/docs/flex-container.png)
 
 ### 容器的属性
 
@@ -351,6 +351,46 @@ flex-direction属性决定主轴的方向（即项目的排列方向）。
   flex-direction: row | row-reverse | column | column-reverse;
 }
 ```
+- row（默认值）：主轴为水平方向，起点在左端。
+- row-reverse：主轴为水平方向，起点在右端。
+- column：主轴为垂直方向，起点在上沿。
+- column-reverse：主轴为垂直方向，起点在下沿。
+
+#### flex-wrap 属性
+默认情况下，项目都排在一条线（又称"轴线"）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
+```css
+.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+```
+- nowrap（默认）：不换行。
+- wrap：换行，第一行在上方。
+- wrap-reverse：换行，第一行在下方。
+
+#### flex-flow 属性
+flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+```css
+.container {
+  flex-flow: <flex-direction> || <flex-wrap>;
+}
+```
+
+#### justify-content 属性
+justify-content属性定义了项目在主轴上的对齐方式。
+```css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}
+```
+- flex-start/start/left（默认值）：左对齐
+- flex-end/end/right：右对齐
+- center： 居中
+- space-between：两端对齐，项目之间的间隔相等。
+- space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与容器边框的间隔大一倍。
+- space-evenly：项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔。
+
+
+
 
 
 
