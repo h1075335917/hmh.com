@@ -15,8 +15,9 @@ import TOC from '@theme/TOC'
 import ContentVisibility from '@theme/ContentVisibility'
 import type { Props } from '@theme/BlogPostPage'
 import type { BlogSidebar } from '@docusaurus/plugin-content-blog'
+import { DiscussionEmbed } from 'disqus-react';
 
-function BlogPostPageContent ({
+function BlogPostPageContent({
   sidebar,
   children,
 }: {
@@ -24,33 +25,35 @@ function BlogPostPageContent ({
   children: ReactNode;
 }): React.ReactElement {
   const { metadata, toc } = useBlogPost()
-  const { nextItem, prevItem, frontMatter } = metadata
+  const { nextItem, prevItem, frontMatter, permalink, title } = metadata
   const {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter
 
-  const commentElement = useRef(null)
+  // const commentElement = useRef(null)
+  // useEffect(() => {
+  //   // Update the document title using the browser API : https://giscus.app/zh-CN
+  //   let s = document.createElement('script')
+  //   s.src = 'https://giscus.app/client.js'
+  //   s.setAttribute('data-repo', 'mhuahe/mhuahe.com')
+  //   s.setAttribute('data-repo-id', 'R_kgDOMpV-6w')
+  //   s.setAttribute('data-category', 'Announcements')
+  //   s.setAttribute('data-category-id', 'DIC_kwDOMpV-684CiOLI')
+  //   s.setAttribute('data-mapping', 'pathname')
+  //   s.setAttribute('data-reactions-enabled', '1')
+  //   s.setAttribute('data-emit-metadata', '0')
+  //   s.setAttribute('data-input-position', 'bottom')
+  //   s.setAttribute('data-theme', 'light')
+  //   s.setAttribute('data-lang', 'zh-CN')
+  //   s.setAttribute('crossorigin', 'anonymous')
+  //   s.async = true
+  //   commentElement.current.appendChild(s)
+  // }, [])
 
-  useEffect(() => {
-    // Update the document title using the browser API : https://giscus.app/zh-CN
-    let s = document.createElement('script')
-    s.src = 'https://giscus.app/client.js'
-    s.setAttribute('data-repo', 'mhuahe/mhuahe.com')
-    s.setAttribute('data-repo-id', 'R_kgDOMpV-6w')
-    s.setAttribute('data-category', 'Announcements')
-    s.setAttribute('data-category-id', 'DIC_kwDOMpV-684CiOLI')
-    s.setAttribute('data-mapping', 'pathname')
-    s.setAttribute('data-reactions-enabled', '1')
-    s.setAttribute('data-emit-metadata', '0')
-    s.setAttribute('data-input-position', 'bottom')
-    s.setAttribute('data-theme', 'light')
-    s.setAttribute('data-lang', 'zh-CN')
-    s.setAttribute('crossorigin', 'anonymous')
-    s.async = true
-    commentElement.current.appendChild(s)
-  }, [])
+  const fmtId = permalink.replace(/^\//, '').replace(/[\s\/]/gi, '-');
+  const disqusId = fmtId == '' ? 'main' : fmtId;
 
   return (
     <BlogLayout
@@ -64,20 +67,30 @@ function BlogPostPageContent ({
           />
         ) : undefined
       }>
-      <ContentVisibility metadata={metadata}/>
+      <ContentVisibility metadata={metadata} />
 
       <BlogPostItem>{children}</BlogPostItem>
 
       {(nextItem || prevItem) && (
-        <BlogPostPaginator nextItem={nextItem} prevItem={prevItem}/>
+        <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
       )}
 
-      <div style={{ marginTop: '20px' }} ref={commentElement}></div>
+      {/* <div style={{ marginTop: '20px' }} ref={commentElement}></div> */}
+      {/* 评论 */}
+      <DiscussionEmbed
+        shortname='mhuahe' //在disqus 配置的
+        config={{
+          url: 'https://brightzoe.top' + permalink, //完整网址
+          identifier: disqusId, //识别符
+          title: title,
+          // language: 'en_US',
+        }}
+      />
     </BlogLayout>
   )
 }
 
-export default function BlogPostPage (props: Props): React.ReactElement {
+export default function BlogPostPage(props: Props): React.ReactElement {
   const BlogPostContent = props.content
   return (
     <BlogPostProvider content={props.content} isBlogPostPage>
@@ -86,10 +99,10 @@ export default function BlogPostPage (props: Props): React.ReactElement {
           ThemeClassNames.wrapper.blogPages,
           ThemeClassNames.page.blogPostPage,
         )}>
-        <BlogPostPageMetadata/>
-        <BlogPostPageStructuredData/>
+        <BlogPostPageMetadata />
+        <BlogPostPageStructuredData />
         <BlogPostPageContent sidebar={props.sidebar}>
-          <BlogPostContent/>
+          <BlogPostContent />
         </BlogPostPageContent>
       </HtmlClassNameProvider>
     </BlogPostProvider>

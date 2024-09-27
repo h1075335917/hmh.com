@@ -6,6 +6,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     //TS2307: Cannot find module @docusaurus/plugin-content-blog/client or its corresponding type declarations
-    "moduleResolution": "node16"
+    "moduleResolution": "node16",
+    "module": "Node16"
   }
 }

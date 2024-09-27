@@ -189,9 +189,34 @@ Docusaurus 可以自动给一个类别关联一篇索引文档。
 - 命名为`README`: docs/Guides/README.mdx
 - 跟父目录同名: docs/Guides/Guides.md
 
-### 集成giscus评论系统
+### 评论系统
 
-#### 配置giscus
+#### disqus
+
+为本博客（docusaurus）添加 disqus 评论系统。
+
+首先需要在 disqus 有一个账号，没有需要先注册。选择 "get started" =>" I want to install Disqus on my site" 。在 disqus 上配置对应的网站信息，配置的 Website Name 就是后面组件中要用到的 shortname。
+
+ `yarn add disqus-react`
+
+```tsx title="src/theme/BlogPostPage/index.tsx"
+import { DiscussionEmbed } from "disqus-react";
+
+const { title, description, tags, permalink } = metadata;
+const fmtId = permalink.replace(/^\//, '').replace(/[\s\/]/gi, '-');
+const disqusId = fmtId == '' ? 'main' : fmtId;
+
+<DiscussionEmbed
+  shortname="yourshortname"
+  config={{
+    url: 'https://brightzoe.top' + permalink,
+    identifier: disqusId,
+    title: title,
+  }}
+/>;
+```
+
+#### giscus
 
 1. 登录github账号安装giscus应用 [giscus app](https://github.com/apps/giscus)。
 
