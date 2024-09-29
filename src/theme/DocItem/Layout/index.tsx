@@ -79,19 +79,19 @@ export default function DocItemLayout({ children }: Props): React.ReactElement {
             <DocVersionBadge />
             {docTOC.mobile}
             <DocItemContent>{children}</DocItemContent>
-            {/* <div style={{ marginTop: '20px' }} ref={commentElement}></div> */}
-            {/* 评论 */}
-            <DiscussionEmbed
-              shortname='mhuahe' //在disqus 配置的
-              config={{
-                url: 'https://brightzoe.top' + permalink, //完整网址
-                identifier: disqusId, //识别符
-                title: title,
-              }}
-            />
             <DocItemFooter />
           </article>
           <DocItemPaginator />
+          {/* <div style={{ marginTop: '20px' }} ref={commentElement}></div> */}
+          {/* 评论 */}
+          <DiscussionEmbed
+            shortname='mhuahe' //在disqus 配置的
+            config={{
+              url: 'https://brightzoe.top' + permalink, //完整网址
+              identifier: disqusId, //识别符
+              title: title,
+            }}
+          />
         </div>
       </div>
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
