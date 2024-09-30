@@ -50,14 +50,14 @@ my-website
   `path`。更多详细信息可以在[文档指南中找到](https://docusaurus.io/docs/docs-introduction)
 - `/src/`- 非文档文件，例如页面或自定义 React 组件。您不必严格将非文档文件放在这里，但是将它们放在集中目录下可以更轻松地指定，以防您需要进行某种
   linting/处理
-    - `/src/pages`- 此目录中的任何 JSX/TSX/MDX
-      文件都将转换为网站页面。更多详细信息可以在[页面指南中找到](https://docusaurus.io/docs/creating-pages)
+  - `/src/pages`- 此目录中的任何 JSX/TSX/MDX
+    文件都将转换为网站页面。更多详细信息可以在[页面指南中找到](https://docusaurus.io/docs/creating-pages)
 - `/static/`- 静态目录。这里的任何内容都将被复制到最终`build`目录的根目录中
 - `/docusaurus.config.js`- 包含站点配置的配置文件。这相当于`siteConfig.js`Docusaurus v1 中的
 - `/package.json`- Docusaurus 网站是一个 React 应用程序。您可以在其中安装和使用您喜欢的任何 npm 软件包
 - `/sidebars.js`- 文档使用它来指定侧边栏中文档的顺序
 
-#### 更新Docusaurus版本
+#### 更新 Docusaurus 版本
 
 有多种方法可以更新 Docusaurus 版本。一种有保证的方法是手动将版本号更改`package.json`为所需的版本。请注意，所有
 `@docusaurus/`命名空间包应使用相同的版本。
@@ -70,7 +70,7 @@ my-website
 
 `docusaurus.config.js`
 
-### 部署到Github
+### 部署到 Github
 
 1. 配置文件中设置：
 
@@ -82,21 +82,21 @@ organizationName: 'mhuahe',
 projectName: 'mhuahe.com',
 ```
 
-2. 设置Github配置Setting>Pages
+2. 设置 Github 配置 Setting>Pages
 
 3. 执行命令：
 
-    - `yarn build`打包
+   - `yarn build`打包
 
-    - `cmd /C 'set "GIT_USER=mhuahe" && yarn deploy'`
+   - `cmd /C 'set "GIT_USER=mhuahe" && yarn deploy'`
 
-      设置变量 && 部署到Github pages
+     设置变量 && 部署到 Github pages
 
-    - https://mhuahe.github.io/mhuahe.com/
+   - https://mhuahe.github.io/mhuahe.com/
 
-      访问Github Pages地址
+     访问 Github Pages 地址
 
-### 集成搜索引擎Algolia
+### 集成搜索引擎 Algolia
 
 配置
 
@@ -141,7 +141,7 @@ themeConfig: {
 }
 ```
 
-### 集成本地搜索引擎docusaurus-search-local
+### 集成本地搜索引擎 docusaurus-search-local
 
 配置
 
@@ -168,18 +168,18 @@ yarn run serve
 
 ### Markdown 和 JSX
 
-Docusaurus v3使用MDX v3。
+Docusaurus v3 使用 MDX v3。
 
-MDX语法主要与CommonMark兼容，但更严格，因为您的.mdx文件可以使用 JSX 并编译成真正的 React 组件（检查 Playground ）。
+MDX 语法主要与 CommonMark 兼容，但更严格，因为您的.mdx 文件可以使用 JSX 并编译成真正的 React 组件（检查 Playground ）。
 
 一些有效的 CommonMark 功能不适用于 MDX（更多信息），特别是：
 
 - 缩进代码块：使用三个反引号代替
 - 自动链接 (`<http://localhost:3000>`)：使用常规链接语法 (`[http://localhost:3000](http://localhost:3000)`)
-- HTML 语法 (`<p style="color: red;">`)：使用JSX代替 (`<p style={{color: 'red'}}>`)
+- HTML 语法 (`<p style="color: red;">`)：使用 JSX 代替 (`<p style={{color: 'red'}}>`)
 - 未转义的`{`and `<`：用( `\{`and `\<`)转义
 
-### category索引约定
+### category 索引约定
 
 Docusaurus 可以自动给一个类别关联一篇索引文档。
 
@@ -197,19 +197,19 @@ Docusaurus 可以自动给一个类别关联一篇索引文档。
 
 首先需要在 disqus 有一个账号，没有需要先注册。选择 "get started" =>" I want to install Disqus on my site" 。在 disqus 上配置对应的网站信息，配置的 Website Name 就是后面组件中要用到的 shortname。
 
- `yarn add disqus-react`
+`yarn add disqus-react`
 
 ```tsx title="src/theme/BlogPostPage/index.tsx"
 import { DiscussionEmbed } from "disqus-react";
 
 const { title, description, tags, permalink } = metadata;
-const fmtId = permalink.replace(/^\//, '').replace(/[\s\/]/gi, '-');
-const disqusId = fmtId == '' ? 'main' : fmtId;
+const fmtId = permalink.replace(/^\//, "").replace(/[\s\/]/gi, "-");
+const disqusId = fmtId == "" ? "main" : fmtId;
 
 <DiscussionEmbed
   shortname="yourshortname"
   config={{
-    url: 'https://brightzoe.top' + permalink,
+    url: "https://brightzoe.top" + permalink,
     identifier: disqusId,
     title: title,
   }}
@@ -218,9 +218,9 @@ const disqusId = fmtId == '' ? 'main' : fmtId;
 
 #### giscus
 
-1. 登录github账号安装giscus应用 [giscus app](https://github.com/apps/giscus)。
+1. 登录 github 账号安装 giscus 应用 [giscus app](https://github.com/apps/giscus)。
 
-2. 然后到 [giscus的官网](https://giscus.app/zh-CN) 配置语言、github仓库、页面与discussion映射关系、discussion分类、特性、主题等。
+2. 然后到 [giscus 的官网](https://giscus.app/zh-CN) 配置语言、github 仓库、页面与 discussion 映射关系、discussion 分类、特性、主题等。
 
 注意：选择 giscus 连接到的仓库。请确保：
 
@@ -228,7 +228,7 @@ const disqusId = fmtId == '' ? 'main' : fmtId;
 - giscus app 已安装，否则访客将无法评论和回应。
 - Discussions 功能已在你的仓库中启用：General → Features → Discussions
 
-页面 ↔️ discussion 映射关系 一般选择Pathname就行。实际生成的评论的时候，会以你的博客请求路径创建一个类似话题的讨论。
+页面 ↔️ discussion 映射关系 一般选择 Pathname 就行。实际生成的评论的时候，会以你的博客请求路径创建一个类似话题的讨论。
 
 得到 `<script> `标签, 类似：
 
@@ -254,14 +254,15 @@ const disqusId = fmtId == '' ? 'main' : fmtId;
 - 选择 Eject (Unsafe) 回车
 - 选择 YES: I know what I am doing! 回车
 
-这时项目目录下src/theme/BlogPostPage生成了自定义主题的文件
-> 注意：这里生成的文件只对你的Blog目录下的文章插入评论系统 如果你要在docs目录下也插入评论系统，则还需要执行命令：
-`yarn swizzle @docusaurus/theme-classic DocItem/Layout`
+这时项目目录下 src/theme/BlogPostPage 生成了自定义主题的文件
+
+> 注意：这里生成的文件只对你的 Blog 目录下的文章插入评论系统 如果你要在 docs 目录下也插入评论系统，则还需要执行命令：
+> `yarn swizzle @docusaurus/theme-classic DocItem/Layout`
 
 修改代码：src/theme/BlogPostPage/index.jsx
 
 ```js title="src/theme/BlogPostPage/index.jsx"
-function BlogPostPageContent ({ sidebar, children }) {
+function BlogPostPageContent({ sidebar, children }) {
   //开始
   const commentElement = useRef(null);
   useEffect(() => {
@@ -287,17 +288,17 @@ function BlogPostPageContent ({ sidebar, children }) {
   return (
     <BlogLayout>
       //开始
-      <div style={{ marginTop: '20px' }} ref={commentElement}></div>
+      <div style={{ marginTop: "20px" }} ref={commentElement}></div>
       //结束
     </BlogLayout>
   );
 }
 ```
 
-doc添加评论功能修改代码：src/theme/DocItem/Layout/index.jsx
+doc 添加评论功能修改代码：src/theme/DocItem/Layout/index.jsx
 
 ```js title="src/theme/DocItem/Layout/index.jsx"
-export default function DocItemLayout ({ children }) {
+export default function DocItemLayout({ children }) {
   //开始
   const commentElement = useRef(null);
   useEffect(() => {
@@ -326,7 +327,7 @@ export default function DocItemLayout ({ children }) {
         <div>
           <article>
             //开始
-            <div style={{ marginTop: '20px' }} ref={commentElement}></div>
+            <div style={{ marginTop: "20px" }} ref={commentElement}></div>
             //结束
           </article>
         </div>
@@ -336,7 +337,7 @@ export default function DocItemLayout ({ children }) {
 }
 ```
 
-### prism代码高亮
+### prism 代码高亮
 
 ```ts title="docusaurus.config.ts"
 export default {
@@ -346,7 +347,7 @@ export default {
       darkTheme: prismThemes.dracula,
     },
   },
-}
+};
 ```
 
 ### 目录层级设置
@@ -365,7 +366,7 @@ export default {
 ### 内联目录
 
 ```jsx title="mdx-code-block"
-import TOCInline from '@theme/TOCInline';
+import TOCInline from "@theme/TOCInline";
 
 <TOCInline
   // Only show h2 and h4 headings
@@ -373,13 +374,13 @@ import TOCInline from '@theme/TOCInline';
   minHeadingLevel={2}
   // Show h4 headings in addition to the default h2 and h3 headings
   maxHeadingLevel={4}
-/>
+/>;
 ```
 
 ```mdx-code-block
 import TOCInline from '@theme/TOCInline';
 
-<TOCInline 
+<TOCInline
   toc={toc}
   minHeadingLevel={2}
   maxHeadingLevel={3}
@@ -427,7 +428,7 @@ import TabItem from '@theme/TabItem';
 ### 代码高亮
 
 ```jsx {1,4-6,11}
-import React from 'react';
+import React from "react";
 
 function MyComponent(props) {
   if (props.isBar) {
@@ -449,20 +450,21 @@ export default {
       magicComments: [
         //highlight-start
         {
-          className: 'theme-code-block-highlighted-line',
-          line: 'highlight-next-line',
-          block: {start: 'highlight-start', end: 'highlight-end'},
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line",
+          block: { start: "highlight-start", end: "highlight-end" },
         },
         //highlight-end
         {
-          className: 'code-block-error-line',
-          line: 'This will error',
+          className: "code-block-error-line",
+          line: "This will error",
         },
       ],
     },
   },
 };
 ```
+
 ```ts
 const name = null;
 //This will error
@@ -472,86 +474,90 @@ console.log(name.toUpperCase());
 
 ### 交互代码编辑器
 
-1. `yarn add @docusaurus/theme-live-codeblock`
+1.  `yarn add @docusaurus/theme-live-codeblock`
 
-2. 配置：
+2.  配置：
     ```ts title="docusaurus.config.js"
     export default {
       // ...
-      themes: ['@docusaurus/theme-live-codeblock'],
+      themes: ["@docusaurus/theme-live-codeblock"],
       // ...
     };
     ```
-3. 示例：
-    ```jsx live
+3.  示例：
+
+    ````jsx live
     function Clock(props) {
-      const [date, setDate] = useState(new Date());
-      useEffect(() => {
-        const timerID = setInterval(() => tick(), 1000);
-    
-        return function cleanup() {
-          clearInterval(timerID);
-        };
-      });
-    
-      function tick() {
-        setDate(new Date());
-      }
-    
-      return (
-        <div>
-          <h2>It is {date.toLocaleTimeString()}.</h2>
-        </div>
-      );
-    }
-    ```
-> 你不能从 react-live 的代码编辑器中直接导入组件。你得显式地预先定义好所有组件导入项。
+    const [date, setDate] = useState(new Date());
+    useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+            return function cleanup() {
+              clearInterval(timerID);
+            };
+          });
+
+          function tick() {
+            setDate(new Date());
+          }
+
+          return (
+            <div>
+              <h2>It is {date.toLocaleTimeString()}.</h2>
+            </div>
+          );
+        }
+        ```
+    > 你不能从 react-live 的代码编辑器中直接导入组件。你得显式地预先定义好所有组件导入项。
+    ````
 
 默认情况下，你可以使用 React 的所有导入项。 如果你需要更多可导入项，你通过 swizzle 组件 react-live scope 来获取：
+
 1. `yarn swizzle @docusaurus/theme-live-codeblock ReactLiveScope --eject`
 2. 示例：
-    ```js title="src/theme/ReactLiveScope/index.js"
-    import React from 'react';
-    
-    const ButtonExample = (props) => (
-      <button
-        {...props}
-        style={{
-          backgroundColor: 'white',
-          color: 'black',
-          border: 'solid red',
-          borderRadius: 20,
-          padding: 10,
-          cursor: 'pointer',
-          ...props.style,
-        }}
-      />
-    );
-    
-    // Add react-live imports you need here
-    const ReactLiveScope = {
-      React,
-      ...React,
-      ButtonExample,
-    };
-    
-    export default ReactLiveScope;
-    ```
+
+   ```js title="src/theme/ReactLiveScope/index.js"
+   import React from "react";
+
+   const ButtonExample = (props) => (
+     <button
+       {...props}
+       style={{
+         backgroundColor: "white",
+         color: "black",
+         border: "solid red",
+         borderRadius: 20,
+         padding: 10,
+         cursor: "pointer",
+         ...props.style,
+       }}
+     />
+   );
+
+   // Add react-live imports you need here
+   const ReactLiveScope = {
+     React,
+     ...React,
+     ButtonExample,
+   };
+
+   export default ReactLiveScope;
+   ```
+
 3. 使用：
-    ```js
-    function MyPlayground(props) {
-      return (
-        <div>
-          <ButtonExample onClick={() => alert('hey!')}>Click me</ButtonExample>
-        </div>
-      );
-    }
-    ```
+   ```js
+   function MyPlayground(props) {
+     return (
+       <div>
+         <ButtonExample onClick={() => alert("hey!")}>Click me</ButtonExample>
+       </div>
+     );
+   }
+   ```
 
 ### 命令式渲染
 
 ```jsx live noInline
-const project = 'Docusaurus';
+const project = "Docusaurus";
 
 const Greeting = () => <p>Hello {project}!</p>;
 
@@ -614,7 +620,6 @@ Some **content** with some _Markdown_ `syntax`.
 
 :::::
 
-
 ```mdx-code-block
 :::tip[Use tabs in admonitions]
 
@@ -652,3 +657,37 @@ import ThemedImage from '@theme/ThemedImage';
 />
 ```
 
+### 图表
+
+[mermaid 示例](https://mermaid.js.org/intro/syntax-reference.html)
+
+```mermaid
+erDiagram
+          CUSTOMER }|..|{ DELIVERY-ADDRESS : has
+          CUSTOMER ||--o{ ORDER : places
+          CUSTOMER ||--o{ INVOICE : "liable for"
+          DELIVERY-ADDRESS ||--o{ ORDER : receives
+          INVOICE ||--|{ ORDER : covers
+          ORDER ||--|{ ORDER-ITEM : includes
+          PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+          PRODUCT ||--o{ ORDER-ITEM : "ordered in"
+
+```
+
+动态 mermaid
+
+```mdx-code-block
+import Mermaid from '@theme/Mermaid';
+
+<Mermaid
+  value={`erDiagram
+          CUSTOMER }|..|{ DELIVERY-ADDRESS : has
+          CUSTOMER ||--o{ ORDER : places
+          CUSTOMER ||--o{ INVOICE : "liable for"
+          DELIVERY-ADDRESS ||--o{ ORDER : receives
+          INVOICE ||--|{ ORDER : covers
+          ORDER ||--|{ ORDER-ITEM : includes
+          PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+          PRODUCT ||--o{ ORDER-ITEM : "ordered in"`}
+/>
+```

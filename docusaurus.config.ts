@@ -1,58 +1,72 @@
-import { themes as prismThemes } from 'prism-react-renderer'
-import type { Config } from '@docusaurus/types'
-import type * as Preset from '@docusaurus/preset-classic'
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: '贺敏华的官方网站',
-  tagline: '贺敏华自用的笔记网站',
-  favicon: 'img/mhuahe.ico',
+  title: "贺敏华的官方网站",
+  tagline: "贺敏华自用的笔记网站",
+  favicon: "img/mhuahe.ico",
 
   // Set the production url of your site here
-  url: 'https://mhuahe.github.io/',
+  url: "https://mhuahe.github.io/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/mhuahe.com/',
+  baseUrl: "/mhuahe.com/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'mhuahe', // Usually your GitHub org/user name.
-  projectName: 'mhuahe.com', // Usually your repo name.
+  organizationName: "mhuahe", // Usually your GitHub org/user name.
+  projectName: "mhuahe.com", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    defaultLocale: "zh-Hans",
+    locales: ["zh-Hans"],
   },
 
   presets: [
     [
-      'classic',
+      "@docusaurus/preset-classic",
       {
+        // Will be passed to @docusaurus/plugin-content-docs (false to disable)
         docs: {
-          sidebarPath: './sidebars.ts',
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master-ts/',
+          // 文档目录
+          path: "docs",
+          // 编辑URL
+          editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
+          // 显示最后更新作者
+          showLastUpdateAuthor: true,
+          // 显示最后更新时间
+          showLastUpdateTime: true,
+          // 侧边栏
+          sidebarPath: "./sidebars.ts",
         },
+        // Will be passed to @docusaurus/plugin-content-blog (false to disable)
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.dev/mhuahe/mhuahe.com/blob/master-ts/',
+          editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
+        // Will be passed to @docusaurus/plugin-content-pages (false to disable)
+        pages: {},
+        // Will be passed to @docusaurus/plugin-sitemap (false to disable)
+        sitemap: {},
+        // Will be passed to @docusaurus/theme-classic
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -60,121 +74,121 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: '贺敏华的官方网站',
+      title: "贺敏华的官方网站",
       logo: {
-        alt: 'mhuahe site logo',
-        src: 'img/mhuahe.svg',
+        alt: "mhuahe site logo",
+        src: "img/mhuahe.svg",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'example',
-          position: 'left',
-          label: '示例',
+          type: "docSidebar",
+          sidebarId: "example",
+          position: "left",
+          label: "示例",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'java',
-          position: 'left',
-          label: 'Java',
+          type: "docSidebar",
+          sidebarId: "java",
+          position: "left",
+          label: "Java",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'web',
-          position: 'left',
-          label: '前端',
+          type: "docSidebar",
+          sidebarId: "web",
+          position: "left",
+          label: "前端",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'c',
-          position: 'left',
-          label: 'C语言',
+          type: "docSidebar",
+          sidebarId: "c",
+          position: "left",
+          label: "C语言",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'linux',
-          position: 'left',
-          label: 'Linux',
+          type: "docSidebar",
+          sidebarId: "linux",
+          position: "left",
+          label: "Linux",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'mysql',
-          position: 'left',
-          label: 'MySQL',
+          type: "docSidebar",
+          sidebarId: "mysql",
+          position: "left",
+          label: "MySQL",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'python',
-          position: 'left',
-          label: 'Python',
+          type: "docSidebar",
+          sidebarId: "python",
+          position: "left",
+          label: "Python",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'tool',
-          position: 'left',
-          label: '工具',
+          type: "docSidebar",
+          sidebarId: "tool",
+          position: "left",
+          label: "工具",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'project',
-          position: 'left',
-          label: '项目',
+          type: "docSidebar",
+          sidebarId: "project",
+          position: "left",
+          label: "项目",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'other',
-          position: 'left',
-          label: '其他',
+          type: "docSidebar",
+          sidebarId: "other",
+          position: "left",
+          label: "其他",
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: "/blog", label: "Blog", position: "left" },
         {
-          href: 'https://github.com/mhuahe/mhuahe.com',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/mhuahe/mhuahe.com",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: '文档',
+          title: "文档",
           items: [
             {
-              label: '开发文档',
-              to: 'https://docusaurus.io/',
+              label: "开发文档",
+              to: "https://docusaurus.io/",
             },
           ],
         },
         {
-          title: '社区',
+          title: "社区",
           items: [
             {
-              label: '博客园',
-              href: 'https://www.cnblogs.com/minhua',
+              label: "博客园",
+              href: "https://www.cnblogs.com/minhua",
             },
             {
-              label: '掘金',
-              href: 'https://juejin.cn/user/2331397363880808',
+              label: "掘金",
+              href: "https://juejin.cn/user/2331397363880808",
             },
             {
-              label: 'Twitter',
-              href: 'https://x.com/mihuahe',
+              label: "Twitter",
+              href: "https://x.com/mihuahe",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/mhuahe',
+              label: "GitHub",
+              href: "https://github.com/mhuahe",
             },
           ],
         },
@@ -187,13 +201,13 @@ const config: Config = {
       //自定义高亮
       magicComments: [
         {
-          className: 'theme-code-block-highlighted-line',
-          line: 'highlight-next-line', //只适用于下一行
-          block: { start: 'highlight-start', end: 'highlight-end' }, //适用在区间
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line", //只适用于下一行
+          block: { start: "highlight-start", end: "highlight-end" }, //适用在区间
         },
         {
-          className: 'code-block-error-line',
-          line: 'This will error',
+          className: "code-block-error-line",
+          line: "This will error",
         },
       ],
     },
@@ -208,19 +222,28 @@ const config: Config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 6,
     },
+    //[mermaid 主题](https://mermaid.js.org/config/theming.html)
+    mermaid: {
+      theme: { 
+        light: 'neutral', 
+        dark: 'forest' 
+      },
+    },
   } satisfies Preset.ThemeConfig,
 
   themes: [
     //交互代码编辑器
-    require.resolve('@docusaurus/theme-live-codeblock'),
+    require.resolve("@docusaurus/theme-live-codeblock"),
+    //mermaid图表插件
+    require.resolve("@docusaurus/theme-mermaid"),
+    //本地搜索插件
     [
-      //本地搜索功能
-      require.resolve('@easyops-cn/docusaurus-search-local'),
+      require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
-      ({
+      {
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        language: ['en', 'zh'],
+        language: ["en", "zh"],
         // 在目标页面上突出显示搜索词。
         highlightSearchTermsOnTargetPage: true,
         // 搜索结果限制
@@ -230,11 +253,15 @@ const config: Config = {
         // 是否显示搜索栏快捷方式
         searchBarShortcutHint: true,
         // 搜索栏位置："auto" | "left" | "right"
-        searchBarPosition: 'auto',
-      }),
+        searchBarPosition: "auto",
+      },
     ],
   ],
 
-}
+  markdown: {
+    // 启用mermaid图表
+    mermaid: true,
+  },
+};
 
-export default config
+export default config;
