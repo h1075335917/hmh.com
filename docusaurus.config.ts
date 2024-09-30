@@ -85,13 +85,13 @@ const config: Config = {
     // 导航栏
     navbar: {
       title: "贺敏华的官方网站",
-      logo: {
-        alt: "mhuahe site logo",
-        src: "img/mhuahe.svg",
-        srcDark: 'img/mhuahe_dark.svg',
-        width: 32,
-        height: 32,
-      },
+      // logo: {
+      //   alt: "mhuahe site logo",
+      //   src: "img/mhuahe.svg",
+      //   srcDark: 'img/mhuahe_dark.svg',
+      //   width: 32,
+      //   height: 32,
+      // },
       // 滚动页面时，导航栏隐藏
       hideOnScroll: false,
       // 导航栏项目
