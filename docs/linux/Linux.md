@@ -871,6 +871,8 @@ $ git config --global user.name "freedom"
 $ git.exe clone --progress --branch 分支名称 -v "远程仓库地址" "本地存储地址"
 # 更新远程分支列表 根目录启动 git bash
 $ git remote update origin --prune
+# 设置远程仓库
+$ git remote set-url origin https://github.com/mhuahe/mhuahe.com.git
 ```
 
 #### git回滚
@@ -908,6 +910,17 @@ $ git update-git-for-windows
 5. `git remote -v `
 
 6. `git push origin master`
+
+#### git设置代理
+
+```shell
+# 设置代理
+$ git config --global http.proxy http://127.0.0.1:1080
+$ git config --global https.proxy http://127.0.0.1:1080
+# 取消代理
+$ git config --global --unset http.proxy
+$ git config --global --unset https.proxy
+```
 
 ### 脚本
 
