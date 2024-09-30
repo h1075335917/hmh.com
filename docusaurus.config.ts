@@ -35,33 +35,40 @@ const config: Config = {
       {
         // Will be passed to @docusaurus/plugin-content-docs (false to disable)
         docs: {
-          // 文档目录
           path: "docs",
-          // 编辑URL
           editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
-          // 显示最后更新作者
           showLastUpdateAuthor: true,
-          // 显示最后更新时间
           showLastUpdateTime: true,
-          // 侧边栏
           sidebarPath: "./sidebars.ts",
         },
         // Will be passed to @docusaurus/plugin-content-blog (false to disable)
         blog: {
+          path: "blog",
+          editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           showReadingTime: true,
+          // 博客订阅选项
           feedOptions: {
             type: ["rss", "atom"],
             xslt: true,
           },
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
-          // Useful options to enforce blogging best practices
+          // 博客侧边栏标题
+          blogSidebarTitle: "最新博客",
+          // 在行内标签上警告
           onInlineTags: "warn",
+          // 在行内作者上警告
           onInlineAuthors: "warn",
+          // 在未截断的博客文章上警告
           onUntruncatedBlogPosts: "warn",
         },
         // Will be passed to @docusaurus/plugin-content-pages (false to disable)
-        pages: {},
+        pages: {
+          path: "src/pages",
+          editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+        },
         // Will be passed to @docusaurus/plugin-sitemap (false to disable)
         sitemap: {},
         // Will be passed to @docusaurus/theme-classic
@@ -73,14 +80,21 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
+    // 当您的网站链接被分享到社交媒体平台（如Facebook、Twitter等）时，这些平台会生成一个预览卡片，显示网站的基本信息。这个卡片通常包含网站标题、描述和一张图片。
     image: "img/docusaurus-social-card.jpg",
+    // 导航栏
     navbar: {
       title: "贺敏华的官方网站",
       logo: {
         alt: "mhuahe site logo",
         src: "img/mhuahe.svg",
+        srcDark: 'img/mhuahe_dark.svg',
+        width: 32,
+        height: 32,
       },
+      // 滚动页面时，导航栏隐藏
+      hideOnScroll: false,
+      // 导航栏项目
       items: [
         {
           type: "docSidebar",
@@ -150,6 +164,13 @@ const config: Config = {
         },
       ],
     },
+    // 公告栏
+    announcementBar: {
+      id: "announcement-bar",
+      content:
+        '🎉️<b>本网站正在建设中，欢迎提出宝贵意见！<a target="_blank" href="https://github.com/mhuahe/mhuahe.com">源码地址</a></b> 🥳️',
+      isCloseable: true,
+    },
     footer: {
       style: "dark",
       links: [
@@ -184,7 +205,7 @@ const config: Config = {
           items: [
             {
               label: "Blog",
-              to: "/blog",
+              to: "https://mhuahe.github.io/mhuahe.com/blog",
             },
             {
               label: "GitHub",
@@ -193,6 +214,11 @@ const config: Config = {
           ],
         },
       ],
+      logo: {
+          alt: 'Meta Open Source Logo',
+          src: '/img/meta_opensource_logo_negative.svg',
+          href: 'https://opensource.fb.com',
+        },
       copyright: `© ${new Date().getFullYear()} mhuahe. Built with Docusaurus.`,
     },
     prism: {
@@ -211,9 +237,10 @@ const config: Config = {
         },
       ],
     },
-    //可隐藏侧边栏
     docs: {
+      versionPersistence: 'localStorage',
       sidebar: {
+        //可隐藏侧边栏
         hideable: true,
       },
     },
@@ -224,10 +251,14 @@ const config: Config = {
     },
     //[mermaid 主题](https://mermaid.js.org/config/theming.html)
     mermaid: {
-      theme: { 
-        light: 'neutral', 
-        dark: 'forest' 
+      theme: {
+        light: "neutral",
+        dark: "forest",
       },
+    },
+    colorMode: {
+      // 使用prefers-color-scheme媒体查询、使用用户系统首选项.
+      respectPrefersColorScheme: true,
     },
   } satisfies Preset.ThemeConfig,
 
