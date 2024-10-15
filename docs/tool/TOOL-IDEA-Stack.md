@@ -224,6 +224,10 @@ IDEA的代码分析包含两个部分，Syntax(语法分析)和Inspections(语�
 1. 在编辑器状态栏中，右上角或右击滚动条，可以看到有3个级别
 2. 选None就关闭了所有提示和分析了，这个只能对单个文件逐个设置。
 
+## IDEA总是提示登录github
+
+在File|Settings|Version Control|Git中勾选Use credential helper（使用凭证助手）即可解决这个问题。
+
 ## QAPlug
 
 代码检测功能：QAPlug、QAPlug-Checkstyle、QAPlug-FindBugs、QAPlug-PMD
