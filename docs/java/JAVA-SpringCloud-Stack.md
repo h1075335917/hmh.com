@@ -1513,7 +1513,11 @@ management:
 # /gateway/routes/{id_route_to_delete} 删除一个路由
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/gateway-endpoints%E7%9B%91%E6%8E%A7%E8%AF%B7%E6%B1%82.png" width="50%" />
+```mdx-code-block
+import monitoringRequests from '/img/docs/SpringCloud-gateway监控请求.png';
+
+<img src={monitoringRequests} alt="SpringCloud-gateway监控请求" width="50%" />
+```
 
 ##### 工作原理
 
@@ -1526,7 +1530,11 @@ management:
 在请求代理执行完后，执行“post filter”逻辑
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/gateway%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" width="50%" />
+```mdx-code-block
+import gatewayWorkPrinciple from '/img/docs/SpringCloud-gateway工作原理.png';
+
+<img src={gatewayWorkPrinciple} alt="SpringCloud-gateway工作原理" width="50%" />
+```
 
 #### cloud-nacos
 
@@ -2236,7 +2244,11 @@ Client Credentials（客户端模式）：客户端直接通过客户端认证�
 5、应用系统验证用户名正确，创建会话，并跳转到redirect url
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/%E6%8E%88%E6%9D%83%E7%A0%81%E6%A8%A1%E5%BC%8F.png" width="50%" />
+```mdx-code-block
+import authorizationCode from '/img/docs/SpringCloud-授权码模式.png';
+
+<img src={authorizationCode} alt="SpringCloud-授权码模式" width="50%" />
+```
 
 ###### Implicit（简化模式）
 
@@ -2244,7 +2256,11 @@ Client Credentials（客户端模式）：客户端直接通过客户端认证�
 省略掉了颁发授权码（Authorization Code）给客户端的过程，直接返回访问令牌和可选的刷新令牌。其适用于没有Server服务器来接受处理Authorization Code的第三方应用。适用于公开的浏览器单页应用
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/%E7%AE%80%E5%8C%96%E6%A8%A1%E5%BC%8F.png" width="50%" />
+```mdx-code-block
+import implicit from '/img/docs/SpringCloud-简化模式.png';
+
+<img src={implicit} alt="SpringCloud-简化模式" width="50%" />
+```
 
 ###### 密码模式
 
@@ -2252,7 +2268,11 @@ Client Credentials（客户端模式）：客户端直接通过客户端认证�
 这种模式再一步简化，和Authorzation Code类型下重要的区分就是省略了Authorization Request和Authorization Response。而是Client直接使用Resource owner提供的username和password来直接请求access_token（直接发起Access Token Request然后返回Access Token Response信息）。这种模式一般适用于Resource server高度信任第三方Client的情况下 
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/%E5%AF%86%E7%A0%81%E6%A8%A1%E5%BC%8F.png" width="50%" />
+```mdx-code-block
+import password from '/img/docs/SpringCloud-密码模式.png';
+
+<img src={password} alt="SpringCloud-密码模式" width="50%" />
+```
 
 ###### Client Credentials（客户端模式）
 
@@ -2262,7 +2282,11 @@ Client直接以自己的名义而不是Resource owner的名义去要求访问Res
 这种模式比较合适消费api的后端服务，比如拉取一组用户信息等
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A8%A1%E5%BC%8F.png" width="50%" />
+```mdx-code-block
+import clientCredentials from '/img/docs/SpringCloud-客户端模式.png';
+
+<img src={clientCredentials} alt="SpringCloud-客户端模式" width="50%" />
+```
 
 ###### 刷新令牌
 
@@ -2270,7 +2294,11 @@ Client直接以自己的名义而不是Resource owner的名义去要求访问Res
 以便在访问令牌过期失效的时候可以由客户端自动获取新的访问令牌，而不是让用户再次登录授权
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/%E5%88%B7%E6%96%B0%E4%BB%A4%E7%89%8C.png" width="50%" />
+```mdx-code-block
+import refreshToken from '/img/docs/SpringCloud-刷新令牌.png';
+
+<img src={refreshToken} alt="SpringCloud-刷新令牌" width="50%" />
+```
 
 ##### 入门使用
 
@@ -2923,6 +2951,8 @@ Windows 直接点击bin/startup.bat
 -Dskywalking.collector.backend_service=127.0.0.1:11800
 ```
 
+```mdx-code-block
+import skywalking from '/img/docs/SpringCloud-SkyWalking链路追踪.png';
 
-
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/skywalking.png" width="50%" />
+<img src={skywalking} alt="SpringCloud-SkyWalking链路追踪" width="50%" />
+```

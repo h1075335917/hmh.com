@@ -736,8 +736,11 @@ class MvcController {
 
 我们用图描述一下注入关系：
 
+```mdx-code-block
+import mvcController from '/img/docs/Handwritten-Spring-MvcController.png';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/image-20240812164831094.png" alt="image-20240812164831094" width="50%" />
+<img src={mvcController} alt="Handwritten-Spring-MvcController" width="50%" />
+```
 
 
 注意到上图的`UserService`已经脱离了IoC容器的管理，因为此时`UserService`对应的`BeanDefinition`中，存放的instance是`UserServiceProxy`。
@@ -1408,9 +1411,11 @@ Servlet规范定义的组件有3类：
 
 而服务器为一个应用程序提供一个“容器”，即Servlet Container，一个Server可以同时跑多个Container，不同的Container可以按URL、域名等区分，Container才是用来管理Servlet、Filter、Listener这些组件的：
 
+```mdx-code-block
+import servletContainer from '/img/docs/Handwritten-Spring-ServletContainer.png';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/image-20240815161223021.png" alt="image-20240815161223021" width="50%" />
-
+<img src={servletContainer} alt="Handwritten-Spring-ServletContainer" width="50%" />
+```
 
 另一个需要特别重要的问题是：组件由谁创建，由谁销毁。
 
@@ -1430,9 +1435,11 @@ Servlet规范定义的组件有3类：
 
 首先，我们不能改变Servlet规范，所以，Servlet、Filter、Listener，以及IoC容器，都必须在Servlet容器内被管理：
 
+```mdx-code-block
+import iocServletContainer from '/img/docs/Handwritten-Spring-IOC-ServletContainer.png';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/image-20240815161331813.png" alt="image-20240815161331813" width="50%" />
-
+<img src={iocServletContainer} alt="Handwritten-Spring-IOC-ServletContainer" width="50%" />
+```
 
 所以我们要捋清楚这些组件的创建顺序，以及谁创建谁。
 

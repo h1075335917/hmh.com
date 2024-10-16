@@ -53,7 +53,11 @@ String md5_16 = md5_32.substring(8, 24);
 Java 中 MD5 加密的结果默认是32位小写。
 ```
 
-![](https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/MD5-1.png)
+```mdx-code-block
+import md5 from '/img/docs/JAVA-MD5.png';
+
+<img src={md5} alt="JAVA-MD5" width="50%" />
+```
 
 ```
 1.MD5加密算法(经常使用MD5+salt作为用户密码加密或MD5加密后再使用MD5加密)

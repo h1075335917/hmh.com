@@ -44,8 +44,11 @@ sidebar_position: 9
 
 > 3. 只显示对象名不显示类名。
 
+```mdx-code-block
+import sequenceDiagram from '/img/docs/Sequence-UML-SequenceDiagram.jpg';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/SequenceDiagram.jpg" alt="img" width="50%" />
+<img src={sequenceDiagram} alt="Sequence-UML-SequenceDiagram" width="50%" />
+```
 
 
 ##### 生命线（Lifeline）
@@ -59,8 +62,11 @@ sidebar_position: 9
 
 > 控制焦点是顺序图中表示时间段的符号，在这个时间段内对象将执行相应的操作。用小矩形表示；
 
+```mdx-code-block
+import elementFOC from '/img/docs/Sequence-UML-ElementFOC.jpg';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/ElementFOC.jpg" alt="img" width="50%" />
+<img src={elementFOC} alt="Sequence-UML-ElementFOC" width="50%" />
+```
 
 
 ##### 消息（Message）
@@ -91,18 +97,22 @@ sidebar_position: 9
 
 > > 返回消息表示从过程调用返回。
 
+```mdx-code-block
+import message from '/img/docs/Sequence-UML-ReturnMessage.gif';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/Message.gif" alt="img" width="50%" />
-
+<img src={message} alt="Sequence-UML-ReturnMessage" width="50%" />
+```
 
 ##### 自关联消息（Self-Message）
 
 
 > 表示方法的自身调用（回调）以及一个对象内的一个方法调用另外一个方法。
 
+```mdx-code-block
+import selfMessage from '/img/docs/Sequence-UML-SelfMessage.gif';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/SelfMessage.gif" alt="img" width="50%" />
-
+<img src={selfMessage} alt="Sequence-UML-SelfMessage" width="50%" />
+```
 
 ##### 组合示例
 
@@ -121,9 +131,11 @@ sidebar_position: 9
 
 > Loop fragment(denoted “loop”) 与 for 或者 Foreach对应
 
+```mdx-code-block
+import combinedFragments from '/img/docs/Sequence-UML-CombinedFragments.gif';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/CombinedFragments.gif" alt="img" width="50%" />
-
+<img src={combinedFragments} alt="Sequence-UML-CombinedFragments" width="50%" />
+```
 
 #### 时序图实例分析
 
@@ -150,9 +162,11 @@ sidebar_position: 9
 
 >  5、完成课程创建功能
 
+```mdx-code-block
+import sequenceDiagramExample from '/img/docs/Sequence-UML-SequenceDiagramExample.jpg';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/Dequence_Diagram_Example.jpg" alt="img" width="50%" />
-
+<img src={sequenceDiagramExample} alt="Sequence-UML-SequenceDiagramExample" width="50%" />
+```
 
 > 1、序号1.0-1.3 完成页面的初始化
 
@@ -202,9 +216,11 @@ sidebar_position: 9
 
 - 学生上学需要用到自行车，与自行车是一种依赖关系，使用带箭头的虚线表示；
 
+```mdx-code-block
+import umlClassStruct from '/img/docs/Sequence-UML-UMLClassStruct.jpg';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/uml_class_struct.jpg" alt="_images/uml_class_struct.jpg" width="50%" />
-
+<img src={umlClassStruct} alt="Sequence-UML-UMLClassStruct" width="50%" />
+```
 
 #### 泛化关系(generalization)
 

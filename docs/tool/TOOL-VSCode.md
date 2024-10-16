@@ -6,23 +6,131 @@ sidebar_position: 3
 
 ## 插件
 
-1. git相关
-   - Git Graph 
-   - GitLens
-   - Git History
+### Git
 
-2. Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code
-3. Highlight Matching Tag -- 高亮区分标签
-4. Markdown All in One
-5. Markdown Preview Github Styling
-6. MySQL -- 数据库
-7. Prettier - Code formatter -- 格式化代码
-8. Image Preview -- 图片预览
-9. Regex Previewer -- 正则表达式预览
+- Git Graph 
+- GitLens
+- Git History
+
+### Chinese (Simplified) (简体中文)
+
+> 中文语言包
+
+### 翻译
+
+- Comment Translate
+
+### Highlight Matching Tag
+
+> 高亮区分标签
+
+### Markdown
+
+- Markdown All in One：提供了丰富的 Markdown 编辑功能，适合日常编写和管理 Markdown 文档。
+- Markdown Preview Enhanced：提供了增强的 Markdown 预览功能，支持多种主题和样式，使文档看起来更加美观。
+- Markdown Preview Github Styling：提供了与 GitHub 类似的 Markdown 预览样式，使文档看起来更加专业。
+- markmap：实时思维导图。
+
+### SQL
+
+- MySQL
+
+### Prettier - Code formatter
+
+> Prettier格式化代码。
+
+### Stylelint
+
+> 为 CSS 提供代码风格检查，支持 CSS、SCSS、Less 等样式文件。
+
+### Image Preview
+
+> 图片预览
+
+### Regex Previewer
+
+> 正则表达式预览
+
+### Auto Rename Tag
+
+> 自动更新 HTML、XML 或 JSX 中标签的名称，当您更改一个标签的名字时，它会自动同步更改配对的结束标签
+
+### Azure Repos
+
+> 微软的代码管理工具.提供与 Azure DevOps 服务中的 Git 仓库进行交互的能力。通过这个插件，可以在 VSCode 内部管理和提交代码更改，浏览仓库的历史记录，以及执行其他常见的 Git 操作
+
+### C/C++
+
+- C/C++：包括智能感知（IntelliSense）、导航、格式化、重构以及其他编辑功能。
+- C/C++ Extension Pack：一个插件包，包含了多个用于 C/C++ 开发的插件，旨在为用户提供一个完整的 C/C++ 开发环境。
+- C/C++ Themes：为 C/C++ 代码提供不同的主题，以提高代码的可读性和视觉效果。
+
+### Java
+
+- Language Support for Java(TM) by Red Hat：为 Java 提供语言支持，包括智能感知、代码补全、导航、调试等功能。
+- Debugger for Java：为 Java 提供调试器，支持断点调试、变量查看、调用栈查看等功能。
+- Maven for Java：为 Maven 提供支持，包括项目创建、依赖管理、构建和运行等功能。
+- Spring Boot Tools：为 Spring Boot 提供支持，包括项目创建、依赖管理、构建和运行等功能。
+- Project Manager for Java：为 Java 项目管理提供支持，包括项目创建、依赖管理、构建和运行等功能。
+- Java Extension Pack：一个插件包，包含了多个用于 Java 开发的插件，旨在为用户提供一个完整的 Java 开发环境。
+- Test Runner for Java：为 Java 提供测试运行器，支持 JUnit、TestNG 等测试框架。
+
+### Python
+
+- Python：为 Python 提供语言支持，包括智能感知、代码补全、导航、调试等功能。
+- Pylint：为 Python 提供代码分析工具，支持代码风格检查、代码复杂度检查等功能。
+- Jupyter：为 Python 提供 Jupyter Notebook 支持，支持交互式编程、数据可视化等功能。
+- Python Extension Pack：一个插件包，包含了多个用于 Python 开发的插件，旨在为用户提供一个完整的 Python 开发环境。
+- Pylance：为 Python 提供智能感知（IntelliSense）支持，支持代码补全、导航、调试等功能。
+- Python Debugger：为 Python 提供调试器，支持断点调试、变量查看、调用栈查看等功能。
+
+### Vue
+
+- Vetur：为 Vue 提供语言支持，包括智能感知、代码补全、导航、调试等功能。
+- Vue - Official：为 Vue 提供官方支持，包括智能感知、代码补全、导航、调试等功能。
+- VueHelper：为 Vue 提供代码片段，以提高开发效率。
+
+### Code Runner
+
+> 允许用户在不离开编辑器的情况下运行各种编程语言的代码。这个插件非常适用于快速测试代码片段或小型脚本，无需复杂的构建或调试配置。
+
+### ES7+ React/Redux/React-Native snippets
+
+> 为 React、Redux 和 React Native 提供代码片段，以提高开发效率。
+
+### Import Cost
+
+> 显示导入模块的大小，以帮助识别潜在的性能问题。
+
+### IntelliCode、IntelliCode API Usage Examples
+
+> 提供智能代码补全和建议，以提高编码效率。
+
+### Open Browser Preview
+
+> 直接从 VSCode 预览 HTML 文件，并且支持实时更新预览页面。
+
+### Open in Browser
+
+> 在默认浏览器中打开当前活动的 HTML 文件。
+
+### Path Intellisense
+
+> 为文件路径提供智能感知（IntelliSense）支持。
+
+### vscode-icons
+
+> 为文件和文件夹添加图标，以提高代码的可读性和视觉效果。
 
 ## 设置
 
-设置水平或垂直活动栏，可以转到设置，设置“workbench.activityBar.orientation”，然后重新启动 Cursor。
+### 设置水平或垂直活动栏
+
+> workbench.activityBar.orientation
+
+### 标签栏行为
+
+> workbench.tabs.wrap：控制编辑器标签是否应该在到达视口边缘时换行。
 
 ## 快捷键
 

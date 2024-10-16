@@ -10,11 +10,20 @@
 >
 > 执行引擎（Excution Engine）
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seven-06.png" alt="img" width="50%" />
+
+```mdx-code-block
+import structureComposition from '/img/docs/JVM-组织架构组成.png';
+
+<img src={structureComposition} alt="JVM-组织架构组成" width="50%" />
+```
 
 #### 组织架构职责
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/what-is-jvm-20231030185742.png" alt="img" width="50%" />
+```mdx-code-block
+import structureResponsibilities from '/img/docs/JVM-组织架构职责.png';
+
+<img src={structureResponsibilities} alt="JVM-组织架构职责" width="50%" />
+```
 
 ##### 类加载器
 
@@ -24,37 +33,53 @@
 
 > JVM 定义了 Java 程序运行期间需要使用到的内存区域，简单来说，这块内存区域存放了字节码信息以及程序执行过程的数据，`垃圾收集器`也会针对运行时数据区进行对象回收的工作
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/seven-07.png" alt="img" width="50%" />
+```mdx-code-block
+import runtimeDataArea from '/img/docs/JVM-运行时数据区.png';
+
+<img src={runtimeDataArea} alt="JVM-运行时数据区" width="50%" />
+```
 
 > 运行时数据区通常包括：`方法区`、`堆`、`虚拟机栈`、`本地方法栈`以及`程序计数器`五个部分。不过，运行时数据区的划分也随着JDK的发展不断变迁，JDK 1.6、JDK 1.7、JDK 1.8 的内存划分都会有所不同。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/neicun-jiegou-20240110195211.png" alt="img" width="50%" />
+```mdx-code-block
+import memoryStructure from '/img/docs/JVM-运行时数据区-内存划分.png';
+
+<img src={memoryStructure} alt="JVM-运行时数据区-内存划分" width="50%" />
+```
 
 ##### 执行引擎
 
-> “虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、缓存、指令集和操作系统层面上的，而**`虚拟机的执行引擎则是由软件自行实现的`**，因此可以不受物理条件制约地定制指令集与执行引擎的结构关系，能够执行那些不被硬件直接支持的指令集格式。
+“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、缓存、指令集和操作系统层面上的，而**`虚拟机的执行引擎则是由软件自行实现的`**，因此可以不受物理条件制约地定制指令集与执行引擎的结构关系，能够执行那些不被硬件直接支持的指令集格式。
 
-> 执行引擎的任务就是将**`字节码指令`**解释/编译为对应平台上的本地机器指令才可以。简单来说，JVM 中的执行引擎充当了将高级语言翻译为机器语言的译者。
+执行引擎的任务就是将**`字节码指令`**解释/编译为对应平台上的本地机器指令才可以。简单来说，JVM 中的执行引擎充当了将高级语言翻译为机器语言的译者。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/what-is-jvm-20231223155202.png" alt="img" width="50%" />
+```mdx-code-block
+import executionEngine from '/img/docs/JVM-执行引擎.png';
 
->解释器
->
->> 读取字节码，然后执行指令。因为它是一行一行地解释和执行指令，所以它可以很快地解释字节码，但是执行起来会比较慢（毕竟要一行执行完再执行下一行）
->
->即时编译器
->
->> 执行引擎首先按照解释执行的方式来执行，随着时间推移，即时编译器会选择性的把一些热点代码编译成本地代码。执行本地代码比一条一条进行解释执行的速度快很多，因为本地代码是保存在缓存里的
->
->垃圾回收器
->
->> 用来回收堆内存中的垃圾对象
+<img src={executionEngine} alt="JVM-执行引擎" width="50%" />
+```
+
+解释器
+
+> 读取字节码，然后执行指令。因为它是一行一行地解释和执行指令，所以它可以很快地解释字节码，但是执行起来会比较慢（毕竟要一行执行完再执行下一行）
+
+即时编译器
+
+> 执行引擎首先按照解释执行的方式来执行，随着时间推移，即时编译器会选择性的把一些热点代码编译成本地代码。执行本地代码比一条一条进行解释执行的速度快很多，因为本地代码是保存在缓存里的
+
+垃圾回收器
+
+> 用来回收堆内存中的垃圾对象
 
 ### 字节码文件结构
 
 > 字节码文件结构是一组以 8 位为最小单元的十六进制数据流，具体的结构如下图所示，主要包含了魔数、class文件版本、常量池、访问标志、索引、字段表集合、方法表集合以及属性表集合描述数据信息
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png" alt="图片" width="50%" />
+```mdx-code-block
+import classFileStructure from '/img/docs/JVM-字节码文件结构.png';
+
+<img src={classFileStructure} alt="JVM-字节码文件结构" width="50%" />
+```
 
 #### 魔数与文件版本
 
@@ -106,7 +131,11 @@
 
 > Java应用的类都是通过类加载器加载到运行时数据区的，那么类加载器本身又是被谁加载的呢？
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/loading-start.png" alt="图片" width="50%" />
+```mdx-code-block
+import loadingStart from '/img/docs/JVM-类加载-加载器启动.png';
+
+<img src={loadingStart} alt="JVM-类加载-加载器启动" width="50%" />
+```
 
 > 1. 以linux系统为例，当我们通过"java"启动一个Java应用的时候，其实就是启动了一个JVM进程实例，此时操作系统会为这个JVM进程实例分配CPU、内存等系统资源
 > 2. "java"可执行文件此时就会解析相关的启动参数，主要包括了查找jre路径、各种包的路径以及虚拟机参数等，进而获取定位`libjvm.so`位置，通过libjvm.so来启动JVM进程实例
@@ -123,11 +152,19 @@
 >
 > > 通过这种双亲委派模型，可以保证同一个类在不同的类加载器中只会被加载一次，从而避免了类的重复加载，也保证了类的唯一性。同时，由于每个类加载器只会加载自己所负责的类，因此可以防止恶意代码的注入和类的篡改，提高了Java程序的安全性
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/loading-parent.png" alt="图片" width="50%" />
+```mdx-code-block
+import loadingParent from '/img/docs/JVM-类加载-双亲委派模型.png';
+
+<img src={loadingParent} alt="JVM-类加载-双亲委派模型" width="50%" />
+```
 
 ### JVM运行Java（字节码指令）
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/how-run-java-code-20231030194039.png" alt="img" width="50%" />
+```mdx-code-block
+import howRunJavaCode from '/img/docs/JVM-运行Java-字节码指令.png';
+
+<img src={howRunJavaCode} alt="JVM-运行Java-字节码指令" width="50%" />
+```
 
 > 字节码指令序列通常由多条指令组成，每条指令由一个操作码和若干个操作数构成
 >
@@ -210,7 +247,11 @@
 
 > 虚拟机栈操作的基本元素就是栈帧，栈帧主要包含了`局部变量表`、`操作数栈`、`动态连接`以及`方法返回地址`。栈帧是一个`先进后出`的数据结构，每个方法从调用到执行完成都会对应一个栈帧在虚拟机栈中入栈和出栈
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/how-run-java-code-20231031142106.png" alt="img" width="50%" />
+```mdx-code-block
+import virtualMachineStack from '/img/docs/JVM-虚拟机栈.png';
+
+<img src={virtualMachineStack} alt="JVM-虚拟机栈" width="50%" />
+```
 
 > 实例：一个 Test 类，main 方法里 new 了一个 Uesr 对象，会将 User 的 age 作为参数传递给静态方法 calculate 进行一个简单的加法操作并返回，最后打印到控制台
 
@@ -231,12 +272,20 @@ public class Test {
 > 1. JVM 完成 .class 文件加载之后，会创建一个名为"main"的线程，该线程会自动调用名为"main"的静态方法，这是 Java 程序的入口点
 > 2. main 线程在执行 mian 方法时，JVM 会在虚拟机栈中压入 main 方法对应的栈帧
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/how-run-java-code-20231031143842.png" width="50%" />
+```mdx-code-block
+import virtualMachineStackMain from '/img/docs/JVM-虚拟机栈-main.png';
+
+<img src={virtualMachineStackMain} alt="JVM-虚拟机栈-main" width="50%" />
+```
 
 > 3. 栈帧的操作数栈中存储了操作的数据，JVM 执行字节码指令的时候会从操作数栈中获取数据，执行计算操作后会将结果再次压入操作数栈中
 > 4. 当进行 calculate 方法调用的时候，虚拟机栈继续压入 calculate 方法对应的栈帧
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/how-run-java-code-20231031144218.png" alt="img" width="50%" />
+```mdx-code-block
+import virtualMachineStackCalculate from '/img/docs/JVM-虚拟机栈-calculate.png';
+
+<img src={virtualMachineStackCalculate} alt="JVM-虚拟机栈-calculate" width="50%" />
+```
 
 > 5. 对于 age + 3 这条加法指令，在执行该指令前，JVM 会将操作数栈顶部的两个元素弹出，并将它们相加，然后将结果压入操作数栈中。
 >

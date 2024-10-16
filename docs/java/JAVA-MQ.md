@@ -45,9 +45,11 @@
 4. Consumer启动之后也会跟会NameServer建立连接，定期从NameServer中获取Broker和对应topic的信息，然后根据自己需要订阅的topic信息找到对应的Broker的地址，然后跟Broker建立连接，获取消息，进行消费
 ```
 
+```mdx-code-block
+import workflow from '/img/docs/MQ-工作流程.png';
 
-
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/rocketmq%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" width="50%" />
+<img src={workflow} alt="MQ-工作流程" width="50%" />
+```
 
 ##### RocketMQ启动
 

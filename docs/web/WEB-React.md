@@ -2266,14 +2266,17 @@ ReactDOM.render(<App />, document.getElementById("example"));
 
 > 注意：如果你的 state 或 props 『永远都会变』，那 PureComponent 并不会比较快，因为shallowEqual 也需要花时间。
 
+```mdx-code-block
+import reactLifeCycle from '/img/docs/React-生命周期流程图.png';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%B5%81%E7%A8%8B%E5%9B%BE.png" width="50%" />
+<img src={reactLifeCycle} alt="React-生命周期流程图" width="50%" />
+```
 
+```mdx-code-block
+import ES6classes与createClass构建组件方法的异同 from '/img/docs/React-ES6classes与createClass构建组件方法的异同.png';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/ES6classes%E4%B8%8EcreateClass%E6%9E%84%E5%BB%BA%E7%BB%84%E4%BB%B6%E6%96%B9%E6%B3%95%E7%9A%84%E5%BC%82%E5%90%8C.png" width="50%" />
-
-
-
+<img src={ES6classes与createClass构建组件方法的异同} alt="React-ES6classes与createClass构建组件方法的异同" width="50%" />
+```
 
 ## React 与 DOM
 

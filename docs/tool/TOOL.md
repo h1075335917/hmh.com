@@ -30,7 +30,6 @@ sidebar_position: 1
 | MOD+o/Shift+o               | 开关设备屏幕（保持镜像） |
 | MOD+n/Shift+n               | 开关通知栏               |
 | MOD+c、MOD+x、MOD+v         | 复制、剪切、粘贴         |
-|                             |                          |
 
 ### [Escrcpy（安卓投屏）](https://github.com/viarotel-org/escrcpy)
 

@@ -775,7 +775,11 @@ numbers.push("test"); // TypeError（proxy 的 'set' 返回 false）
 alert("This line is never reached (error in the line above)");
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/js%E5%9C%A8%E6%B5%8F%E8%A7%88%E4%B8%AD%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E9%B8%9F%E7%9E%BB%E5%9B%BE.png" width="50%" />
+```mdx-code-block
+import jsRunInBrowser from '/img/docs/WEB-JS在浏览器中运行时的鸟瞰图.png';
+
+<img src={jsRunInBrowser} alt="WEB-JS在浏览器中运行时的鸟瞰图" width="50%" />
+```
 
 ### Document
 

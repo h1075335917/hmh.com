@@ -653,7 +653,11 @@ try (ZipOutputStream zip = new ZipOutputStream(new FileOutputStream(...))) {
 }
 ```
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/image-20240731171256874.png" alt="image-20240731171256874" width="50%" />
+```mdx-code-block
+import inputStream from '/img/docs/JAVA-InputStream.png';
+
+<img src={inputStream} alt="JAVA-InputStream" width="50%" />
+```
 
 #### 读取classpath
 
@@ -1122,7 +1126,11 @@ public class Main {
 
 > 因为Java引入了泛型，所以，只用`Class`来标识类型已经不够了。实际上，Java的类型系统结构如下：
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/image-20240725153106645.png" alt="image-20240725153106645" width="50%" />
+```mdx-code-block
+import typeSystem from '/img/docs/JAVA-TypeSystem.png';
+
+<img src={typeSystem} alt="JAVA-TypeSystem" width="50%" />
+```
 
 #### 上界通配符（? extends T）
 
@@ -1551,7 +1559,11 @@ public void execute3() {
 上述代码可以形象地理解为，谁是A2爵位的受益者，就在他自己的方法，或者继承的方法执行前增强，即打印@within — A2，显然，Man、Boy都收益。Boy重写的方法不会增强，这不是世袭的，也好理解！
 ```
 
-![](https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/withinAndtarget.png)
+```mdx-code-block
+import withinAndtarget from '/img/docs/JAVA-withinAndtarget.png';
+
+<img src={withinAndtarget} alt="withinAndtarget" width="50%" />
+```
 
 #### @Validated @Valid
 
@@ -2773,7 +2785,11 @@ public Object getIPLimiter(String ipAddr) throws ExecutionException {
 
 内存模型限制的是共享变量，也就是存储在堆内存中的变量，在 Java 语言中，所有的实例变量、静态变量和数组元素都存储在堆内存之中。方法参数、异常处理参数这些局部变量存储在方法栈帧之中，因此不会在线程之间共享，不会受到内存模型影响，也不存在内存可见性问题。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/image-20211102115340611.png" alt="image-20211102115340611" width="50%" />
+```mdx-code-block
+import javaMemoryModel from '/img/docs/JAVA-内存模型.png';
+
+<img src={javaMemoryModel} alt="JAVA-内存模型" width="50%" />
+```
 
 线程 A 把在本地内存更新后的共享变量副本的值，刷新到主内存中。线程 B 在使用到该共享变量时，到主内存中去读取线程 A 更新后的共享变量的值，并更新线程 B 本地内存的值。
 
@@ -2906,13 +2922,21 @@ public class CountDownLatchTest {
 - 中间：发生的开始和结束事件之间，影响处理的流程
 - 结束：表示该过程结束
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/BPMN-%E4%BA%8B%E4%BB%B6.png" width="50%" />
+```mdx-code-block
+import events from '/img/docs/JAVA-BPMN-事件.png';
+
+<img src={events} alt="JAVA-BPMN-事件" width="50%" />
+```
 
 #### 活动（Activities）
 
 包括任务和子流程两类。子流程在图形的下方中间外加一个小加号（+）来区分。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/BPMN-%E6%B4%BB%E5%8A%A8.png" width="50%" />
+```mdx-code-block
+import activities from '/img/docs/JAVA-BPMN-活动.png';
+
+<img src={activities} alt="JAVA-BPMN-活动" width="50%" />
+```
 
 #### 网关（Gateways）
 
@@ -2928,5 +2952,9 @@ public class CountDownLatchTest {
 
   当流程执行到事件网关后，流程处于等待状态，需要等待抛出事件才能将等待状态转换为活动状态。
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/BPMN-%E7%BD%91%E5%85%B3.png" width="50%" />
+```mdx-code-block
+import gateways from '/img/docs/JAVA-BPMN-网关.png';
+
+<img src={gateways} alt="JAVA-BPMN-网关" width="50%" />
+```
 

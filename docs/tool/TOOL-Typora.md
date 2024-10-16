@@ -98,8 +98,11 @@ This is a link: https://support.typora.io/Links
 
 ```
 
+```mdx-code-block
+import typoraNote from '/img/docs/Typora-note.png';
 
-<img src="https://hayes-typora.oss-cn-shenzhen.aliyuncs.com/Typora-note.png" alt="截图 2023-12-13 19.02.02" />
+<img src={typoraNote} alt="Typora-note" />
+```
 
 
 ### 序列图（Sequence Diagrams）
