@@ -53,7 +53,7 @@ ws://example.com:80/some/path
 ```
 
 ```mdx-code-block
-import webSocket from '/img/docs/WebSocket-webSocket.jpg';
+import webSocket from '/img/docs/java/websocket/WebSocket-webSocket.jpg';
 
 <img src={webSocket} alt="WebSocket-webSocket" width="50%" />
 ```

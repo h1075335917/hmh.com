@@ -95,7 +95,7 @@
 #### UML类图
 
 ```mdx-code-block
-import simpleFactory from '/img/docs/DesignPattern-简单工厂模式.jpg';
+import simpleFactory from '/img/docs/java/designpattern/DesignPattern-简单工厂模式.jpg';
 
 <img src={simpleFactory} alt="DesignPattern-简单工厂模式" width="50%" />
 ```
@@ -103,7 +103,7 @@ import simpleFactory from '/img/docs/DesignPattern-简单工厂模式.jpg';
 #### 时序图
 
 ```mdx-code-block
-import seqSimpleFactory from '/img/docs/DesignPattern-简单工厂模式时序图.jpg';
+import seqSimpleFactory from '/img/docs/java/designpattern/DesignPattern-简单工厂模式时序图.jpg';
 
 <img src={seqSimpleFactory} alt="DesignPattern-简单工厂模式时序图" width="50%" />
 ```
@@ -158,7 +158,7 @@ Cipher cp=Cipher.getInstance("DESede");
 #### UML类图
 
 ```mdx-code-block
-import factoryMethod from '/img/docs/DesignPattern-工厂方法模式.jpg';
+import factoryMethod from '/img/docs/java/designpattern/DesignPattern-工厂方法模式.jpg';
 
 <img src={factoryMethod} alt="DesignPattern-工厂方法模式" width="50%" />
 ```
@@ -166,7 +166,7 @@ import factoryMethod from '/img/docs/DesignPattern-工厂方法模式.jpg';
 #### 时序图
 
 ```mdx-code-block
-import seqFactoryMethod from '/img/docs/DesignPattern-工厂方法模式时序图.jpg';
+import seqFactoryMethod from '/img/docs/java/designpattern/DesignPattern-工厂方法模式时序图.jpg';
 
 <img src={seqFactoryMethod} alt="DesignPattern-工厂方法模式时序图" width="50%" />
 ```
@@ -218,7 +218,7 @@ ResultSet rs = statement.executeQuery("select * from UserInfo");
 #### UML类图
 
 ```mdx-code-block
-import abatractFactory from '/img/docs/DesignPattern-抽象工厂模式.jpg';
+import abatractFactory from '/img/docs/java/designpattern/DesignPattern-抽象工厂模式.jpg';
 
 <img src={abatractFactory} alt="DesignPattern-抽象工厂模式" width="50%" />
 ```
@@ -226,7 +226,7 @@ import abatractFactory from '/img/docs/DesignPattern-抽象工厂模式.jpg';
 #### 时序图
 
 ```mdx-code-block
-import seqAbatractFactory from '/img/docs/DesignPattern-抽象工厂模式时序图.jpg';
+import seqAbatractFactory from '/img/docs/java/designpattern/DesignPattern-抽象工厂模式时序图.jpg';
 
 <img src={seqAbatractFactory} alt="DesignPattern-抽象工厂模式时序图" width="50%" />
 ```
@@ -244,7 +244,7 @@ import seqAbatractFactory from '/img/docs/DesignPattern-抽象工厂模式时序
 #### UML类图
 
 ```mdx-code-block
-import state from '/img/docs/DesignPattern-状态模式.jpg';
+import state from '/img/docs/java/designpattern/DesignPattern-状态模式.jpg';
 
 <img src={state} alt="DesignPattern-状态模式" width="50%" />
 ```
@@ -252,7 +252,7 @@ import state from '/img/docs/DesignPattern-状态模式.jpg';
 #### 时序图
 
 ```mdx-code-block
-import seqState from '/img/docs/DesignPattern-状态模式时序图.jpg';
+import seqState from '/img/docs/java/designpattern/DesignPattern-状态模式时序图.jpg';
 
 <img src={seqState} alt="DesignPattern-状态模式时序图" width="50%" />
 ```
@@ -285,7 +285,7 @@ import seqState from '/img/docs/DesignPattern-状态模式时序图.jpg';
 #### UML类图
 
 ```mdx-code-block
-import strategy from '/img/docs/DesignPattern-策略模式.jpg';
+import strategy from '/img/docs/java/designpattern/DesignPattern-策略模式.jpg';
 
 <img src={strategy} alt="DesignPattern-策略模式" width="50%" />
 ```
@@ -293,7 +293,7 @@ import strategy from '/img/docs/DesignPattern-策略模式.jpg';
 #### 时序图
 
 ```mdx-code-block
-import seqStrategy from '/img/docs/DesignPattern-策略模式时序图.jpg';
+import seqStrategy from '/img/docs/java/designpattern/DesignPattern-策略模式时序图.jpg';
 
 <img src={seqStrategy} alt="DesignPattern-策略模式时序图" width="50%" />
 ```

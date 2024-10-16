@@ -54,9 +54,9 @@ Java 中 MD5 加密的结果默认是32位小写。
 ```
 
 ```mdx-code-block
-import md5 from '/img/docs/JAVA-MD5.png';
+import md5 from '/img/docs/java/encryption/Encryption-MD5.png';
 
-<img src={md5} alt="JAVA-MD5" width="50%" />
+<img src={md5} alt="Encryption-MD5" width="50%" />
 ```
 
 ```

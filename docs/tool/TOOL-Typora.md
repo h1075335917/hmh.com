@@ -99,7 +99,7 @@ This is a link: https://support.typora.io/Links
 ```
 
 ```mdx-code-block
-import typoraNote from '/img/docs/Typora-note.png';
+import typoraNote from '/img/docs/tool/typora/Typora-note.png';
 
 <img src={typoraNote} alt="Typora-note" />
 ```

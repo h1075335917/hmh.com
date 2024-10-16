@@ -15,7 +15,7 @@
 Windows、Linux、MacOS 等操作系统都有相应的 JDK，只要安装好了 JDK 就有了 Java 的运行时环境，就可以把 Java 源代码编译为字节码，然后字节码又可以在不同的操作系统上运行了
 
 ```mdx-code-block
-import organizationalStructureJdk from '/img/docs/JDK-组织结构.png';
+import organizationalStructureJdk from '/img/docs/java/jdk/JDK-组织结构.png';
 
 <img src={organizationalStructureJdk} alt="JDK-组织结构" width="50%" />
 ```
@@ -198,7 +198,7 @@ https://openjdk.org/projects/jdk9/
 - 简单来说，你可以将一个模块看作是一组唯一命名、可重用的包、资源和模块描述文件（`module-info.java`）。任意一个 jar 文件，只要加上一个模块描述文件（`module-info.java`），就可以升级为一个模块
 
 ```mdx-code-block
-import moduleStructure from '/img/docs/JDK-模块化.png';
+import moduleStructure from '/img/docs/java/jdk/JDK-模块化.png';
 
 <img src={moduleStructure} alt="JDK-模块化" width="50%" />
 ```
@@ -1649,7 +1649,7 @@ thread.start();
 ```
 
 ```mdx-code-block
-import virtualThreads from '/img/docs/JDK-虚拟线程、平台线程和系统内核线程的关系.png';
+import virtualThreads from '/img/docs/java/jdk/JDK-虚拟线程、平台线程和系统内核线程的关系.png';
 
 <img src={virtualThreads} alt="JDK-虚拟线程、平台线程和系统内核线程的关系" width="50%" />
 ```

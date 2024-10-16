@@ -3,7 +3,7 @@
 ### 二维数组的存储地址
 
 ```mdx-code-block
-import twoDimensionalArrayAddress from '/img/docs/Knowledge-二维数组存储地址.png';
+import twoDimensionalArrayAddress from '/img/docs/java/knowledge/Knowledge-二维数组存储地址.png';
 
 <img src={twoDimensionalArrayAddress} alt="Knowledge-二维数组存储地址" width="50%" />
 ```

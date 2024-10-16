@@ -737,7 +737,7 @@ class MvcController {
 我们用图描述一下注入关系：
 
 ```mdx-code-block
-import mvcController from '/img/docs/Handwritten-Spring-MvcController.png';
+import mvcController from '/img/docs/project/handwrittenspring/Handwritten-Spring-MvcController.png';
 
 <img src={mvcController} alt="Handwritten-Spring-MvcController" width="50%" />
 ```
@@ -1412,7 +1412,7 @@ Servlet规范定义的组件有3类：
 而服务器为一个应用程序提供一个“容器”，即Servlet Container，一个Server可以同时跑多个Container，不同的Container可以按URL、域名等区分，Container才是用来管理Servlet、Filter、Listener这些组件的：
 
 ```mdx-code-block
-import servletContainer from '/img/docs/Handwritten-Spring-ServletContainer.png';
+import servletContainer from '/img/docs/project/handwrittenspring/Handwritten-Spring-ServletContainer.png';
 
 <img src={servletContainer} alt="Handwritten-Spring-ServletContainer" width="50%" />
 ```
@@ -1436,7 +1436,7 @@ import servletContainer from '/img/docs/Handwritten-Spring-ServletContainer.png'
 首先，我们不能改变Servlet规范，所以，Servlet、Filter、Listener，以及IoC容器，都必须在Servlet容器内被管理：
 
 ```mdx-code-block
-import iocServletContainer from '/img/docs/Handwritten-Spring-IOC-ServletContainer.png';
+import iocServletContainer from '/img/docs/project/handwrittenspring/Handwritten-Spring-IOC-ServletContainer.png';
 
 <img src={iocServletContainer} alt="Handwritten-Spring-IOC-ServletContainer" width="50%" />
 ```

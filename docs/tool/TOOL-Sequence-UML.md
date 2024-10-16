@@ -45,7 +45,7 @@ sidebar_position: 9
 > 3. 只显示对象名不显示类名。
 
 ```mdx-code-block
-import sequenceDiagram from '/img/docs/Sequence-UML-SequenceDiagram.jpg';
+import sequenceDiagram from '/img/docs/tool/sequenceuml/Sequence-UML-SequenceDiagram.jpg';
 
 <img src={sequenceDiagram} alt="Sequence-UML-SequenceDiagram" width="50%" />
 ```
@@ -63,7 +63,7 @@ import sequenceDiagram from '/img/docs/Sequence-UML-SequenceDiagram.jpg';
 > 控制焦点是顺序图中表示时间段的符号，在这个时间段内对象将执行相应的操作。用小矩形表示；
 
 ```mdx-code-block
-import elementFOC from '/img/docs/Sequence-UML-ElementFOC.jpg';
+import elementFOC from '/img/docs/tool/sequenceuml/Sequence-UML-ElementFOC.jpg';
 
 <img src={elementFOC} alt="Sequence-UML-ElementFOC" width="50%" />
 ```
@@ -98,7 +98,7 @@ import elementFOC from '/img/docs/Sequence-UML-ElementFOC.jpg';
 > > 返回消息表示从过程调用返回。
 
 ```mdx-code-block
-import message from '/img/docs/Sequence-UML-ReturnMessage.gif';
+import message from '/img/docs/tool/sequenceuml/Sequence-UML-ReturnMessage.gif';
 
 <img src={message} alt="Sequence-UML-ReturnMessage" width="50%" />
 ```
@@ -109,7 +109,7 @@ import message from '/img/docs/Sequence-UML-ReturnMessage.gif';
 > 表示方法的自身调用（回调）以及一个对象内的一个方法调用另外一个方法。
 
 ```mdx-code-block
-import selfMessage from '/img/docs/Sequence-UML-SelfMessage.gif';
+import selfMessage from '/img/docs/tool/sequenceuml/Sequence-UML-SelfMessage.gif';
 
 <img src={selfMessage} alt="Sequence-UML-SelfMessage" width="50%" />
 ```
@@ -132,7 +132,7 @@ import selfMessage from '/img/docs/Sequence-UML-SelfMessage.gif';
 > Loop fragment(denoted “loop”) 与 for 或者 Foreach对应
 
 ```mdx-code-block
-import combinedFragments from '/img/docs/Sequence-UML-CombinedFragments.gif';
+import combinedFragments from '/img/docs/tool/sequenceuml/Sequence-UML-CombinedFragments.gif';
 
 <img src={combinedFragments} alt="Sequence-UML-CombinedFragments" width="50%" />
 ```
@@ -163,7 +163,7 @@ import combinedFragments from '/img/docs/Sequence-UML-CombinedFragments.gif';
 >  5、完成课程创建功能
 
 ```mdx-code-block
-import sequenceDiagramExample from '/img/docs/Sequence-UML-SequenceDiagramExample.jpg';
+import sequenceDiagramExample from '/img/docs/tool/sequenceuml/Sequence-UML-SequenceDiagramExample.jpg';
 
 <img src={sequenceDiagramExample} alt="Sequence-UML-SequenceDiagramExample" width="50%" />
 ```
@@ -217,7 +217,7 @@ import sequenceDiagramExample from '/img/docs/Sequence-UML-SequenceDiagramExampl
 - 学生上学需要用到自行车，与自行车是一种依赖关系，使用带箭头的虚线表示；
 
 ```mdx-code-block
-import umlClassStruct from '/img/docs/Sequence-UML-UMLClassStruct.jpg';
+import umlClassStruct from '/img/docs/tool/sequenceuml/Sequence-UML-UMLClassStruct.jpg';
 
 <img src={umlClassStruct} alt="Sequence-UML-UMLClassStruct" width="50%" />
 ```

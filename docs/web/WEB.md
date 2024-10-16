@@ -776,7 +776,7 @@ alert("This line is never reached (error in the line above)");
 ```
 
 ```mdx-code-block
-import jsRunInBrowser from '/img/docs/WEB-JS在浏览器中运行时的鸟瞰图.png';
+import jsRunInBrowser from '/img/docs/web/web/WEB-JS在浏览器中运行时的鸟瞰图.png';
 
 <img src={jsRunInBrowser} alt="WEB-JS在浏览器中运行时的鸟瞰图" width="50%" />
 ```

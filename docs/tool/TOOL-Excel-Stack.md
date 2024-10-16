@@ -11,7 +11,7 @@ sidebar_position: 7
 ```
 
 ```mdx-code-block
-import excelDeleteDuplicate from '/img/docs/Excel-快速删除重复值.jpg';
+import excelDeleteDuplicate from '/img/docs/tool/excel/Excel-快速删除重复值.jpg';
 
 <img src={excelDeleteDuplicate} alt="Excel-快速删除重复值" width="50%" />
 ```
@@ -23,7 +23,7 @@ import excelDeleteDuplicate from '/img/docs/Excel-快速删除重复值.jpg';
 ```
 
 ```mdx-code-block
-import excelSplitData from '/img/docs/Excel-快速拆分数据.jpg';
+import excelSplitData from '/img/docs/tool/excel/Excel-快速拆分数据.jpg';
 
 <img src={excelSplitData} alt="Excel-快速拆分数据" width="50%" />
 ```
@@ -36,7 +36,7 @@ import excelSplitData from '/img/docs/Excel-快速拆分数据.jpg';
 ```
 
 ```mdx-code-block
-import excelGenerateChart from '/img/docs/Excel-快速生成图表.jpg';
+import excelGenerateChart from '/img/docs/tool/excel/Excel-快速生成图表.jpg';
 
 <img src={excelGenerateChart} alt="Excel-快速生成图表" width="50%" />
 ```
@@ -48,7 +48,7 @@ import excelGenerateChart from '/img/docs/Excel-快速生成图表.jpg';
 ```
 
 ```mdx-code-block
-import excelAddSubtractMultiplyDivide from '/img/docs/Excel-快速加减乘除运算.jpg';
+import excelAddSubtractMultiplyDivide from '/img/docs/tool/excel/Excel-快速加减乘除运算.jpg';
 
 <img src={excelAddSubtractMultiplyDivide} alt="Excel-快速加减乘除运算" width="50%" />
 ```
@@ -60,7 +60,7 @@ import excelAddSubtractMultiplyDivide from '/img/docs/Excel-快速加减乘除�
 ```
 
 ```mdx-code-block
-import excelDeleteBlankRow from '/img/docs/Excel-快速删除空白行.jpg';
+import excelDeleteBlankRow from '/img/docs/tool/excel/Excel-快速删除空白行.jpg';
 
 <img src={excelDeleteBlankRow} alt="Excel-快速删除空白行" width="50%" />
 ```

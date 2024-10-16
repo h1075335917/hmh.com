@@ -402,7 +402,7 @@ Webkit 内核的浏览器，必须加上-webkit 前缀。
 项目默认沿主轴排列。单个项目占据的主轴空间叫做 main size，占据的交叉轴空间叫做 cross size。
 
 ```mdx-code-block
-import flexContainer from '/img/docs/HTML-flex-container.png';
+import flexContainer from '/img/docs/web/html/HTML-flex-container.png';
 
 <img src={flexContainer} alt="HTML-flex-container" width="50%" />
 ```

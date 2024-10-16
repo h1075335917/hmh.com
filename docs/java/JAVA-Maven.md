@@ -16,7 +16,7 @@ Maven自动化构建是通过约定目录结构，如自动编译时，Maven需�
 2. 基于第三方工具或框架的约定 Maven 对工程目录结构的要求
 
 ```mdx-code-block
-import mavenDirectoryStructure from '/img/docs/Maven-目录结构.png';
+import mavenDirectoryStructure from '/img/docs/java/maven/Maven-目录结构.png';
 
 <img src={mavenDirectoryStructure} alt="Maven-目录结构" width="50%" />
 ```
@@ -28,7 +28,7 @@ Java 项目开发过程中，构建指的是使用『**原材料生产产品**�
 Thymeleaf 是一个现代服务器端 Java 模板引擎，用于渲染 HTML 页面。
 
 ```mdx-code-block
-import mavenBuild from '/img/docs/Maven-构建.png';
+import mavenBuild from '/img/docs/java/maven/Maven-构建.png';
 
 <img src={mavenBuild} alt="Maven-构建" width="50%" />
 ```
@@ -36,7 +36,7 @@ import mavenBuild from '/img/docs/Maven-构建.png';
 构建过程主要包含以下环节：
 
 ```mdx-code-block
-import mavenBuildProcess from '/img/docs/Maven-构建环节.png';
+import mavenBuildProcess from '/img/docs/java/maven/Maven-构建环节.png';
 
 <img src={mavenBuildProcess} alt="Maven-构建环节" width="50%" />
 ```
@@ -314,7 +314,7 @@ A 依赖 B，B 依赖 C， A 没有配置对 C 的依赖。在这前提下，C �
 两者可以结合使用，例如，一个聚合项目（父项目）同时也是一个父 POM 项目，子模块既是聚合项目的一部分，也继承了父项目的配置。
 
 ```mdx-code-block
-import mavenInheritanceAndAggregation from '/img/docs/Maven-继承和聚合.png';
+import mavenInheritanceAndAggregation from '/img/docs/java/maven/Maven-继承和聚合.png';
 
 <img src={mavenInheritanceAndAggregation} alt="Maven-继承和聚合" width="50%" />
 ```
@@ -663,7 +663,7 @@ project标签下除了modelVersion和坐标标签之外，其它标签都可以�
 在 idea 中可以看到，因此，当你需要打包哪一个环境的就勾选即可：
 
 ```mdx-code-block
-import mavenProfile from '/img/docs/Maven-profile.png';
+import mavenProfile from '/img/docs/java/maven/Maven-profile.png';
 
 <img src={mavenProfile} alt="Maven-profile" width="50%" />
 ```
@@ -673,7 +673,7 @@ import mavenProfile from '/img/docs/Maven-profile.png';
 `application.yml` 中配置`spring.profiles.active=prod`（或者 dev、test）指定使用的配置文件，如下：
 
 ```mdx-code-block
-import mavenProfileActive from '/img/docs/Maven-profileActive.png';
+import mavenProfileActive from '/img/docs/java/maven/Maven-profileActive.png';
 
 <img src={mavenProfileActive} alt="Maven-profileActive" width="50%" />
 ```
@@ -683,7 +683,7 @@ import mavenProfileActive from '/img/docs/Maven-profileActive.png';
 然后当我们勾选哪一个环境，打包的配置文件就是那一个环境：
 
 ```mdx-code-block
-import mavenProfileProd from '/img/docs/Maven-profile-prod.png';
+import mavenProfileProd from '/img/docs/java/maven/Maven-profile-prod.png';
 
 <img src={mavenProfileProd} alt="Maven-profileProd" width="50%" />
 ```
@@ -710,7 +710,7 @@ Maven 的版本仲裁机制只是在没有人为干预的情况下，自主决�
 - **最短路径优先**
 
 ```mdx-code-block
-import mavenShortestPathFirst from '/img/docs/Maven-最短路径优先.png';
+import mavenShortestPathFirst from '/img/docs/java/maven/Maven-最短路径优先.png';
 
 <img src={mavenShortestPathFirst} alt="Maven-最短路径优先" width="50%" />
 ```
@@ -718,7 +718,7 @@ import mavenShortestPathFirst from '/img/docs/Maven-最短路径优先.png';
 - **路径相同时先声明者优先**
 
 ```mdx-code-block
-import mavenPathSameFirst from '/img/docs/Maven-路径相同时先声明者优先.png';
+import mavenPathSameFirst from '/img/docs/java/maven/Maven-路径相同时先声明者优先.png';
 
 <img src={mavenPathSameFirst} alt="Maven-路径相同时先声明者优先" width="50%" />
 ```
@@ -751,7 +751,7 @@ import mavenPathSameFirst from '/img/docs/Maven-路径相同时先声明者优�
 - **特定版本控制**：当你需要确保使用特定版本的原型而不想被远程仓库中的更新干扰时，使用 `internal` 是一个好选择。
 
 ```mdx-code-block
-import mavenDarchetypeCatalog from '/img/docs/Maven-DarchetypeCatalog配置.png';
+import mavenDarchetypeCatalog from '/img/docs/java/maven/Maven-DarchetypeCatalog配置.png';
 
 <img src={mavenDarchetypeCatalog} alt="Maven-DarchetypeCatalog配置" width="50%" />
 ```
@@ -784,7 +784,7 @@ spring boot支持外部application.yml  读取优先级为：
 ```
 
 ```mdx-code-block
-import mavenSpringBootConfig from '/img/docs/Maven-SpringBoot-配置文件加载优先级.png';
+import mavenSpringBootConfig from '/img/docs/java/maven/Maven-SpringBoot-配置文件加载优先级.png';
 
 <img src={mavenSpringBootConfig} alt="Maven-SpringBoot-配置文件加载优先级" width="50%" />
 ```
@@ -1209,7 +1209,7 @@ Gradle官方文档：https://docs.gradle.org
 项目创建完成后，一个非常简单的Gradle项目目录结构如下，需要注意的是`build.gradle`和`settings.gradle`这两个文件。
 
 ```mdx-code-block
-import gradleStart from '/img/docs/Maven-Gradle-start.png';
+import gradleStart from '/img/docs/java/maven/Maven-Gradle-start.png';
 
 <img src={gradleStart} alt="Maven-Gradle-start" width="50%" />
 ```

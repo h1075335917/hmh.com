@@ -12,7 +12,7 @@
 
 
 ```mdx-code-block
-import structureComposition from '/img/docs/JVM-组织架构组成.png';
+import structureComposition from '/img/docs/java/jvm/JVM-组织架构组成.png';
 
 <img src={structureComposition} alt="JVM-组织架构组成" width="50%" />
 ```
@@ -20,7 +20,7 @@ import structureComposition from '/img/docs/JVM-组织架构组成.png';
 #### 组织架构职责
 
 ```mdx-code-block
-import structureResponsibilities from '/img/docs/JVM-组织架构职责.png';
+import structureResponsibilities from '/img/docs/java/jvm/JVM-组织架构职责.png';
 
 <img src={structureResponsibilities} alt="JVM-组织架构职责" width="50%" />
 ```
@@ -34,7 +34,7 @@ import structureResponsibilities from '/img/docs/JVM-组织架构职责.png';
 > JVM 定义了 Java 程序运行期间需要使用到的内存区域，简单来说，这块内存区域存放了字节码信息以及程序执行过程的数据，`垃圾收集器`也会针对运行时数据区进行对象回收的工作
 
 ```mdx-code-block
-import runtimeDataArea from '/img/docs/JVM-运行时数据区.png';
+import runtimeDataArea from '/img/docs/java/jvm/JVM-运行时数据区.png';
 
 <img src={runtimeDataArea} alt="JVM-运行时数据区" width="50%" />
 ```
@@ -42,7 +42,7 @@ import runtimeDataArea from '/img/docs/JVM-运行时数据区.png';
 > 运行时数据区通常包括：`方法区`、`堆`、`虚拟机栈`、`本地方法栈`以及`程序计数器`五个部分。不过，运行时数据区的划分也随着JDK的发展不断变迁，JDK 1.6、JDK 1.7、JDK 1.8 的内存划分都会有所不同。
 
 ```mdx-code-block
-import memoryStructure from '/img/docs/JVM-运行时数据区-内存划分.png';
+import memoryStructure from '/img/docs/java/jvm/JVM-运行时数据区-内存划分.png';
 
 <img src={memoryStructure} alt="JVM-运行时数据区-内存划分" width="50%" />
 ```
@@ -54,7 +54,7 @@ import memoryStructure from '/img/docs/JVM-运行时数据区-内存划分.png';
 执行引擎的任务就是将**`字节码指令`**解释/编译为对应平台上的本地机器指令才可以。简单来说，JVM 中的执行引擎充当了将高级语言翻译为机器语言的译者。
 
 ```mdx-code-block
-import executionEngine from '/img/docs/JVM-执行引擎.png';
+import executionEngine from '/img/docs/java/jvm/JVM-执行引擎.png';
 
 <img src={executionEngine} alt="JVM-执行引擎" width="50%" />
 ```
@@ -76,7 +76,7 @@ import executionEngine from '/img/docs/JVM-执行引擎.png';
 > 字节码文件结构是一组以 8 位为最小单元的十六进制数据流，具体的结构如下图所示，主要包含了魔数、class文件版本、常量池、访问标志、索引、字段表集合、方法表集合以及属性表集合描述数据信息
 
 ```mdx-code-block
-import classFileStructure from '/img/docs/JVM-字节码文件结构.png';
+import classFileStructure from '/img/docs/java/jvm/JVM-字节码文件结构.png';
 
 <img src={classFileStructure} alt="JVM-字节码文件结构" width="50%" />
 ```
@@ -132,7 +132,7 @@ import classFileStructure from '/img/docs/JVM-字节码文件结构.png';
 > Java应用的类都是通过类加载器加载到运行时数据区的，那么类加载器本身又是被谁加载的呢？
 
 ```mdx-code-block
-import loadingStart from '/img/docs/JVM-类加载-加载器启动.png';
+import loadingStart from '/img/docs/java/jvm/JVM-类加载-加载器启动.png';
 
 <img src={loadingStart} alt="JVM-类加载-加载器启动" width="50%" />
 ```
@@ -153,7 +153,7 @@ import loadingStart from '/img/docs/JVM-类加载-加载器启动.png';
 > > 通过这种双亲委派模型，可以保证同一个类在不同的类加载器中只会被加载一次，从而避免了类的重复加载，也保证了类的唯一性。同时，由于每个类加载器只会加载自己所负责的类，因此可以防止恶意代码的注入和类的篡改，提高了Java程序的安全性
 
 ```mdx-code-block
-import loadingParent from '/img/docs/JVM-类加载-双亲委派模型.png';
+import loadingParent from '/img/docs/java/jvm/JVM-类加载-双亲委派模型.png';
 
 <img src={loadingParent} alt="JVM-类加载-双亲委派模型" width="50%" />
 ```
@@ -161,7 +161,7 @@ import loadingParent from '/img/docs/JVM-类加载-双亲委派模型.png';
 ### JVM运行Java（字节码指令）
 
 ```mdx-code-block
-import howRunJavaCode from '/img/docs/JVM-运行Java-字节码指令.png';
+import howRunJavaCode from '/img/docs/java/jvm/JVM-运行Java-字节码指令.png';
 
 <img src={howRunJavaCode} alt="JVM-运行Java-字节码指令" width="50%" />
 ```
@@ -248,7 +248,7 @@ import howRunJavaCode from '/img/docs/JVM-运行Java-字节码指令.png';
 > 虚拟机栈操作的基本元素就是栈帧，栈帧主要包含了`局部变量表`、`操作数栈`、`动态连接`以及`方法返回地址`。栈帧是一个`先进后出`的数据结构，每个方法从调用到执行完成都会对应一个栈帧在虚拟机栈中入栈和出栈
 
 ```mdx-code-block
-import virtualMachineStack from '/img/docs/JVM-虚拟机栈.png';
+import virtualMachineStack from '/img/docs/java/jvm/JVM-虚拟机栈.png';
 
 <img src={virtualMachineStack} alt="JVM-虚拟机栈" width="50%" />
 ```
@@ -273,7 +273,7 @@ public class Test {
 > 2. main 线程在执行 mian 方法时，JVM 会在虚拟机栈中压入 main 方法对应的栈帧
 
 ```mdx-code-block
-import virtualMachineStackMain from '/img/docs/JVM-虚拟机栈-main.png';
+import virtualMachineStackMain from '/img/docs/java/jvm/JVM-虚拟机栈-main.png';
 
 <img src={virtualMachineStackMain} alt="JVM-虚拟机栈-main" width="50%" />
 ```
@@ -282,7 +282,7 @@ import virtualMachineStackMain from '/img/docs/JVM-虚拟机栈-main.png';
 > 4. 当进行 calculate 方法调用的时候，虚拟机栈继续压入 calculate 方法对应的栈帧
 
 ```mdx-code-block
-import virtualMachineStackCalculate from '/img/docs/JVM-虚拟机栈-calculate.png';
+import virtualMachineStackCalculate from '/img/docs/java/jvm/JVM-虚拟机栈-calculate.png';
 
 <img src={virtualMachineStackCalculate} alt="JVM-虚拟机栈-calculate" width="50%" />
 ```

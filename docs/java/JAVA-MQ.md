@@ -46,7 +46,7 @@
 ```
 
 ```mdx-code-block
-import workflow from '/img/docs/MQ-工作流程.png';
+import workflow from '/img/docs/java/mq/MQ-工作流程.png';
 
 <img src={workflow} alt="MQ-工作流程" width="50%" />
 ```

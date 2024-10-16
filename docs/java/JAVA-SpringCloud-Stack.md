@@ -1514,7 +1514,7 @@ management:
 ```
 
 ```mdx-code-block
-import monitoringRequests from '/img/docs/SpringCloud-gateway监控请求.png';
+import monitoringRequests from '/img/docs/java/springcloud/SpringCloud-gateway监控请求.png';
 
 <img src={monitoringRequests} alt="SpringCloud-gateway监控请求" width="50%" />
 ```
@@ -1531,7 +1531,7 @@ import monitoringRequests from '/img/docs/SpringCloud-gateway监控请求.png';
 ```
 
 ```mdx-code-block
-import gatewayWorkPrinciple from '/img/docs/SpringCloud-gateway工作原理.png';
+import gatewayWorkPrinciple from '/img/docs/java/springcloud/SpringCloud-gateway工作原理.png';
 
 <img src={gatewayWorkPrinciple} alt="SpringCloud-gateway工作原理" width="50%" />
 ```
@@ -2245,7 +2245,7 @@ Client Credentials（客户端模式）：客户端直接通过客户端认证�
 ```
 
 ```mdx-code-block
-import authorizationCode from '/img/docs/SpringCloud-授权码模式.png';
+import authorizationCode from '/img/docs/java/springcloud/SpringCloud-授权码模式.png';
 
 <img src={authorizationCode} alt="SpringCloud-授权码模式" width="50%" />
 ```
@@ -2257,7 +2257,7 @@ import authorizationCode from '/img/docs/SpringCloud-授权码模式.png';
 ```
 
 ```mdx-code-block
-import implicit from '/img/docs/SpringCloud-简化模式.png';
+import implicit from '/img/docs/java/springcloud/SpringCloud-简化模式.png';
 
 <img src={implicit} alt="SpringCloud-简化模式" width="50%" />
 ```
@@ -2269,7 +2269,7 @@ import implicit from '/img/docs/SpringCloud-简化模式.png';
 ```
 
 ```mdx-code-block
-import password from '/img/docs/SpringCloud-密码模式.png';
+import password from '/img/docs/java/springcloud/SpringCloud-密码模式.png';
 
 <img src={password} alt="SpringCloud-密码模式" width="50%" />
 ```
@@ -2283,7 +2283,7 @@ Client直接以自己的名义而不是Resource owner的名义去要求访问Res
 ```
 
 ```mdx-code-block
-import clientCredentials from '/img/docs/SpringCloud-客户端模式.png';
+import clientCredentials from '/img/docs/java/springcloud/SpringCloud-客户端模式.png';
 
 <img src={clientCredentials} alt="SpringCloud-客户端模式" width="50%" />
 ```
@@ -2295,7 +2295,7 @@ import clientCredentials from '/img/docs/SpringCloud-客户端模式.png';
 ```
 
 ```mdx-code-block
-import refreshToken from '/img/docs/SpringCloud-刷新令牌.png';
+import refreshToken from '/img/docs/java/springcloud/SpringCloud-刷新令牌.png';
 
 <img src={refreshToken} alt="SpringCloud-刷新令牌" width="50%" />
 ```
@@ -2952,7 +2952,7 @@ Windows 直接点击bin/startup.bat
 ```
 
 ```mdx-code-block
-import skywalking from '/img/docs/SpringCloud-SkyWalking链路追踪.png';
+import skywalking from '/img/docs/java/springcloud/SpringCloud-SkyWalking链路追踪.png';
 
 <img src={skywalking} alt="SpringCloud-SkyWalking链路追踪" width="50%" />
 ```

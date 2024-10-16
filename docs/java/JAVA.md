@@ -654,7 +654,7 @@ try (ZipOutputStream zip = new ZipOutputStream(new FileOutputStream(...))) {
 ```
 
 ```mdx-code-block
-import inputStream from '/img/docs/JAVA-InputStream.png';
+import inputStream from '/img/docs/java/java/JAVA-InputStream.png';
 
 <img src={inputStream} alt="JAVA-InputStream" width="50%" />
 ```
@@ -1127,7 +1127,7 @@ public class Main {
 > 因为Java引入了泛型，所以，只用`Class`来标识类型已经不够了。实际上，Java的类型系统结构如下：
 
 ```mdx-code-block
-import typeSystem from '/img/docs/JAVA-TypeSystem.png';
+import typeSystem from '/img/docs/java/java/JAVA-TypeSystem.png';
 
 <img src={typeSystem} alt="JAVA-TypeSystem" width="50%" />
 ```
@@ -1560,7 +1560,7 @@ public void execute3() {
 ```
 
 ```mdx-code-block
-import withinAndtarget from '/img/docs/JAVA-withinAndtarget.png';
+import withinAndtarget from '/img/docs/java/java/JAVA-withinAndtarget.png';
 
 <img src={withinAndtarget} alt="withinAndtarget" width="50%" />
 ```
@@ -2786,7 +2786,7 @@ public Object getIPLimiter(String ipAddr) throws ExecutionException {
 内存模型限制的是共享变量，也就是存储在堆内存中的变量，在 Java 语言中，所有的实例变量、静态变量和数组元素都存储在堆内存之中。方法参数、异常处理参数这些局部变量存储在方法栈帧之中，因此不会在线程之间共享，不会受到内存模型影响，也不存在内存可见性问题。
 
 ```mdx-code-block
-import javaMemoryModel from '/img/docs/JAVA-内存模型.png';
+import javaMemoryModel from '/img/docs/java/java/JAVA-内存模型.png';
 
 <img src={javaMemoryModel} alt="JAVA-内存模型" width="50%" />
 ```
@@ -2923,7 +2923,7 @@ public class CountDownLatchTest {
 - 结束：表示该过程结束
 
 ```mdx-code-block
-import events from '/img/docs/JAVA-BPMN-事件.png';
+import events from '/img/docs/java/java/JAVA-BPMN-事件.png';
 
 <img src={events} alt="JAVA-BPMN-事件" width="50%" />
 ```
@@ -2933,7 +2933,7 @@ import events from '/img/docs/JAVA-BPMN-事件.png';
 包括任务和子流程两类。子流程在图形的下方中间外加一个小加号（+）来区分。
 
 ```mdx-code-block
-import activities from '/img/docs/JAVA-BPMN-活动.png';
+import activities from '/img/docs/java/java/JAVA-BPMN-活动.png';
 
 <img src={activities} alt="JAVA-BPMN-活动" width="50%" />
 ```
@@ -2953,7 +2953,7 @@ import activities from '/img/docs/JAVA-BPMN-活动.png';
   当流程执行到事件网关后，流程处于等待状态，需要等待抛出事件才能将等待状态转换为活动状态。
 
 ```mdx-code-block
-import gateways from '/img/docs/JAVA-BPMN-网关.png';
+import gateways from '/img/docs/java/java/JAVA-BPMN-网关.png';
 
 <img src={gateways} alt="JAVA-BPMN-网关" width="50%" />
 ```

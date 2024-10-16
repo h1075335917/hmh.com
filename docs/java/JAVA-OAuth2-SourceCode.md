@@ -330,7 +330,7 @@ private ResponseEntity<OAuth2AccessToken> getResponse(OAuth2AccessToken accessTo
 ```
 
 ```mdx-code-block
-import generateTokenFlowChart from '/img/docs/OAuth2-生成token流程图.png';
+import generateTokenFlowChart from '/img/docs/java/oauth2/OAuth2-生成token流程图.png';
 
 <img src={generateTokenFlowChart} alt="OAuth2-生成token流程图" width="50%" />
 ```
