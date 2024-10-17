@@ -1,0 +1,43 @@
+.resumeContainer {
+  display: flex;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: #2d2d2d;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.contactInfo {
+  margin-top: 20px;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 40px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skillCard {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* 添加更多样式以匹配图片中的设计 */

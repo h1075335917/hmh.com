@@ -102,7 +102,7 @@ const config: Config = {
           position: "left",
           label: "示例",
         },
-        { to: "/vcard", label: "示例2", position: "left" },
+        { to: "/resume", label: "简历", position: "left" },
         {
           type: "docSidebar",
           sidebarId: "java",
