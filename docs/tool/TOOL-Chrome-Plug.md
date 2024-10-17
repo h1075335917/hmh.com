@@ -60,7 +60,7 @@ https://chromewebstore.google.com/detail/%E7%B1%BB%E4%BC%BC%E7%9A%84%E7%BD%91%E7
 
 > 发现相似的网站。
 
-## 视频下载器 - 
+## 视频下载器
 [CoCoCut](https://chromewebstore.google.com/detail/%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%99%A8-cococut/ekhbcipncbkfpkaianbjbcbmfehjflpf)
 [Video DownloadHelper](https://chromewebstore.google.com/detail/video-downloadhelper/lmjnegcaeklhafolokijcfjliaokphfk)
 
@@ -108,6 +108,10 @@ https://chromewebstore.google.com/detail/%E4%BA%8C%E7%AE%B1/kidibbfcblfbbafhnlan
 
 ## 翻译
 [侧边翻译](https://chromewebstore.google.com/detail/%E4%BE%A7%E8%BE%B9%E7%BF%BB%E8%AF%91/bocbaocobfecmglnmeaeppambideimao)
+
+
+## Octotree - GitHub code tree
+https://chromewebstore.google.com/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc
 
 ## Tampermonkey
 

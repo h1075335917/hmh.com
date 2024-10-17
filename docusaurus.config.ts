@@ -102,6 +102,7 @@ const config: Config = {
           position: "left",
           label: "示例",
         },
+        { to: "/vcard", label: "示例2", position: "left" },
         {
           type: "docSidebar",
           sidebarId: "java",
@@ -215,10 +216,10 @@ const config: Config = {
         },
       ],
       logo: {
-          alt: 'Meta Open Source Logo',
-          src: '/img/meta_opensource_logo_negative.svg',
-          href: 'https://opensource.fb.com',
-        },
+        alt: "Meta Open Source Logo",
+        src: "/img/meta_opensource_logo_negative.svg",
+        href: "https://opensource.fb.com",
+      },
       copyright: `© ${new Date().getFullYear()} mhuahe. Built with Docusaurus.`,
     },
     prism: {
@@ -238,7 +239,7 @@ const config: Config = {
       ],
     },
     docs: {
-      versionPersistence: 'localStorage',
+      versionPersistence: "localStorage",
       sidebar: {
         //可隐藏侧边栏
         hideable: true,
