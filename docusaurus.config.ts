@@ -172,53 +172,53 @@ const config: Config = {
       isCloseable: true,
     },
     footer: {
-      style: "dark",
-      links: [
-        {
-          title: "文档",
-          items: [
-            {
-              label: "开发文档",
-              to: "https://docusaurus.io/",
-            },
-          ],
-        },
-        {
-          title: "社区",
-          items: [
-            {
-              label: "博客园",
-              href: "https://www.cnblogs.com/minhua",
-            },
-            {
-              label: "掘金",
-              href: "https://juejin.cn/user/2331397363880808",
-            },
-            {
-              label: "Twitter",
-              href: "https://x.com/mihuahe",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "https://mhuahe.github.io/mhuahe.com/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/mhuahe",
-            },
-          ],
-        },
-      ],
-      logo: {
-        alt: "Meta Open Source Logo",
-        src: "/img/meta_opensource_logo_negative.svg",
-        href: "https://opensource.fb.com",
-      },
+      // style: "dark",
+      // links: [
+      //   {
+      //     title: "文档",
+      //     items: [
+      //       {
+      //         label: "开发文档",
+      //         to: "https://docusaurus.io/",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: "社区",
+      //     items: [
+      //       {
+      //         label: "博客园",
+      //         href: "https://www.cnblogs.com/minhua",
+      //       },
+      //       {
+      //         label: "掘金",
+      //         href: "https://juejin.cn/user/2331397363880808",
+      //       },
+      //       {
+      //         label: "Twitter",
+      //         href: "https://x.com/mihuahe",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: "More",
+      //     items: [
+      //       {
+      //         label: "Blog",
+      //         to: "https://mhuahe.github.io/mhuahe.com/blog",
+      //       },
+      //       {
+      //         label: "GitHub",
+      //         href: "https://github.com/mhuahe",
+      //       },
+      //     ],
+      //   },
+      // ],
+      // logo: {
+      //   alt: "Meta Open Source Logo",
+      //   src: "/img/meta_opensource_logo_negative.svg",
+      //   href: "https://opensource.fb.com",
+      // },
       copyright: `© ${new Date().getFullYear()} mhuahe. Built with Docusaurus.`,
     },
     prism: {
