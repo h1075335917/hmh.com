@@ -1,66 +1,58 @@
 import clsx from 'clsx'
 import styles from './styles.module.css'
-import Link from '@docusaurus/Link'
 import React from 'react'
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
   description: React.ReactElement;
-  to: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Java',
-    to: '/docs/java',
-    Svg: require('@site/static/img/java.svg').default,
+    title: '支持我',
+    // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        我的<code>Java</code>笔记.
+        在这里给我一个星标 <a target="_blank" rel="noopener noreferrer" href="https://github.com/mhuahe/mhuahe.com">GitHub</a>
       </>
     ),
   },
   {
-    title: '前端',
-    to: '/docs/web',
-    Svg: require('@site/static/img/web.svg').default,
+    title: '关于我',
+    // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        我的<code>前端</code>笔记.
+        在业的Java开发
       </>
     ),
   },
   {
-    title: 'Blog',
-    to: '/blog',
-    Svg: require('@site/static/img/blog.svg').default,
+    title: '联系我',
+    // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        我的<code>Blog</code>.
+        微信: mhuahe
       </>
     ),
   },
 ]
 
-function Feature ({ title, Svg, description, to }: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img"/>
+        {/* <Svg className={styles.featureSvg} role="img"/> */}
       </div>
       <div className="text--center padding-horiz--md">
-        <Link
-          to={to}>
-          <h3>{title}</h3>
-        </Link>
+        <h3>{title}</h3>
         <p>{description}</p>
       </div>
     </div>
   )
 }
 
-export default function HomepageFeatures (): React.ReactElement {
+export default function HomepageFeatures(): React.ReactElement {
   return (
     <section className={styles.features}>
       <div className="container">
