@@ -1,5 +1,6 @@
 ---
-draft: true
+draft: false
+sidebar_position: 1
 ---
 
 # 什么是SaaS
@@ -75,25 +76,31 @@ SaaS 与我们普通使用者联系可能是最直接的，简单地说任何一
 
 介于传统与互联网之间，通过租用的方式提供服务，服务部署在云端，任何用户通过注册后进行订购后获得需要的服务，可以理解成服务器及软件归供应商所有，用户通过付费获得使用权
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjhh9LO39nbv0p8fF8xqMnj1ZCywDnZKw5icG0v457APkYHpjzcgELaow/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass1 from '/img/docs/knowledge/whatsass/What-Sass-1.png';
 
-  
+<img src={whatSass1} alt="What-Sass-1" width="80%" />
+```
 
 ### **3.2 传统软件**
 
 出售软件及配套设备，将软件部署在客户服务器或客户指定云服务器，出售的软件系统及运维服务为盈利来
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjgqjC3iazVf1BxHM6mYiaYbhnIL28v81xhRmGbkFJkPop5mC1Nl27JQlQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass2 from '/img/docs/knowledge/whatsass/What-Sass-2.png';
 
-  
+<img src={whatSass2} alt="What-Sass-2" width="80%" />
+```
 
 ### **3.3 互联网应用供应商**
 
 服务器部署在云端，所有用户可以通过客户端注册进行使用，广告及付费增值服务作为盈利来源
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicj27H7fVWXaAeEK9YPTsibJV6MiaPiaes8Fb0sx09pv9A0kuGyVTXworHjg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass3 from '/img/docs/knowledge/whatsass/What-Sass-3.png';
 
-  
+<img src={whatSass3} alt="What-Sass-3" width="80%" />
+```
 
 ## **4、 B2B2C**
 
@@ -107,9 +114,11 @@ SaaS作为租户系统，需要为租户（C端）提供注册、购买、业务
 
 架构以及商业模式：在产品的成长期阶段，为了扩充业务规模和体量，业务SaaS产品会拓展为“多场景+多行业”的产品模式，为不同行业或者不同场景提供适应的解决方案，例如做电商独立站的有赞，后期发展为“商城、零售、美业、教育”多行业的解决方案进行售卖。
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicj68zS7ZxDnL9icsx5WYshoZib8RUcWwAyODRFI4NMMK1VA5ThnoEKO4lQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass4 from '/img/docs/knowledge/whatsass/What-Sass-4.png';
 
-  
+<img src={whatSass4} alt="What-Sass-4" width="80%" />
+```
 
 ### **5.2 效率型SaaS**
 
@@ -117,9 +126,11 @@ SaaS作为租户系统，需要为租户（C端）提供注册、购买、业务
 
 架构以及商业模式：不同于业务型的SaaS，效率SaaS思考得更多的是企业内存在一个大共性的效率的问题，不同的企业对于CRM销售系统的需求是不一样的，但都需要一个协同办公的产品来提升协作效率。对于效率类SaaS来说，从哪来到哪去是非常清晰的，就是要解决优化或者解决一个流程上的问题。
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjZopH3JhU1WEMsYibgWeKoHHEdjHa3YiaEghN538A1et589CNnvHQHc3A/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass5 from '/img/docs/knowledge/whatsass/What-Sass-5.png';
 
-  
+<img src={whatSass5} alt="What-Sass-5" width="80%" />
+```
 
 ### **5.3 混合型SaaS**
 
@@ -127,9 +138,11 @@ SaaS作为租户系统，需要为租户（C端）提供注册、购买、业务
 
 架构以及商业模式：混合SaaS是业务和效率SaaS的结合体，负责企业业务以及企业管理流程的某类场景上的降本增效；因混合SaaS核心业务的使用场景是清晰且通用的，非核心业务是近似于锦上添花的存在，所以在中台产品架构上更接近为“1+X”组合方式——即1个核心业务+X个非核心功能，两者在产品层级上是属于同一层级的。
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjXeKjcpIsv64utuHtUOaj39wXNLoGyunptDUHNgPiaIqiakkbDbfVCrKg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass6 from '/img/docs/knowledge/whatsass/What-Sass-6.png';
 
-  
+<img src={whatSass6} alt="What-Sass-6" width="80%" />
+```
 
 ## **6、 如何SaaS化**
 
@@ -188,9 +201,11 @@ SaaS作为租户系统，需要为租户（C端）提供注册、购买、业务
 
 ##### **8.2.1 竖井隔离模式**
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjBCoR3aWuap4SgClps5lHkAnopfYCXvp2GzMwgxDwd3kLwia2ZCEzsVg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass7 from '/img/docs/knowledge/whatsass/What-Sass-7.png';
 
-  
+<img src={whatSass7} alt="What-Sass-7" width="80%" />
+```
 
 优势：
 
@@ -214,9 +229,11 @@ SaaS作为租户系统，需要为租户（C端）提供注册、购买、业务
 
 ##### **8.2.2 共享模式**
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjZyt3QP1RJScyyF1LTYWEfdgV4FGSLqdzUB7ib9Xv7HCsSqicctvOEMag/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass8 from '/img/docs/knowledge/whatsass/What-Sass-8.png';
 
-  
+<img src={whatSass8} alt="What-Sass-8" width="80%" />
+```
 
 优势：
 
@@ -234,9 +251,11 @@ SaaS作为租户系统，需要为租户（C端）提供注册、购买、业务
 
 ##### **8.2.3 分域隔离模式**
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjLW0EWU0whAoyvkrCYL8bf41N5s3vib79EtliceqDibwTWibcSlOjzLr1Pw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass9 from '/img/docs/knowledge/whatsass/What-Sass-9.png';
 
-  
+<img src={whatSass9} alt="What-Sass-9" width="80%" />
+```
 
 ### **8.3 多租户系统需要具备的能力**
 
@@ -251,4 +270,8 @@ SaaS作为租户系统，需要为租户（C端）提供注册、购买、业务
 
 ### **8.4 多租户系统应用架构图**
 
-<!-- ![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/knmrNHnmCLH7m9ibKJ8tNlKrDfZM3icwicjntcst5z8stmbL8NJVlDmZXuKO0Nf1oBmaIInE9xWZjM2icCHP44rmng/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1) -->
+```mdx-code-block
+import whatSass10 from '/img/docs/knowledge/whatsass/What-Sass-10.png';
+
+<img src={whatSass10} alt="What-Sass-10" width="80%" />
+```

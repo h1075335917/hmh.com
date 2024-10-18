@@ -98,12 +98,6 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "example",
-          position: "left",
-          label: "示例",
-        },
-        {
-          type: "docSidebar",
           sidebarId: "java",
           position: "left",
           label: "Java",
@@ -152,11 +146,23 @@ const config: Config = {
         },
         {
           type: "docSidebar",
+          sidebarId: "knowledge",
+          position: "left",
+          label: "知识",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "other",
           position: "left",
           label: "其他",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        {
+          type: "docSidebar",
+          sidebarId: "example",
+          position: "right",
+          label: "示例",
+        },
+        { to: "/blog", label: "Blog", position: "right" },
         {
           href: "https://github.com/mhuahe/mhuahe.com",
           label: "GitHub",

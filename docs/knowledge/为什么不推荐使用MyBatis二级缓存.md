@@ -1,5 +1,6 @@
 ---
-draft: true
+draft: false
+sidebar_position: 2
 ---
 
 # 为什么不推荐使用MyBatis二级缓存
@@ -80,7 +81,7 @@ ___
 ### **与springboot集成时一级缓存不生效原因**
 
 ```mdx-code-block
-import mybatisCache1 from '/img/docs/project/mybatiscache/Mybatis-Cache-1.webp';
+import mybatisCache1 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-1.webp';
 
 <img src={mybatisCache1} alt="Mybatis-Cache-1" width="80%" />
 ```
@@ -90,7 +91,7 @@ import mybatisCache1 from '/img/docs/project/mybatiscache/Mybatis-Cache-1.webp';
 当调用 mapper 的方法时，最终会执行到 `SqlSessionUtils` 的 `getSqlSession` 方法，在这个方法中会尝试在事务管理器中获取 SqlSession，如果没有开启事务，那么就会 new 一个 `DefaultSqlSession`。
 
 ```mdx-code-block
-import mybatisCache2 from '/img/docs/project/mybatiscache/Mybatis-Cache-2.webp';
+import mybatisCache2 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-2.webp';
 
 <img src={mybatisCache2} alt="Mybatis-Cache-2" width="80%" />
 ```
@@ -104,7 +105,7 @@ import mybatisCache2 from '/img/docs/project/mybatiscache/Mybatis-Cache-2.webp';
 加上 `@Transactional` 注解，看下效果：
 
 ```mdx-code-block
-import mybatisCache3 from '/img/docs/project/mybatiscache/Mybatis-Cache-3.webp';
+import mybatisCache3 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-3.webp';
 
 <img src={mybatisCache3} alt="Mybatis-Cache-3" width="80%" />
 ```
@@ -112,7 +113,7 @@ import mybatisCache3 from '/img/docs/project/mybatiscache/Mybatis-Cache-3.webp';
 没错，的确生效了。在代码中可以看到，从事务管理器中，获取到了 SqlSession：
 
 ```mdx-code-block
-import mybatisCache4 from '/img/docs/project/mybatiscache/Mybatis-Cache-4.webp';
+import mybatisCache4 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-4.webp';
 
 <img src={mybatisCache4} alt="Mybatis-Cache-4" width="80%" />
 ```
@@ -122,7 +123,7 @@ import mybatisCache4 from '/img/docs/project/mybatiscache/Mybatis-Cache-4.webp';
 `SqlSessionUtils` 中，在获取到 `SqlSession` 后，会调用 `registerSessionHolder` 方法注册 `SessionHolder` 到事务管理器：
 
 ```mdx-code-block
-import mybatisCache5 from '/img/docs/project/mybatiscache/Mybatis-Cache-5.webp';
+import mybatisCache5 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-5.webp';
 
 <img src={mybatisCache5} alt="Mybatis-Cache-5" width="80%" />
 ```
@@ -130,7 +131,7 @@ import mybatisCache5 from '/img/docs/project/mybatiscache/Mybatis-Cache-5.webp';
 具体是在 `TransactionSynchronizationManager` 的 `bindResource` 方法中操作的，将 `SessionHolder` 保存到线程本地变量`(ThreadLocal) resources` 中，这是每个线程独享的。
 
 ```mdx-code-block
-import mybatisCache6 from '/img/docs/project/mybatiscache/Mybatis-Cache-6.webp';
+import mybatisCache6 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-6.webp';
 
 <img src={mybatisCache6} alt="Mybatis-Cache-6" width="80%" />
 ```
@@ -142,7 +143,7 @@ import mybatisCache6 from '/img/docs/project/mybatiscache/Mybatis-Cache-6.webp';
 至于缓存查询数据的地方，是在 `BaseExecutor` 中的 `queryFromDatabase` 方法中。执行 doQuery 从数据库中查询数据后，会立马缓存到 `localCache(PerpetualCache类型)` 中：
 
 ```mdx-code-block
-import mybatisCache7 from '/img/docs/project/mybatiscache/Mybatis-Cache-7.webp';
+import mybatisCache7 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-7.webp';
 
 <img src={mybatisCache7} alt="Mybatis-Cache-7" width="80%" />
 ```
@@ -175,7 +176,7 @@ public class ItemController {
 当发送两次 get 请求时（两个不同的会话），通过日志可以发现第二次查询使用的是缓存
 
 ```mdx-code-block
-import mybatisCache8 from '/img/docs/project/mybatiscache/Mybatis-Cache-8.webp';
+import mybatisCache8 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-8.webp';
 
 <img src={mybatisCache8} alt="Mybatis-Cache-8" width="80%" />
 ```
@@ -195,7 +196,7 @@ mybatis-plus:
 2）Mapper 接口上添加 `@CacheNamespace` 注解
 
 ```mdx-code-block
-import mybatisCache9 from '/img/docs/project/mybatiscache/Mybatis-Cache-9.webp';
+import mybatisCache9 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-9.webp';
 
 <img src={mybatisCache9} alt="Mybatis-Cache-9" width="80%" />
 ```
@@ -203,7 +204,7 @@ import mybatisCache9 from '/img/docs/project/mybatiscache/Mybatis-Cache-9.webp';
 3）实体类实现 `Serializable` 接口
 
 ```mdx-code-block
-import mybatisCache10 from '/img/docs/project/mybatiscache/Mybatis-Cache-10.webp';
+import mybatisCache10 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-10.webp';
 
 <img src={mybatisCache10} alt="Mybatis-Cache-10" width="80%" />
 ```
@@ -237,7 +238,7 @@ import mybatisCache10 from '/img/docs/project/mybatiscache/Mybatis-Cache-10.webp
 在查询到结果后，会调用 SqlSession 的 commit 方法进行提交（如果开启事务的话，提交 SqlSession 走的不是这里了，但最终填充二级缓存的地方是一样的。）：
 
 ```mdx-code-block
-import mybatisCache11 from '/img/docs/project/mybatiscache/Mybatis-Cache-11.webp';
+import mybatisCache11 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-11.webp';
 
 <img src={mybatisCache11} alt="Mybatis-Cache-11" width="80%" />
 ```
@@ -245,7 +246,7 @@ import mybatisCache11 from '/img/docs/project/mybatiscache/Mybatis-Cache-11.webp
 在此方法中，最终会调用到 `TransactionalCache` 的 `flushPendingEntries` 方法中填充二级缓存：
 
 ```mdx-code-block
-import mybatisCache12 from '/img/docs/project/mybatiscache/Mybatis-Cache-12.webp';
+import mybatisCache12 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-12.webp';
 
 <img src={mybatisCache12} alt="Mybatis-Cache-12" width="80%" />
 ```
@@ -261,7 +262,7 @@ springboot 集成 mybatis 的话，如果没有开启事务，每次执行查询
 如果能在二级缓存中查询到，就直接返回了，不需要访问数据库。
 
 ```mdx-code-block
-import mybatisCache13 from '/img/docs/project/mybatiscache/Mybatis-Cache-13.webp';
+import mybatisCache13 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-13.webp';
 
 <img src={mybatisCache13} alt="Mybatis-Cache-13" width="80%" />
 ```
@@ -269,7 +270,7 @@ import mybatisCache13 from '/img/docs/project/mybatiscache/Mybatis-Cache-13.webp
 具体的调用层数实在太多，用到了装饰者模式，最终是在 `PerpetualCache` 中获取缓存的：
 
 ```mdx-code-block
-import mybatisCache14 from '/img/docs/project/mybatiscache/Mybatis-Cache-14.webp';
+import mybatisCache14 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-14.webp';
 
 <img src={mybatisCache14} alt="Mybatis-Cache-14" width="80%" />
 ```
@@ -277,7 +278,7 @@ import mybatisCache14 from '/img/docs/project/mybatiscache/Mybatis-Cache-14.webp
 打印日志是在 `LoggingCache` 中：
 
 ```mdx-code-block
-import mybatisCache15 from '/img/docs/project/mybatiscache/Mybatis-Cache-15.webp';
+import mybatisCache15 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-15.webp';
 
 <img src={mybatisCache15} alt="Mybatis-Cache-15" width="80%" />
 ```
@@ -335,7 +336,7 @@ void test() {
 执行日志如下：
 
 ```mdx-code-block
-import mybatisCache16 from '/img/docs/project/mybatiscache/Mybatis-Cache-16.webp';
+import mybatisCache16 from '/img/docs/knowledge/mybatiscache/Mybatis-Cache-16.webp';
 
 <img src={mybatisCache16} alt="Mybatis-Cache-16" width="80%" />
 ```
