@@ -16,6 +16,7 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-pre-padding: 1px;
+  --primary-neutral-600: #4d5761;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -76,3 +77,21 @@ div[class^='announcementBar_'] {
   font-weight: bold;
 }
 
+/* 侧边栏图标 */
+.menu__list .menu__list-item .menu__link div {
+  display: flex;
+  align-items: center;
+}
+
+.menu__list .menu__list-item .menu__link div svg {
+  margin-right: 0.5rem;
+  width: 1.25rem;
+}
+
+.menu__list .menu__list-item .menu__link div svg path {
+  stroke: var(--primary-neutral-600);
+}
+
+.connectors-icon .menu__list-item-collapsible .menu__link svg path {
+  stroke-width: 0;
+}
