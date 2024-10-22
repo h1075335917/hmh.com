@@ -1,6 +1,6 @@
 # JAVA-加密方式
 
-### 别用MD5加密密码了
+## 别用MD5加密密码了
 
 解释
 
@@ -43,7 +43,8 @@
 >  }
 > ```
 
-### [MD5](https://blog.csdn.net/yb546822612/article/details/103953034)
+## MD5
+https://blog.csdn.net/yb546822612/article/details/103953034
 
 ```
 1.MD5加密
@@ -241,7 +242,7 @@ public void md() {
 }
 ```
 
-### DES
+## DES
 
 ```
 2. DES加密算法--3DES--AES
@@ -614,7 +615,7 @@ public void des3() {
 }
 ```
 
-### RSA
+## RSA
 
 ```
 3. RSA加密算法
@@ -852,14 +853,14 @@ public void rsa() {
 }
 ```
 
-### IDEA
+## IDEA
 
 ```
 4.IDEA加密算法
 IDEA（International Data Encryption Algorithm）国际数据加密算法：使⽤ 128 位密钥提供⾮常强的安全性。
 ```
 
-### DSA
+## DSA
 
 ```
 5. DSA加密算法
@@ -1005,7 +1006,7 @@ public void dsa() {
 }
 ```
 
-### AES
+## AES
 
 ```
 6.AES加密算法
@@ -1230,7 +1231,7 @@ public void aes() {
 }
 ```
 
-### Elgamal
+## Elgamal
 
 ```
 7. Elgamal加密算法
@@ -1399,7 +1400,7 @@ public void elgamal() {
 }
 ```
 
-### Base64
+## Base64
 
 ```
 8. Base64加密算法
@@ -1466,7 +1467,7 @@ public void base64() {
 }
 ```
 
-### SHA
+## SHA
 
 ```
 9. SHA1加密算法
@@ -1577,14 +1578,14 @@ public void sha() {
 }
 ```
 
-### PKCS
+## PKCS
 
 ```
 10. PKCS加密算法
 PKCS是由美国RSA数据安全公司及其合作伙伴制定的⼀组公钥密码学标准，其中包括证书申请、证书更新、证书作废表发布、扩展证书内容以及数字签名、数字信封的格式等⽅⾯的⼀系列相关协议。
 ```
 
-### ECDSA
+## ECDSA
 
 ```
 11.ECDSA
@@ -1731,7 +1732,7 @@ public void ecdsa() {
 }
 ```
 
-### DH
+## DH
 
 ```
 非对称加密算法
@@ -2028,7 +2029,7 @@ public void dh() {
 }
 ```
 
-### PBE
+## PBE
 
 ```
 PBE算法结合了消息摘要算法和对称加密算法的优点，是一种特殊的对称加密算法。Password Based Encryption，基于口令的加密。因为口令是比较好记的，就容易通过穷举、猜测的方式获得口令——针对这种情况，我们采用的方式是加盐（Salt），通过加入一些额外的内容（通常是随机字符）去扰乱。实现的方式有2种：JDK和BC。
@@ -2130,7 +2131,7 @@ public void pbe() {
 }
 ```
 
-### MAC
+## MAC
 
 ```
 消息摘要算法——MAC
@@ -2218,7 +2219,7 @@ public void mac() {
 }
 ```
 
-### 哈希算法
+## 哈希算法
 
 > 哈希算法可以简单分为两类
 >
@@ -2232,7 +2233,7 @@ public void mac() {
 > >
 > > 3. 除了这两种之外，还有一些特殊的哈希算法，例如安全性更高的**慢哈希算法**。
 
-### 私钥公钥签证加密
+## 私钥公钥签证加密
 
 ```java
 //utf-8编码/解密
@@ -2498,3 +2499,222 @@ private static String decryptJWE(String data){
     return null;
 }
 ```
+
+## 雪花算法
+
+```mdx-code-block
+import Copyright from '@site/src/components/Copyright';
+
+<Copyright behavior="参考" description="【Java全栈知识体系】分布式算法-Snowflake算法" url="https://pdai.tech/md/algorithm/alg-domain-id-snowflake.html" />
+```
+
+> Snowflake，雪花算法是由Twitter开源的分布式ID生成算法，以划分命名空间的方式将 64-bit位分割成多个部分，每个部分代表不同的含义。这种就是将64位划分为不同的段，每段代表不同的涵义，基本就是时间戳、机器ID和序列数。为什么如此重要？因为它提供了一种ID生成及生成的思路，当然这种方案就是需要考虑时钟回拨的问题以及做一些 buffer的缓冲设计提高性能。
+
+Snowflake，雪花算法是由Twitter开源的分布式ID生成算法，以划分命名空间的方式将 64-bit位分割成多个部分，每个部分代表不同的含义。而 Java中64bit的整数是Long类型，所以在 Java 中 SnowFlake 算法生成的 ID 就是 long 来存储的。
+
+- `第1位占用1bit`，其值始终是0，可看做是符号位不使用。
+- `第2位开始的41位是时间戳`，41-bit位可表示2^41个数，每个数代表毫秒，那么雪花算法可用的时间年限是`(1L<<41)/(1000L360024*365)\=69` 年的时间。
+- `中间的10-bit位可表示机器数`，即2^10 = 1024台机器，但是一般情况下我们不会部署这么台机器。如果我们对IDC（互联网数据中心）有需求，还可以将 10-bit 分 5-bit 给 IDC，分5-bit给工作机器。这样就可以表示32个IDC，每个IDC下可以有32台机器，具体的划分可以根据自身需求定义。
+- `最后12-bit位是自增序列`，可表示2^12 = 4096个数。
+
+这样的划分之后相当于在一毫秒一个数据中心的一台机器上可产生4096个有序的不重复的ID。但是我们 IDC 和机器数肯定不止一个，所以毫秒内能生成的有序ID数是翻倍的。
+
+```mdx-code-block
+import snowflake from '/img/docs/java/encryption/Encryption-Snowflake.png';
+
+<img src={snowflake} alt="Snowflake" width="50%" />
+```
+
+Snowflake 的Twitter官方原版是用Scala写的，对Scala语言有研究的同学可以去阅读下，以下是 Java 版本的写法。
+
+```java
+package com.jajian.demo.distribute;
+
+/**
+ * Twitter_Snowflake<br>
+ * SnowFlake的结构如下(每部分用-分开):<br>
+ * 0 - 0000000000 0000000000 0000000000 0000000000 0 - 00000 - 00000 - 000000000000 <br>
+ * 1位标识，由于long基本类型在Java中是带符号的，最高位是符号位，正数是0，负数是1，所以id一般是正数，最高位是0<br>
+ * 41位时间截(毫秒级)，注意，41位时间截不是存储当前时间的时间截，而是存储时间截的差值（当前时间截 - 开始时间截)
+ * 得到的值），这里的的开始时间截，一般是我们的id生成器开始使用的时间，由我们程序来指定的（如下下面程序IdWorker类的startTime属性）。41位的时间截，可以使用69年，年T = (1L << 41) / (1000L * 60 * 60 * 24 * 365) = 69<br>
+ * 10位的数据机器位，可以部署在1024个节点，包括5位datacenterId和5位workerId<br>
+ * 12位序列，毫秒内的计数，12位的计数顺序号支持每个节点每毫秒(同一机器，同一时间截)产生4096个ID序号<br>
+ * 加起来刚好64位，为一个Long型。<br>
+ * SnowFlake的优点是，整体上按照时间自增排序，并且整个分布式系统内不会产生ID碰撞(由数据中心ID和机器ID作区分)，并且效率较高，经测试，SnowFlake每秒能够产生26万ID左右。
+ */
+public class SnowflakeDistributeId {
+
+
+    // ==============================Fields===========================================
+    /**
+     * 开始时间截 (2015-01-01)
+     */
+    private final long twepoch = 1420041600000L;
+
+    /**
+     * 机器id所占的位数
+     */
+    private final long workerIdBits = 5L;
+
+    /**
+     * 数据标识id所占的位数
+     */
+    private final long datacenterIdBits = 5L;
+
+    /**
+     * 支持的最大机器id，结果是31 (这个移位算法可以很快的计算出几位二进制数所能表示的最大十进制数)
+     */
+    private final long maxWorkerId = -1L ^ (-1L << workerIdBits);
+
+    /**
+     * 支持的最大数据标识id，结果是31
+     */
+    private final long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);
+
+    /**
+     * 序列在id中占的位数
+     */
+    private final long sequenceBits = 12L;
+
+    /**
+     * 机器ID向左移12位
+     */
+    private final long workerIdShift = sequenceBits;
+
+    /**
+     * 数据标识id向左移17位(12+5)
+     */
+    private final long datacenterIdShift = sequenceBits + workerIdBits;
+
+    /**
+     * 时间截向左移22位(5+5+12)
+     */
+    private final long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
+
+    /**
+     * 生成序列的掩码，这里为4095 (0b111111111111=0xfff=4095)
+     */
+    private final long sequenceMask = -1L ^ (-1L << sequenceBits);
+
+    /**
+     * 工作机器ID(0~31)
+     */
+    private long workerId;
+
+    /**
+     * 数据中心ID(0~31)
+     */
+    private long datacenterId;
+
+    /**
+     * 毫秒内序列(0~4095)
+     */
+    private long sequence = 0L;
+
+    /**
+     * 上次生成ID的时间截
+     */
+    private long lastTimestamp = -1L;
+
+    //==============================Constructors=====================================
+
+    /**
+     * 构造函数
+     *
+     * @param workerId     工作ID (0~31)
+     * @param datacenterId 数据中心ID (0~31)
+     */
+    public SnowflakeDistributeId(long workerId, long datacenterId) {
+        if (workerId > maxWorkerId || workerId < 0) {
+            throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
+        }
+        if (datacenterId > maxDatacenterId || datacenterId < 0) {
+            throw new IllegalArgumentException(String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
+        }
+        this.workerId = workerId;
+        this.datacenterId = datacenterId;
+    }
+
+    // ==============================Methods==========================================
+
+    /**
+     * 获得下一个ID (该方法是线程安全的)
+     *
+     * @return SnowflakeId
+     */
+    public synchronized long nextId() {
+        long timestamp = timeGen();
+
+        //如果当前时间小于上一次ID生成的时间戳，说明系统时钟回退过这个时候应当抛出异常
+        if (timestamp < lastTimestamp) {
+            throw new RuntimeException(
+                    String.format("Clock moved backwards.  Refusing to generate id for %d milliseconds", lastTimestamp - timestamp));
+        }
+
+        //如果是同一时间生成的，则进行毫秒内序列
+        if (lastTimestamp == timestamp) {
+            sequence = (sequence + 1) & sequenceMask;
+            //毫秒内序列溢出
+            if (sequence == 0) {
+                //阻塞到下一个毫秒,获得新的时间戳
+                timestamp = tilNextMillis(lastTimestamp);
+            }
+        }
+        //时间戳改变，毫秒内序列重置
+        else {
+            sequence = 0L;
+        }
+
+        //上次生成ID的时间截
+        lastTimestamp = timestamp;
+
+        //移位并通过或运算拼到一起组成64位的ID
+        return ((timestamp - twepoch) << timestampLeftShift) //
+                | (datacenterId << datacenterIdShift) //
+                | (workerId << workerIdShift) //
+                | sequence;
+    }
+
+    /**
+     * 阻塞到下一个毫秒，直到获得新的时间戳
+     *
+     * @param lastTimestamp 上次生成ID的时间截
+     * @return 当前时间戳
+     */
+    protected long tilNextMillis(long lastTimestamp) {
+        long timestamp = timeGen();
+        while (timestamp <= lastTimestamp) {
+            timestamp = timeGen();
+        }
+        return timestamp;
+    }
+
+    /**
+     * 返回以毫秒为单位的当前时间
+     *
+     * @return 当前时间(毫秒)
+     */
+    protected long timeGen() {
+        return System.currentTimeMillis();
+    }
+}
+```
+
+测试的代码如下
+
+```java
+public static void main(String[] args) {
+    SnowflakeDistributeId idWorker = new SnowflakeDistributeId(0, 0);
+    for (int i = 0; i < 1000; i++) {
+        long id = idWorker.nextId();
+//      System.out.println(Long.toBinaryString(id));
+        System.out.println(id);
+    }
+}
+```
+
+雪花算法提供了一个很好的设计思想，雪花算法生成的ID是趋势递增，不依赖数据库等第三方系统，以服务的方式部署，稳定性更高，生成ID的性能也是非常高的，而且可以根据自身业务特性分配bit位，非常灵活。
+
+但是雪花算法强依赖机器时钟，如果机器上时钟回拨，会导致发号重复或者服务会处于不可用状态。如果恰巧回退前生成过一些ID，而时间回退后，生成的ID就有可能重复。官方对于此并没有给出解决方案，而是简单的抛错处理，这样会造成在时间被追回之前的这段时间服务不可用。
+
+很多其他类雪花算法也是在此思想上的设计然后改进规避它的缺陷，`百度 UidGenerator` 和 `美团分布式ID生成系统 Leaf`等算法中snowflake模式都是在 snowflake 的基础上演进出来的。
