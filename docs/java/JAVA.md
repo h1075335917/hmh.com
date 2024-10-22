@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # JAVA
 
-### 新闻
+## 新闻
 
-#### 移除Netflix
+### 移除Netflix
 
 Netflix的产品组件链 
 
@@ -38,7 +38,7 @@ springcloud服务
 - springboot-admin监控中心服务：统一界面管理，查看各个服务运行状态actuator健康检查。
 - sentinel高可用流量管理框架： 以流量为切入点，限流、流量整形、熔断降级、系统负载保护、热点防护。
 
-#### 移除oauth2
+### 移除oauth2
 
 停止版本
 
@@ -85,21 +85,21 @@ springcloud服务
   </dependency>
   ```
 
-#### servlet
+### servlet
 
 在 Servlet 3.1 规范之前的版本，请求是只能被 Servlet 同步阻塞处理完成，返回结果给前端。
 
 在 Servlet 3.1 规范开始的版本，请求是允许被 Servlet 丢到线程池中处执行，等到执行完毕，异步回调结果给 Servlet ，最后返回给前端。
 
-#### GLIB
+### GLIB
 
 CGLIB已经不维护了，建议使用ByteBuddy。
 
 ---
 
-### 基础知识点
+## 基础知识点
 
-#### 多态
+### 多态
 
 ```sql
 -- 强转
@@ -113,7 +113,7 @@ if(animal instanof Dog){
 }
 ```
 
-#### 时间
+### 时间
 
 ```java
 /**
@@ -169,9 +169,9 @@ LocalDate.minus()
 ```
 
 ---
-#### 集合
+### 集合
 
-##### List
+#### List
 
 > List实现类
 
@@ -181,7 +181,7 @@ LocalDate.minus()
 3.LinkedList 底层链表
 ```
 
-##### Set
+#### Set
 
 > Set实现类
 
@@ -191,7 +191,7 @@ LocalDate.minus()
 3.TreeSet 底层红黑树，唯一，有序。可实现Comparable进行元素自然排序。集合接收Comparator实现类对象进行集合比较器排序
 ```
 
-##### Map
+#### Map
 
 > [!tip]
 >
@@ -256,7 +256,7 @@ for (Iterator<Map.Entry<String, String>> it = map.entrySet().iterator(); it.hasN
 }
 ```
 
-##### 集合API
+#### 集合API
 
 ```sql
 -- 数组排序
@@ -294,7 +294,7 @@ String str = StringUtils.json(list.toArray(), ",");
 List<Integer> collect = Arrays.stream(arr).boxed().collect(Collectors.toList());
 ```
 ---
-#### BigDecimal
+### BigDecimal
 
 | 字段              | 字段详情                                                     |
 | :---------------- | :----------------------------------------------------------- |
@@ -309,7 +309,7 @@ List<Integer> collect = Arrays.stream(arr).boxed().collect(Collectors.toList());
 
 ---
 
-#### 函数式接口
+### 函数式接口
 
 > 使用注解 `@FunctionalInterface` 标识，并且只包含一个抽象方法的接口是函数式接口。
 
@@ -320,7 +320,7 @@ List<Integer> collect = Arrays.stream(arr).boxed().collect(Collectors.toList());
 
 ---
 
-#### lambda
+### lambda
 
 ```java
 //无参
@@ -350,7 +350,7 @@ Function<String, Weapon> elfWeaponFunction = new Function<String, Weapon>() {
 
 ---
 
-#### 代码规范
+### 代码规范
 
 ```sql
 -- MVC分层可以分四层
@@ -404,7 +404,7 @@ update_time 字段 datetime 类型，默认值 CURRENT_TIMESTAMP, On update CURR
 
 ---
 
-#### active配置
+### active配置
 
 ```sql
 -- 可查看类Environment加载的配置详情
@@ -433,7 +433,7 @@ spring.profiles.include:
 按照顺序，后面的覆盖前面的。
 ```
 
-### JSqlParser
+## JSqlParser
 
 > 依赖了JSqlParser
 >
@@ -479,13 +479,13 @@ if (statement instanceof Select) {
 }
 ```
 
-### IO
+## IO
 
 > [!tip]
 >
 > Windows平台使用`\`作为路径分隔符，在Java字符串中需要用`\\`表示一个`\`。Linux平台使用`/`作为路径分隔符：
 
-#### File
+### File
 
 > `File`对象既可以表示文件，也可以表示目录。特别要注意的是，构造一个`File`对象，即使传入的文件或目录不存在，代码也不会出错，因为构造一个`File`对象，并不会导致任何磁盘操作。只有当我们调用`File`对象的某些方法的时候，才真正进行磁盘操作。
 
@@ -534,7 +534,7 @@ public static void main(String[] args) throws IOException {
 }
 ```
 
-#### InputStream
+### InputStream
 
 > `InputStream`并不是一个接口，而是一个抽象类，它是所有输入流的超类。
 
@@ -577,7 +577,7 @@ public void readFile() throws IOException {
 }
 ```
 
-#### OutputStream
+### OutputStream
 
 > 和`InputStream`类似，`OutputStream`也是抽象类，它是所有输出流的超类。
 
@@ -604,7 +604,7 @@ public void writeFile() throws IOException {
 }
 ```
 
-#### Filter模式
+### Filter模式
 
 > 通过一个“基础”组件再叠加各种“附加”功能组件的模式，称之为Filter模式（或者装饰器模式：Decorator）
 
@@ -613,7 +613,7 @@ Java的IO标准库使用Filter模式为`InputStream`和`OutputStream`增加功�
 - 可以把一个`InputStream`和任意个`FilterInputStream`组合；
 - 可以把一个`OutputStream`和任意个`FilterOutputStream`组合。
 
-#### Zip
+### Zip
 
 读取zip包
 
@@ -659,7 +659,7 @@ import inputStream from '/img/docs/java/java/JAVA-InputStream.png';
 <img src={inputStream} alt="JAVA-InputStream" width="50%" />
 ```
 
-#### 读取classpath
+### 读取classpath
 
 > 从classpath读取文件就可以避免不同环境下文件路径不一致的问题：如果我们把`default.properties`文件放到classpath中，就不用关心它的实际存放路径。
 >
@@ -681,7 +681,7 @@ props.load(Files.newInputStream(Paths.get("/default.properties")));
 props.load(Files.newInputStream(Paths.get("./conf.properties")));
 ```
 
-#### 序列化
+### 序列化
 
 > 序列化是指把一个Java对象变成二进制内容，本质上就是一个`byte[]`数组。
 >
@@ -741,7 +741,7 @@ public class Person implements Serializable {
 - **继承层次中的非可序列化父类**：如果一个类实现了 `Serializable` 接口，但它的父类没有实现 `Serializable` 接口，那么在反序列化过程中，会调用该非可序列化父类的无参构造函数。如果该父类没有无参构造函数，则会抛出 `InvalidClassException`。
 - **自定义反序列化**：如果一个类定义了 `private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException` 方法，则可以在反序列化过程中执行自定义逻辑，包括调用构造函数或者初始化对象状态。
 
-#### Reader
+### Reader
 
 > `Reader`是Java的IO库提供的另一个输入流接口。和`InputStream`的区别是，`InputStream`是一个字节流，即以`byte`为单位读取，而`Reader`是一个字符流，即以`char`为单位读取。
 >
@@ -770,7 +770,7 @@ try (Reader reader = new InputStreamReader(new FileInputStream("src/readme.txt")
 }
 ```
 
-#### Writer
+### Writer
 
 ```java
 try (Writer writer = new FileWriter("readme.txt", StandardCharsets.UTF_8)) {
@@ -794,7 +794,7 @@ try (Writer writer = new OutputStreamWriter(new FileOutputStream("readme.txt"), 
 
 :::
 
-#### PrintStream和PrintWriter
+### PrintStream和PrintWriter
 
 > `PrintStream`是一种`FilterOutputStream`，它在`OutputStream`的接口上，额外提供了一些写入各种数据类型的方法：
 
@@ -824,7 +824,7 @@ try (PrintWriter pw = new PrintWriter(buffer)) {
 System.out.println(buffer.toString());
 ```
 
-#### Files
+### Files
 
 Java 7开始，提供了`Files`这个工具类，能极大地方便我们读写文件。
 
@@ -864,7 +864,7 @@ Files.write(Path.of("/path/to/file.txt"), lines);
 
 ---
 
-### stream
+## stream
 
 ```sql
 -- Stream（流）是一个来自数据源的元素队列，它可以支持聚合操作。
@@ -872,7 +872,7 @@ Files.write(Path.of("/path/to/file.txt"), lines);
 聚合操作：对Stream对象进行处理后使得Stream对象返回指定规则数据的操作称之为聚合操作，比如filter、map、limit、sorted等都是聚合操作
 ```
 
-#### Stream对象的创建
+### Stream对象的创建
 
 ```sql
 -- Stream对象分为两种，一种串行的流对象(顺序单线程)，一种并行的流对象（多线程）
@@ -883,7 +883,7 @@ Stream<UmsPermission> stream = permissionList.stream();
 tream<UmsPermission> parallelStream = permissionList.parallelStream();
 ```
 
-#### filter
+### filter
 
 ```sql
 -- 对Stream中的元素进行过滤操作，当设置条件返回true时返回相应元素
@@ -893,7 +893,7 @@ List<UmsPermission> dirList = permissionList.stream()
     .collect(Collectors.toList());
 ```
 
-#### map
+### map
 
 ```sql
 -- 对Stream中的元素进行转换处理后获取。比如可以将UmsPermission对象转换成Long对象。 我们经常会有这样的需求：需要把某些对象的id提取出来，然后根据这些id去查询其他对象，这时可以使用此方法
@@ -903,9 +903,9 @@ List<Long> idList = permissionList.stream()
     .collect(Collectors.toList());
 ```
 
-#### flatMap
+### flatMap
 
-#### limit
+### limit
 
 ```sql
 -- 从Stream中获取指定数量的元素
@@ -915,7 +915,7 @@ List<UmsPermission> firstFiveList = permissionList.stream()
     .collect(Collectors.toList());
 ```
 
-#### count
+### count
 
 ```sql
 -- 仅获取Stream中元素的个数
@@ -925,7 +925,7 @@ long dirPermissionCount = permissionList.stream()
     .count();
 ```
 
-#### sorted
+### sorted
 
 ```sql
 -- 对Stream中元素按指定规则进行排序
@@ -935,7 +935,7 @@ List<UmsPermission> sortedList = permissionList.stream()
     .collect(Collectors.toList());
 ```
 
-#### skip
+### skip
 
 ```sql
 -- 跳过指定个数的Stream中元素，获取后面的元素
@@ -945,7 +945,7 @@ List<UmsPermission> skipList = permissionList.stream()
     .collect(Collectors.toList());
 ```
 
-#### List转成map
+### List转成map
 
 ```sql
 -- 有时候我们需要反复对List中的对象根据id进行查询，我们可以先把该List转换为以id为key的map结构，然后再通过map.get(id)来获取对象，这样比较方便
@@ -976,7 +976,7 @@ Map<String, List<Device>> groupByTime = list.stream()             .collect(Colle
 //list流
 ```
 
-#### parallelStream
+### parallelStream
 
 ```sql
 -- 与stream流区别
@@ -985,7 +985,7 @@ stream是顺序流，由主线程按顺序对流执行操作，而parallelStream
 
 ---
 
-### 泛型
+## 泛型
 
 > [!tip]
 >
@@ -1006,7 +1006,7 @@ stream是顺序流，由主线程按顺序对流执行操作，而parallelStream
 >   }
 >   ```
 
-#### 擦拭法
+### 擦拭法
 
 > 泛型是一种类似”模板代码“的技术，不同语言的泛型实现方式不一定相同。Java语言的泛型实现方式是擦拭法（Type Erasure）。所谓擦拭法是指，虚拟机对泛型其实一无所知，所有的工作都是编译器做的。
 
@@ -1132,7 +1132,7 @@ import typeSystem from '/img/docs/java/java/JAVA-TypeSystem.png';
 <img src={typeSystem} alt="JAVA-TypeSystem" width="50%" />
 ```
 
-#### 上界通配符（? extends T）
+### 上界通配符（? extends T）
 
 > [!important]
 >
@@ -1147,7 +1147,7 @@ import typeSystem from '/img/docs/java/java/JAVA-TypeSystem.png';
 > - 允许调用`get()`方法获取`Integer`的引用；
 > - 不允许调用`set(? extends Integer)`方法并传入任何`Integer`的引用（`null`除外）。
 
-##### 下界通配符（? super T）
+#### 下界通配符（? super T）
 
 > [!important]
 >
@@ -1183,7 +1183,7 @@ import typeSystem from '/img/docs/java/java/JAVA-TypeSystem.png';
 > }
 > ```
 
-#### 无限定通配符
+### 无限定通配符
 
 Java的泛型还允许使用无限定通配符（Unbounded Wildcard Type），即只定义一个`?`：`void sample(Pair<?> p);`。
 
@@ -1219,7 +1219,7 @@ public static void main(String[] args) {
 }
 ```
 
-#### 示例
+### 示例
 
 > 如果类本身不能使用泛型（例如，如果你正在使用一个不允许泛型的旧Java版本，或者是出于设计上的考虑），但是你仍然希望 `calculateYoy` 方法能够灵活地处理不同类型的列表，你可以将泛型放在方法级别。
 >
@@ -1242,7 +1242,7 @@ private <T> void calculateYoy(List<? extends T> list, Function<? super T, String
 }
 ```
 
-#### 泛型和反射
+### 泛型和反射
 
 Java的部分反射API也是泛型。例如：`Class<T>`就是泛型：
 
@@ -1334,9 +1334,9 @@ public class Main {
 }
 ```
 
-### 注解 
+## 注解 
 
-#### @Inherited
+### @Inherited
 
 ```sql
 -- 元注解
@@ -1346,7 +1346,7 @@ public class Main {
 RUNTIME：确保它可以在运行时被反射访问
 ```
 
-#### @Intercepts @Signature
+### @Intercepts @Signature
 
 ```sql
 -- mybatis拦截器可以拦截如下4中类型
@@ -1385,7 +1385,7 @@ plugin方法：让mybatis判断，是否要进行拦截，然后做出决定是�
 setProperties方法：拦截器需要一些变量对象，而且这个对象是支持可配置的
 ```
 
-#### @Conditional
+### @Conditional
 
 ```java
 //简单使用
@@ -1469,7 +1469,7 @@ public class CmdServiceConditionConfig {
 不是web应用
 ```
 
-#### @RequestMapping
+### @RequestMapping
 
 ```sql
 -- produces 指定Accept标头（指定返回类型）
@@ -1485,20 +1485,20 @@ public class CmdServiceConditionConfig {
     consumes="application/json")  
 ```
 
-#### @DependsOn
+### @DependsOn
 
 ```sql
 可以定义在类和方法上，意思是我这个组件要依赖于另一个组件，也就是说被依赖的组件会比该组件先注册到IOC容器中
 ```
 
-#### @PostConstruct 
+### @PostConstruct 
 
 ```mysql
 服务启动时执行该注解方法
 @PostConstruct注解的⽅法在加载类的构造函数之后执⾏，也就是在加载了构造函数之后
 ```
 
-#### @Async
+### @Async
 
 ```mysql
 1.异步线程
@@ -1511,7 +1511,7 @@ public class CmdServiceConditionConfig {
 在Spring里面，不论是事务注解还是异步注解，通通都是依靠AOP注入逻辑的，而内部方法调用是走不了代理的，所以这里的@Async压根就没生效，所以说这叫假想异步（同个类不生效）
 ```
 
-#### @Value
+### @Value
 
 ```mysql
 private static String appKey;
@@ -1521,14 +1521,14 @@ public static void setAppKey(String appKey) {
 }
 ```
 
-#### @PreAuthorize
+### @PreAuthorize
 
 ```mysql
 @PreAuthorize 注解，顾名思义是进入方法前的权限验证，@PreAuthorize 声明这个方法所需要的权限表达式，例如：@PreAuthorize("hasAuthority('sys:dept:delete')")，
 根据这个注解所需要的权限，再和当前登录的用户角色所拥有的权限对比，如果用户的角色权限集Set中有这个权限，则放行；没有，拒绝
 ```
 
-#### @Builder
+### @Builder
 
 ```sql
 @Builder 注解为类生成相对略微复杂的构建器 API
@@ -1539,7 +1539,7 @@ public static void setAppKey(String appKey) {
 它会生成一个全参的构造函数
 ```
 
-#### @within @target
+### @within @target
 
 ```sql
 @within() 和 @target的“作用域”有点像清朝的爵位和官位的“有效期”：
@@ -1565,7 +1565,7 @@ import withinAndtarget from '/img/docs/java/java/JAVA-withinAndtarget.png';
 <img src={withinAndtarget} alt="withinAndtarget" width="50%" />
 ```
 
-#### @Validated @Valid
+### @Validated @Valid
 
 ```sql
 -- 说明
@@ -1585,7 +1585,7 @@ springboot2.3版本后，web中不包含Validated校验依赖，需要手动添�
 如果校验失败，会抛出MethodArgumentNotValidException或者ConstraintViolationException异常
 ```
 
-##### 分组校验
+#### 分组校验
 
 ```java
 -- 分组校验
@@ -1600,7 +1600,7 @@ private UserIdCardVo userIdCardVo;
 不支持分组，所以对于所有校验标签里面添加了groups字段的都不会校验会跳过
 ```
 
-##### 嵌套校验
+#### 嵌套校验
 
 ```java
 /*
@@ -1618,7 +1618,7 @@ public static class Job {
 }
 ```
 
-##### 集合校验
+#### 集合校验
 
 ```java
 /*
@@ -1637,7 +1637,7 @@ public class ValidationList<E> implements List<E> {
 @RequestBody @Validated(UserDTO.Save.class) ValidationList<UserDTO> userList
 ```
 
-##### 自定义校验
+#### 自定义校验
 
 ```java
 /* 
@@ -1673,7 +1673,7 @@ public class EncryptIdValidator implements ConstraintValidator<EncryptId, String
 //这样我们就可以使用@EncryptId进行参数校验了
 ```
 
-##### 编程式校验
+#### 编程式校验
 
 ```sql
 @Autowired
@@ -1697,7 +1697,7 @@ public Result saveWithCodingValidate(@RequestBody UserDTO userDTO) {
 }
 ```
 
-##### 快速失败
+#### 快速失败
 
 ```java
 /*
@@ -1714,11 +1714,11 @@ public Validator validator() {
 }
 ```
 
-### 敏感词脱敏
+## 敏感词脱敏
 
 https://mp.weixin.qq.com/s/vVhB8uJBz4WMlOZHJ2Zbog
 
-### Jenkins自动化部署
+## Jenkins自动化部署
 
 ```sql
 -- 部署后端
@@ -1727,7 +1727,7 @@ https://www.macrozheng.com/mall/reference/jenkins.html
 https://www.macrozheng.com/mall/reference/jenkins_vue.html
 ```
 
-### SPI机制
+## SPI机制
 
 ```java
 //SPI ，全称为 Service Provider Interface，是一种服务发现机制。它通过在ClassPath路径下的META-INF/services文件夹查找文件，自动加载文件里所定义的类。
@@ -1777,7 +1777,7 @@ SpiImpl2.execute()
 总结：Java中的SPI提供了一种比较特别的服务发现和调用机制，通过接口灵活的将服务调用与服务提供者分离，用于提供给第三方实现扩展时还是很方便的。但是也有缺点，比方说一旦加载一个接口，就会把所有实现类都加载进来，可能会加载到不需要的冗余服务。不过站在整体角度上，还是给我们提供了一种非常不错的框架扩展、集成的思路。
 ```
 
-### JNA JNI
+## JNA JNI
 
 ```sql
 -- JNA(Java Native Access "JNA(Java Native Access)"
@@ -1787,7 +1787,7 @@ SpiImpl2.execute()
 即 Java 本地接口，它建立了 Java 与其他编程语言的桥梁，允许 Java 程序调用其他语言（尤其是 C/C++ ）编写的程序或者代码库。并且， JDK 本身的实现也大量用到 JNI 技术来调用本地 C 程序库。
 ```
 
-### AOP
+## AOP
 
 ```sql
 -- AOP为Aspect Oriented Programming的缩写
@@ -1796,9 +1796,9 @@ SpiImpl2.execute()
 -- 利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率
 ```
 
-#### 相关术语
+### 相关术语
 
-##### 通知（Advice）
+#### 通知（Advice）
 
 通知描述了切面要完成的工作以及何时执行。比如我们的日志切面需要记录每个接口调用时长，就需要在接口调用前后分别记录当前时间，再取差值
 
@@ -1810,27 +1810,27 @@ SpiImpl2.execute()
   需要对原操作调用Object result = proceedingJoinPoint.proceed()；
   如果有返回值，需要return result。
 
-##### 连接点（JoinPoint）
+#### 连接点（JoinPoint）
 
 通知功能被应用的时机。比如接口方法被调用的时候就是日志切面的连接点
 
-##### 切点（Pointcut）
+#### 切点（Pointcut）
 
  切点定义了通知功能被应用的范围。比如日志切面的应用范围就是所有接口，即所有controller层的接口方法
 
-##### 切面（Aspect）
+#### 切面（Aspect）
 
 切面是通知和切点的结合，定义了何时、何地应用通知功能
 
-##### 引入（Introduction）
+#### 引入（Introduction）
 
 在无需修改现有类的情况下，向现有的类添加新方法或属性
 
-##### 织入（Weaving）
+#### 织入（Weaving）
 
 把切面应用到目标对象并创建新的代理对象的过程
 
-#### 相关注解
+### 相关注解
 
 - @Aspect：用于定义切面
 - @Before：通知方法会在目标方法调用之前执行
@@ -1840,7 +1840,7 @@ SpiImpl2.execute()
 - @Around：通知方法会将目标方法封装起来
 - @Pointcut：定义切点表达式
 
-#### 切点表达式
+### 切点表达式
 
 ```sql
 -- 指定了通知被应用的范围，表达式格式
@@ -1854,9 +1854,9 @@ execution(* com.macro.mall.tiny.service..*.*(..))
 execution(* com.macro.mall.tiny.service.PmsBrandService.*(..))
 ```
 
-### 接口文档
+## 接口文档
 
-#### springfox
+### springfox
 
 ```xml
 <dependency>
@@ -1879,7 +1879,7 @@ execution(* com.macro.mall.tiny.service.PmsBrandService.*(..))
 5. 除了Spring MVC外，Springfox还支持Spring Data REST、JSR 303，这项标准的参考实现是Hibernate Validator
 ```
 
-#### swagger
+### swagger
 
 ```sql
 -- 接口地址：
@@ -1949,7 +1949,7 @@ public class Swagger2Config {
 }
 ```
 
-#### knife4j
+### knife4j
 
 ```sql
 -- 接口地址：
@@ -1977,7 +1977,7 @@ public class Swagger2Config {
 }
 ```
 
-#### swagger新版本
+### swagger新版本
 
 ```xml
 <!--springfox swagger官方Starter-->
@@ -1998,11 +1998,11 @@ springfox:
 	documentation:
 		enabled: true
 ```
-### 反应式编程
+## 反应式编程
 
 反应式编程是关于非阻塞应用程序的，这些应用程序是异步的、事件驱动的，并且需要少量的线程来垂直伸缩(即在 JVM 中)，而不是水平伸缩(即通过集群)
 
-#### Reactor框架
+### Reactor框架
 
 ```sql
 -- Reactor是一个第四代响应式编程框架，用于构建非阻塞JVM应用程序，基于Reactive Streams Specification实现
@@ -2018,7 +2018,7 @@ springfox:
 Java类Reactor模型的优点是可以处理大量的并发连接请求，减少了线程的创建和销毁，提高了程序的性能和效率。但同时也需要注意防止Handler的处理逻辑过于复杂，导致阻塞或者耗时过长的情况出现。
 ```
 
-##### Flux和Mono
+#### Flux和Mono
 
 ```sql
 -- Flux
@@ -2034,7 +2034,7 @@ Java类Reactor模型的优点是可以处理大量的并发连接请求，减少
 4. Mono和Flux是可以互相转换的，Mono#concatWith(Publisher)返回一个Flux，而 Mono#then(Mono)返回一个Mono.
 ```
 
-##### Flux
+#### Flux
 
 ```sql
 -- 创建
@@ -2086,9 +2086,52 @@ public interface Disposable {
 2. Disposables.composite(…)可以将多个Disposable合并起来，在后面统一做处理
 ```
 
-### 事务
+## 事务
 
-#### 分布式事务
+### 事务传播
+
+- `PROPAGATION_REQUIRED`（默认）：如果有现有事务：加入到现有事务中；如果没有现有事务：启动一个新的事务。
+- `PROPAGATION_REQUIRES_NEW`：无论当前是否存在事务，总是新建一个事务。如果当前存在事务，则把当前事务挂起。
+- `PROPAGATION_NOT_SUPPORTED`：无论当前是否存在事务，都以非事务方式执行。如果当前存在事务，则把当前事务挂起。
+- `PROPAGATION_NEVER`：无论当前是否存在事务，都以非事务方式执行。如果当前存在事务，则抛出异常。
+- `PROPAGATION_SUPPORTS`：如果有现有事务：加入到现有事务中；如果没有现有事务：以非事务方式执行。
+- `PROPAGATION_MANDATORY`：如果有现有事务：加入到现有事务中；如果没有现有事务：抛出异常。
+- `PROPAGATION_NESTED`：如果有现有事务：创建一个嵌套事务；如果没有现有事务：启动一个新的事务。
+
+在 Spring 中，如果 createProfile 方法没有显式地标明 propagation 属性，默认情况下它将继承父事务的传播行为。默认的传播行为是 `PROPAGATION_REQUIRED`，这意味着如果当前存在一个事务，则 createProfile 将加入到这个事务中；如果没有事务，则会启动一个新的事务。
+
+- 如果 createUserAndProfile 方法已经在事务中：
+  - createProfile 方法将加入到同一个事务中。
+  - 这意味着 createProfile 方法中的操作将作为 createUserAndProfile 方法的一部分，它们将一起提交或一起回滚。
+- 如果 createUserAndProfile 方法不在事务中：
+  - createProfile 方法将启动一个新的事务。
+  - 这意味着 createProfile 方法中的操作将独立于 createUserAndProfile 方法，它们将分别提交或回滚。
+
+```java
+@Service
+public class UserService {
+    @Autowired
+    private UserRepository userRepository;
+    @Transactional
+    public void createUserAndProfile(User user, UserProfile userProfile) {
+        // 创建用户
+        userRepository.save(user);
+        
+        // 创建用户资料
+        createProfile(userProfile);
+    }
+    @Transactional
+    public void createProfile(UserProfile userProfile) {
+        // 创建用户资料
+        // 这里默认使用 PROPAGATION_REQUIRED，
+        // 如果 createUserAndProfile 方法已经在事务中，则 join 同一个事务；
+        // 否则，将启动一个新的事务
+        userProfileRepository.save(userProfile);
+    }
+}
+```
+
+### 分布式事务
 
 seata写隔离
 
@@ -2101,7 +2144,7 @@ seata写隔离
    而t2将一直请求全局锁，直到请求超时，回滚并放弃请求全局锁及释放本地锁，
    t2释放本地锁后，t1获取到本地锁，回滚成功
 
-#### 手动提交事务
+### 手动提交事务
 
 ```java
 @Autowired
@@ -2120,7 +2163,7 @@ public void test() {
 }
 ```
 
-#### JDBC事务
+### JDBC事务
 
 - JDBC 事务是用 Connection 对象控制的。JDBC Connection 接口（ java.sql.Connection ）提供了两种事务模式：自动提交和手工提交。
 - java.sql.Connection 提供了以下控制事务的方法：
@@ -2132,7 +2175,7 @@ public void test() {
   JDBC 事务的一个缺点是事务的范围局限于一个数据库连接。一个 JDBC 事务不能跨越多个数据库。
 - JDBC定义了SavePoint接口，提供在一个更细粒度的事务控制机制。当设置了一个保存点后，可以rollback到该保存点处的状态，而不是rollback整个事务。
 
-### MinIO
+## MinIO
 
 ```sql
 -- 下载地址
@@ -2159,7 +2202,7 @@ http://localhost:9000
 </dependency>
 ```
 
-### PageHelper
+## PageHelper
 
 使用文档：https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md
 
@@ -2179,7 +2222,7 @@ List<PmsBrand> brandList = brandMapper.selectByExample(new PmsBrandExample());
 //通过构造PageInfo对象获取分页信息，如当前页码，总页数，总条数
 PageInfo<PmsBrand> pageInfo = new PageInfo<>(list);
 ```
-### 跨域
+## 跨域
 
 跨域（Cross-Origin Resource Sharing, CORS）是指一个网页发起的请求，其资源位于不同的域、协议或端口。例如，`http://example.com` 的网页试图访问 `http://api.example.com`，这就是一次跨域请求。
 
@@ -2187,7 +2230,7 @@ PageInfo<PmsBrand> pageInfo = new PageInfo<>(list);
 
 复杂的跨越请求需要先进行一次OPTIONS请求进行预检，我们的应用整合SpringSecurity，对OPTIONS请求需要放开登录认证。
 
-#### CORS工作原理
+### CORS工作原理
 
 CORS 的核心在于服务器通过设置 HTTP 头来告诉浏览器允许跨域请求。常见的 CORS 相关 HTTP 头包括：
 
@@ -2198,7 +2241,7 @@ CORS 的核心在于服务器通过设置 HTTP 头来告诉浏览器允许跨域
 5. **Access-Control-Expose-Headers**：列出哪些响应头可以暴露给前端应用。
 6. **Access-Control-Max-Age**：指示在缓存预检请求的结果期间，浏览器可以缓存结果的时间（以秒为单位）。
 
-#### 预检请求
+### 预检请求
 
 对于复杂请求（如包含自定义头的 POST 请求），浏览器会在正式请求之前发送一个 OPTIONS 请求（预检请求）以确定服务器是否允许该请求。服务器在预检请求中设置相应的 CORS 头，以告知浏览器请求是否被允许。
 
@@ -2218,9 +2261,9 @@ public class MyController {
 }
 ```
 
-#### 解决跨域
+### 解决跨域
 
-##### CORS跨域（推荐）
+#### CORS跨域（推荐）
 
 方式一：
 
@@ -2284,7 +2327,7 @@ public class GlobalCorsConfig {
 .antMatchers(HttpMethod.OPTIONS)//跨域请求会先进行一次options请求
 .permitAll()
 ```
-##### Gateway跨域
+#### Gateway跨域
 
 ```java
 //跨域问题, 核心是需要在请求头带上Access-control-Allow-Origin
@@ -2312,7 +2355,7 @@ protected boolean preHandle(ServletRequest request, ServletResponse response){
     return super.preHandle(request, response);
 }
 ```
-##### 同源代理跨域
+#### 同源代理跨域
 
 通过在同源服务器上设置代理，将跨域请求转发给目标服务器，从而绕过浏览器的同源策略。
 
@@ -2333,11 +2376,11 @@ public class ProxyController {
 
 
 
-### Dubbo+zookeeper
+## Dubbo+zookeeper
 
-### Gaea实现读写分离
+## Gaea实现读写分离
 
-### Charles（抓包工具）
+## Charles（抓包工具）
 
 ```sql
 -- 网络抓包
@@ -2349,9 +2392,9 @@ www.charlesproxy.com/
 https://www.zzzmode.com/mytools/charles/
 ```
 
-### 任务调度
+## 任务调度
 
-#### Quartz
+### Quartz
 
 Quartz是一款功能强大的开源任务调度框架，几乎可以集成到任何Java应用程序中（小到单机应用，大到分布式应用）。
 
@@ -2370,13 +2413,13 @@ Quartz可用于创建简单或复杂的任务调度，用以执行数以万计�
 
 
 
-### HTTP
+## HTTP
 
-#### 身份认证
+### 身份认证
 
 HTTP身份认证的方式有很多：Basic、Bearer、Digest、HOBA、Mutual、Negotiate / NTLM、VAPID、SCRAM、AWS4-HMAC-SHA256、OAuth。
 
-##### 基本(Basic)认证
+#### 基本(Basic)认证
 
 1. 当请求的资源需要 BASIC 认证时，服务器会随状态码 401 Authorization Required，返回带WWW-Authenticate首部字段的响应。该字段内包含认证的方式（BASIC）及Request-URI安全域字符串（realm）。
 2. 接收到状态码401的客户端为了通过BASIC 认证，需要将用户ID及密码发送给服务器。发送的字符串内容是由用户ID和密码构成，两者中间以冒号（:）连接后，再经过 Base64 编码处理（如guest:guest）。
@@ -2384,7 +2427,7 @@ HTTP身份认证的方式有很多：Basic、Bearer、Digest、HOBA、Mutual、N
 
 缺陷：BASIC 认证虽然采用 Base64 编码方式，但这不是加密处理，由于明文解码后就是用户 ID 和密码，在 HTTP 等非加密通信的线路上进行 BASIC 认证的过程中，如果被人窃听，被盗的可能性极高。另外，除此之外想再进行一次 BASIC 认证时，一般的浏览器却无法实现认证注销操作，这也是问题之一。
 
-##### 摘要(Digest)认证
+#### 摘要(Digest)认证
 
 为弥补 BASIC 认证存在的弱点，从 HTTP/1.1 起就有了 DIGEST 认证。 DIGEST 认证同样使用质询 / 响应的方式（challenge/response），但不会像 BASIC 认证那样直接发送明文密码。所谓质询响应方式是指，一开始一方会先发送认证要求给另一方，接着使用从另一方那接收到的质询码计算生成响应码。最后将响应码返回给对方进行认证的方式。
 
@@ -2394,7 +2437,7 @@ HTTP身份认证的方式有很多：Basic、Bearer、Digest、HOBA、Mutual、N
 
 缺陷：DIGEST 认证提供了高于 BASIC 认证的安全等级，但是和 HTTPS 的客户端认证相比仍旧很弱。DIGEST 认证提供防止密码被窃听的保护机制，但并不存在防止用户伪装的保护机制。DIGEST 认证和 BASIC 认证一样，使用上不那么便捷灵活，且仍达不到多数 Web 网站对高度安全等级的追求标准。因此它的适用范围也有所受限。
 
-##### 基于表单(Form-Based)的SSL客户端认证
+#### 基于表单(Form-Based)的SSL客户端认证
 
 从使用用户 ID 和密码的认证方式方面来讲，只要二者的内容正确，即可认证是本人的行为。但如果用户 ID 和密码被盗，就很有可能被第三者冒充。利用 SSL 客户端认证则可以避免该情况的发生。SSL 客户端认证是借由 HTTPS 的客户端证书完成认证的方式。凭借 SSL 客户端证书认证，服务器可确认访问是否来自已登录的客户端。
 
@@ -2405,7 +2448,7 @@ HTTP身份认证的方式有很多：Basic、Bearer、Digest、HOBA、Mutual、N
 3. 服务器验证客户端证书验证通过后方可领取证书内客户端的165公开密钥，然后开始 HTTPS 加密通信
    在多数情况下，SSL 客户端认证不会仅依靠证书完成认证，一般会和基于表单认证组合形成一种双因素认证（Two-factor authentication）来使用。所谓双因素认证就是指，认证过程中不仅需要密码这一个因素，还需要申请认证者提供其他持有信息，从而作为另一个因素，与其组合使用的认证方式。换言之，第一个认证因素的 SSL 客户端证书用来认证客户端计算机，另一个认证因素的密码则用来确定这是用户本人的行为。通过双因素认证后，就可以确认是用户本人正在使用匹配正确的计算机访问服务器。
 
-#### HTTP请求
+### HTTP请求
 
 ```xml
 <!-- http默认超时时间为20s -->
@@ -2416,7 +2459,7 @@ HTTP身份认证的方式有很多：Basic、Bearer、Digest、HOBA、Mutual、N
 </dependency>
 ```
 
-##### 常用HTTP请求
+#### 常用HTTP请求
 
 1. 创建HttpClient实例
 
@@ -2470,7 +2513,7 @@ HTTP身份认证的方式有很多：Basic、Bearer、Digest、HOBA、Mutual、N
 6. 释放连接
    `post.releaseConnection();`
 
-##### 带证书HTTP请求
+#### 带证书HTTP请求
 
 ```java
 public static String sendRedEnvelope(String url, String param) throws Exception {
@@ -2529,15 +2572,15 @@ public static String sendRedEnvelope(String url, String param) throws Exception 
 }
 ```
 
-### MapStruct
+## MapStruct
 
 MapStruct是一款基于Java注解的对象属性映射工具
 
-#### 插件
+### 插件
 
 MapStruct Support
 
-#### 依赖
+### 依赖
 
 ```xml
 <!--MapStruct相关依赖-->
@@ -2577,9 +2620,9 @@ MapStruct Support
 </plugin>
 ```
 
-#### 使用
+### 使用
 
-##### 基本映射
+#### 基本映射
 
 ```java
 @Mapper
@@ -2592,7 +2635,7 @@ public interface MemberMapper {
 }
 ```
 
-##### 集合映射
+#### 集合映射
 
 ```java
 @Mapper
@@ -2605,7 +2648,7 @@ public interface MemberMapper {
 }
 ```
 
-#### 子对象映射
+### 子对象映射
 
 ```java
 @Mapper(uses = {MemberMapper.class,ProductMapper.class})
@@ -2618,7 +2661,7 @@ public interface OrderMapper {
 }
 ```
 
-#### 合并映射
+### 合并映射
 
 ```java
 //把多个对象属性映射到一个对象中
@@ -2635,7 +2678,7 @@ public interface MemberMapper {
 }
 ```
 
-#### 使用依赖注入
+### 使用依赖注入
 
 ```java
 //想要使用依赖注入，我们只要将@Mapper注解的componentModel参数设置为spring即可，这样在生成接口实现类时，MapperStruct会为其添加@Component注解
@@ -2647,7 +2690,7 @@ public interface MemberSpringMapper {
 }
 ```
 
-#### 使用常量、默认值和表达式
+### 使用常量、默认值和表达式
 
 ```java
 @Mapper(imports = {UUID.class})
@@ -2661,7 +2704,7 @@ public interface ProductMapper {
 }
 ```
 
-#### 在映射前后进行自定义处理
+### 在映射前后进行自定义处理
 
 ```java
 //此时我们需要创建自定义处理方法，创建一个抽象类ProductRoundMapper，通过@BeforeMapping注解自定义映射前操作，通过@AfterMapping注解自定义映射后操作；
@@ -2699,7 +2742,7 @@ public abstract class ProductRoundMapper {
 }
 ```
 
-#### 处理映射异常
+### 处理映射异常
 
 ```java
 //自定义异常类
@@ -2730,9 +2773,9 @@ public interface ProductExceptionMapper {
 >
 > Mapper-struct存在问题，跟lombok在配合的时候会出现问题，如果mapperStruct的依赖放在lombok的依赖上面就会出现在对象复制的时候，会将原有数据全变为null的情况，所以一定要将lombok的依赖放在mapperStruct上面？
 
-### 本地缓存
+## 本地缓存
 
-#### Guava Cache
+### Guava Cache
 
 ```xml
 <dependency>
@@ -2781,7 +2824,7 @@ public Object getIPLimiter(String ipAddr) throws ExecutionException {
 - put(Long key, String value)：设置缓存值。
 - remove(Long key)：移除缓存值。
 
-### Java内存模型
+## Java内存模型
 
 内存模型限制的是共享变量，也就是存储在堆内存中的变量，在 Java 语言中，所有的实例变量、静态变量和数组元素都存储在堆内存之中。方法参数、异常处理参数这些局部变量存储在方法栈帧之中，因此不会在线程之间共享，不会受到内存模型影响，也不存在内存可见性问题。
 
@@ -2793,9 +2836,9 @@ import javaMemoryModel from '/img/docs/java/java/JAVA-内存模型.png';
 
 线程 A 把在本地内存更新后的共享变量副本的值，刷新到主内存中。线程 B 在使用到该共享变量时，到主内存中去读取线程 A 更新后的共享变量的值，并更新线程 B 本地内存的值。
 
-### WebClient
+## WebClient
 
-#### WebClient和RestTemplate
+### WebClient和RestTemplate
 
 区别
 
@@ -2819,18 +2862,18 @@ public Flux<Tweet> getTweetsNonBlocking() {
 }
 ```
 
-### jmeter
+## jmeter
 
 1. 添加线程组
 2. 添加HTTP请求
 3. 添加察看结果树
 4. HTTP信息头管理器 -- 设置发送application/json请求
 
-### k8s(kubernetes)
+## k8s(kubernetes)
 
-### 多线程
+## 多线程
 
-#### 手动创建线程池
+### 手动创建线程池
 
 ```java
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
@@ -2851,7 +2894,7 @@ taskExe.execute(new Runnable() {
 });
 ```
 
-#### 等待线程执行完成
+### 等待线程执行完成
 
 ```java
 //调用await()方法的线程会被挂起，它会等待直到count值为0才继续执行
@@ -2912,9 +2955,9 @@ public class CountDownLatchTest {
 }
 ```
 
-### BPMN
+## BPMN
 
-#### 事件（Events）
+### 事件（Events）
 
 指的是在业务流程的运行过程中发生的事情
 
@@ -2928,7 +2971,7 @@ import events from '/img/docs/java/java/JAVA-BPMN-事件.png';
 <img src={events} alt="JAVA-BPMN-事件" width="50%" />
 ```
 
-#### 活动（Activities）
+### 活动（Activities）
 
 包括任务和子流程两类。子流程在图形的下方中间外加一个小加号（+）来区分。
 
@@ -2938,7 +2981,7 @@ import activities from '/img/docs/java/java/JAVA-BPMN-活动.png';
 <img src={activities} alt="JAVA-BPMN-活动" width="50%" />
 ```
 
-#### 网关（Gateways）
+### 网关（Gateways）
 
 用于表示流程的分支与合并。
 
