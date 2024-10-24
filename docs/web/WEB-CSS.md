@@ -4,6 +4,29 @@ sidebar_position: 2
 
 # WEB-CSS
 
+## box-shadow
+
+```css
+/* 单阴影 */
+box-shadow: h-shadow v-shadow blur spread color position;
+/* 多阴影 */
+box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3), inset 0 0 10px rgba(255,255,255,0.5);
+```
+
+- h-shadow：必需。水平阴影的位置。正值将阴影置于元素右侧，负值将阴影置于左侧。
+- v-shadow：必需。垂直阴影的位置。正值将阴影置于元素下方，负值将阴影置于上方。
+- blur：可选。模糊半径。值越大，阴影越模糊；0 表示没有模糊（锐利的阴影）。
+- spread：可选。阴影的尺寸。正值将阴影扩大，负值将阴影缩小。
+- color：可选。阴影的颜色。
+
+## rgba
+
+```css
+color: rgba(0, 0, 0, 0.5);
+```
+
+- 最后一个参数表示透明度，取值范围0~1之间。
+
 ## 行内元素和块级元素
 ```mdx-code-block
 import Copyright from '@site/src/components/Copyright';

@@ -1,14 +1,23 @@
+:root {
+  --skill-card-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --skill-card-bg: rgba(255, 255, 255, 0.3);
+}
+
 .resumeContainer {
   display: flex;
-  background-color: #ffffff;
-  color: #1e1e1e;
+  /* background-color: #ffffff; */
+  /* color: #1e1e1e; */
   min-height: 100vh;
 }
 
 .sidebar {
   width: 300px;
   padding: 20px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .avatar {
@@ -35,10 +44,10 @@
 }
 
 .skillCard {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--skill-card-bg);
 }
 
 /* 添加更多样式以匹配图片中的设计 */

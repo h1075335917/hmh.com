@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "贺敏华的官方网站",
   tagline: "贺敏华自用的笔记网站",
-  favicon: "img/mhuahe.ico",
+  favicon: "img/m_two_logo.ico",
 
   // Set the production url of your site here
   url: "https://mhuahe.github.io/",
@@ -85,13 +85,13 @@ const config: Config = {
     // 导航栏
     navbar: {
       title: "贺敏华的官方网站",
-      // logo: {
-      //   alt: "mhuahe site logo",
-      //   src: "img/mhuahe.svg",
-      //   srcDark: 'img/mhuahe_dark.svg',
-      //   width: 32,
-      //   height: 32,
-      // },
+      logo: {
+        alt: "mhuahe site logo",
+        src: "img/m_two_logo.svg",
+        srcDark: 'img/m_two_logo.svg',
+        width: 32,
+        height: 32,
+      },
       // 滚动页面时，导航栏隐藏
       hideOnScroll: false,
       // 导航栏项目
