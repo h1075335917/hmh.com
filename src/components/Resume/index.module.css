@@ -1,39 +1,72 @@
 :root {
   --skill-card-bg: rgba(0, 0, 0, 0.3);
+  --contact-info-p-color: hsl(0, 0%, 100%);
+  --contact-info-p-bg: hsl(0, 0%, 100%);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --skill-card-bg: rgba(255, 255, 255, 0.3);
+  --contact-info-p-color: hsl(0, 0%, 100%);
+  --contact-info-p-bg: hsl(240, 1%, 17%);
 }
 
 .resumeContainer {
   display: flex;
-  /* background-color: #ffffff; */
-  /* color: #1e1e1e; */
   min-height: 100vh;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 .sidebar {
   width: 300px;
   padding: 20px;
-  /* background-color: #ffffff; */
+  height: max-content;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--skill-card-bg);
+  margin: 0 auto; /* 添加此行以水平居中 */
+  text-align: center; /* 添加此行以使内容居中对齐 */
 }
 
 .avatar {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  display: block; /* 将图片设置为块级元素，使其独占一行。 */
+  margin: 0 auto; /* 将图片的左右外边距设置为自动，从而在水平方向上居中图片。 */
+  border-radius: 20px; /* 定义外边框边缘的半径 */
   margin-bottom: 20px;
+}
+
+.sidebar .name {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.sidebar .job {
+  /* width: max-content; */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--skill-card-bg);
 }
 
 .contactInfo {
   margin-top: 20px;
 }
 
+.contactInfo p {
+  background: var(--contact-info-p-bg);
+  font-size: 13px;
+  width: max-content;
+  padding: 3px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--skill-card-bg);
+}
+
 .mainContent {
   flex: 1;
-  padding: 40px;
+  padding: 20px;
+  height: max-content;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--skill-card-bg);
 }
 
 .skillsGrid {
@@ -44,7 +77,6 @@
 }
 
 .skillCard {
-  /* background-color: #ffffff; */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px var(--skill-card-bg);

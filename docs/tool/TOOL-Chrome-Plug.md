@@ -6,11 +6,8 @@ sidebar_position: 4
 
 ## 技巧
 
-> 1. 切换引擎：设置搜索引擎的快捷访问，如百度，设置为bd
->
->    bd + space，进入百度搜索引擎
->
-> 2. 站内搜索：比如在www.yinwang.org搜索**中国人**的语法为`site:www.yinwang.org 中国人`
+- 切换引擎：设置搜索引擎的快捷访问，如百度，设置为`bd`：`bd + space`，进入百度搜索引擎。
+- 站内搜索：比如在www.yinwang.org搜索`中国人`的语法为`site:www.yinwang.org 中国人`
 
 ## 插件英雄榜
 https://zhaoolee.com/ChromeAppHeroes/#/
@@ -107,11 +104,14 @@ https://chromewebstore.google.com/detail/%E4%BA%8C%E7%AE%B1/kidibbfcblfbbafhnlan
 > 以图搜图
 
 ## 翻译
-[侧边翻译](https://chromewebstore.google.com/detail/%E4%BE%A7%E8%BE%B9%E7%BF%BB%E8%AF%91/bocbaocobfecmglnmeaeppambideimao)
 
+- [侧边翻译](https://chromewebstore.google.com/detail/%E4%BE%A7%E8%BE%B9%E7%BF%BB%E8%AF%91/bocbaocobfecmglnmeaeppambideimao)
+- [沉浸式翻译](https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91-%E7%BD%91%E9%A1%B5%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6-pdf%E7%BF%BB%E8%AF%91-%E5%85%8D%E8%B4%B9/bpoadfkcbjbfhfodiogcnhhhpibjhbnh?pli=1)
 
 ## Octotree - GitHub code tree
 https://chromewebstore.google.com/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc
+
+> 显示GitHub代码树。
 
 ## Tampermonkey
 
@@ -122,15 +122,10 @@ https://greasyfork.org/zh-CN/scripts/14178-ac-baidu-%E9%87%8D%E5%AE%9A%E5%90%91%
 
 >重定向优化百度搜狗谷歌必应搜索
 
-### 自动无缝翻页
-https://greasyfork.org/zh-CN/scripts/419215-%E8%87%AA%E5%8A%A8%E6%97%A0%E7%BC%9D%E7%BF%BB%E9%A1%B5
+### 自动翻页
 
-> 无缝加载下一页内容
-
-### 东方永页机
-https://greasyfork.org/zh-CN/scripts/438684-pagetual
-
-> 无缝加载下一页内容
+- [东方永页机](https://greasyfork.org/zh-CN/scripts/438684-pagetual)
+- [自动无缝翻页](https://greasyfork.org/zh-CN/scripts/419215-%E8%87%AA%E5%8A%A8%E6%97%A0%E7%BC%9D%E7%BF%BB%E9%A1%B5)
 
 ### 网页限制解除(改)
 https://greasyfork.org/zh-CN/scripts/28497-%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E8%A7%A3%E9%99%A4-%E6%94%B9

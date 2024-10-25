@@ -433,6 +433,35 @@ spring.profiles.include:
 按照顺序，后面的覆盖前面的。
 ```
 
+### 全局处理日期
+
+```java
+// 局部配置
+@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+private LocalDateTime createTime;
+
+// 全局配置
+@Configuration
+public class JacksonConfig {
+    @Value("${prop.local-date-time-format:yyyy-MM-dd HH:mm:ss}")
+    private String localDateTimeFormat;
+    /**
+     * 配置Jackson对枚举序列化/反序列化的支持
+     *
+     * @return
+     */
+    @Bean
+    public Jackson2ObjectMapperBuilderCustomizer customizer() {
+        return builder -> builder.featuresToEnable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
+                .serializerByType(LocalDateTime.class,
+                        new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(localDateTimeFormat)))
+                .deserializerByType(LocalDateTime.class,
+                        new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(localDateTimeFormat)));
+    }
+}
+```
+
 ## JSqlParser
 
 > 依赖了JSqlParser

@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "@theme/Layout";
 import styles from "./index.module.css";
 
 function Resume() {
@@ -11,8 +10,8 @@ function Resume() {
           alt="头像"
           className={styles.avatar}
         />
-        <h2>贺敏华</h2>
-        <p>Java开发者</p>
+        <div className={styles.name}>贺敏华</div>
+        <div className={styles.job}>Java开发者</div>
         <div className={styles.contactInfo}>
           <p>邮箱: h1075335917@gmail.com</p>
           <p>电话: +86 17746684414</p>
