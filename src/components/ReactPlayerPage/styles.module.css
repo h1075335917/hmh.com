@@ -1,7 +1,7 @@
 :root {
   --column-width: 640px;
   --gap-width: 10px;
-  --player-color: #666666;
+  --player-color: #000000;
 }
 
 /* 通用样式：下的直接子元素（不包含更深的元素） */
@@ -27,7 +27,7 @@
 }
 
 .playerWrapper {
-  background-color: var(--player-color); /*播放器颜色*/
+  background-color: var(--player-color);
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   max-width: var(--column-width);

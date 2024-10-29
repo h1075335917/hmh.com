@@ -1,0 +1,5 @@
+media-play-button {
+  --media-icon-color: lightpink;
+  --media-control-background: rgb(27 54 93 / 0.85);
+  --media-control-hover-background: rgb(128 0 0 / 0.85);
+}
