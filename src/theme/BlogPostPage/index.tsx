@@ -16,6 +16,7 @@ import ContentVisibility from '@theme/ContentVisibility'
 import type { Props } from '@theme/BlogPostPage'
 import type { BlogSidebar } from '@docusaurus/plugin-content-blog'
 import { DiscussionEmbed } from 'disqus-react';
+import PageViewCounter from '@site/src/components/PageViewCounter'
 
 function BlogPostPageContent({
   sidebar,
@@ -86,6 +87,10 @@ function BlogPostPageContent({
           // language: 'en_US',
         }}
       />
+      {/* 访问计数器 - 添加margin和样式控制 */}
+      <div>
+        <PageViewCounter />
+      </div>
     </BlogLayout>
   )
 }

@@ -15,6 +15,7 @@ import type { Props } from '@theme/DocItem/Layout'
 import { DiscussionEmbed } from 'disqus-react';
 
 import styles from './styles.module.css'
+import PageViewCounter from '@site/src/components/PageViewCounter'
 
 /**
  * Decide if the toc should be rendered, on mobile or desktop viewports
@@ -92,6 +93,8 @@ export default function DocItemLayout({ children }: Props): React.ReactElement {
               title: title,
             }}
           />
+          {/* 访问计数器 */}
+          <PageViewCounter />
         </div>
       </div>
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
