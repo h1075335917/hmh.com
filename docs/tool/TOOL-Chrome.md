@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# 工具-谷歌插件
+# 工具-谷歌
 
 ## 技巧
 
@@ -12,103 +12,105 @@ sidebar_position: 4
 ## 插件英雄榜
 https://zhaoolee.com/ChromeAppHeroes/#/
 
-## Apifox Browser Extension
+## 插件
+
+### Apifox Browser Extension
 
 > Apifox扩展插件。
 
-## bilibili哔哩哔哩下载助手
+### bilibili哔哩哔哩下载助手
 https://chromewebstore.google.com/detail/bilibili%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B/bfcbfobhcjbkilcbehlnlchiinokiijp
 
 > 下载B站视频。
 
-## Checker Plus for Gmail™
+### Checker Plus for Gmail™
 https://chromewebstore.google.com/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj
 
 > 桌面邮件通知。
 
-## Chrono下载管理器
+### Chrono下载管理器
 https://chromewebstore.google.com/detail/chrono%E4%B8%8B%E8%BD%BD%E7%AE%A1%E7%90%86%E5%99%A8/mciiogijehkdemklbdcbfkefimifhecn
 
 > 下载管理器 && 资源嗅探器
 
-## GoFullPage
+### GoFullPage
 https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl
 
 > 全屏截图。
 
-## Google Keep Chrome
+### Google Keep Chrome
 https://chromewebstore.google.com/detail/google-keep-chrome-%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F/lpcaedmchfhocbbapmcbpinfpgnhiddi
 
 > 标记笔记。
 
-## Nimbus | loom
+### Nimbus | loom
 [Nimbus](https://chromewebstore.google.com/detail/nimble-capture/bpconcjcammlapcogcnnelfmaeghhagj)
 [Loom](https://chromewebstore.google.com/detail/loom-%E2%80%93-screen-recorder-sc/liecbddmkiiihnedobmlmillhodjkdmb)
 
 > 录屏。
 
-## OneTab
+### OneTab
 https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall
 
 > 标签页列表管理。
 
-## 类似的网站
+### 类似的网站
 https://chromewebstore.google.com/detail/%E7%B1%BB%E4%BC%BC%E7%9A%84%E7%BD%91%E7%AB%99-%E5%8F%91%E7%8E%B0%E7%9B%B8%E5%85%B3%E7%BD%91%E7%AB%99/necpbmbhhdiplmfhmjicabdeighkndkn
 
 > 发现相似的网站。
 
-## 视频下载器
+### 视频下载器
 [CoCoCut](https://chromewebstore.google.com/detail/%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%99%A8-cococut/ekhbcipncbkfpkaianbjbcbmfehjflpf)
 [Video DownloadHelper](https://chromewebstore.google.com/detail/video-downloadhelper/lmjnegcaeklhafolokijcfjliaokphfk)
 
 > 下载器。
 
-## vimium
+### vimium
 https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb
 
 > [vim操作说明](https://blog.csdn.net/lifushu/article/details/122672911)
 
-## 扩展管理器
+### 扩展管理器
 https://chromewebstore.google.com/detail/%E6%89%A9%E5%B1%95%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%88extension-manager%EF%BC%89/gjldcdngmdknpinoemndlidpcabkggco
 
 > 对插件进行分组，按照场景，启用不同组的插件
 
-## Get Favicon
+### Get Favicon
 https://chromewebstore.google.com/detail/get-favicon/gpipahagclehninhhjkhbkliinfofnhe
 
 > 获取网址的图标
 
-## Volume master
+### Volume master
 https://chromewebstore.google.com/detail/volume-master-%E9%9F%B3%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/jghecgabfgfdldnmbfkhmffcabddioke
 
 > 把网页的音量调整到最大音量的六倍；它的调整是一次性的，并且只针对一个网页
 
-## MarkDownload
+### MarkDownload
 https://chromewebstore.google.com/detail/markdownload-markdown-web/pcmpcfapbekmbjjkdalcgopdkipoggdi
 
 > 页面转成Markdown
 
-## Global Speed
+### Global Speed
 https://chromewebstore.google.com/detail/global-speed-%E8%A7%86%E9%A2%91%E9%80%9F%E5%BA%A6%E6%8E%A7%E5%88%B6/jpbjcnkcffbooppibceonlgknpkniiff
 
 > 视频速度控制
 
-## uBlock Origin
+### uBlock Origin
 https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
 
 > 广告拦截
 
-## 二箱
+### 二箱
 https://chromewebstore.google.com/detail/%E4%BA%8C%E7%AE%B1/kidibbfcblfbbafhnlanccjjdehoahep
 
 > 以图搜图
 
-## 翻译
+### 翻译
 
 - [侧边翻译](https://chromewebstore.google.com/detail/%E4%BE%A7%E8%BE%B9%E7%BF%BB%E8%AF%91/bocbaocobfecmglnmeaeppambideimao)
 - [沉浸式翻译](https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91-%E7%BD%91%E9%A1%B5%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6-pdf%E7%BF%BB%E8%AF%91-%E5%85%8D%E8%B4%B9/bpoadfkcbjbfhfodiogcnhhhpibjhbnh?pli=1)
 
-## Octotree - GitHub code tree
+### Octotree - GitHub code tree
 https://chromewebstore.google.com/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc
 
 > 显示GitHub代码树。

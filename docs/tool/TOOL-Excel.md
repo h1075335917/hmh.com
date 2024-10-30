@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# 工具-Excel技巧
+# 工具-Excel
 
 ### 快速删除重复值
 

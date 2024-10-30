@@ -2,150 +2,138 @@
 sidebar_position: 2
 ---
 
-# 工具-IDEA技巧
+# 工具-IDEA
 
 ## 插件
 
-代码规范
+### 代码规范
 - Alibaba Java Coding Guidelines
 - CheckStyle-IDEA
 - QAPlug、QAPlug-Checkstyle、QAPlug-FindBugs、QAPlug-PMD
 - Sonarlint
 - Statictic
 
-Dao工具
+### Dao工具
 - MybatisX
 - Free MyBatis plugin
 - Mybatis Log Plugin
 
-实体类
+### 实体类
 - lombok
 - GenerateAllSetter
 - GsonFormat
 - POJO to JSON
 
-翻译
+### 翻译
 - Translation
 
-日志
+### 日志
 - Grep Console
 
-Maven
+### Maven
 - Maven Helper
 
-热部署
+### 热部署
 - JRebel and XRebel
+  - [魔法方式地址](https://www.jpy.wang/page/jrebel.html)
+  - `curl https://register.jpy.wang/ReRegister/src/main/java/jrebel/JrebelMain.java -o tmp.java && java tmp.java && del tmp.java`
 - JRebel mybatisPlus extension
 
-缩略图
+### 缩略图
 - CodeGlance
 - CodeGlance Pro
 
-括号显示
+### 括号显示
 - Rainbow Brackets
 - HighlightBracketPair
 
-Git
+### Git
 - GitToolBox
 - Git Commit Message Helper
 - .ignore
 
-字符串
+### 字符串
 - String Manipulation
 - CamelCase
 
-接口
+### 接口
 - Apifox Helper
 - Apipost Helper V2
 
-图表
+### 图表
 - SequenceDiagram
 - PlantUML Integration
 - ExcelReader
 - CSV Editor
 
-字节码
+### 字节码
 - jclasslib Bytecode Viewer
 
-正则表达式
+### 正则表达式
 - any-rule
 
-监控
+### 监控
 - VisualVM Launcher
 
+### 其他插件
 
-其他插件
-```
-Tabnine AI Code Completion
-Codota AI Autocomplete for Java and JavaScript --- 代码提示
-
-IntelliJ IDEA Help --- idea离线文档
-
-WeChat Mini Program Support -- 支持微信小程序或QQ小程序项目
-
-WeChat weapp Support -- 支持微信app项目
-
-AceJump -- 代替鼠标
-
-ideaVim -- 模拟Vim的操作方式
-
-Codota -- 代码提示,方法使用提示
-
-Properties to YAML Converter -- 加properties文件转成yaml文件,右击文件
-
-activate-power-mode -- 敲代码震动效果
-
-Key Promoter X -- 显示对应的快捷键
-
-IDE Features Trainer -- idea基础学习
-
-Squaretest -- 生成测试用例
-
-TestMe -- 生成测试用例
-
-IDE Features Trainer -- IDEA工具学习
-
-Atom Material Icons -- 好看的图标
-
-IntelliVue -- Vue功能增强
-
-Ini -- ini文件支持
-
-MapStruct Support -- MapStruct工具支持
-
-Statictic -- 统计代码行数
-
-.env files support -- .env文件支持
-
-AWS Toolkit -- 亚马逊云上传协议工具
-```
+| 插件名称                     | 功能描述                            |
+| ---------------------------- | ----------------------------------- |
+| Tabnine AI Code Completion   | AI代码补全                          |
+| Codota AI Autocomplete       | Java和JavaScript的代码提示          |
+| IntelliJ IDEA Help           | idea离线文档                        |
+| WeChat Mini Program Support  | 支持微信小程序或QQ小程序项目        |
+| WeChat weapp Support         | 支持微信app项目                     |
+| AceJump                      | 代替鼠标                            |
+| ideaVim                      | 模拟Vim的操作方式                   |
+| Codota                       | 代码提示,方法使用提示               |
+| Properties to YAML Converter | properties文件转成yaml文件,右击文件 |
+| activate-power-mode          | 敲代码震动效果                      |
+| Key Promoter X               | 显示对应的快捷键                    |
+| IDE Features Trainer         | idea基础学习                        |
+| Squaretest                   | 生成测试用例                        |
+| TestMe                       | 生成测试用例                        |
+| IDE Features Trainer         | IDEA工具学习                        |
+| Atom Material Icons          | 好看的图标                          |
+| IntelliVue                   | Vue功能增强                         |
+| Ini                          | ini文件支持                         |
+| MapStruct Support            | MapStruct工具支持                   |
+| Statictic                    | 统计代码行数                        |
+| .env files support           | .env文件支持                        |
+| AWS Toolkit                  | 亚马逊云上传协议工具                |
 
 
 ## 快捷键
 
 操作快捷
-- `ctrl + alt + m`：提取方法
-- `ctrl + r`：局部替换
-- `ctrl + alt + t`：包裹代码
-- `ctrl + shift + r`：全局替换
-- `ctrl + shift + u`：转大小写
-- `ctrl + shift + v`：从历史粘贴
-- `alt + ↑/↓`：上/下一个方法
-- `Ctrl + Tab`：切换活动文件
-- `Ctrl + E`：最近的文件
+| 快捷键             | 功能描述      |
+| ------------------ | ------------- |
+| `ctrl + alt + m`   | 提取方法      |
+| `ctrl + r`         | 局部替换      |
+| `ctrl + alt + t`   | 包裹代码      |
+| `ctrl + shift + r` | 全局替换      |
+| `ctrl + shift + u` | 转大小写      |
+| `ctrl + shift + v` | 从历史粘贴    |
+| `alt + ↑/↓`        | 上/下一个方法 |
+| `Ctrl + Tab`       | 切换活动文件  |
+| `Ctrl + E`         | 最近的文件    |
 
 多选行快捷
-- `双击Ctrl+↑/↓`：向上/下克隆插入符号
-- `Alt+Shift+G`：将插入符号添加到选择中的每一行
-- `Alt+J`：选择单位下次出现的位置
-- `Alt+Shift+J`：取消最后一次选择
-- `Ctrl+Alt+Shift+J`：选择所有出现的位置
+| 快捷键             | 功能描述                       |
+| ------------------ | ------------------------------ |
+| `双击Ctrl+↑/↓`     | 向上/下克隆插入符号            |
+| `Alt+Shift+G`      | 将插入符号添加到选择中的每一行 |
+| `Alt+J`            | 选择单位下次出现的位置         |
+| `Alt+Shift+J`      | 取消最后一次选择               |
+| `Ctrl+Alt+Shift+J` | 选择所有出现的位置             |
 
 折叠代码
-- `Ctrl + -`：折叠当前代码块
-- `Ctrl + +`：展开当前代码块
-- `Ctrl + Shift + -`：折叠所有代码块
-- `Ctrl + Shift + +`：展开所有代码块
+| 快捷键             | 功能描述       |
+| ------------------ | -------------- |
+| `Ctrl + -`         | 折叠当前代码块 |
+| `Ctrl + +`         | 展开当前代码块 |
+| `Ctrl + Shift + -` | 折叠所有代码块 |
+| `Ctrl + Shift + +` | 展开所有代码块 |
 
 ## idea免安装配置
 
