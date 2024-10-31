@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # MySQL
 
 ### 笛卡尔积

@@ -122,9 +122,9 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "mysql",
+          sidebarId: "sql",
           position: "left",
-          label: "MySQL",
+          label: "SQL",
         },
         {
           type: "docSidebar",
