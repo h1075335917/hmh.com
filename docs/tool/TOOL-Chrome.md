@@ -115,6 +115,12 @@ https://chromewebstore.google.com/detail/octotree-github-code-tree/bkhaagjahfmjl
 
 > 显示GitHub代码树。
 
+### cookie
+
+- [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc?hl=zh)
+
+> 获取cookies
+
 ## Tampermonkey
 
 > 油猴。插件管理器。

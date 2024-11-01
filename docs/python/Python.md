@@ -209,3 +209,9 @@ int2('1000000') == 64
 - `type()`: 判断对象类型
 - `isinstance()`: 判断一个对象是否是某种类型
 - `dir()`: 获得一个对象的所有属性和方法
+
+## 问题
+
+### 解决cmd输入python弹出应用商店的问题
+
+在用户变量PATH中删去`C:\Users…\AppData\Local\Microsoft\WindowsApps`或下移，此处推荐下移，删去可能会自动又添加回来。

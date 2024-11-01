@@ -80,6 +80,147 @@ https://github.com/AlistGo/alist
 - `alist admin set NEW_PASSWORD`：设置管理员密码
 - `alist admin random`：随机生成管理员密码
 
+## you-get
+https://you-get.org/
+
+> 一个命令行工具，用于从网页下载视频
+
+### 环境
+
+- [Python 3.7.4 or above](https://www.python.org/downloads/windows/)
+- [FFmpeg 1.0 or above](https://www.gyan.dev/ffmpeg/builds/)
+
+### 配置 FFmpeg 环境变量
+
+添加到系统环境变量`PATH`中：`D:\hayes\software-1023\ffmpeg\bin`
+
+### 安装
+
+```shell
+# 安装
+$ pip install you-get
+# 查看版本
+$ you-get -V
+```
+
+### 使用
+
+#### 升级
+
+```shell
+$ pip install --upgrade you-get
+```
+
+#### 查看下载信息
+
+```shell
+$ you-get --info/-i 下载地址
+
+$ you-get -i 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
+```
+
+#### 暂停和恢复下载
+
+可以使用Ctrl+C来中断下载。临时.download文件保存在输出目录中。下次使用相同的参数运行时you-get，下载进度将从上次会话开始恢复。如果文件完全下载（临时 .download扩展名消失），you-get将跳过下载。要强制重新下载，请使用 `--force/-f` 选项。 （警告： 这样做将覆盖任何现有的同名文件或临时文件！）
+
+#### 设置下载文件的路径和名称
+
+使用 `--output-dir/-o` 选项设置路径，使用 `--output-filename/-O` 设置下载文件的名称：
+
+```shell
+$ you-get -o 存储地址 -O 存储文件名 下载地址
+
+$ you-get -o ~/Videos -O zoo.webm 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
+```
+
+#### 代理设置
+
+可以通过 `--http-proxy/-x` 选项指定要you-get使用的HTTP 代理：
+
+```shell
+$ you-get -x 127.0.0.1:8087 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
+```
+
+> 但是，默认情况下应用系统代理设置（即环境变量 `http_proxy`）。要禁用任何代理，请使用该 `--no-proxy` 选项。
+
+#### 观看视频
+
+使用 `--player/-p` 选项将视频输入到您选择的媒体播放器中，例如 mpv 或 vlc，而不是下载它：
+
+```shell
+$ you-get -p mpv 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
+```
+
+或者，在浏览器中观看视频，只是没有广告或评论部分：
+
+```shell
+$ you-get -p chrome 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
+```
+
+#### 加载cookies
+
+并非所有视频都向任何人公开。如果您需要登录帐户才能访问某些内容（例如，私人视频），则不可避免地要you-get通过 `--cookies/-c` 选项向浏览器提供 cookie。
+
+> 截至目前，支持两种格式的浏览器cookie：Mozilla cookies.sqlite和 Netscape cookies.txt。
+
+## youtube-dl
+https://github.com/ytdl-org/youtube-dl
+
+> 一个命令行工具，用于从网页下载视频
+
+## yt-dlp
+https://github.com/yt-dlp/yt-dlp
+
+> youtube-dl 的 fork，一个命令行工具，用于从网页下载视频
+
+### 环境
+
+- [Python 2.6、2.7 或 3.2+](https://www.python.org/downloads/windows/)
+
+### 安装
+
+```shell
+# 安装
+$ pip install yt-dlp
+# 查看版本
+$ yt-dlp --version
+```
+
+### 使用
+
+#### 升级
+
+```shell
+# 升级
+$ yt-dlp -U
+```
+
+`yt-dlp [OPTIONS] [--] URL [URL...]`
+
+#### 常用命令
+
+| 命令                   | 说明                                                       |
+| ---------------------- | ---------------------------------------------------------- |
+| --version              | 打印程序版本并退出                                         |
+| -U, --update           | 更新程序到最新版本                                         |
+| --update-to @[TAG]     | 升级/降级到特定版本                                        |
+| --live-from-start      | 从开始下载直播流。仅支持YouTube(实验性)                    |
+| --no-live-from-start   | 从当前时间下载直播流(默认)                                 |
+| --proxy URL            | 使用HTTP/HTTPS/SOCKS代理。`--proxy ""`表示直接连接         |
+| --cookies FILE         | 读取和转储cookie                                           |
+| -I                     | 以逗号分隔的播放列表索引，指定要下载的项目                 |
+| --min-filesize SIZE    | 如果文件大小小于SIZE，则中止下载，例如50k或44.6M。         |
+| --max-filesize SIZE    | 如果文件大小大于SIZE，则中止下载，例如50k或44.6M。         |
+| --date DATE            | 仅下载在此日期上传的视频。                                 |
+| --datebefore DATE      | 仅下载在此日期之前上传的视频。接受的日期格式与--date相同。 |
+| --dateafter DATE       | 仅下载在此日期之后上传的视频。接受的日期格式与--date相同。 |
+| --match-filters FILTER | 通用视频过滤器                                             |
+
+```shell
+# [--cookies]下载地址使用指定cookies，[F]列出可下载的视频格式
+$ yt-dlp -F --cookies cookies.txt https://www.youtube.com/watch?v=3UfqgYafgss
+```
+
 ## 代理相关
 
 ### VPN和机场的区别
