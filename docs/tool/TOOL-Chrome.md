@@ -121,6 +121,11 @@ https://chromewebstore.google.com/detail/octotree-github-code-tree/bkhaagjahfmjl
 
 > 获取cookies
 
+### Burning Vocabulary
+https://chromewebstore.google.com/detail/burning-vocabulary-%E8%8B%B1%E6%96%87%E9%98%85%E8%AF%BB%E3%80%81%E5%8D%95/ljfjnlcnpmabfcgcmffkmgainghokdpl
+
+> 记录单词。
+
 ## Tampermonkey
 
 > 油猴。插件管理器。

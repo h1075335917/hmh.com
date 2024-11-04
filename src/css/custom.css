@@ -47,12 +47,31 @@
 .markdown h5::after {
   content: "";
   display: block;
-  width: 100%;
   height: 1px;
-  background-color: var(--ifm-color-primary-lightest);
   margin: 10px 0; /* 调整分割线和标题的间距 */
 }
 
+.markdown h2::after {
+  width: 80%;
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.markdown h3::after {
+  width: 60%;
+  background-color: var(--ifm-color-primary-lighter);
+}
+
+.markdown h4::after {
+  width: 40%;
+  background-color: var(--ifm-color-primary-light);
+}
+
+.markdown h5::after {
+  width: 20%;
+  background-color: var(--ifm-color-primary);
+}
+
+/* 分页导航样式 */
 .pagination-nav__link--next .pagination-nav__label:after {
   content: " 👉" !important;
 }
