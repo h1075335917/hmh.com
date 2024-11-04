@@ -18,12 +18,3 @@ import MediaChromePage from '@site/src/components/MediaChromePage';
 <MediaChromePage />
 ```
 
-## ReactRunner示例
-[react-runner文档](https://react-runner.vercel.app/)
-
-```mdx-code-block
-import ReactRunner from '@site/src/components/ReactRunner';
-
-<ReactRunner />
-```
-

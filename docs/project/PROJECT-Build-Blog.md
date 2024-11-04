@@ -486,73 +486,78 @@ console.log(name.toUpperCase());
     ```
 3.  示例：
 
-    ````jsx live
-    function Clock(props) {
-    const [date, setDate] = useState(new Date());
-    useEffect(() => {
-    const timerID = setInterval(() => tick(), 1000);
-            return function cleanup() {
-              clearInterval(timerID);
-            };
-          });
+````jsx live
+function Clock(props) {
+const [date, setDate] = useState(new Date());
+useEffect(() => {
+const timerID = setInterval(() => tick(), 1000);
+        return function cleanup() {
+          clearInterval(timerID);
+        };
+      });
 
-          function tick() {
-            setDate(new Date());
-          }
+      function tick() {
+        setDate(new Date());
+      }
 
-          return (
-            <div>
-              <h2>It is {date.toLocaleTimeString()}.</h2>
-            </div>
-          );
-        }
-        ```
-    > 你不能从 react-live 的代码编辑器中直接导入组件。你得显式地预先定义好所有组件导入项。
-    ````
+      return (
+        <div>
+          <h2>It is {date.toLocaleTimeString()}.</h2>
+        </div>
+      );
+    }
+````
+
+:::warning[重要]
+
+你不能从 react-live 的代码编辑器中直接导入组件。你得显式地预先定义好所有组件导入项。
+
+:::
+
 
 默认情况下，你可以使用 React 的所有导入项。 如果你需要更多可导入项，你通过 swizzle 组件 react-live scope 来获取：
 
 1. `yarn swizzle @docusaurus/theme-live-codeblock ReactLiveScope --eject`
 2. 示例：
 
-   ```js title="src/theme/ReactLiveScope/index.js"
-   import React from "react";
+```js title="src/theme/ReactLiveScope/index.js"
+import React from "react";
 
-   const ButtonExample = (props) => (
-     <button
-       {...props}
-       style={{
-         backgroundColor: "white",
-         color: "black",
-         border: "solid red",
-         borderRadius: 20,
-         padding: 10,
-         cursor: "pointer",
-         ...props.style,
-       }}
-     />
-   );
+const ButtonExample = (props) => (
+  <button
+    {...props}
+    style={{
+      backgroundColor: "white",
+      color: "black",
+      border: "solid red",
+      borderRadius: 20,
+      padding: 10,
+      cursor: "pointer",
+      ...props.style,
+    }}
+  />
+);
 
-   // Add react-live imports you need here
-   const ReactLiveScope = {
-     React,
-     ...React,
-     ButtonExample,
-   };
+// Add react-live imports you need here
+const ReactLiveScope = {
+  React,
+  ...React,
+  ButtonExample,
+};
 
-   export default ReactLiveScope;
-   ```
+export default ReactLiveScope;
+```
 
 3. 使用：
-   ```js
-   function MyPlayground(props) {
-     return (
-       <div>
-         <ButtonExample onClick={() => alert("hey!")}>Click me</ButtonExample>
-       </div>
-     );
-   }
-   ```
+```jsx live
+function MyPlayground(props) {
+  return (
+    <div>
+      <ButtonExample onClick={() => alert("hey!")}>Click me</ButtonExample>
+    </div>
+  );
+}
+```
 
 ### 命令式渲染
 
