@@ -126,6 +126,11 @@ https://chromewebstore.google.com/detail/burning-vocabulary-%E8%8B%B1%E6%96%87%E
 
 > 记录单词。
 
+### 网站
+
+- [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=zh-CN&utm_source=ext_sidebar)
+- [类似的网站](https://chromewebstore.google.com/detail/%E7%B1%BB%E4%BC%BC%E7%9A%84%E7%BD%91%E7%AB%99-%E5%8F%91%E7%8E%B0%E7%9B%B8%E5%85%B3%E7%BD%91%E7%AB%99/necpbmbhhdiplmfhmjicabdeighkndkn)
+
 ## Tampermonkey
 
 > 油猴。插件管理器。
