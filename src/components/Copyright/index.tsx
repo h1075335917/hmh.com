@@ -12,7 +12,7 @@ export default function Copyright({ behavior, description, url }: CopyrightItem)
 
   return (
     <p>
-      © {new Date().getFullYear()} mhuahe. {behavior} with&nbsp;
+      © {new Date().getFullYear()} mhuahe. {behavior}：
       {descriptions.map((desc, index) => (
         <React.Fragment key={index}>
           {index > 0 && ' 、'}
@@ -21,7 +21,6 @@ export default function Copyright({ behavior, description, url }: CopyrightItem)
           </a>
         </React.Fragment>
       ))}
-      .
     </p>
   )
 }
