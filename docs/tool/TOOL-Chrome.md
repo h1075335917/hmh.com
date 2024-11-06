@@ -38,10 +38,11 @@ https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechi
 
 > 全屏截图。
 
-### Google Keep Chrome
-https://chromewebstore.google.com/detail/google-keep-chrome-%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F/lpcaedmchfhocbbapmcbpinfpgnhiddi
+### 书签和笔记
 
-> 标记笔记。
+- [Google Keep Chrome](https://chromewebstore.google.com/detail/google-keep-chrome-%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F/lpcaedmchfhocbbapmcbpinfpgnhiddi)
+- [Raindrop.io](https://chromewebstore.google.com/detail/raindropio/ldgfbffkinooeloadekpmfoklnobpien)
+- [Pintree](https://pintree.io/)
 
 ### Nimbus | loom
 [Nimbus](https://chromewebstore.google.com/detail/nimble-capture/bpconcjcammlapcogcnnelfmaeghhagj)
