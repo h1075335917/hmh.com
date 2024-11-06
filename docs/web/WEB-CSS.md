@@ -4,6 +4,22 @@ sidebar_position: 2
 
 # WEB-CSS
 
+## text-align
+
+> `text-align`属性设置文本的水平对齐方式。
+
+```css
+text-align: center;
+```
+
+## background-color
+
+> `background-color`属性设置元素的背景颜色。
+
+```css
+background-color: Burlywood;
+```
+
 ## box-shadow
 
 ```css
