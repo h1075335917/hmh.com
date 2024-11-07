@@ -189,9 +189,10 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "right" },
         {
-          href: "https://mhuahe.github.io/pintree/",
+          href: "/pintree/index.html",
           label: "书签",
           position: "right",
+          target: "_blank",
         },
         {
           href: "https://github.com/mhuahe/mhuahe.com",
