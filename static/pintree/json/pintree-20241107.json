@@ -193,13 +193,6 @@
                     "title": "史上最全Jenkins安装指南",
                     "icon": "https://logo.clearbit.com/mp.weixin.qq.com",
                     "url": "https://mp.weixin.qq.com/s/NfMuTrPLYqVAH1g-UmlHAw"
-                  },
-                  {
-                    "type": "link",
-                    "addDate": 1730162261978,
-                    "title": "Jrebel 最新的 2024.3.0 激活方法_jrebel激活-CSDN博客",
-                    "icon": "https://logo.clearbit.com/blog.csdn.net",
-                    "url": "https://blog.csdn.net/qq251708339/article/details/134105044"
                   }
                 ]
               },
@@ -2512,13 +2505,6 @@
                 "title": "cobalt-下载视频",
                 "icon": "https://logo.clearbit.com/cobalt.tools",
                 "url": "https://cobalt.tools/"
-              },
-              {
-                "type": "link",
-                "addDate": 1730770574335,
-                "title": "JSON Crack",
-                "icon": "https://logo.clearbit.com/jsoncrack.com",
-                "url": "https://jsoncrack.com/editor"
               }
             ]
           },
@@ -2596,20 +2582,6 @@
                 "title": "Python Tutor - Python Online Compiler with Visual AI Help",
                 "icon": "https://logo.clearbit.com/pythontutor.com",
                 "url": "https://pythontutor.com/"
-              },
-              {
-                "type": "link",
-                "addDate": 1730448492456,
-                "title": "React Runner",
-                "icon": "https://logo.clearbit.com/react-runner.vercel.app",
-                "url": "https://react-runner.vercel.app/"
-              },
-              {
-                "type": "link",
-                "addDate": 1730708191007,
-                "title": "30 seconds of code",
-                "icon": "https://logo.clearbit.com/www.30secondsofcode.org",
-                "url": "https://www.30secondsofcode.org/"
               }
             ]
           },
@@ -2618,6 +2590,13 @@
             "addDate": 1723802862437,
             "title": "网盘",
             "children": [
+              {
+                "type": "link",
+                "addDate": 1729560868450,
+                "title": "AList网盘",
+                "icon": "https://logo.clearbit.com/175.178.164.134",
+                "url": "http://175.178.164.134:5244/"
+              },
               {
                 "type": "link",
                 "addDate": 1723802850179,
@@ -2708,6 +2687,13 @@
                 "title": "Syncthing",
                 "icon": "https://logo.clearbit.com/127.0.0.1",
                 "url": "http://127.0.0.1:8384/#device-general"
+              },
+              {
+                "type": "link",
+                "addDate": 1729751463107,
+                "title": "AList网盘",
+                "icon": "https://logo.clearbit.com/175.178.164.134",
+                "url": "http://175.178.164.134:5244/@login?redirect=%2F"
               }
             ]
           },
@@ -2841,6 +2827,13 @@
                     "url": "https://wallpapercave.com/"
                   }
                 ]
+              },
+              {
+                "type": "link",
+                "addDate": 1729242340348,
+                "title": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
+                "icon": "https://logo.clearbit.com/www.liblib.art",
+                "url": "https://www.liblib.art/?sourceId=000052"
               },
               {
                 "type": "link",
@@ -3061,38 +3054,10 @@
               },
               {
                 "type": "link",
-                "addDate": 1729242340348,
-                "title": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
-                "icon": "https://logo.clearbit.com/www.liblib.art",
-                "url": "https://www.liblib.art/?sourceId=000052"
-              },
-              {
-                "type": "link",
                 "addDate": 1729242608203,
                 "title": "探索 - 即时设计",
                 "icon": "https://logo.clearbit.com/js.design",
                 "url": "https://js.design/community?category=explore"
-              },
-              {
-                "type": "link",
-                "addDate": 1729754733902,
-                "title": "图像魔方 img2046.com | 一站式图像处理工具",
-                "icon": "https://logo.clearbit.com/www.img2046.com",
-                "url": "https://www.img2046.com/"
-              },
-              {
-                "type": "link",
-                "addDate": 1730077832253,
-                "title": "icon查询",
-                "icon": "https://logo.clearbit.com/icones.js.org",
-                "url": "https://icones.js.org/"
-              },
-              {
-                "type": "link",
-                "addDate": 1730858191257,
-                "title": "AI Color（AI配色）",
-                "icon": "https://logo.clearbit.com/aicolors.co",
-                "url": "https://aicolors.co/"
               }
             ]
           },
@@ -3592,20 +3557,6 @@
             "title": "platform",
             "icon": "https://logo.clearbit.com/huly.app",
             "url": "https://huly.app/workbench/mhuahe/tracker/6707e5c52119b679dce146d5/issues"
-          },
-          {
-            "type": "link",
-            "addDate": 1730078420722,
-            "title": "Dangerous Writing - 消失的笔记",
-            "icon": "https://logo.clearbit.com/maebert.github.io",
-            "url": "https://maebert.github.io/themostdangerouswritingapp/"
-          },
-          {
-            "type": "link",
-            "addDate": 1730354063728,
-            "title": "omnivore",
-            "icon": "https://logo.clearbit.com/omnivore.app",
-            "url": "https://omnivore.app/home"
           }
         ]
       },
@@ -4189,6 +4140,20 @@
             ]
           },
           {
+            "type": "folder",
+            "addDate": 1727659896830,
+            "title": "计算机",
+            "children": [
+              {
+                "type": "link",
+                "addDate": 1727659865185,
+                "title": "Intro | Putting the \"You\" in CPU",
+                "icon": "https://logo.clearbit.com/cpu.land",
+                "url": "https://cpu.land/"
+              }
+            ]
+          },
+          {
             "type": "link",
             "addDate": 1721007109968,
             "title": "design patterns - 图说设计模式",
@@ -4406,32 +4371,11 @@
             "url": "https://markdown.com.cn/"
           },
           {
-            "type": "folder",
-            "addDate": 1727659896830,
-            "title": "计算机",
-            "children": [
-              {
-                "type": "link",
-                "addDate": 1727659865185,
-                "title": "Intro | Putting the \"You\" in CPU",
-                "icon": "https://logo.clearbit.com/cpu.land",
-                "url": "https://cpu.land/"
-              }
-            ]
-          },
-          {
             "type": "link",
             "addDate": 1729560740451,
             "title": "Java 全栈知识体系",
             "icon": "https://logo.clearbit.com/pdai.tech",
             "url": "https://pdai.tech/"
-          },
-          {
-            "type": "link",
-            "addDate": 1730706058911,
-            "title": "freecodecamp",
-            "icon": "https://logo.clearbit.com/www.freecodecamp.org",
-            "url": "https://www.freecodecamp.org/chinese/learn/?messages=success%5B0%5D%3Dflash.signin-success"
           }
         ]
       },
@@ -4485,53 +4429,11 @@
         "url": "https://www.bilibili.com/video/BV19t4y1x7Ze/?spm_id_from=333.337.search-card.all.click&vd_source=84397dcddaddbb286537865ffceb3762"
       },
       {
-        "type": "folder",
-        "addDate": 1729752334231,
-        "title": "我的网站",
-        "children": [
-          {
-            "type": "link",
-            "addDate": 1729752345216,
-            "title": "mhuahe的书签网站",
-            "icon": "https://logo.clearbit.com/mhuahe.github.io",
-            "url": "https://mhuahe.github.io/pintree/"
-          },
-          {
-            "type": "link",
-            "addDate": 1728959197006,
-            "title": "mhuahe的官方网站",
-            "icon": "https://logo.clearbit.com/mhuahe.github.io",
-            "url": "https://mhuahe.github.io/mhuahe.com/"
-          },
-          {
-            "type": "link",
-            "addDate": 1729560868450,
-            "title": "mhuahe的网盘",
-            "icon": "https://logo.clearbit.com/175.178.164.134",
-            "url": "http://175.178.164.134:5244/"
-          },
-          {
-            "type": "link",
-            "addDate": 1730271809396,
-            "title": "腾讯云-Nacos",
-            "icon": "https://logo.clearbit.com/175.178.164.134",
-            "url": "http://175.178.164.134:8848/nacos/#/configurationManagement?dataId=&group=&appName=&namespace=&pageSize=&pageNo="
-          }
-        ]
-      },
-      {
         "type": "link",
-        "addDate": 1730707918597,
-        "title": "Responsive Web Design Certification | freeCodeCamp.org",
-        "icon": "https://logo.clearbit.com/www.freecodecamp.org",
-        "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/"
-      },
-      {
-        "type": "link",
-        "addDate": 1730966940918,
-        "title": "dbarochiya/me: This is the code implementation for the blog 'How to create your portfolio website in React.js'",
-        "icon": "https://logo.clearbit.com/github.com",
-        "url": "https://github.com/dbarochiya/me"
+        "addDate": 1728959197006,
+        "title": "贺敏华的官方网站",
+        "icon": "https://logo.clearbit.com/mhuahe.github.io",
+        "url": "https://mhuahe.github.io/mhuahe.com/"
       }
     ]
   }

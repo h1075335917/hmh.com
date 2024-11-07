@@ -234,6 +234,9 @@
   </div>
 
   <script>
+
+    let latestJson = "json/pintree.json";
+
     document.addEventListener('DOMContentLoaded', () => {
       // Variables for sidebar elements
       const openSidebarButton = document.getElementById('open-sidebar-button');
@@ -268,7 +271,7 @@
 
     // Search functionality
     function searchBookmarks(query) {
-      fetch('json/pintree.json')
+      fetch(latestJson)
         .then(response => response.json())
         .then(data => {
           const results = searchInData(data, query.toLowerCase());
@@ -300,7 +303,7 @@
 
     // Clear search results and reset UI
     function clearSearchResults() {
-      fetch('json/pintree.json')
+      fetch(latestJson)
         .then(response => response.json())
         .then(data => {
           const secondLayer = data[0].children;
@@ -315,7 +318,7 @@
     document.getElementById('clearSearchButton').addEventListener('click', clearSearchResults);
 
     function searchBookmarks(query) {
-      fetch('json/pintree.json')
+      fetch(latestJson)
         .then(response => response.json())
         .then(data => {
           const results = searchInData(data, query.toLowerCase());
@@ -598,7 +601,7 @@
     }
 
     // Fetch and render data
-    fetch('json/pintree.json')
+    fetch(latestJson)
       .then(response => response.json())
       .then(data => {
         // Use the first layer of the data directly
@@ -661,7 +664,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       // Fetch and render data
-      fetch('json/pintree.json')
+      fetch(latestJson)
         .then(response => response.json())
         .then(data => {
           // Hide loading spinner
