@@ -1,22 +1,20 @@
-# 项目-博客
+# docusaurus
 
-## docusaurus
+## 部署
 
-### 部署
-
-#### 地址
+### 地址
 
 文档：https://docusaurus.io/zh-CN/
 
 代码：https://github.com/h1075335917/hmh.com
 
-#### 脚手架
+### 脚手架
 
 ```sh
 npx create-docusaurus@latest my-website classic
 ```
 
-#### 目录结构
+### 目录结构
 
 ```bash
 my-website
@@ -57,7 +55,7 @@ my-website
 - `/package.json`- Docusaurus 网站是一个 React 应用程序。您可以在其中安装和使用您喜欢的任何 npm 软件包
 - `/sidebars.js`- 文档使用它来指定侧边栏中文档的顺序
 
-#### 更新 Docusaurus 版本
+### 更新 Docusaurus 版本
 
 有多种方法可以更新 Docusaurus 版本。一种有保证的方法是手动将版本号更改`package.json`为所需的版本。请注意，所有
 `@docusaurus/`命名空间包应使用相同的版本。
@@ -66,11 +64,11 @@ my-website
 
 检查更新是否成功：`npx docusaurus --version`。
 
-### 配置
+## 配置
 
 `docusaurus.config.js`
 
-### 部署到 Github
+## 部署到 Github
 
 1. 配置文件中设置：
 
@@ -96,7 +94,7 @@ projectName: 'mhuahe.com',
 
      访问 Github Pages 地址
 
-### 集成搜索引擎 Algolia
+## 集成搜索引擎 Algolia
 
 配置
 
@@ -141,7 +139,7 @@ themeConfig: {
 }
 ```
 
-### 集成本地搜索引擎 docusaurus-search-local
+## 集成本地搜索引擎 docusaurus-search-local
 
 配置
 
@@ -166,7 +164,7 @@ yarn run build
 yarn run serve
 ```
 
-### Markdown 和 JSX
+## Markdown 和 JSX
 
 Docusaurus v3 使用 MDX v3。
 
@@ -179,7 +177,7 @@ MDX 语法主要与 CommonMark 兼容，但更严格，因为您的.mdx 文件�
 - HTML 语法 (`<p style="color: red;">`)：使用 JSX 代替 (`<p style={{color: 'red'}}>`)
 - 未转义的`{`and `<`：用( `\{`and `\<`)转义
 
-### category 索引约定
+## category 索引约定
 
 Docusaurus 可以自动给一个类别关联一篇索引文档。
 
@@ -189,9 +187,9 @@ Docusaurus 可以自动给一个类别关联一篇索引文档。
 - 命名为`README`: docs/Guides/README.mdx
 - 跟父目录同名: docs/Guides/Guides.md
 
-### 评论系统
+## 评论系统
 
-#### disqus
+### disqus
 
 为本博客（docusaurus）添加 disqus 评论系统。
 
@@ -216,7 +214,7 @@ const disqusId = fmtId == "" ? "main" : fmtId;
 />;
 ```
 
-#### giscus
+### giscus
 
 1. 登录 github 账号安装 giscus 应用 [giscus app](https://github.com/apps/giscus)。
 
@@ -337,7 +335,7 @@ export default function DocItemLayout({ children }) {
 }
 ```
 
-### prism 代码高亮
+## prism 代码高亮
 
 ```ts title="docusaurus.config.ts"
 export default {
@@ -350,7 +348,7 @@ export default {
 };
 ```
 
-### 目录层级设置
+## 目录层级设置
 
 ```ts title="docusaurus.config.ts"
 export default {
@@ -363,7 +361,7 @@ export default {
 };
 ```
 
-### 内联目录
+## 内联目录
 
 ```jsx title="mdx-code-block"
 import TOCInline from "@theme/TOCInline";
@@ -387,7 +385,7 @@ import TOCInline from '@theme/TOCInline';
 />
 ```
 
-### 选项卡
+## 选项卡
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -425,7 +423,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 ```
 
-### 代码高亮
+## 代码高亮
 
 ```jsx {1,4-6,11}
 import React from "react";
@@ -441,7 +439,7 @@ function MyComponent(props) {
 export default MyComponent;
 ```
 
-### 自定义高亮
+## 自定义高亮
 
 ```ts
 export default {
@@ -472,7 +470,7 @@ console.log(name.toUpperCase());
 // Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
 ```
 
-### 交互代码编辑器
+## 交互代码编辑器
 
 1.  `yarn add @docusaurus/theme-live-codeblock`
 
@@ -559,7 +557,7 @@ function MyPlayground(props) {
 }
 ```
 
-### 命令式渲染
+## 命令式渲染
 
 ```jsx live noInline
 const project = "Docusaurus";
@@ -569,7 +567,7 @@ const Greeting = () => <p>Hello {project}!</p>;
 render(<Greeting />);
 ```
 
-### 告示语法
+## 告示语法
 
 :::note
 
@@ -646,7 +644,7 @@ import Admonition from '@theme/Admonition';
 </Admonition>
 ```
 
-### 资源
+## 资源
 
 ```mdx-code-block
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -662,7 +660,7 @@ import ThemedImage from '@theme/ThemedImage';
 />
 ```
 
-### 图表
+## 图表
 
 [mermaid 示例](https://mermaid.js.org/intro/syntax-reference.html)
 
@@ -695,4 +693,95 @@ import Mermaid from '@theme/Mermaid';
           PRODUCT-CATEGORY ||--|{ PRODUCT : contains
           PRODUCT ||--o{ ORDER-ITEM : "ordered in"`}
 />
+```
+
+## 依赖说明
+
+```json
+{
+  // 项目名称
+  "name": "my-website",
+  // 版本
+  "version": "1.0",
+  // 私有
+  "private": true,
+  // 脚本
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    // 使用@docusaurus/core来创建Docusaurus站点
+    "@docusaurus/core": "^3.6.0",
+    // 使用@docusaurus/faster来加速构建
+    "@docusaurus/faster": "^3.6.0",
+    // Rsdoctor插件可以帮助您解决 Docusaurus 站点捆绑阶段的问题，同时支持 Webpack 和 Rspack。
+    "@docusaurus/plugin-rsdoctor": "^3.6.0",
+    // 使用@docusaurus/preset-classic来配置Docusaurus
+    "@docusaurus/preset-classic": "^3.6.0",
+    // 使用@docusaurus/theme-live-codeblock来高亮代码
+    "@docusaurus/theme-live-codeblock": "^3.6.0",
+    // 使用@docusaurus/theme-mermaid来渲染图表
+    "@docusaurus/theme-mermaid": "^3.6.0",
+    // 使用@easyops-cn/docusaurus-search-local来搜索
+    "@easyops-cn/docusaurus-search-local": "^0.44.5",
+    // 使用@mdx-js/react来渲染MDX
+    "@mdx-js/react": "^3.0.0",
+    // 使用@types/react-dom来类型检查React DOM
+    "@types/react-dom": "^18.3.0",
+    // 使用clsx来处理CSS类
+    "clsx": "^2.0.0",
+    // 使用disqus-react来渲染Disqus评论
+    "disqus-react": "^1.1.5",
+    // 使用media-chrome来处理媒体
+    "media-chrome": "^4.2.2",
+    // 使用prism-react-renderer来渲染代码
+    "prism-react-renderer": "^2.3.0",
+    // 使用react来渲染React组件
+    "react": "^18.0.0",
+    // 使用react-dom来渲染React DOM
+    "react-dom": "^18.0.0",
+    // 使用react-player来处理视频
+    "react-player": "^2.16.0",
+    // 使用screenfull来处理全屏
+    "screenfull": "^6.0.2"
+  },
+  "devDependencies": {
+    // 使用@docusaurus/module-type-aliases来处理模块类型
+    "@docusaurus/module-type-aliases": "^3.6.0",
+    // 使用@docusaurus/tsconfig来处理TypeScript配置
+    "@docusaurus/tsconfig": "^3.6.0",
+    // 使用@docusaurus/types来处理类型
+    "@docusaurus/types": "^3.6.0",
+    // 使用typescript来处理TypeScript
+    "typescript": "~5.5.2"
+  },
+  // 浏览器兼容性
+  "browserslist": {
+    // 生产环境
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    // 开发环境
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  // Node.js版本要求
+  "engines": {
+    "node": ">=18.0"
+  }
+}
 ```

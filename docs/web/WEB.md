@@ -98,48 +98,30 @@ fnm use 18.17.0
 
 ## npm
 
-升级到最新版本
-
-```sh
-npm install -g npm
-```
+| 命令                      | 描述             |
+| ------------------------- | ---------------- |
+| `npm install -g npm`      | 升级到最新版本   |
+| `npm cache clean --force` | 清理缓存删除依赖 |
 
 ## yarn
 
-```sql
--- 安装yarn
-npm install --global yarn
-
-yarn --version
-
--- 安装指定依赖
-yarn add <package-name>@<version>
-
--- 清理缓存删除依赖
-npm cache clean --force
-或 yarn cache clean
-
--- 删除依赖
-rmdir /s /q node_modules
-
--- 删除全局安装的依赖项
-yarn global remove package-name
-    
--- 忽略yarn.lock重新安装依赖
-yarn install --frozen-lockfile
-```
+| 命令                                                         | 描述                        |
+| ------------------------------------------------------------ | --------------------------- |
+| `npm install --global yarn`                                  | 安装yarn                    |
+| `yarn --version`                                             | 查看版本                    |
+| `yarn add <package-name>@<version>`                          | 安装指定依赖                |
+| `yarn cache clean`                                           | 清理缓存删除依赖            |
+| `rmdir /s /q node_modules`                                   | 删除依赖                    |
+| `yarn global remove package-name`                            | 删除全局安装的依赖项        |
+| `yarn install --frozen-lockfile`                             | 忽略 yarn.lock 重新安装依赖 |
+| `yarn config set [proxy\|https-proxy] http://127.0.0.1:10809` | 设置代理                    |
 
 ## pnpm
 
-```sql
--- 无node - windows
-iwr https://get.pnpm.io/install.ps1 -useb | iex
-
--- node安装
-npm install -g pnpm
-```
-
-
+| 命令                                               | 描述                    |
+| -------------------------------------------------- | ----------------------- |
+| `iwr https://get.pnpm.io/install.ps1 -useb \| iex` | windows下无node安装pnpm |
+| `npm install -g pnpm`                              | node安装pnpm            |
 
 ## vite
 

@@ -29,6 +29,30 @@ const config: Config = {
     locales: ["zh-Hans"],
   },
 
+  future: {
+    // @docusaurus/faster
+    experimental_faster: {
+      swcJsLoader: true, // 使用SWC转译 JS (而不是Babel )
+      swcJsMinimizer: true, // 使用SWC来缩小 JS （而不是Terser）
+      swcHtmlMinimizer: true, // 使用SWC来缩小 HTML （而不是HtmlMinimizer）
+      lightningCssMinimizer: true, // 使用Lightning CSS来缩小CSS（而不是CSSMinimizer）
+      rspackBundler: false, // 使用Rspack作为捆绑器（而不是Webpack）
+      mdxCrossCompilerCache: true, // 使用MDX交叉编译器缓存，为浏览器/Node.js 环境编译 MDX 文件一次，而不是两次
+    },
+  },
+
+  plugins: [
+    // Rsdoctor插件可以帮助您解决 Docusaurus 站点捆绑阶段的问题，同时支持 Webpack 和 Rspack。
+    // [
+    //   "rsdoctor",
+    //   {
+    //     rsdoctorOptions: {
+    //       mode: "lite",
+    //     },
+    //   },
+    // ],
+  ],
+
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -88,7 +112,7 @@ const config: Config = {
       logo: {
         alt: "mhuahe site logo",
         src: "img/m_two_logo.svg",
-        srcDark: 'img/m_two_logo.svg',
+        srcDark: "img/m_two_logo.svg",
         width: 32,
         height: 32,
       },
