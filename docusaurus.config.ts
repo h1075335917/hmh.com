@@ -7,23 +7,24 @@ const config: Config = {
   tagline: "贺敏华自用的笔记网站",
   favicon: "img/m_two_logo.ico",
 
-  // Set the production url of your site here
+  // 设置生产环境的站点 URL
   url: "https://mhuahe.github.io/",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  // 设置站点的 /<baseUrl>/ 路径名，您的站点在此路径下提供
+  // 对于 GitHub pages 部署，它通常是 '/<projectName>/'
   baseUrl: "/mhuahe.com/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "mhuahe", // Usually your GitHub org/user name.
-  projectName: "mhuahe.com", // Usually your repo name.
+  // GitHub pages 部署配置。
+  // 如果您不使用 GitHub pages，则不需要这些。
+  organizationName: "mhuahe", // 拥有部署仓库的 GitHub 用户或组织 ORGANIZATION_NAME
+  projectName: "mhuahe.com", // 部署仓库的名字 PROJECT_NAME
+  deploymentBranch: "gh-pages", // 部署分支的名称 DEPLOYMENT_BRANCH
+  trailingSlash: false, // 是否在 URL 末尾添加尾随斜杠
 
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw", // 当链接断开时，抛出错误
+  onBrokenMarkdownLinks: "warn", // 当 Markdown 链接断开时，发出警告
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // 即使您不使用国际化，也可以使用此字段设置
+  // 有用元数据，例如 html lang。例如，如果您的网站是中文，您可能希望将 "en" 替换为 "zh-Hans"。
   i18n: {
     defaultLocale: "zh-Hans",
     locales: ["zh-Hans"],
@@ -57,7 +58,7 @@ const config: Config = {
     [
       "@docusaurus/preset-classic",
       {
-        // Will be passed to @docusaurus/plugin-content-docs (false to disable)
+        // 将传递给 @docusaurus/plugin-content-docs (false 禁用)
         docs: {
           path: "docs",
           editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
@@ -65,7 +66,7 @@ const config: Config = {
           showLastUpdateTime: true,
           sidebarPath: "./sidebars.ts",
         },
-        // Will be passed to @docusaurus/plugin-content-blog (false to disable)
+        // 将传递给 @docusaurus/plugin-content-blog (false 禁用)
         blog: {
           path: "blog",
           editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
@@ -86,16 +87,16 @@ const config: Config = {
           // 在未截断的博客文章上警告
           onUntruncatedBlogPosts: "warn",
         },
-        // Will be passed to @docusaurus/plugin-content-pages (false to disable)
+        // 将传递给 @docusaurus/plugin-content-pages (false 禁用)
         pages: {
           path: "src/pages",
           editUrl: "https://github.dev/mhuahe/mhuahe.com/blob/master-ts/",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
-        // Will be passed to @docusaurus/plugin-sitemap (false to disable)
+        // 将传递给 @docusaurus/plugin-sitemap (false 禁用)
         sitemap: {},
-        // Will be passed to @docusaurus/theme-classic
+        // 将传递给 @docusaurus/theme-classic
         theme: {
           customCss: "./src/css/custom.css",
         },

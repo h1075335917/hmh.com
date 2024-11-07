@@ -7,6 +7,8 @@
     "jsx": "react",
     //TS2307: Cannot find module @docusaurus/plugin-content-blog/client or its corresponding type declarations
     "moduleResolution": "node16",
-    "module": "Node16"
+    "module": "Node16",
+    // Allow importing JSON files
+    "resolveJsonModule": true
   }
 }
