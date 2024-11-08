@@ -1,4 +1,4 @@
-name: 部署到 GitHub Pages
+name: 部署到 gh-pages 分支
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           path: build
 
   deploy:
-    name: 部署到 GitHub Pages
+    name: 部署到 gh-pages 分支
     # build 必须在 deploy 开始之前成功完成
     needs: build
 
@@ -40,13 +40,15 @@ jobs:
       pages: write # 以部署到 Pages
       id-token: write # 以验证部署来自恰当的源
 
-    # 部署到 Github Pages 环境
+    # 部署到 gh-pages 分支
     environment:
       name: production_environment
       url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
     steps:
-      - name: 部署到 GitHub Pages
+      - name: 部署到 gh-pages 分支
         id: deployment
-        uses: actions/gh-pages@v4
+        uses: actions/deploy-pages@v4
+        with:
+          branch: gh-pages
