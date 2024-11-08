@@ -201,6 +201,30 @@ const config: Config = {
         },
       ],
     },
+    //DocSearch
+    algolia: {
+      // Algolia 提供的应用 ID
+      appId: "I1N20F00TC",
+      //  公开 API 密钥：提交它没有危险
+      apiKey: "2c68adfaa6a85f46e8e43c95701e10b6",
+      indexName: "mhuaheio",
+      // 可选：见下文
+      contextualSearch: true,
+      // 可选：声明哪些域名需要用 window.location 型的导航而不是 history.push。 适用于 Algolia 配置会爬取多个文档站点，而我们想要用 window.location.href 在它们之间跳转时。
+      externalUrlRegex: "external\\.com|domain\\.com",
+      // 可选：替换 Algolia 的部分网址。 在使用相同搜索索引支持多个不同 baseUrl 的部署时非常有用。 你可以在 “from” 中使用正则表达式或字符串。 比方说，localhost:3000 和 myCompany.com/docs
+      replaceSearchResultPathname: {
+        from: "/docs/", // or as RegExp: /\/docs\//
+        to: "/",
+      },
+      // 可选：Algolia 搜索参数
+      searchParameters: {},
+      // 可选：默认启用的搜索页路径（传递 `false` 以禁用它）
+      searchPagePath: "search",
+      // 可选：Docsearch 的 insights 功能是否启用（默认为 `false`）
+      insights: false,
+      //... 其他 Algolia 参数
+    },
     // 公告栏
     announcementBar: {
       id: "announcement-bar",
@@ -256,7 +280,7 @@ const config: Config = {
       //   src: "/img/meta_opensource_logo_negative.svg",
       //   href: "https://opensource.fb.com",
       // },
-      copyright: `© ${new Date().getFullYear()} mhuahe. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} mhuahe. Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -305,25 +329,25 @@ const config: Config = {
     //mermaid图表插件
     require.resolve("@docusaurus/theme-mermaid"),
     //本地搜索插件
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
-      {
-        // `hashed` is recommended as long-term-cache of index file is possible.
-        hashed: true,
-        language: ["en", "zh"],
-        // 在目标页面上突出显示搜索词。
-        highlightSearchTermsOnTargetPage: true,
-        // 搜索结果限制
-        searchResultLimits: 10,
-        // 是否使用搜索栏快捷方式
-        searchBarShortcut: true,
-        // 是否显示搜索栏快捷方式
-        searchBarShortcutHint: true,
-        // 搜索栏位置："auto" | "left" | "right"
-        searchBarPosition: "auto",
-      },
-    ],
+    // [
+    //   require.resolve("@easyops-cn/docusaurus-search-local"),
+    //   /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+    //   {
+    //     // `hashed` is recommended as long-term-cache of index file is possible.
+    //     hashed: true,
+    //     language: ["en", "zh"],
+    //     // 在目标页面上突出显示搜索词。
+    //     highlightSearchTermsOnTargetPage: true,
+    //     // 搜索结果限制
+    //     searchResultLimits: 10,
+    //     // 是否使用搜索栏快捷方式
+    //     searchBarShortcut: true,
+    //     // 是否显示搜索栏快捷方式
+    //     searchBarShortcutHint: true,
+    //     // 搜索栏位置："auto" | "left" | "right"
+    //     searchBarPosition: "auto",
+    //   },
+    // ],
   ],
 
   markdown: {
