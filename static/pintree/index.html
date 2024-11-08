@@ -237,16 +237,17 @@
 
     let pintreeJsonData = [];
 
-    function fetchPintreeJsonData() {
-      fetch("json/pintree.json")
-        .then(response => response.json())
-        .then(data => {
-          pintreeJsonData = data;
-        })
-        .catch(error => console.error('Error searching bookmarks:', error));
+    async function fetchPintreeJsonData() {
+      try {
+        const response = await fetch("json/pintree.json");
+        const data = await response.json();
+        pintreeJsonData = data;
+        return data;
+      } catch (error) {
+        console.error('Error searching bookmarks:', error);
+        return [];
+      }
     }
-
-    fetchPintreeJsonData();
 
     document.addEventListener('DOMContentLoaded', () => {
       // Variables for sidebar elements
@@ -275,7 +276,7 @@
       };
 
       // Event listeners for open and close buttons
-      openSidebarButton.addEventListener('click', openSidebar);
+      openSidebarButton?.addEventListener('click', openSidebar);
       closeSidebarButton.addEventListener('click', closeSidebar);
       offCanvasBackdrop.addEventListener('click', closeSidebar); // Close sidebar when clicking on the backdrop
     });
@@ -332,9 +333,7 @@
 
     // Clear search results and reset UI
     function clearSearchResults() {
-      const secondLayer = pintreeJsonData[0].children;
-      renderNavigation(secondLayer, document.getElementById('navigation'));
-      renderBookmarks(secondLayer, [{ title: 'Bookmark', children: secondLayer }]);
+      renderFirstLayer();
       document.getElementById('searchInput').value = '';
       document.getElementById('clearSearchButton').classList.add('hidden');
     }
@@ -619,20 +618,8 @@
       updateSidebarActiveState(path);
     }
 
-    // Fetch and render data
-    // 直接使用pintreeJsonData
-    const firstLayer = pintreeJsonData;
     // 渲染导航，使用数据的第一层
-    renderNavigation(firstLayer, document.getElementById('navigation'), true);
-    // 渲染书签，使用数据的第一层，从书签开始
-    renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
-
-    // 自动选择并显示第一个项目
-    if (firstLayer.length > 0) {
-      const firstItem = firstLayer[0];
-      updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
-      renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
-    }
+    renderFirstLayer();
 
     // Search functionality on pressing Enter
     document.getElementById('searchInput').addEventListener('keydown', function (event) {
@@ -677,24 +664,28 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Fetch and render data
       // 隐藏加载动画
       document.getElementById('loading-spinner').style.display = 'none';
-
-      // 直接使用pintreeJsonData的第一层数据
-      const firstLayer = pintreeJsonData;
       // 使用第一层数据渲染导航
-      renderNavigation(firstLayer, document.getElementById('navigation'), true);
-      // 从书签开始，使用第一层数据渲染书签
-      renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
-
-      // 自动选择并显示第一个项目
-      if (firstLayer.length > 0) {
-        const firstItem = firstLayer[0];
-        updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
-        renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
-      }
+      renderFirstLayer();
     });
+
+    // 渲染第一层数据
+    function renderFirstLayer() {
+      fetchPintreeJsonData().then(firstLayer => {
+        // 使用第一层数据渲染导航
+        renderNavigation(firstLayer, document.getElementById('navigation'), true);
+        // 从书签开始，使用第一层数据渲染书签
+        renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
+
+        // 自动选择并显示第一个项目
+        if (firstLayer.length > 0) {
+          const firstItem = firstLayer[0];
+          updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
+          renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
+        }
+      });
+    }
 
     // Event listener for theme toggle button
     themeToggleButton.addEventListener('click', toggleTheme);
@@ -718,7 +709,7 @@
     });
 
     // Open mobile menu
-    document.getElementById('open-sidebar-button').addEventListener('click', function () {
+    document.getElementById('open-sidebar-button')?.addEventListener('click', function () {
       var navigation = document.getElementById('navigation').cloneNode(true);
       document.getElementById('sidebar-2').appendChild(navigation);
     });
