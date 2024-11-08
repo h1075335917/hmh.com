@@ -1,6 +1,6 @@
 # Linux
 
-### Linux基本命令
+## Linux基本命令
 
 >shell是一个接收由键盘输入的命令，并将其传递给操作系统来执行的程序.
 >
@@ -115,9 +115,9 @@ $ ntpdate cn.pool.ntp.org
 $ cat /etc/redhat-release
 ```
 
-### Windows命令
+## Windows命令
 
-#### 快速删除文件夹和子文件夹
+### 快速删除文件夹和子文件夹
 
 ```shell
 rmdir 文件路径 /S /Q
@@ -125,9 +125,9 @@ del 文件路径 /S /Q
 /* 注意：/S 表示除本身外，还将删除目录下的所有子目录和文件，/Q 表示安静模式，删除时不需要经过确认 */
 ```
 
-### docker
+## docker
 
-#### 基本命令
+### 基本命令
 
 ```shell
 # 启动
@@ -150,7 +150,7 @@ $ docker top 容器
 $ docker inspect 容器
 ```
 
-#### 安装docker容器
+### 安装docker容器
 
 ```shell
 # 卸载旧版本
@@ -195,7 +195,7 @@ sudo systemctl start docker
 # 测试docker是否安装成功
 docker run --rm hello-world
 ```
-#### 安装docker-compose
+### 安装docker-compose
 
 ```shell
 # github安装
@@ -213,9 +213,9 @@ Warning: the “docker“ command appears to already exist on this system
 安装的docker-compose有问题，从GitHub安装
 ```
 
-#### 镜像命令
+### 镜像命令
 
-##### 基本命令
+#### 基本命令
 
 ```shell
 # 搜索镜像 
@@ -244,7 +244,7 @@ $ docker logout
 $ docker push h1075335917/myhello-world:latest
 ```
 
-##### 微服务镜像命令
+#### 微服务镜像命令
 
 ```shell
 配置文件：需要改镜像版本
@@ -295,9 +295,9 @@ sudo docker image tag ef7da1212d31  llyf999/enfc-face:v1.2.3c3c4
 docker exec -it system-start /bin/bash
 ```
 
-### 部署
+## 部署
 
-#### 部署redis
+### 部署redis
 
 ```sql
 -- docker部署
@@ -340,7 +340,7 @@ vim redis.conf
 ./src/redis-server ./redis.conf
 ```
 
-#### docker部署nacos
+### docker部署nacos
 
 ```sql
 -- 下载nacos docker-compose
@@ -368,9 +368,9 @@ services:
 docker-compose -f example/standalone-derby.yaml up -d
 ```
 
-#### 部署jdk
+### 部署jdk
 
-##### 文件部署jdk
+#### 文件部署jdk
 
 ```sql
 -- 卸载已有的openJDK
@@ -389,7 +389,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 source /etc/profile 
 ```
 
-##### docker部署jdk
+#### docker部署jdk
 
 ```sql
 -- 拉镜像
@@ -402,9 +402,9 @@ docker exec -it jdk8 /bin/bash
 Java -version
 ```
 
-#### 微服务部署
+### 微服务部署
 
-##### 部署auth
+#### 部署auth
 
 ```sql
 -- authDockerfile
@@ -443,9 +443,9 @@ docker build -f authDockerfile -t hmh-cloud-auth .
 docker-compose -f docker-compose.yaml up -d
 ```
 
-#### 部署elasticsearch
+### 部署elasticsearch
 
-##### Linux文件部署elastic
+#### Linux文件部署elastic
 
 ```sql
 -- 下载文件 Linux X86_64
@@ -478,7 +478,7 @@ su - es
 /usr/local/elk/elasticsearch-7.17.0/bin/elasticsearch -d
 ```
 
-##### docker部署elastic
+#### docker部署elastic
 
 ```sql
 -- 拉镜像
@@ -487,7 +487,7 @@ docker pull logstash:7.17.3
 docker pull kibana:7.17.3
 ```
 
-##### Linux文件部署logstash
+#### Linux文件部署logstash
 
 ```sql
 -- 下载文件 Linux X86_64
@@ -514,7 +514,7 @@ output {
 ./logstash -f /usr/local/elk/logstash-8.8.0/bin/logstash-elasticsearch.conf -d
 ```
 
-##### Linux文件部署kibana
+#### Linux文件部署kibana
 
 ```sql
 -- 下载文件 Linux X86_64
@@ -538,9 +538,9 @@ su - es
 http://175.178.164.134:5601
 ```
 
-### 端口查杀
+## 端口查杀
 
-#### Linux终止进程
+### Linux终止进程
 
 ```shell
 # 查询进程
@@ -574,7 +574,7 @@ $ netstat -ntlp   				# 查看当前所有tcp端口
 $ netstat -ntulp | grep 80   	# 查看所有80端口使用情况
 ```
 
-#### Windows终止进程
+### Windows终止进程
 
 ```shell
 $ netstat -ano | findstr "端口号"
@@ -582,7 +582,7 @@ $ netstat -tunlp|grep {port}
 $ taskkill /pid 5588 /f
 ```
 
-### 解压压缩
+## 解压压缩
 
 ```shell
 # 解压tar.gz
@@ -596,9 +596,9 @@ $ zip -q -r /data/xxx/Generatefile_name.zip OridinaryFile_name/
 $ tar -zcvf /data/xxx/Generatefile_name.tar.gz OridinaryFile_name
 ```
 
-### 环境配置
+## 环境配置
 
-##### Jdk配置
+#### Jdk配置
 
 ```shell
 # 编辑配置环境文件
@@ -613,7 +613,7 @@ export PATH=$PATH:${JAVA_PATH}
 source /etc/profile
 ```
 
-##### tomcat配置
+#### tomcat配置
 
 ```xml
 <!--  Tomcat指定项目路径(可在service.xml或context.xml中配置) -->
@@ -628,18 +628,18 @@ source /etc/profile
 </Host>
 ```
 
-###### 控制台乱码
+#### 控制台乱码
 
 设置`logging.properties`，UTF-8改为GBK
 
-###### tomcat部署，请求中文乱码
+#### tomcat部署，请求中文乱码
 
 在`conf/server.xml`中的`<Connector>`中添加两个设置
 
 - `useBodyEncodingForURI="true" ` ：设置POST和GET使用相同编码
 - `URIEncoding="UTF-8"` //对URI使用utf-8编码处理
 
-### Linux信息
+## Linux信息
 
 ```shell
 # 查gc内存
@@ -662,7 +662,7 @@ grep 'processor' /proc/cpuinfo | sort -u | wc -l
 telnet ip port
 ```
 
-### 查看日志
+## 查看日志
 
 ```shell
 # docker启动查看Tomcat日志：
@@ -680,7 +680,7 @@ $ tail -100f test.log
 $ echo "" > access.log
 ```
 
-### 开放端口
+## 开放端口
 
 ```shell
 # 查询已开放的端口:
@@ -697,7 +697,7 @@ $ firewall-cmd --query-port=123/tcp
 $ firewall-cmd --permanent --remove-port=123/tcp
 ```
 
-### docker数据库操作
+## docker数据库操作
 
 ```shell
 # 进入docker的mysql容器并登录查看数据库
@@ -716,7 +716,7 @@ $ select * from {table}
 $ exit 
 ```
 
-### 服务启动命令
+## 服务启动命令
 
 ```shell
 # nacos单机启动
@@ -727,7 +727,7 @@ $ redis-server.exe redis.windows.conf --maxmemory 200M
 emqttd console
 ```
 
-### 修改容器jar包配置
+## 修改容器jar包配置
 
 ```shell
 # 1.进入容器
@@ -746,7 +746,7 @@ $ jar uf web_scoket.jar BOOT-INF/classes/application.yml
 $ docker restart
 ```
 
-### exe设置为服务
+## exe设置为服务
 
 > 1. 下载 [WinSW x64.exe](https://github.com/winsw/winsw/releases)
 >
@@ -789,7 +789,7 @@ $ docker restart
 >
 >    NacosWinService.exe uninstall
 
-### nohup 命令
+## nohup 命令
 
 ```sql
 -- nohup 英文全称 no hang up（不挂起），用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。
@@ -804,7 +804,7 @@ Arg：一些参数，可以指定输出文件。
 &：让命令在后台执行，终端退出后命令仍旧执行。
 ```
 
-### 查看内存
+## 查看内存
 
 > df：查看磁盘驱动器当前的可用空间
 >
@@ -824,7 +824,7 @@ Arg：一些参数，可以指定输出文件。
 >
 > du -a | sort -n -r | head -n 10：占用空间最大的前10个文件
 
-### 本地 | linux文件
+## 本地 | linux文件
 
 实现本地与Linux服务器文件互传的常用方式：scp命令、sftp命令、lrzsz程序，xftp软件
 
@@ -834,9 +834,9 @@ Arg：一些参数，可以指定输出文件。
 
 - 使用`rz` 、`rz -be` 上传本地文件到linux。使用`sz`下载linux上文件到本地
 
-### git
+## git
 
-#### git用户配置
+### git用户配置
 
 git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
 
@@ -864,7 +864,7 @@ $ git config user.name "freedom"
 $ git config --global user.name "freedom"
 ```
 
-#### git分支操作
+### git分支操作
 
 ```shell
 # 克隆
@@ -875,7 +875,7 @@ $ git remote update origin --prune
 $ git remote set-url origin https://github.com/mhuahe/mhuahe.com.git
 ```
 
-#### git回滚
+### git回滚
 
 ```shell
 # 本地回滚到指定版本
@@ -884,7 +884,7 @@ $ git reset --hard  66b9f9481b45b562a1949898504f74e3695a
 $ git push -f
 ```
 
-#### git更新
+### git更新
 
 ```shell
 # 方式一：下载地址
@@ -893,7 +893,7 @@ https://git-scm.com/download/win
 $ git update-git-for-windows
 ```
 
-#### 目录初始化GIT
+### 目录初始化GIT
 
 1. `git init`
 
@@ -911,7 +911,7 @@ $ git update-git-for-windows
 
 6. `git push origin master`
 
-#### git设置代理
+### git设置代理
 
 ```shell
 # 设置代理
@@ -922,9 +922,9 @@ $ git config --global --unset http.proxy
 $ git config --global --unset https.proxy
 ```
 
-### 脚本
+## 脚本
 
-#### Linux定时任务脚本设置
+### Linux定时任务脚本设置
 
 > 1. 新建脚本文件，如 `clear_tomcat_log.sh`
 >
@@ -939,7 +939,7 @@ $ git config --global --unset https.proxy
 >
 > 4. 配置生效 `service crond reload/restart`
 
-#### windows查杀端口号（BAT脚本）
+### windows查杀端口号（BAT脚本）
 
 ```bash
 @echo off & setlocal EnableDelayedExpansion
@@ -964,9 +964,9 @@ for /f "usebackq delims== tokens=1-2" %%a in (`set obj`) do (
 pause
 ```
 
-### 问题
+## 问题
 
-#### 未找到vim命令
+### 未找到vim命令
 
 ```shell
 $ rpm -qa |grep vim
