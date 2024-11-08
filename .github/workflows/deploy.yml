@@ -32,6 +32,7 @@ jobs:
 
   deploy:
     name: 部署到 GitHub Pages
+    # build 必须在 deploy 开始之前成功完成
     needs: build
 
     # 给予 GITHUB_TOKEN 进行 Pages 部署所必须的权限
@@ -41,11 +42,11 @@ jobs:
 
     # 部署到 Github Pages 环境
     environment:
-      name: gh-pages
+      name: production_environment
       url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
     steps:
       - name: 部署到 GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/gh-pages@v4
