@@ -141,7 +141,7 @@
               </button>
               <input id="searchInput" type="search"
                 class="text-sm text-gray-900 dark:text-gray-400 pl-8 h-full border-0 focus:outline-none focus:ring-0 dark:pintree-bg-gray-900"
-                placeholder="Search...">
+                placeholder="Search title or url...">
               <button id="clearSearchButton" class="text-sm text-gray-500 mr-4 rounded hidden">Clear</button>
             </div>
           </div>
@@ -235,7 +235,18 @@
 
   <script>
 
-    let latestJson = "json/pintree.json";
+    let pintreeJsonData = [];
+
+    function fetchPintreeJsonData() {
+      fetch("json/pintree.json")
+        .then(response => response.json())
+        .then(data => {
+          pintreeJsonData = data;
+        })
+        .catch(error => console.error('Error searching bookmarks:', error));
+    }
+
+    fetchPintreeJsonData();
 
     document.addEventListener('DOMContentLoaded', () => {
       // Variables for sidebar elements
@@ -271,28 +282,46 @@
 
     // Search functionality
     function searchBookmarks(query) {
-      fetch(latestJson)
-        .then(response => response.json())
-        .then(data => {
-          const results = searchInData(data, query.toLowerCase());
-          renderBookmarks(results, [{ title: 'Search Results', children: results }]);
-        })
-        .catch(error => console.error('Error searching bookmarks:', error));
+      const results = searchInData(pintreeJsonData, query.toLowerCase());
+      renderBookmarks(results, [{ title: 'Search Results', children: results }]);
     }
 
     function searchInData(data, query) {
       let results = [];
-      data.forEach(item => {
-        if (item.title.toLowerCase().includes(query)) {
-          results.push(item);
+      const lowerCaseQuery = query.trim().toLowerCase();
+      const isUrlSearch = lowerCaseQuery.startsWith('url:') || lowerCaseQuery.startsWith('url：');
+      const isTitleSearch = lowerCaseQuery.startsWith('title:') || lowerCaseQuery.startsWith('title：');
+      query = lowerCaseQuery.trim().replace(/^title[:：]/, '').replace(/^url[:：]/, '');
+
+      for (const item of data) {
+        switch (true) {
+          case isUrlSearch:
+            if (item.url && item.url.toLowerCase().includes(query)) {
+              // search url
+              results.push(item);
+            }
+            break;
+          case isTitleSearch:
+            // search title
+            if (item.title && item.title.toLowerCase().includes(query)) {
+              results.push(item);
+            }
+            break;
+          default:
+            // search title or url
+            if (item.title.toLowerCase().includes(query) || (item.url && item.url.toLowerCase().includes(query))) {
+              results.push(item);
+            }
+            break;
         }
         if (item.children) {
-          const childResults = searchInData(item.children, query);
+          // search children
+          const childResults = searchInData(item.children, lowerCaseQuery);
           if (childResults.length > 0) {
             results = results.concat(childResults);
           }
         }
-      });
+      }
       return results;
     }
 
@@ -303,29 +332,19 @@
 
     // Clear search results and reset UI
     function clearSearchResults() {
-      fetch(latestJson)
-        .then(response => response.json())
-        .then(data => {
-          const secondLayer = data[0].children;
-          renderNavigation(secondLayer, document.getElementById('navigation'));
-          renderBookmarks(secondLayer, [{ title: 'Bookmark', children: secondLayer }]);
-          document.getElementById('searchInput').value = '';
-          document.getElementById('clearSearchButton').classList.add('hidden');
-        })
-        .catch(error => console.error('Error clearing search results:', error));
+      const secondLayer = pintreeJsonData[0].children;
+      renderNavigation(secondLayer, document.getElementById('navigation'));
+      renderBookmarks(secondLayer, [{ title: 'Bookmark', children: secondLayer }]);
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchButton').classList.add('hidden');
     }
 
     document.getElementById('clearSearchButton').addEventListener('click', clearSearchResults);
 
     function searchBookmarks(query) {
-      fetch(latestJson)
-        .then(response => response.json())
-        .then(data => {
-          const results = searchInData(data, query.toLowerCase());
-          renderBookmarks(results, [{ title: 'Search Results', children: results }]);
-          document.getElementById('clearSearchButton').classList.remove('hidden');
-        })
-        .catch(error => console.error('Error searching bookmarks:', error));
+      const results = searchInData(pintreeJsonData, query.toLowerCase());
+      renderBookmarks(results, [{ title: 'Search Results', children: results }]);
+      document.getElementById('clearSearchButton').classList.remove('hidden');
     }
 
     // Create bookmark card element
@@ -601,24 +620,19 @@
     }
 
     // Fetch and render data
-    fetch(latestJson)
-      .then(response => response.json())
-      .then(data => {
-        // Use the first layer of the data directly
-        const firstLayer = data;
-        // Render navigation using the first layer of data
-        renderNavigation(firstLayer, document.getElementById('navigation'), true);
-        // Render bookmarks using the first layer of data, starting from the Bookmark
-        renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
+    // 直接使用pintreeJsonData
+    const firstLayer = pintreeJsonData;
+    // 渲染导航，使用数据的第一层
+    renderNavigation(firstLayer, document.getElementById('navigation'), true);
+    // 渲染书签，使用数据的第一层，从书签开始
+    renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
 
-        // Automatically select and show the first item
-        if (firstLayer.length > 0) {
-          const firstItem = firstLayer[0];
-          updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
-          renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
-        }
-      })
-      .catch(error => console.error('Error loading bookmarks:', error));
+    // 自动选择并显示第一个项目
+    if (firstLayer.length > 0) {
+      const firstItem = firstLayer[0];
+      updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
+      renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
+    }
 
     // Search functionality on pressing Enter
     document.getElementById('searchInput').addEventListener('keydown', function (event) {
@@ -664,31 +678,22 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       // Fetch and render data
-      fetch(latestJson)
-        .then(response => response.json())
-        .then(data => {
-          // Hide loading spinner
-          document.getElementById('loading-spinner').style.display = 'none';
+      // 隐藏加载动画
+      document.getElementById('loading-spinner').style.display = 'none';
 
-          // Use the first layer of the data directly
-          const firstLayer = data;
-          // Render navigation using the first layer of data
-          renderNavigation(firstLayer, document.getElementById('navigation'), true);
-          // Render bookmarks using the first layer of data, starting from the Bookmark
-          renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
+      // 直接使用pintreeJsonData的第一层数据
+      const firstLayer = pintreeJsonData;
+      // 使用第一层数据渲染导航
+      renderNavigation(firstLayer, document.getElementById('navigation'), true);
+      // 从书签开始，使用第一层数据渲染书签
+      renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
 
-          // Automatically select and show the first item
-          if (firstLayer.length > 0) {
-            const firstItem = firstLayer[0];
-            updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
-            renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
-          }
-        })
-        .catch(error => {
-          console.error('Error loading bookmarks:', error);
-          // Optionally hide the spinner and show an error message
-          document.getElementById('loading-spinner').style.display = 'none';
-        });
+      // 自动选择并显示第一个项目
+      if (firstLayer.length > 0) {
+        const firstItem = firstLayer[0];
+        updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
+        renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
+      }
     });
 
     // Event listener for theme toggle button

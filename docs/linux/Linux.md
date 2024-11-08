@@ -928,6 +928,65 @@ $ git config --global --unset https.proxy
 
 ### Github Actions
 
+1. Github仓库设置：Pages =》 Build and deployment =》 Github Actions =》 创建新的工作流
+
+2. 创建 `.github/workflows/deploy.yml` 文件
+
+```yaml title=".github/workflows/deploy.yml"
+name: 部署到 gh-pages 分支
+
+on:
+  push:
+    branches:
+      - master-ts
+    # 如果你想要进一步定义触发、路径以及其他内容，请检阅 Github Actions 文档
+    # https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions#on
+
+jobs:
+  build:
+    name: 构建 Docusaurus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: yarn
+
+      - name: 安装依赖
+        run: yarn install --frozen-lockfile
+      - name: 构建网站
+        run: yarn build
+
+      - name: 上传构建制品
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    name: 部署到 gh-pages 分支
+    # build 必须在 deploy 开始之前成功完成
+    needs: build
+
+    # 给予 GITHUB_TOKEN 进行 Pages 部署所必须的权限
+    permissions:
+      pages: write # 以部署到 Pages
+      id-token: write # 以验证部署来自恰当的源
+
+    # 部署到 gh-pages 分支
+    environment:
+      name: production_environment
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: 部署到 gh-pages 分支
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
 ## 脚本
 
 ### Linux定时任务脚本设置
