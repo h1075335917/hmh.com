@@ -50,5 +50,3 @@ jobs:
       - name: 部署到 gh-pages 分支
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          branch: gh-pages

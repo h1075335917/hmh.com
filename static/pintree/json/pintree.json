@@ -2519,6 +2519,13 @@
                 "title": "JSON Crack",
                 "icon": "https://logo.clearbit.com/jsoncrack.com",
                 "url": "https://jsoncrack.com/editor"
+              },
+              {
+                "type": "link",
+                "addDate": 1731035042433,
+                "title": "Cloudflare 临时邮件",
+                "icon": "https://logo.clearbit.com/mail.awsl.uk",
+                "url": "https://mail.awsl.uk/"
               }
             ]
           },
@@ -4532,6 +4539,13 @@
         "title": "dbarochiya/me: This is the code implementation for the blog 'How to create your portfolio website in React.js'",
         "icon": "https://logo.clearbit.com/github.com",
         "url": "https://github.com/dbarochiya/me"
+      },
+      {
+        "type": "link",
+        "addDate": 1731032956831,
+        "title": "VS Code开发Java之快速入门_vs code java-CSDN博客",
+        "icon": "https://logo.clearbit.com/blog.csdn.net",
+        "url": "https://blog.csdn.net/oscar999/article/details/134150362"
       }
     ]
   }
