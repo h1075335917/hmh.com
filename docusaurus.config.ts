@@ -189,6 +189,12 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "right" },
         {
+          href: "/vcard-personal-portfolio/index.html",
+          label: "简历",
+          position: "right",
+          target: "_blank",
+        },
+        {
           href: "/pintree/index.html",
           label: "书签",
           position: "right",

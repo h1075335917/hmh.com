@@ -21,3 +21,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 syncthing-folder-*.txt
+node_modules.7z
