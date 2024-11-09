@@ -6,9 +6,9 @@ sidebar_position: 1
 
 ## nvm
 
-```sql
--- nvm
 nvm(Node Version Manager) 是一个用于管理系统上 Node.js 多个版本的工具
+
+```sql
 -- 显示可以安装的所有node.js的版本
 nvm list available
 -- 安装node.js的命名 version是版本
@@ -35,17 +35,28 @@ npm 官方原始镜像网址是：https://registry.npmjs.org/
 腾讯，华为，阿里的镜像站基本上比较全
 ```
 
+## nrm
+
+nrm 是一个用于管理 npm 镜像源的工具，可以方便地在不同的镜像源之间切换。
+
+| 命令                 | 说明             |
+| -------------------- | ---------------- |
+| `npm install -g nrm` | 安装 nrm         |
+| `nrm ls`             | 查看所有镜像源   |
+| `nrm use taobao`     | 切换到淘宝镜像源 |
+
 ## fnm
 
 `fnm`（FNM Node Version Manager）是一个用于管理不同 Node.js 版本的工具。要使用 `fnm` 切换 Node.js 版本，请遵循以下步骤：
 
-在PowerShell中使用fnm
+在 PowerShell 中使用 fnm
 
 ```
 fnm env --use-on-cd --shell power-shell | Out-String | Invoke-Expression
 ```
 
 ### 1. 安装 fnm
+
 #### 使用 Winget (Windows)
 
 ```
@@ -53,6 +64,7 @@ winget install Schniz.fnm
 ```
 
 ### 2. 验证 fnm 安装
+
 安装完成后，您可以验证 `fnm` 是否正确安装：
 
 ```sh
@@ -62,6 +74,7 @@ fnm --version
 这将显示 `fnm` 的版本号。
 
 ### 3. 列出可用的 Node.js 版本
+
 您可以通过以下命令查看可用的 Node.js 版本列表：
 
 ```sh
@@ -71,6 +84,7 @@ fnm ls-remote
 这将列出所有可安装的 Node.js 版本。
 
 ### 4. 安装 Node.js 版本
+
 要安装特定版本的 Node.js，您可以使用以下命令：
 
 ```sh
@@ -84,6 +98,7 @@ fnm install 18.17.0
 ```
 
 ### 5. 切换 Node.js 版本
+
 要切换到已安装的 Node.js 版本，可以使用以下命令：
 
 ```sh
@@ -105,23 +120,23 @@ fnm use 18.17.0
 
 ## yarn
 
-| 命令                                                         | 描述                        |
-| ------------------------------------------------------------ | --------------------------- |
-| `npm install --global yarn`                                  | 安装yarn                    |
-| `yarn --version`                                             | 查看版本                    |
-| `yarn add <package-name>@<version>`                          | 安装指定依赖                |
-| `yarn cache clean`                                           | 清理缓存删除依赖            |
-| `rmdir /s /q node_modules`                                   | 删除依赖                    |
-| `yarn global remove package-name`                            | 删除全局安装的依赖项        |
-| `yarn install --frozen-lockfile`                             | 忽略 yarn.lock 重新安装依赖 |
+| 命令                                                          | 描述                        |
+| ------------------------------------------------------------- | --------------------------- |
+| `npm install --global yarn`                                   | 安装 yarn                   |
+| `yarn --version`                                              | 查看版本                    |
+| `yarn add <package-name>@<version>`                           | 安装指定依赖                |
+| `yarn cache clean`                                            | 清理缓存删除依赖            |
+| `rmdir /s /q node_modules`                                    | 删除依赖                    |
+| `yarn global remove package-name`                             | 删除全局安装的依赖项        |
+| `yarn install --frozen-lockfile`                              | 忽略 yarn.lock 重新安装依赖 |
 | `yarn config set [proxy\|https-proxy] http://127.0.0.1:10809` | 设置代理                    |
 
 ## pnpm
 
-| 命令                                               | 描述                    |
-| -------------------------------------------------- | ----------------------- |
-| `iwr https://get.pnpm.io/install.ps1 -useb \| iex` | windows下无node安装pnpm |
-| `npm install -g pnpm`                              | node安装pnpm            |
+| 命令                                               | 描述                        |
+| -------------------------------------------------- | --------------------------- |
+| `iwr https://get.pnpm.io/install.ps1 -useb \| iex` | windows 下无 node 安装 pnpm |
+| `npm install -g pnpm`                              | node 安装 pnpm              |
 
 ## vite
 
@@ -133,7 +148,8 @@ yarn create vite
 ||
 pnpm create vite
 ```
-## package-lock和package
+
+## package-lock 和 package
 
 ```sql
 1. `package-lock.json` 和 `package.json` 是 Node.js 项目中的两个重要文件，用于管理项目的依赖项
@@ -157,7 +173,7 @@ rm node_modules
 npm install
 ```
 
-## JS基础
+## JS 基础
 
 ```sql
 -- let 和 const
@@ -443,7 +459,7 @@ console.log(arr);
 ### 全局对象
 
 ```sql
--- 
+--
 alert("Hello");
 // 等同于
 window.alert("Hello");
@@ -554,9 +570,9 @@ try {
 message _ 人类可读的 error 信息。
 name —— 具有 error 名称的字符串（Error 构造器的名称）。
 stack（没有标准，但得到了很好的支持）—— Error 发生时的调用栈。
--- 
+--
 如果我们不需要 error 对象，我们可以通过使用 catch { 而不是 catch (err) { 来省略它。
--- 
+--
 我们也可以使用 throw 操作符来生成自定义的 error。从技术上讲，throw 的参数可以是任何东西，但通常是继承自内建的 Error 类的 error 对象。
 --
 再次抛出（rethrowing）是一种错误处理的重要模式：catch 块通常期望并知道如何处理特定的 error 类型，因此它应该再次抛出它不知道的 error。
@@ -584,7 +600,7 @@ let promise = new Promise(function(resolve, reject) {
   // 1 秒后发出工作已经被完成的信号，并带有结果 "done"
   setTimeout(() => resolve("done"), 1000);
 });
--- 
+--
 // Create a Promise that simulates an asynchronous operation
 const myPromise = new Promise((resolve, reject) => {
   // Simulate an asynchronous operation, like fetching data from an API
@@ -722,7 +738,7 @@ let proxy = new Proxy(target, handler)
 target —— 是要包装的对象，可以是任何东西，包括函数。
 handler —— 代理配置：带有“捕捉器”（“traps”，即拦截操作的方法）的对象。比如 get 捕捉器用于读取 target 的属性，set 捕捉器用于写入 target 的属性，等等。
 -- 例子（带有 “get” 捕捉器的默认值）
--- get(target, property, receiver) 
+-- get(target, property, receiver)
 -- target目标对象、property目标属性名、receiver是this对象本身
 let numbers = [0, 1, 2];
 numbers = new Proxy(numbers, {
@@ -808,11 +824,9 @@ eg: let divs = document.getElementsByTagName('div');
 getElementsByClassName(className) 返回具有给定CSS类的元素
 ```
 
-
-
 ## 基础
 
-### CSS属性
+### CSS 属性
 
 #### position
 
@@ -867,28 +881,28 @@ let params = {
 };
 ```
 
-##### assign对象合并
+##### assign 对象合并
 
 ```js
 let obj1 = {
-    name: 'dk',
-    age: '99',
-    feature: 'stronge'
-}
+  name: "dk",
+  age: "99",
+  feature: "stronge",
+};
 let obj2 = {
-    name: 'tk',
-    age: '99',
-    feature1: 'noStronge',
+  name: "tk",
+  age: "99",
+  feature1: "noStronge",
+  address: {
+    city: "广州",
     address: {
-        city: '广州',
-        address: {
-            city: '深圳'
-        }
+      city: "深圳",
     },
-    skills: ['JavaScript', 'React', 'Node']
-}
+  },
+  skills: ["JavaScript", "React", "Node"],
+};
 let res = Object.assign(obj1, obj2);
-res.address.address.city = '广州';
+res.address.address.city = "广州";
 console.log(obj2);
 console.log(res);
 ```
@@ -897,51 +911,51 @@ console.log(res);
 
 ```js
 let obj1 = {
-    name: 'dk',
-    age: '99',
-    feature: 'stronge'
-}
+  name: "dk",
+  age: "99",
+  feature: "stronge",
+};
 
 let obj2 = {
-    name: 'tk',
-    age: '99',
-    feature1: 'noStronge',
+  name: "tk",
+  age: "99",
+  feature1: "noStronge",
+  address: {
+    city: "广州",
     address: {
-        city: '广州',
-        address: {
-            city: '深圳'
-        }
+      city: "深圳",
     },
-    skills: ['JavaScript', 'React', 'Node']
-}
+  },
+  skills: ["JavaScript", "React", "Node"],
+};
 
-let res = {...obj1, ...obj2};
-res.address.address.city = '杭州';
+let res = { ...obj1, ...obj2 };
+res.address.address.city = "杭州";
 console.log(obj2);
 console.log(res);
 ```
 
-##### merge深拷贝
+##### merge 深拷贝
 
 ```js
-const _ = require('lodash');
+const _ = require("lodash");
 let obj1 = {
-    name: 'dk',
-    age: '99',
-    feature: 'stronge'
-}
+  name: "dk",
+  age: "99",
+  feature: "stronge",
+};
 let obj2 = {
-    name: 'tk',
-    age: '99',
-    feature1: 'noStronge',
+  name: "tk",
+  age: "99",
+  feature1: "noStronge",
+  address: {
+    city: "广州",
     address: {
-        city: '广州',
-        address: {
-            city: '深圳'
-        }
+      city: "深圳",
     },
-    skills: ['JavaScript', 'React', 'Node']
-}
+  },
+  skills: ["JavaScript", "React", "Node"],
+};
 const res = _.merge(obj1, obj2);
 console.log(res);
 ```
@@ -968,9 +982,9 @@ $(".inuptxt").css({
 #### 定时器
 
 ```js
-setTimeout(function(){
-  that.showQRCode()
-}, 200)
+setTimeout(function () {
+  that.showQRCode();
+}, 200);
 ```
 
 #### WebSocket
@@ -1075,75 +1089,82 @@ if (socket.bufferedAmount === 0) {
 }
 ```
 
-### Axios拦截器
+### Axios 拦截器
 
 ```javascript
 // 1.创建axios实例
 const service = axios.create({
   baseURL: process.env.BASE_API, // api的base_url
-  timeout: 15000 // 请求超时时间
-})
+  timeout: 15000, // 请求超时时间
+});
 //将创建的 Axios 实例 service 导出，以便在其他模块中使用
-export default service
+export default service;
 ```
 
 ```js
 // request拦截器
-service.interceptors.request.use(config => {
-  if (store.getters.token) {
-    config.headers['Authorization'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+service.interceptors.request.use(
+  (config) => {
+    if (store.getters.token) {
+      config.headers["Authorization"] = getToken(); // 让每个请求携带自定义token 请根据实际情况自行修改
+    }
+    return config;
+  },
+  (error) => {
+    // Do something with request error
+    console.log(error); // for debug
+    Promise.reject(error);
   }
-  return config
-}, error => {
-  // Do something with request error
-  console.log(error) // for debug
-  Promise.reject(error)
-})
+);
 ```
 
 ```js
 // response拦截器
 service.interceptors.response.use(
-  response => {
+  (response) => {
     /**
      * code为非200是抛错 可结合自己业务进行修改
      */
-    const res = response.data
+    const res = response.data;
     if (res.code !== 200) {
       Message({
         message: res.message,
-        type: 'error',
-        duration: 3 * 1000
-      })
+        type: "error",
+        duration: 3 * 1000,
+      });
       // 401:未登录,弹窗;
       if (res.code === 401) {
-        MessageBox.confirm('你已被登出，可以取消继续留在该页面，或者重新登录', '确定登出', {
-          confirmButtonText: '重新登录',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          store.dispatch('FedLogOut').then(() => {
-            location.reload()// 为了重新实例化vue-router对象 避免bug
-          })
-        })
+        MessageBox.confirm(
+          "你已被登出，可以取消继续留在该页面，或者重新登录",
+          "确定登出",
+          {
+            confirmButtonText: "重新登录",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
+        ).then(() => {
+          store.dispatch("FedLogOut").then(() => {
+            location.reload(); // 为了重新实例化vue-router对象 避免bug
+          });
+        });
       }
       // 403:没有相关权限;
       if (res.code === 401) {
-        Message.error('没有相关权限')
+        Message.error("没有相关权限");
       }
-      return Promise.reject('error')
+      return Promise.reject("error");
     } else {
-      return response.data
+      return response.data;
     }
   },
-  error => {
-    console.log('err' + error)// for debug
+  (error) => {
+    console.log("err" + error); // for debug
     Message({
       message: error.message,
-      type: 'error',
-      duration: 3 * 1000
-    })
-    return Promise.reject(error)
+      type: "error",
+      duration: 3 * 1000,
+    });
+    return Promise.reject(error);
   }
-)
+);
 ```
