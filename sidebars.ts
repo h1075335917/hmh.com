@@ -26,7 +26,6 @@ const sidebars: SidebarsConfig = {
   // But you can create a sidebar manually
   example: [
     'example/EXAMPLE-Video',
-    'example/EXAMPLE-Resume',
     {
       type: 'category',
       label: 'DocCardList示例',
