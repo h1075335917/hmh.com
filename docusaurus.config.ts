@@ -211,6 +211,12 @@ const config: Config = {
           target: "_blank",
         },
         {
+          to: "http://175.178.164.134:5244/",
+          label: "网盘",
+          position: "right",
+          target: "_blank",
+        },
+        {
           href: "https://github.com/mhuahe/mhuahe.com",
           label: "GitHub",
           position: "right",
