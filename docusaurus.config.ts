@@ -225,9 +225,9 @@ const config: Config = {
     //DocSearch
     algolia: {
       // Algolia 提供的应用 ID
-      appId: "I1N20F00TC",
+      appId: "WZKDOGRNUN",
       //  公开 API 密钥：提交它没有危险
-      apiKey: "2c68adfaa6a85f46e8e43c95701e10b6",
+      apiKey: "7bf03af7c1e8bf9a9460bd56598602f7",
       indexName: "mhuaheio",
       // 可选：见下文
       contextualSearch: true,
