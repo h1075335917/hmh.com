@@ -216,9 +216,9 @@ const config: Config = {
           position: "right",
         },
         {
-          type: 'localeDropdown',
+          type: "localeDropdown",
           label: "语言",
-          position: 'right',
+          position: "right",
         },
       ],
     },
@@ -226,6 +226,8 @@ const config: Config = {
       appId: "SSZM8E31Q1",
       apiKey: "a44c5956a2291c2381e6f37661abc1be",
       indexName: "mhuaheio",
+      // 区分语言和版本，分片搜索
+      contextualSearch: true,
     },
     // 公告栏
     announcementBar: {
@@ -330,26 +332,6 @@ const config: Config = {
     require.resolve("@docusaurus/theme-live-codeblock"),
     //mermaid图表插件
     require.resolve("@docusaurus/theme-mermaid"),
-    //本地搜索插件
-    // [
-    //   require.resolve("@easyops-cn/docusaurus-search-local"),
-    //   /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
-    //   {
-    //     // `hashed` is recommended as long-term-cache of index file is possible.
-    //     hashed: true,
-    //     language: ["en", "zh"],
-    //     // 在目标页面上突出显示搜索词。
-    //     highlightSearchTermsOnTargetPage: true,
-    //     // 搜索结果限制
-    //     searchResultLimits: 10,
-    //     // 是否使用搜索栏快捷方式
-    //     searchBarShortcut: true,
-    //     // 是否显示搜索栏快捷方式
-    //     searchBarShortcutHint: true,
-    //     // 搜索栏位置："auto" | "left" | "right"
-    //     searchBarPosition: "auto",
-    //   },
-    // ],
   ],
 
   markdown: {

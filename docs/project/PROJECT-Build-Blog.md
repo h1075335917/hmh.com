@@ -96,47 +96,133 @@ projectName: 'mhuahe.com',
 
 ## 集成搜索引擎 Algolia
 
-配置
+### 申请Algolia
+
+https://docsearch.algolia.com/apply/
+
+### 配置Algolia
+https://docsearch.algolia.com/docs/templates/#docusaurus-v3-template
+
+使用推荐配置，否则可能会出现搜索结果为空的，且只在配置`contextualSearch: true`时，才能搜索出结果。
 
 ```js
-themeConfig: {
-  //algolia文档搜索
-  algolia: {
-    appId: 'YOUR_APP_ID',
-      apiKey
-  :
-    'YOUR_SEARCH_API_KEY',
-      indexName
-  :
-    'YOUR_INDEX_NAME',
-      // 上下文搜索：它确保搜索结果与当前语言和版本相关
-      contextualSearch
-  :
-    true,
-      externalUrlRegex
-  :
-    'external\\.com|domain\\.com',
-      replaceSearchResultPathname
-  :
+new Crawler({
+  appId: 'YOUR_APP_ID',
+  apiKey: 'YOUR_API_KEY',
+  rateLimit: 8,
+  maxDepth: 10,
+  startUrls: ['https://YOUR_WEBSITE_URL/'],
+  sitemaps: ['https://YOUR_WEBSITE_URL/sitemap.xml'],
+  ignoreCanonicalTo: true,
+  discoveryPatterns: ['https://YOUR_WEBSITE_URL/**'],
+  actions: [
     {
-      from: '/docs/', // or as RegExp: /\/docs\//
-        to
-    :
-      '/',
-    }
-  ,
-    // Optional: Algolia search parameters
-    searchParameters: {}
-  ,
-    // Optional: path for search page that enabled by default (`false` to disable it)
-    searchPagePath: 'search',
-      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-      insights
-  :
-    false,
-  }
-,
-}
+      indexName: 'YOUR_INDEX_NAME',
+      pathsToMatch: ['https://YOUR_WEBSITE_URL/**'],
+      recordExtractor: ({ $, helpers }) => {
+        // priority order: deepest active sub list header -> navbar active item -> 'Documentation'
+        const lvl0 =
+          $(
+            '.menu__link.menu__link--sublist.menu__link--active, .navbar__item.navbar__link--active'
+          )
+            .last()
+            .text() || 'Documentation';
+
+        return helpers.docsearch({
+          recordProps: {
+            lvl0: {
+              selectors: '',
+              defaultValue: lvl0,
+            },
+            lvl1: ['header h1', 'article h1'],
+            lvl2: 'article h2',
+            lvl3: 'article h3',
+            lvl4: 'article h4',
+            lvl5: 'article h5, article td:first-child',
+            lvl6: 'article h6',
+            content: 'article p, article li, article td:last-child',
+          },
+          indexHeadings: true,
+          aggregateContent: true,
+          recordVersion: 'v3',
+        });
+      },
+    },
+  ],
+  initialIndexSettings: {
+    YOUR_INDEX_NAME: {
+      attributesForFaceting: [
+        'type',
+        'lang',
+        'language',
+        'version',
+        'docusaurus_tag',
+      ],
+      attributesToRetrieve: [
+        'hierarchy',
+        'content',
+        'anchor',
+        'url',
+        'url_without_anchor',
+        'type',
+      ],
+      attributesToHighlight: ['hierarchy', 'content'],
+      attributesToSnippet: ['content:10'],
+      camelCaseAttributes: ['hierarchy', 'content'],
+      searchableAttributes: [
+        'unordered(hierarchy.lvl0)',
+        'unordered(hierarchy.lvl1)',
+        'unordered(hierarchy.lvl2)',
+        'unordered(hierarchy.lvl3)',
+        'unordered(hierarchy.lvl4)',
+        'unordered(hierarchy.lvl5)',
+        'unordered(hierarchy.lvl6)',
+        'content',
+      ],
+      distinct: true,
+      attributeForDistinct: 'url',
+      customRanking: [
+        'desc(weight.pageRank)',
+        'desc(weight.level)',
+        'asc(weight.position)',
+      ],
+      ranking: [
+        'words',
+        'filters',
+        'typo',
+        'attribute',
+        'proximity',
+        'exact',
+        'custom',
+      ],
+      highlightPreTag: '<span class="algolia-docsearch-suggestion--highlight">',
+      highlightPostTag: '</span>',
+      minWordSizefor1Typo: 3,
+      minWordSizefor2Typos: 7,
+      allowTyposOnNumericTokens: false,
+      minProximity: 1,
+      ignorePlurals: true,
+      advancedSyntax: true,
+      attributeCriteriaComputedByMinProximity: true,
+      removeWordsIfNoResults: 'allOptional',
+      separatorsToIndex: '_',
+    },
+  },
+});
+```
+
+### 配置 docusaurus.config.js
+
+```ts
+export default {
+  themeConfig: {
+    algolia: {
+      appId: 'YOUR_APP_ID',
+      apiKey: 'YOUR_SEARCH_API_KEY',
+      indexName: 'YOUR_INDEX_NAME',
+    },
+  },
+};
 ```
 
 ## 集成本地搜索引擎 docusaurus-search-local
