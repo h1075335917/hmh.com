@@ -1,0 +1,74 @@
+{
+  "title": {
+    "message": "mhuahe's website",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "mhuahe site logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Java": {
+    "message": "Java",
+    "description": "Navbar item with label Java"
+  },
+  "item.label.前端": {
+    "message": "Web",
+    "description": "Navbar item with label 前端"
+  },
+  "item.label.C语言": {
+    "message": "C",
+    "description": "Navbar item with label C语言"
+  },
+  "item.label.Linux": {
+    "message": "Linux",
+    "description": "Navbar item with label Linux"
+  },
+  "item.label.SQL": {
+    "message": "SQL",
+    "description": "Navbar item with label SQL"
+  },
+  "item.label.Python": {
+    "message": "Python",
+    "description": "Navbar item with label Python"
+  },
+  "item.label.工具": {
+    "message": "Tool",
+    "description": "Navbar item with label 工具"
+  },
+  "item.label.项目": {
+    "message": "Project",
+    "description": "Navbar item with label 项目"
+  },
+  "item.label.知识": {
+    "message": "Kownledge",
+    "description": "Navbar item with label 知识"
+  },
+  "item.label.其他": {
+    "message": "Other",
+    "description": "Navbar item with label 其他"
+  },
+  "item.label.示例": {
+    "message": "Example",
+    "description": "Navbar item with label 示例"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.简历": {
+    "message": "Resume",
+    "description": "Navbar item with label 简历"
+  },
+  "item.label.书签": {
+    "message": "Bookmark",
+    "description": "Navbar item with label 书签"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.语言": {
+    "message": "Language",
+    "description": "Navbar item with label 语言"
+  }
+}

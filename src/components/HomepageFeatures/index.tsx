@@ -1,38 +1,47 @@
 import clsx from 'clsx'
 import styles from './styles.module.css'
 import React from 'react'
+import Translate from '@docusaurus/Translate'
 
 type FeatureItem = {
-  title: string;
+  title: React.ReactNode;
   Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
   description: React.ReactElement;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: '支持我',
+    title: <Translate id="homepage.feature.supportMe">支持我</Translate>,
     // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        在这里给我一个星标 <a target="_blank" rel="noopener noreferrer" href="https://github.com/mhuahe/mhuahe.com">GitHub</a>
+        <Translate id="homepage.feature.supportMe.description">
+          在这里给我一个星标
+        </Translate>
+        &nbsp;
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/mhuahe/mhuahe.com">GitHub</a>
       </>
     ),
   },
   {
-    title: '关于我',
+    title: <Translate id="homepage.feature.aboutMe">关于我</Translate>,
     // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        在业的Java开发
+        <Translate id="homepage.feature.aboutMe.description">
+          在业的Java开发
+        </Translate>
       </>
     ),
   },
   {
-    title: '联系我',
+    title: <Translate id="homepage.feature.contactMe">联系我</Translate>,
     // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        微信: mhuahe
+        <Translate id="homepage.feature.contactMe.description">
+          微信: mhuahe
+        </Translate>
       </>
     ),
   },

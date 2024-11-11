@@ -26,8 +26,18 @@ const config: Config = {
   // 即使您不使用国际化，也可以使用此字段设置
   // 有用元数据，例如 html lang。例如，如果您的网站是中文，您可能希望将 "en" 替换为 "zh-Hans"。
   i18n: {
-    defaultLocale: "zh-Hans",
-    locales: ["zh-Hans"],
+    defaultLocale: 'zh-cn',
+    locales: ['zh-cn', 'en'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      'zh-cn':{
+        label: '中文',
+        direction: 'ltr',
+      },
+    },
   },
 
   future: {
@@ -189,13 +199,13 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "right" },
         {
-          href: "/vcard-personal-portfolio/index.html",
+          to: "/vcard-personal-portfolio/index.html",
           label: "简历",
           position: "right",
           target: "_blank",
         },
         {
-          href: "/pintree/index.html",
+          to: "/pintree/index.html",
           label: "书签",
           position: "right",
           target: "_blank",
@@ -204,6 +214,11 @@ const config: Config = {
           href: "https://github.com/mhuahe/mhuahe.com",
           label: "GitHub",
           position: "right",
+        },
+        {
+          type: 'localeDropdown',
+          label: "语言",
+          position: 'right',
         },
       ],
     },

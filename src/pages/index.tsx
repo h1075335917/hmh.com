@@ -5,12 +5,16 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import Translate from '@docusaurus/Translate';
 
 const logo = require("@site/static/img/mhuahe.png").default;
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+interface HomepageHeaderProps {
+  title: React.ReactNode;
+  subtitle: React.ReactNode;
+}
 
+function HomepageHeader({title, subtitle}: HomepageHeaderProps) {
   useEffect(() => {
     (async function () {
       const vsSource = `
@@ -107,11 +111,11 @@ function HomepageHeader() {
       <div className="container">
         {/* <img src={logo} style={{width: 280, borderRadius: '50%'}} />  */}
         <canvas width="300" height="300" style={{ borderRadius: '50%' }} />
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title">{title}</h1>
+        <p className="hero__subtitle">{subtitle}</p>
         <div className={styles.buttons}>
           <Link className="button button--secondary button--lg" to="/blog">
-            前端博客 →
+            <Translate id="homepage.link.blog">前往博客 → </Translate>
           </Link>
         </div>
       </div>
@@ -121,12 +125,15 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const title = <Translate id="homepage.title">{siteConfig.title}</Translate>;
+  const subtitle = <Translate id="homepage.subtitle">{siteConfig.tagline}</Translate>;
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`Hello from ${title}`}
       description="Description will go into a meta tag in <head />"
     >
-      <HomepageHeader />
+      <HomepageHeader title={title} subtitle={subtitle} />
       <main>
         <HomepageFeatures />
       </main>

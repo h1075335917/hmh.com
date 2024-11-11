@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.example.category.DocCardList示例": {
+    "message": "DocCardList示例",
+    "description": "The label for category DocCardList示例 in sidebar example"
+  }
+}
