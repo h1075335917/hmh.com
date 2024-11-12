@@ -257,3 +257,12 @@ sidebar_position: 3
   <button type="submit">Submit</button>
 </form>
 ```
+
+## `<article>`标签
+
+> `article`标签定义独立的内容块。
+
+## `<hr>`标签
+
+> `hr`标签定义水平线。
+

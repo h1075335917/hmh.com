@@ -20,6 +20,14 @@ text-align: center;
 background-color: Burlywood;
 ```
 
+## border-color
+
+> `border-color`属性设置元素的边框颜色。
+
+```css
+border-color: #000;
+```
+
 ## box-shadow
 
 ```css
@@ -34,6 +42,56 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3), inset 0 0 10px rgba(255,255,255,0.5
 - blur：可选。模糊半径。值越大，阴影越模糊；0 表示没有模糊（锐利的阴影）。
 - spread：可选。阴影的尺寸。正值将阴影扩大，负值将阴影缩小。
 - color：可选。阴影的颜色。
+
+## background-image
+
+> `background-image`属性设置元素的背景图像。
+
+```css
+background-image: url(image.png);
+```
+
+## max-width
+
+> `max-width`属性设置元素的最大宽度。
+
+```css
+max-width: 100px;
+```
+
+## padding
+
+> `padding`属性设置元素的内边距。
+
+```css
+/* 上右下左 */
+padding: 10px 10px 10px 10px;
+```
+
+## font-family
+
+> `font-family`属性设置元素的字体。
+
+```css
+font-family: Arial, sans-serif;
+```
+
+## font-style
+
+> `font-style`属性设置元素的字体样式。
+
+```css
+/* 斜体 */
+font-style: italic;
+```
+
+## font-size
+
+> `font-size`属性设置元素的字体大小。
+
+```css
+font-size: 16px;
+```
 
 ## rgba
 
