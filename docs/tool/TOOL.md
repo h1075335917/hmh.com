@@ -80,21 +80,23 @@ https://github.com/AlistGo/alist
 - `alist admin set NEW_PASSWORD`：设置管理员密码
 - `alist admin random`：随机生成管理员密码
 
-## you-get
+## 下载工具
+
+### you-get
 https://you-get.org/
 
 > 一个命令行工具，用于从网页下载视频
 
-### 环境
+#### 环境
 
 - [Python 3.7.4 or above](https://www.python.org/downloads/windows/)
 - [FFmpeg 1.0 or above](https://www.gyan.dev/ffmpeg/builds/)
 
-### 配置 FFmpeg 环境变量
+#### 配置 FFmpeg 环境变量
 
 添加到系统环境变量`PATH`中：`D:\hayes\software-1023\ffmpeg\bin`
 
-### 安装
+#### 安装
 
 ```shell
 # 安装
@@ -103,15 +105,15 @@ $ pip install you-get
 $ you-get -V
 ```
 
-### 使用
+#### 使用
 
-#### 升级
+##### 升级
 
 ```shell
 $ pip install --upgrade you-get
 ```
 
-#### 查看下载信息
+##### 查看下载信息
 
 ```shell
 $ you-get --info/-i 下载地址
@@ -119,11 +121,11 @@ $ you-get --info/-i 下载地址
 $ you-get -i 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
 ```
 
-#### 暂停和恢复下载
+##### 暂停和恢复下载
 
 可以使用Ctrl+C来中断下载。临时.download文件保存在输出目录中。下次使用相同的参数运行时you-get，下载进度将从上次会话开始恢复。如果文件完全下载（临时 .download扩展名消失），you-get将跳过下载。要强制重新下载，请使用 `--force/-f` 选项。 （警告： 这样做将覆盖任何现有的同名文件或临时文件！）
 
-#### 设置下载文件的路径和名称
+##### 设置下载文件的路径和名称
 
 使用 `--output-dir/-o` 选项设置路径，使用 `--output-filename/-O` 设置下载文件的名称：
 
@@ -133,7 +135,7 @@ $ you-get -o 存储地址 -O 存储文件名 下载地址
 $ you-get -o ~/Videos -O zoo.webm 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
 ```
 
-#### 代理设置
+##### 代理设置
 
 可以通过 `--http-proxy/-x` 选项指定要you-get使用的HTTP 代理：
 
@@ -143,7 +145,7 @@ $ you-get -x 127.0.0.1:8087 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
 
 > 但是，默认情况下应用系统代理设置（即环境变量 `http_proxy`）。要禁用任何代理，请使用该 `--no-proxy` 选项。
 
-#### 观看视频
+##### 观看视频
 
 使用 `--player/-p` 选项将视频输入到您选择的媒体播放器中，例如 mpv 或 vlc，而不是下载它：
 
@@ -157,27 +159,27 @@ $ you-get -p mpv 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
 $ you-get -p chrome 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
 ```
 
-#### 加载cookies
+##### 加载cookies
 
 并非所有视频都向任何人公开。如果您需要登录帐户才能访问某些内容（例如，私人视频），则不可避免地要you-get通过 `--cookies/-c` 选项向浏览器提供 cookie。
 
 > 截至目前，支持两种格式的浏览器cookie：Mozilla cookies.sqlite和 Netscape cookies.txt。
 
-## youtube-dl
+### youtube-dl
 https://github.com/ytdl-org/youtube-dl
 
 > 一个命令行工具，用于从网页下载视频
 
-## yt-dlp
+### yt-dlp
 https://github.com/yt-dlp/yt-dlp
 
 > youtube-dl 的 fork，一个命令行工具，用于从网页下载视频
 
-### 环境
+#### 环境
 
 - [Python 2.6、2.7 或 3.2+](https://www.python.org/downloads/windows/)
 
-### 安装
+#### 安装
 
 ```shell
 # 安装
@@ -186,9 +188,9 @@ $ pip install yt-dlp
 $ yt-dlp --version
 ```
 
-### 使用
+#### 使用
 
-#### 升级
+##### 升级
 
 ```shell
 # 升级
@@ -197,7 +199,7 @@ $ yt-dlp -U
 
 `yt-dlp [OPTIONS] [--] URL [URL...]`
 
-#### 常用命令
+##### 常用命令
 
 | 命令                   | 说明                                                       |
 | ---------------------- | ---------------------------------------------------------- |
@@ -220,6 +222,25 @@ $ yt-dlp -U
 # [--cookies]下载地址使用指定cookies，[F]列出可下载的视频格式
 $ yt-dlp -F --cookies cookies.txt https://www.youtube.com/watch?v=3UfqgYafgss
 ```
+
+## 翻译工具
+
+### STranslate
+
+https://github.com/ZGGSONG/STranslate
+
+> 一款即开即用、即用即走的翻译、OCR工具
+
+## WebDAV
+
+webdav就像一个存储服务，各种应用都可以连接到它，允许应用直接访问我们的云盘内容，对其进行读写操作。推荐使用[坚果云](https://www.jianguoyun.com/)去使用webdav。
+
+### 坚果云
+
+- 注册
+- 个人中心 - 安全选项
+- 添加你需要使用webdav的应用获取到密码
+- 在应用中使用webdav的服务器地址、账户、密码即可
 
 ## 代理相关
 
