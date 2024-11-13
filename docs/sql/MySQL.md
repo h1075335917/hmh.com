@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # MySQL
 
-### 笛卡尔积
+## 笛卡尔积
 
 
 > 在SQL中，笛卡尔积（Cartesian Product）是指两个或多个表的每一行与另一个表的每一行进行组合的结果。当没有为连接操作指定适当的条件时，就可能导致笛卡尔积。
@@ -28,7 +28,7 @@ sidebar_position: 1
 >  则这两个集合的笛卡儿积是有52个元素的标准扑克牌的集合`{(𝐴,♠),(𝐾,♠),...,(2,♠),...,(𝐴,♣),...,(3,♣),(2,♣)}`。
 
 
-#### 笛卡尔积产生的原因
+### 笛卡尔积产生的原因
 
 
 - **未使用JOIN条件**：当查询中涉及两个或多个表，但没有指定连接条件时，[数据库](https://cloud.baidu.com/solution/database.html)系统会默认执行笛卡尔积操作。
@@ -40,7 +40,7 @@ sidebar_position: 1
 - **隐式转换**：在某些情况下，数据库系统可能会自动执行隐式转换，导致笛卡尔积的产生。
 
 
-#### 笛卡尔积的影响
+### 笛卡尔积的影响
 
 
 - **性能问题**：笛卡尔积会产生大量不必要的数据，导致查询性能下降。
@@ -50,7 +50,7 @@ sidebar_position: 1
 - **逻辑错误**：开发者可能没有意识到笛卡尔积的存在，导致查询结果不符合预期。
 
 
-#### 应对策略
+### 应对策略
 
 
 - **明确指定JOIN条件**：在使用JOIN操作时，应始终明确指定连接条件，避免产生笛卡尔积。
@@ -74,10 +74,10 @@ sidebar_position: 1
 - 测试与验证：在开发过程中进行充分测试，验证查询结果的正确性；同时在实际应用中持续监控数据库性能指标，以便及时发现和处理问题。
 
 
-### 常用语句
+## 常用语句
 
 
-#### 表结构操作
+### 表结构操作
 
 
 ```sql
@@ -160,7 +160,7 @@ ALTER TABLE `sys_depart` MODIFY `b` varchar(32) DEFAULT NULL COMMENT '测试b';
 ```
 
 
-#### GROUP BY
+### GROUP BY
 
 
 ```sql
@@ -176,7 +176,7 @@ SELECT * FROM ( SELECT * FROM `pms_conference_info` having 1 ORDER BY create_tim
 ```
 
 
-#### concat
+### concat
 
 
 ```sql
@@ -192,7 +192,7 @@ select CONCAT(1,'-','2')
 ```
 
 
-#### FIND_IN_SET
+### FIND_IN_SET
 
 
 ```sql
@@ -204,7 +204,7 @@ select * from table where FIND_IN_SET(id, '1,2,3')
 ```
 
 
-#### UUID
+### UUID
 
 
 ```sql
@@ -216,7 +216,7 @@ REPLACE(UUID(),'-','')
 ```
 
 
-#### IF
+### IF
 
 
 ```sql
@@ -256,7 +256,7 @@ END IF
 ```
 
 
-#### UNION
+### UNION
 
 
 > [!TIP]
@@ -313,7 +313,7 @@ ORDER BY country;
 ```
 
 
-#### PAD
+### PAD
 
 
 ```sql
@@ -337,7 +337,7 @@ select RPAD(‘1’, 8, 0)
 
 ```
 
-#### choose when otherwise
+### choose when otherwise
 
 
 ```mysql
@@ -373,7 +373,7 @@ select RPAD(‘1’, 8, 0)
 ```
 
 
-#### EXISTS
+### EXISTS
 
 
 ```mysql
@@ -393,7 +393,7 @@ SELECT * FROM A WHERE EXISTS (SELECT 1 FROM B WHERE B.id = A.id);
 ```
 
 
-#### ＜![CDATA[ ]]
+### ＜![CDATA[ ]]
 
 
 ```mysql
@@ -417,7 +417,7 @@ and INET_ATON(#{ip})  <![CDATA[ < ]]>  ip_end_num
 ```
 
 
-#### substring
+### substring
 
 
 ```mysql
@@ -444,7 +444,7 @@ and INET_ATON(#{ip})  <![CDATA[ < ]]>  ip_end_num
 ```
 
 
-#### any_value
+### any_value
 
 
 ```mysql
@@ -460,7 +460,7 @@ and INET_ATON(#{ip})  <![CDATA[ < ]]>  ip_end_num
 ```
 
 
-#### round
+### round
 
 
 ```mysql
@@ -478,7 +478,7 @@ and INET_ATON(#{ip})  <![CDATA[ < ]]>  ip_end_num
 ```
 
 
-#### case when then else end
+### case when then else end
 
 
 ```mysql
@@ -507,12 +507,12 @@ and INET_ATON(#{ip})  <![CDATA[ < ]]>  ip_end_num
 
 ```
 
+### COALESCE
 
-#### [COALESCE](https://dev.mysql.com/doc/refman/5.7/en/comparison-operators.html#function_coalesce)
+https://dev.mysql.com/doc/refman/5.7/en/comparison-operators.html#function_coalesce
 
 
-> 返回列表中第一个分开数值
-
+> 返回列表中第一个为空数值
 
 ```mysql
 
@@ -522,8 +522,7 @@ SELECT COALESCE(NULL,NULL,NULL); -- NULL
 
 ```
 
-
-#### date_format
+### date_format
 
 
 ```sql
@@ -532,10 +531,7 @@ date_format(ii.issue_expire_date, '%Y%m%d')
 
 ```
 
-
-
-
-#### DATEDIFF
+### DATEDIFF
 
 
 ```mysql
@@ -577,7 +573,7 @@ SELECT DATEDIFF('2017-06-25 09:34:21', '2017-06-15');
 ```
 
 
-#### TIMESTAMPDIFF
+### TIMESTAMPDIFF
 
 
 ```mysql
@@ -647,7 +643,7 @@ SELECT TIMESTAMPDIFF(YEAR,'2022-04-23 11:20:00', '2023-04-23 11:20:00');
 ```
 
 
-#### day()  last_day()
+### day()  last_day()
 
 
 ```mysql
@@ -684,7 +680,7 @@ select DATE_ADD(CURDATE(),INTERVAL 1 DAY/INTERVAL 1 MOUTH)
 ```
 
 
-#### CAST
+### CAST
 
 
 ```mysql
@@ -746,7 +742,7 @@ select FORMAT("",2)
 ```
 
 
-#### INSTR
+### INSTR
 
 
 ```mysql
@@ -758,7 +754,7 @@ SELECT INSTR('111222','2') -- 4
 ```
 
 
-#### PERIOD_DIFF
+### PERIOD_DIFF
 
 
 ```mysql
@@ -771,7 +767,7 @@ SELECT PERIOD_DIFF(201710, 201703); -- 7
 
 ```
 
-#### MOD
+### MOD
 
 
 ```sql
@@ -783,7 +779,7 @@ select MOD(MONTH(CURDATE()), 12)
 ```
 
 
-#### RIGHT
+### RIGHT
 
 
 ```sql
@@ -795,7 +791,7 @@ select RIGHT(value,4)/left(value,4)
 ```
 
 
-#### REGEXP
+### REGEXP
 
 
 ```sql
@@ -807,16 +803,41 @@ REGEXP()/NOT REGEXP/RLIKE/NOT RLIKE
 ```
 
 
-#### 窗口函数（8.0版本前）
+### 窗口函数（8.0版本前）
 
 
-###### [DENSE_RANK](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_dense-rank)
+#### DENSE_RANK
 
+https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_dense-rank
 
 > 排名
 
+#### ROW_NUMBER
 
-### 其它语句
+https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_row-number
+
+> 行号
+
+使用 ROW_NUMBER() 窗口函数为每个 project_id 按 create_time 降序排列的记录分配一个行号。在外部查询中，只选择行号为 1 的记录，即每个 project_id 的最新记录。
+
+```sql
+SELECT
+    project_id,
+    actual_trade_time,
+    create_time
+FROM (
+    SELECT
+        project_id,
+        actual_trade_time,
+        create_time,
+        ROW_NUMBER() OVER (PARTITION BY project_id ORDER BY create_time DESC) as rn
+    FROM pms_invest_finance_apply
+    WHERE approval_status = '1'
+) subquery
+WHERE rn = 1;
+```
+
+## 其它语句
 
 
 ```mysql
@@ -860,7 +881,7 @@ SELECT value1,MAX(value) FROM a GROUP BY a.value1
 ```
 
 
-#### binlog
+### binlog
 
 
 ```mysql
@@ -884,7 +905,7 @@ show binlog events;
 ```
 
 
-#### 索引
+### 索引
 
 
 ```mysql
@@ -918,12 +939,12 @@ show binlog events;
 ```
 
 
-#### 存储过程
+### 存储过程
 
 
 ```mysql
 
-###创建存储过程
+##创建存储过程
 
 create procedure update_user_times()
 
@@ -933,7 +954,7 @@ update sv_common_user set times_supplement = '5',surplus_times_supplement = '5';
 
 end;
 
-###创建任务
+##创建任务
 
 create event if not exists udpate_user 
 
@@ -947,11 +968,11 @@ on completion PRESERVE
 
 do call update_user_times();
 
-### event_scheduler查询是否开启event
+## event_scheduler查询是否开启event
 
 show variables like '%sche%';
 
-### 如果没开启，则执行语句开启
+## 如果没开启，则执行语句开启
 
 set global event_scheduler=1;
 
@@ -978,7 +999,7 @@ select EVENT_NAME,EVENT_DEFINITION,STARTS,STATUS from information_schema.`EVENTS
 ```
 
 
-#### 数据权限
+### 数据权限
 
 
 ```sql
@@ -1020,7 +1041,7 @@ grant usage on *.* to 'test'@'localhost'
 ```
 
 
-#### 账号
+### 账号
 
 
 ```sql
@@ -1042,7 +1063,7 @@ set password for 'test'@'localhost' = password('123')
 ```
 
 
-#### 字符集
+### 字符集
 
 
 ```sql
@@ -1059,7 +1080,7 @@ create database test2 character set utf8
 ```
 
 
-### 批量插入
+## 批量插入
 
 
 ```sql
@@ -1178,7 +1199,7 @@ connection.close();
 ```
 
 
-### 时间字段
+## 时间字段
 
 
 ```sql
@@ -1196,17 +1217,18 @@ TIMESTAMP	YYYY-MM-DD HH:MM:SS	 1980-01-01 00:00:01 UTC ~ 2040-01-19 03:14:07 UTC
 ```
 
 
-### 回表
+## 回表
 
 
 ---
 
 
-### LeetCode
+## LeetCode
 
 
-#### [第二高的薪水](https://leetcode.cn/problems/second-highest-salary/)
+### 第二高的薪水
 
+https://leetcode.cn/problems/second-highest-salary/
 
 > 没有第二高的数据的情况，怎么去返回NUll
 
@@ -1218,8 +1240,9 @@ select (select distinct salary from Employee order by salary desc limit 1 offset
 ```
 
 
-#### [第N高的薪水](https://leetcode.cn/problems/nth-highest-salary/description/)
+### 第N高的薪水
 
+https://leetcode.cn/problems/nth-highest-salary/description/
 
 ```mysql
 
@@ -1242,11 +1265,11 @@ END
 ```
 
 
-#### [分数排名](https://leetcode.cn/problems/rank-scores/)
+### 分数排名
 
+https://leetcode.cn/problems/rank-scores/
 
 > 使用子查询
-
 
 ```mysql
 
@@ -1254,9 +1277,7 @@ select a.score, (select count(distinct score) from Scores where score >= a.score
 
 ```
 
-
 > 使用[DENSE_RANK](#DENSE_RANK)（推荐）
-
 
 ```mysql
 
@@ -1264,9 +1285,7 @@ SELECT S.score, DENSE_RANK() OVER (ORDER BY S.score DESC) AS 'rank' FROM Scores 
 
 ```
 
-
 > 使用INNER JOIN
-
 
 ```mysql
 
