@@ -4,6 +4,25 @@ sidebar_position: 2
 
 # WEB-CSS
 
+## display
+
+> `display`属性设置元素的显示方式。
+
+```css
+/* 块级元素 */
+display: block;
+/* 行内元素 */
+display: inline;
+/* 行内块级元素 */
+display: inline-block;
+/* 隐藏元素 */
+display: none;
+/* 弹性盒布局 */
+display: flex;
+/* 网格布局 */
+display: grid;
+```
+
 ## text-align
 
 > `text-align`属性设置文本的水平对齐方式。
@@ -18,6 +37,14 @@ text-align: center;
 
 ```css
 background-color: Burlywood;
+```
+
+## color
+
+> `color`属性设置元素的文本颜色。
+
+```css
+color: #000;
 ```
 
 ## border-color
@@ -68,6 +95,15 @@ max-width: 100px;
 padding: 10px 10px 10px 10px;
 ```
 
+## margin
+
+> `margin`属性设置元素的外边距。
+
+```css
+/* 上右下左 */
+margin: 10px 10px 10px 10px;
+```
+
 ## font-family
 
 > `font-family`属性设置元素的字体。
@@ -101,7 +137,38 @@ color: rgba(0, 0, 0, 0.5);
 
 - 最后一个参数表示透明度，取值范围0~1之间。
 
+## :visited
+
+> `:visited`伪类选择器用于选择已被访问过的链接。
+
+```css
+a:visited {
+  color: purple;
+}
+```
+
+## :hover
+
+> `:hover`伪类选择器用于选择鼠标悬停在元素上的状态。
+
+```css
+a:hover {
+  color: purple;
+}
+```
+
+## :active
+
+> `:active`伪类选择器用于选择鼠标点击在元素上的状态。
+
+```css
+a:active {
+  color: purple;
+}
+```
+
 ## 行内元素和块级元素
+
 ```mdx-code-block
 import Copyright from '@site/src/components/Copyright';
 
