@@ -138,6 +138,83 @@ fnm use 18.17.0
 | `iwr https://get.pnpm.io/install.ps1 -useb \| iex` | windows 下无 node 安装 pnpm |
 | `npm install -g pnpm`                              | node 安装 pnpm              |
 
+## Plasmo
+
+https://github.com/PlasmoHQ/plasmo/blob/main/cli/plasmo/i18n/README.zh-CN.md
+
+> Plasmo 是一个专门开发浏览器扩展程序的框架，使用它来构建您的产品，不用担心配置文件和构建浏览器扩展的奇怪特性。就像是浏览器插件开发领域的 Next.js。
+
+### 特征
+
+- 支持 Recat + Typescript
+- 声明式开发 ， 自动生成 mainfest.json（MV3，Manifest Version 3）
+- 热加载
+- .env* 文件
+- 远程代码打包（例如用于 gtag4）
+- 自动化部署（通过BPP）
+
+### 系统要求
+
+- Node.js 16.x 或更高版本
+- MacOS、Windows 或 Linux
+- 推荐使用pnpm
+
+### 初始化
+
+```shell
+pnpm dlx plasmo init
+# OR npm v7
+npm x plasmo init
+```
+
+### 目录
+
+```css
+example-dir
+├───background.ts /*后台*/
+├───assets /*资源*/
+|   └───icon512.png
+├───popup /*弹窗*/
+|   ├───index.tsx
+|   └───button.tsx
+├───options /*选项*/  
+|   ├───index.tsx
+|   ├───utils.ts
+|   └───input.tsx
+├───newtab /*新标签页*/ 
+|   ├───index.tsx
+├───contents /*内容*/
+|   ├───site-one.ts
+|   ├───site-two.ts
+|   └───site-three.ts
+...
+```
+
+您还可以将源代码放在src子目录下，而不是将源代码放在根目录中。请注意，asset和其他配置文件仍需要在根目录中。要使 TypeScript 正常工作，您需要在tsconfig.json文件paths中将`~*` 或 `@/*`前缀指向`"./src/*"`
+
+```json
+"paths": {
+  "~*": ["./src/*"]
+}
+```
+
+### 运行
+
+```shell
+pnpm dev
+pnpm build
+```
+
+创建上传到 Chrome 商店的的 zip 包
+
+```shell
+pnpm build -- --zip
+# OR
+npm build -- --zip
+# OR
+plasmo build --zip
+```
+
 ## vite
 
 ```sql

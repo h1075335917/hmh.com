@@ -19,3 +19,9 @@ import Copyright from '@site/src/components/Copyright';
 ```mdx-code-block
 <Copyright behavior="来源" description="【芋道源码】为什么 Spring和IDEA 都不推荐使用 @Autowired 注解" url="https://mp.weixin.qq.com/s/s-Izu6oaasdZeXiPT8D2dA" />
 ```
+
+## Plasmo 开发浏览器扩展
+
+```mdx-code-block
+<Copyright behavior="来源" description="【Esther_】Plasmo 快速入门" url="https://juejin.cn/post/7257520279312498748" />
+```
