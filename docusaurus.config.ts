@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "贺敏华的官方网站",
   tagline: "贺敏华自用的笔记网站",
-  favicon: "img/m_two_logo.ico",
+  favicon: "img/favicon_white.ico",
 
   // 设置生产环境的站点 URL
   url: "https://mhuahe.github.io/",
@@ -122,8 +122,8 @@ const config: Config = {
       title: "贺敏华的官方网站",
       logo: {
         alt: "mhuahe site logo",
-        src: "img/m_two_logo.svg",
-        srcDark: "img/m_two_logo.svg",
+        src: "img/favicon_white.png",
+        srcDark: "img/favicon_black.png",
         width: 32,
         height: 32,
       },

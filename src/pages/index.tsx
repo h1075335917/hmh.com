@@ -6,8 +6,10 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Translate from '@docusaurus/Translate';
+import { useColorMode } from '@docusaurus/theme-common';
 
-const logo = require("@site/static/img/mhuahe.png").default;
+const logo_white = require("@site/static/img/favicon_white.png").default;
+const logo_black = require("@site/static/img/favicon_black.png").default;
 
 interface HomepageHeaderProps {
   title: React.ReactNode;
@@ -15,6 +17,9 @@ interface HomepageHeaderProps {
 }
 
 function HomepageHeader({title, subtitle}: HomepageHeaderProps) {
+  const { colorMode } = useColorMode();
+  const logo = colorMode === 'dark' ? logo_black : logo_white;
+
   useEffect(() => {
     (async function () {
       const vsSource = `
@@ -88,6 +93,7 @@ function HomepageHeader({title, subtitle}: HomepageHeaderProps) {
       draw();
 
       function draw() {
+        gl.useProgram(aka.program); // 确保在绘制之前使用正确的程序
         const uniform2 = gl.getUniformLocation(aka.program, "uVar");
         gl.uniform1f(uniform2, reverse ? (value -= 0.01) : (value += 0.01));
 
@@ -104,7 +110,7 @@ function HomepageHeader({title, subtitle}: HomepageHeaderProps) {
         requestAnimationFrame(draw);
       }
     })();
-  }, []);
+  }, [colorMode]);
 
   return (
     <header className={clsx(styles.heroBanner)}>
