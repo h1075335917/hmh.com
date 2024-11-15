@@ -132,6 +132,14 @@ sidebar_position: 3
 
 > workbench.tabs.wrap：控制编辑器标签是否应该在到达视口边缘时换行。
 
+### 设置代理
+
+```json title="settings.json"
+"http.proxy": "http://your-proxy-server:port",
+"https.proxy": "https://your-proxy-server:port",
+"http.proxyStrictSSL": false
+```
+
 ## 快捷键
 
 ### VsCode 快捷键有五种组合方式（科普）
