@@ -94,6 +94,14 @@ projectName: 'mhuahe.com',
 
      访问 Github Pages 地址
 
+## swizzle
+
+查看可 swizzle 的组件
+
+```shell
+yarn swizzle @docusaurus/theme-classic --list
+```
+
 ## 集成搜索引擎 Algolia
 
 ### 申请Algolia
