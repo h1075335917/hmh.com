@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { translate } from "@docusaurus/Translate";
 
 const config: Config = {
   title: "mhuahe's website",
@@ -212,14 +213,26 @@ const config: Config = {
         },
         {
           to: "http://175.178.164.134:5244/",
-          label: "网盘",
           position: "right",
-          target: "_blank",
+          className: "navbar-cloud-link",
+          "aria-label": "网盘",
         },
         {
           href: "https://github.com/mhuahe/mhuahe.com",
-          label: "GitHub",
           position: "right",
+          className: "navbar-github-link",
+          /* 
+            是一个 ARIA (Accessible Rich Internet Applications) 属性
+            1. 辅助功能支持：
+              - 为使用屏幕阅读器的用户提供元素的描述性文本
+              - 当用户使用屏幕阅读器浏览网站时，会读出 "GitHub repository" 而不是仅显示一个图标
+            2. 语义化：
+              - 当元素没有可见文本时（比如只有图标的按钮），提供其含义
+              - 帮助用户理解这个链接的用途
+            3. SEO优化：
+              - 提供额外的语义信息，有助于搜索引擎理解页面内容
+          */
+          "aria-label": "GitHub",
         },
         {
           type: "localeDropdown",
