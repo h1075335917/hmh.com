@@ -10,7 +10,7 @@ function Resume() {
           alt="头像"
           className={styles.avatar}
         />
-        <div className={styles.name}>贺敏华</div>
+        <div className={styles.name}>mhuahe</div>
         <div className={styles.job}>Java开发者</div>
         <div className={styles.contactInfo}>
           <p>邮箱: h1075335917@gmail.com</p>

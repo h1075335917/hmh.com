@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "贺敏华的官方网站",
-  tagline: "贺敏华自用的笔记网站",
+  title: "mhuahe's website",
+  tagline: "mhuahe's personal note website",
   favicon: "img/favicon_white.ico",
 
   // 设置生产环境的站点 URL
@@ -119,7 +119,7 @@ const config: Config = {
     image: "img/docusaurus-social-card.jpg",
     // 导航栏
     navbar: {
-      title: "贺敏华的官方网站",
+      title: "mhuahe's website",
       logo: {
         alt: "mhuahe site logo",
         src: "img/favicon_white.png",
