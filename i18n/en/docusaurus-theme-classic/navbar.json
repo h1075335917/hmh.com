@@ -63,6 +63,10 @@
     "message": "Bookmark",
     "description": "Navbar item with label 书签"
   },
+  "item.label.网盘": {
+    "message": "Cloud",
+    "description": "Navbar item with label 网盘"
+  },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"

@@ -9,7 +9,7 @@ import Translate from '@docusaurus/Translate';
 import { useColorMode } from '@docusaurus/theme-common';
 
 const logo_white = require("@site/static/img/favicon_white.png").default;
-const logo_black = require("@site/static/img/favicon_black.png").default;
+const logo_black = require("@site/static/img/favicon_all_black.png").default;
 
 interface HomepageHeaderProps {
   title: React.ReactNode;
