@@ -80,8 +80,8 @@ const rightItems: NavbarItem[] = [
   {
     to: "/pintree/index.html",
     position: "right",
-    className: "navbar-bookmark-link",
-    "aria-label": "书签",
+    label: "书签",
+    target: "_blank",
   },
   {
     to: "http://175.178.164.134:5244/",
