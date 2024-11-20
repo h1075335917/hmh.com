@@ -18,7 +18,8 @@
   --ifm-pre-padding: 1px;
   --primary-neutral-600: #4d5761;
   --navbar-github-link: url("/img/icons/github.svg") no-repeat;
-  --navbar-cloud-link: url("/img/icons/cloud-fill.svg") no-repeat;
+  --navbar-cloud-link: url("/img/icons/cloud-light.svg") no-repeat;
+  --navbar-bookmark-link: url("/img/icons/bookmark-light.svg") no-repeat;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -32,7 +33,8 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --navbar-github-link: url("/img/icons/github-dark.svg") no-repeat;
-  --navbar-cloud-link: url("/img/icons/cloud-line.svg") no-repeat;
+  --navbar-cloud-link: url("/img/icons/cloud-dark.svg") no-repeat;
+  --navbar-bookmark-link: url("/img/icons/bookmark-dark.svg") no-repeat;
 }
 
 /*高亮报错样式*/
@@ -121,7 +123,8 @@ div[class^='announcementBar_'] {
 
 /* 导航栏 GitHub 图标 */
 .navbar-github-link:before,
-.navbar-cloud-link:before {
+.navbar-cloud-link:before,
+.navbar-bookmark-link:before {
   content: "";
   width: 24px;
   height: 24px;
@@ -136,3 +139,6 @@ div[class^='announcementBar_'] {
   background: var(--navbar-cloud-link);
 }
 
+.navbar-bookmark-link:before {
+  background: var(--navbar-bookmark-link);
+}
