@@ -1,5 +1,22 @@
 # JAVA-MybatisPlus
 
+## Mybatis
+
+### `<include>`
+
+```xml
+<sql id="testSQL">
+    ${tablename}.id,${tablename}.name
+</sql>
+<select id="selectSome" >
+    select
+    <include refid="testSQL"> 
+        <property name="tablename" value="user"></property>
+    </include> 
+    from user
+ </select>
+```
+
 ## 快速测试
 
 
