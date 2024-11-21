@@ -142,3 +142,10 @@ div[class^='announcementBar_'] {
 .navbar-bookmark-link:before {
   background: var(--navbar-bookmark-link);
 }
+
+/* MD文件中图片显示样式 */
+.mdx-div-img-50 {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
