@@ -7,6 +7,8 @@ const config: Config = {
   title: "mhuahe's website",
   tagline: "mhuahe's personal note website",
   favicon: "img/favicon_white.ico",
+  // 静态资源目录
+  staticDirectories: ['static'],
 
   // 设置生产环境的站点 URL
   url: "https://mhuahe.github.io/",

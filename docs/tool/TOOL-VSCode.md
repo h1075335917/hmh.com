@@ -67,13 +67,8 @@ sidebar_position: 3
 
 ### Java
 
-- Language Support for Java(TM) by Red Hat：为 Java 提供语言支持，包括智能感知、代码补全、导航、调试等功能。
-- Debugger for Java：为 Java 提供调试器，支持断点调试、变量查看、调用栈查看等功能。
-- Maven for Java：为 Maven 提供支持，包括项目创建、依赖管理、构建和运行等功能。
-- Spring Boot Tools：为 Spring Boot 提供支持，包括项目创建、依赖管理、构建和运行等功能。
-- Project Manager for Java：为 Java 项目管理提供支持，包括项目创建、依赖管理、构建和运行等功能。
-- Java Extension Pack：一个插件包，包含了多个用于 Java 开发的插件，旨在为用户提供一个完整的 Java 开发环境。
-- Test Runner for Java：为 Java 提供测试运行器，支持 JUnit、TestNG 等测试框架。
+- Extension Pack for Java：为 Java 提供支持，包括智能感知、代码补全、导航、调试等功能。
+- Spring Boot Extension Pack：为 Spring Boot 提供支持，包括项目创建、依赖管理、构建和运行等功能。
 
 ### Python
 
@@ -126,11 +121,11 @@ sidebar_position: 3
 
 ### 设置水平或垂直活动栏
 
-> workbench.activityBar.orientation
+`workbench.activityBar.orientation`：设置水平或垂直活动栏。
 
 ### 标签栏行为
 
-> workbench.tabs.wrap：控制编辑器标签是否应该在到达视口边缘时换行。
+`workbench.tabs.wrap`：控制编辑器标签是否应该在到达视口边缘时换行。
 
 ### 设置代理
 
@@ -139,6 +134,30 @@ sidebar_position: 3
 "https.proxy": "https://your-proxy-server:port",
 "http.proxyStrictSSL": false
 ```
+
+### 新窗口
+
+`Open Folders In New Window`：打开新窗口，设置为`on`。
+
+### 配置项目使用的JDK版本
+
+`java.configuration.runtimes`：用于配置和指定要在 Java 项目中使用的 Java 运行时环境
+
+```json title="settings.json"
+"java.configuration.runtimes": [
+    {
+        "name": "JavaSE-1.8",
+        "path": "C:\\Program Files\\Java\\jdk1.8.0_144",
+        "default": true
+    },
+    {
+        "name": "JavaSE-21",
+        "path": "C:\\Program Files\\Java\\jdk-21",
+    }
+]
+```
+
+在命令窗口，输入`Java: Configure Java Runtime`，设置JDK版本。
 
 ## 快捷键
 
