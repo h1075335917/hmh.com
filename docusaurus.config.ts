@@ -144,12 +144,12 @@ const config: Config = {
       contextualSearch: true,
     },
     // 公告栏
-    announcementBar: {
-      id: "announcement-bar",
-      content:
-        '🎉️<b>本网站正在建设中，欢迎提出宝贵意见！<a target="_blank" href="https://github.com/mhuahe/mhuahe.com">源码地址</a></b> 🥳️',
-      isCloseable: true,
-    },
+    // announcementBar: {
+    //   id: "announcement-bar",
+    //   content:
+    //     '🎉️<b>本网站正在建设中，欢迎提出宝贵意见！<a target="_blank" href="https://github.com/mhuahe/mhuahe.com">源码地址</a></b> 🥳️',
+    //   isCloseable: true,
+    // },
     footer: footerItems,
     prism: {
       theme: prismThemes.github,
