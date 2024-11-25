@@ -117,12 +117,19 @@ $ cat /etc/redhat-release
 
 ## Windows命令
 
-### 快速删除文件夹和子文件夹
+### cmd 删除文件夹和子文件夹
+
+> /S 表示除本身外，还将删除目录下的所有子目录和文件，/Q 表示安静模式，删除时不需要经过确认
 
 ```shell
 rmdir 文件路径 /S /Q
 del 文件路径 /S /Q 
-/* 注意：/S 表示除本身外，还将删除目录下的所有子目录和文件，/Q 表示安静模式，删除时不需要经过确认 */
+```
+
+### PowerShell 删除文件夹和子文件夹
+
+```shell
+Remove-Item -Recurse -Force 文件路径
 ```
 
 ## docker

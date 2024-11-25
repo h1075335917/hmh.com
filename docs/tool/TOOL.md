@@ -4,6 +4,146 @@ sidebar_position: 1
 
 # 工具
 
+## 截屏工具
+
+### Snipaste
+https://zh.snipaste.com/
+
+## 抓包工具
+
+### charles-proxy
+https://www.charlesproxy.com/
+
+## Windows工具
+
+### instsrv+srvany
+https://www.cr173.com/soft/64394.html
+
+> 一个用于在Windows上安装和运行服务的小工具
+
+### Optimizer
+https://github.com/hellzerg/optimizer
+
+> 一个用于优化Windows性能的工具
+
+### ContextMenuManager
+https://github.com/BluePointLilac/ContextMenuManager
+
+> 一个用于管理Windows右键菜单的工具
+
+### Directory Opus
+https://www.gpsoft.com.au/
+
+> 一个功能强大的文件管理器，支持文件搜索、文件比较、文件同步等多种功能
+
+### RevokeMsgPatcher
+https://github.com/huiyadanli/RevokeMsgPatcher
+
+> 一个用于恢复微信撤回消息的工具
+
+### PowerToys
+https://github.com/microsoft/PowerToys
+
+> 一个免费的实用程序的集合，旨在提高人们的工作效率
+
+### UniGetUI
+https://github.com/marticliment/UniGetUI
+
+> winget包管理器的图形界面
+
+## 传输工具
+
+### syncthing
+https://syncthing.net/
+
+> 一个开源的文件同步工具，支持跨平台和云同步
+
+### LocalSend
+https://localsend.org/
+
+> 一个开源的文件传输工具，支持跨平台和云传输
+
+## PDF工具
+
+### Stirling-PDF
+https://github.com/StirlingPDF/Stirling-PDF
+
+> 一个开源的PDF工具，支持PDF转换、编辑、合并、拆分等功能
+
+## 网络穿透
+
+### 小米球Ngrok
+https://manager.xiaomiqiu.com/
+
+### ngrok
+https://dashboard.ngrok.com/
+
+### 蜻蜓映射
+https://www.qingting.fun/
+
+## 图片工具
+
+### 7gif
+https://www.xtreme-lab.net/7gif/en/index.html
+
+### Upscayl
+https://upscayl.org/
+
+> 一个开源的图像放大工具，用于将低分辨率图像放大到高分辨率
+
+## 开发工具
+
+### MinGW-w64
+https://www.mingw-w64.org/
+
+> 一个用于Windows的Minimalist GNU for Windows-w64的编译器
+
+### jmeter
+https://jmeter.apache.org/
+
+> 一个纯Java桌面应用程序，用于对HTTP / HTTPS应用程序执行负载测试和性能测试
+
+### Camunda
+https://camunda.com/
+
+> 一个开源的BPM平台，用于设计和执行复杂的业务流程
+
+### jetbrains-toolbox
+https://www.jetbrains.com/toolbox-app/
+
+> 一个用于安装和管理JetBrains产品的工具
+
+## 笔记工具
+
+### typora
+https://www.typora.io/
+
+### notion
+https://www.notion.so/
+
+### 印象笔记
+https://app.yinxiang.com/
+
+### 有道云笔记
+https://note.youdao.com/
+
+### drawio
+https://app.diagrams.net/
+
+### XMind
+https://www.xmind.net/
+
+## 上传文件
+
+### oss-browser
+https://github.com/aliyun/oss-browser
+
+### PicGo
+https://github.com/Molunerfinn/PicGo
+
+### MinIO
+https://github.com/minio/minio
+
 ## 安卓投屏
 
 ### scrcpy
@@ -81,6 +221,11 @@ https://github.com/AlistGo/alist
 - `alist admin random`：随机生成管理员密码
 
 ## 下载工具
+
+### Motrix
+https://motrix.app/
+
+> 一个基于 Electron 和 Flutter 的多协议、多来源的下载工具
 
 ### you-get
 https://you-get.org/
