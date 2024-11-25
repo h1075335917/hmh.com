@@ -2,6 +2,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import { navbarItems } from './config/navbar-items';
+import { footerItems } from './config/footer-items';
 
 const config: Config = {
   title: "mhuahe's website",
@@ -149,56 +150,7 @@ const config: Config = {
         '🎉️<b>本网站正在建设中，欢迎提出宝贵意见！<a target="_blank" href="https://github.com/mhuahe/mhuahe.com">源码地址</a></b> 🥳️',
       isCloseable: true,
     },
-    footer: {
-      // style: "dark",
-      // links: [
-      //   {
-      //     title: "文档",
-      //     items: [
-      //       {
-      //         label: "开发文档",
-      //         to: "https://docusaurus.io/",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: "社区",
-      //     items: [
-      //       {
-      //         label: "博客园",
-      //         href: "https://www.cnblogs.com/minhua",
-      //       },
-      //       {
-      //         label: "掘金",
-      //         href: "https://juejin.cn/user/2331397363880808",
-      //       },
-      //       {
-      //         label: "Twitter",
-      //         href: "https://x.com/mihuahe",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: "More",
-      //     items: [
-      //       {
-      //         label: "Blog",
-      //         to: "https://mhuahe.github.io/mhuahe.com/blog",
-      //       },
-      //       {
-      //         label: "GitHub",
-      //         href: "https://github.com/mhuahe",
-      //       },
-      //     ],
-      //   },
-      // ],
-      // logo: {
-      //   alt: "Meta Open Source Logo",
-      //   src: "/img/meta_opensource_logo_negative.svg",
-      //   href: "https://opensource.fb.com",
-      // },
-      copyright: `© ${new Date().getFullYear()} mhuahe. Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.`,
-    },
+    footer: footerItems,
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

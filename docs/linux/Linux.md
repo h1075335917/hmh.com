@@ -884,9 +884,11 @@ $ git remote set-url origin https://github.com/mhuahe/mhuahe.com.git
 
 ### git回滚
 
+同IDEA的undo commit
+
 ```shell
 # 本地回滚到指定版本
-$ git reset --hard  66b9f9481b45b562a1949898504f74e3695a
+$ git reset [--hard | --soft]  commitId
 # 提交远程回滚（强制）
 $ git push -f
 ```
