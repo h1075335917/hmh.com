@@ -140,9 +140,9 @@ export default function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader title={title} subtitle={subtitle} />
-      <main>
+      {/* <main>
         <HomepageFeatures />
-      </main>
+      </main> */}
     </Layout>
   );
 }
