@@ -23,7 +23,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -37,7 +37,7 @@
   --navbar-bookmark-link: url("/img/icons/bookmark-dark.svg") no-repeat;
 }
 
-/*高亮报错样式*/
+/* 高亮报错样式 */
 .code-block-error-line {
   background-color: #ff000020;
   display: block;
@@ -46,34 +46,40 @@
   border-left: 3px solid #ff000080;
 }
 
-/* 为 h2-h5 标题添加分割线 */
+/* 为 h2-h5 标题分割线样式 */
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5 {
+  position: relative; /* 使标题相对定位 */
+  display: table; /* 使用 table 布局让元素宽度适应内容 */
+}
+
 .markdown h2::after,
 .markdown h3::after,
 .markdown h4::after,
 .markdown h5::after {
-  content: "";
-  display: block;
-  height: 1px;
-  margin: 10px 0; /* 调整分割线和标题的间距 */
+  content: ""; /* 添加内容以生成伪元素 */
+  height: 1px; /* 设置分割线高度为1px */
+  position: absolute; /* 使分割线绝对定位 */
+  left: 0; /* 使分割线从左侧开始 */
+  bottom: -10px; /* 调整分割线与文字的距离 */
+  width: 100%; /* 使分割线宽度为100% */
 }
 
 .markdown h2::after {
-  width: 80%;
   background-color: var(--ifm-color-primary-lightest);
 }
 
 .markdown h3::after {
-  width: 60%;
   background-color: var(--ifm-color-primary-lighter);
 }
 
 .markdown h4::after {
-  width: 40%;
   background-color: var(--ifm-color-primary-light);
 }
 
 .markdown h5::after {
-  width: 20%;
   background-color: var(--ifm-color-primary);
 }
 
@@ -87,7 +93,7 @@
 }
 
 /* 公告栏样式 */
-div[class^='announcementBar_'] {
+div[class^="announcementBar_"] {
   font-size: 20px;
   --site-announcement-bar-stripe-color1: #e8d7ff;
   --site-announcement-bar-stripe-color2: #ffe9d1;
