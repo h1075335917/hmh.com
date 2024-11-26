@@ -113,6 +113,27 @@ https://www.jetbrains.com/toolbox-app/
 
 > 一个用于安装和管理JetBrains产品的工具
 
+## Shell工具
+
+### Xshell
+https://www.xshell.com/
+
+### FinalShell
+https://www.hostbuf.com/t/988.html
+
+### Tabby
+https://github.com/Eugeny/tabby
+
+#### 同步设置
+
+- 下载插件`Cloud Sync Setting`
+- 设置 `Setting Sync`
+- 选择`Dropbox`同步
+- 将`Dropbox`认证后的重定向地址复制到设置中的`Sync URL`
+
+### Xterminal
+https://www.xterminal.cn/
+
 ## 笔记工具
 
 ### typora

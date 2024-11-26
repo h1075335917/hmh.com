@@ -1,8 +1,8 @@
-# JAVA-SpringBoot技术栈
+# SpringBoot技术栈
 
-### spring-boot-redis
+## spring-boot-redis
 
-#### 启动命令
+### 启动命令
 
 ```sql
 -- 启动
@@ -17,7 +17,7 @@ redis-server --service-stop
 redis-server --service-uninstall
 ```
 
-#### 依赖
+### 依赖
 
 ```xml
 <dependency>
@@ -27,7 +27,7 @@ redis-server --service-uninstall
 </dependency>
 ```
 
-#### 文件配置
+### 文件配置
 
 ```yml
 spring:
@@ -44,7 +44,7 @@ spring:
         min-idle: 0     #最小等待连接中的数量,设 0 为没有限制
 ```
 
-#### 配置类
+### 配置类
 
 ```java
 package com.lingyun.middleware.redis;
@@ -197,7 +197,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 }
 ```
 
-#### 过期监听
+### 过期监听
 
 ```sql
 -- 存在延迟
@@ -238,7 +238,7 @@ public class RedisKeyExpirationListener extends KeyExpirationEventMessageListene
 }
 ```
 
-#### 缓存注解
+### 缓存注解
 
 ```sql
 @EnableCaching：启用缓存
@@ -266,7 +266,7 @@ key：用于设置在命名空间中的缓存key值，可以使用SpEL表达式�
 condition：条件符合则缓存。
 ```
 
-#### Redis连接池
+### Redis连接池
 
 ```xml
 <!-- 
@@ -279,7 +279,7 @@ condition：条件符合则缓存。
 </dependency>
 ```
 
-### spring-retry
+## spring-retry
 
 ```xml
 <dependency>
@@ -336,7 +336,7 @@ public void recover(Exception e) {
 4 、使用了@Retryable的方法里面不能使用try…catch包裹，要在方法上抛出异常，不然不会触发。
 ```
 
-### SpringSecurity+JWT
+## SpringSecurity+JWT
 
 ```xml
 <!--SpringSecurity依赖配置-->
@@ -352,7 +352,7 @@ public void recover(Exception e) {
 </dependency>
 ```
 
-#### SpringSecurity
+### SpringSecurity
 
 ```sql
 -- SpringSecurity是一个强大的可高度定制的认证和授权框架，对于Spring应用来说它是一套Web安全标准。SpringSecurity注重于为Java应用提供认证和授权功能，像所有的Spring项目一样，它对自定义需求具有强大的扩展性
@@ -438,7 +438,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-##### 方法说明
+#### 方法说明
 
 ```sql
 configure(HttpSecurity httpSecurity)：用于配置需要拦截的url路径、jwt过滤器及出异常后的处理器
@@ -458,7 +458,7 @@ PasswordEncoder：SpringSecurity定义的用于对密码进行编码及比对的
 JwtAuthenticationTokenFilter：在用户名和密码校验前添加的过滤器，如果有jwt的token，会自行根据token信息进行登录
 ```
 
-##### 接口权限
+#### 接口权限
 
 ```
 给查询接口添加pms:brand:read权限
@@ -467,13 +467,13 @@ JwtAuthenticationTokenFilter：在用户名和密码校验前添加的过滤器�
 给添加接口添加pms:brand:create权限
 ```
 
-#### JWT
+### JWT
 
 ```sql
 -- JWT是JSON WEB TOKEN的缩写，它是基于 RFC 7519 标准定义的一种可以安全传输的的JSON对象，由于使用了数字签名，所以是可信任和安全的
 ```
 
-##### JWT的组成
+#### JWT的组成
 
 ```sql
 -- 解析地址
@@ -493,7 +493,7 @@ header.payload.signature
 String signature = HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
 ```
 
-##### JWT使用原理
+#### JWT使用原理
 
 ```sql
 1、用户调用登录接口，登录成功后获取到JWT的token
@@ -501,13 +501,13 @@ String signature = HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(pay
 3、后台程序通过对Authorization头中信息的解码及数字签名校验来获取其中的用户信息，从而实现认证和授权
 ```
 
-### Hibernate Validator
+## Hibernate Validator
 
 ```sql
 -- Hibernate Validator是SpringBoot内置的校验框架，只要集成了SpringBoot就自动集成了它，我们可以通过在对象上面使用它提供的注解来完成参数校验
 ```
 
-#### 常用注解
+### 常用注解
 
 ```sql
 @Null：被注释的属性必须为null；
@@ -537,7 +537,7 @@ String signature = HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(pay
 2、使用全局异常方式，在添加品牌的接口中添加@Validated注解
 ```
 
-#### 自定义注解
+### 自定义注解
 
 ```java
 /**
@@ -597,9 +597,9 @@ public class PmsBrandParam {
 }
 ```
 
-### 全局异常处理
+## 全局异常处理
 
-#### 注解
+### 注解
 
 ```sql
 @ControllerAdvice：类似于@Component注解，可以指定一个组件，这个组件主要用于增强@Controller注解修饰的类的功能，比如说进行全局异常处理
@@ -607,7 +607,7 @@ public class PmsBrandParam {
 @ExceptionHandler：用来修饰全局异常处理的方法，可以指定异常的类型
 ```
 
-#### 使用实现
+### 使用实现
 
 ```java
 //首先我们需要自定义一个异常类ApiException，当我们校验失败时抛出该异常

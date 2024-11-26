@@ -1,8 +1,8 @@
-# JAVA-WebSocket
+# WebSocket
 
 WebSocket 协议在2008年诞生，2011年成为国际标准。所有浏览器都已经支持了
 
-#### WebSocket 和 HTTP 的关系
+## WebSocket 和 HTTP 的关系
 
 ```sql
 -- 结论
@@ -35,7 +35,7 @@ Sec-WebSocket-Accept:s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 WebSocket设计上就是天生为HTTP增强通信（全双工通信等），所以在HTTP协议连接的基础上是很自然的一件事，并因此而能获得HTTP的诸多便利。这诸多便利中有一条很重要，基于HTTP连接将获得最大的一个兼容支持，比如即使服务器不支持WebSocket也能建立HTTP通信，只不过返回的是onerror而已，这显然比服务器无响应要好的多
 ```
 
-#### WebSocket
+## WebSocket
 
 ```sql
 -- 我们已经有了 HTTP 协议，为什么还需要WebSocket协议？它能带来什么好处？
@@ -58,7 +58,7 @@ import webSocket from '/img/docs/java/websocket/WebSocket-webSocket.jpg';
 <img src={webSocket} alt="WebSocket-webSocket" width="50%" />
 ```
 
-#### Netty-websocket
+## Netty-websocket
 
 ```xml
 <!-- netty依赖 -->
@@ -69,7 +69,7 @@ import webSocket from '/img/docs/java/websocket/WebSocket-webSocket.jpg';
 </dependency>
 ```
 
-#### 注解说明
+## 注解说明
 
 ```
 @ServerEndpoint

@@ -1,6 +1,6 @@
-# JAVA-知识题
+# 知识题
 
-### 二维数组的存储地址
+## 二维数组的存储地址
 
 ```mdx-code-block
 import twoDimensionalArrayAddress from '/img/docs/java/knowledge/Knowledge-二维数组存储地址.png';
@@ -8,7 +8,7 @@ import twoDimensionalArrayAddress from '/img/docs/java/knowledge/Knowledge-二�
 <img src={twoDimensionalArrayAddress} alt="Knowledge-二维数组存储地址" width="50%" />
 ```
 
-### wait()、notify()、notifyAll()
+## wait()、notify()、notifyAll()
 
 ```
 1、wait(), notify(), 和 notifyAll() 方法是 Object 类中定义的 final 方法，因此不能被子类重写。这些方法用于实现线程之间的协调和通信，主要用于实现线程的等待和唤醒机制
@@ -18,7 +18,7 @@ import twoDimensionalArrayAddress from '/img/docs/java/knowledge/Knowledge-二�
 5、这些方法通常与 synchronized 关键字一起使用，以实现多线程之间的协调和同步
 ```
 
-### GET和POST请求
+## GET和POST请求
 
 ```sql
 -- GET和POST浏览器缓存问题
@@ -37,7 +37,7 @@ import twoDimensionalArrayAddress from '/img/docs/java/knowledge/Knowledge-二�
 3、POST 请求的参数通常不会被保存在浏览器的历史记录中。这是因为 POST 请求通常用于向服务器提交敏感数据，例如表单提交，将这些参数保存在浏览器历史记录中可能会导致安全风险和隐私问题。因此，浏览器通常不会将 POST 请求的参数保存在历史记录中，以保护用户的数据安全。
 ```
 
-### 静态语句块和静态变量
+## 静态语句块和静态变量
 
 ```
 1、静态变量和静态初始化块的初始化顺序与它们在代码中的声明顺序有关。
@@ -45,7 +45,7 @@ import twoDimensionalArrayAddress from '/img/docs/java/knowledge/Knowledge-二�
 3、静态初始化块：静态初始化块也按照代码中的声明顺序执行。当类加载时，静态初始化块会按照声明顺序依次执行。
 ```
 
-### volatile
+## volatile
 
 ```sql
 -- 工作原理
@@ -53,7 +53,7 @@ import twoDimensionalArrayAddress from '/img/docs/java/knowledge/Knowledge-二�
 2、禁止指令重排序：volatile 变量的读写操作不能和其前后的指令重排序，保证了代码的执行顺序符合预期。
 ```
 
-### HTTP错误码
+## HTTP错误码
 
 ```sql
 -- 302

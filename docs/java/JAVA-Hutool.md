@@ -1,8 +1,8 @@
-# JAVA-HuTool工具
+# HuTool
 
-### 工具类使用
+## 工具类使用
 
-#### Convert 转换
+### Convert 转换
 
 ```java
 //转换工具类
@@ -11,7 +11,7 @@ String cover =  "[1,3]";
 List<String> list = Convert.toList(String.class, cover);
 ```
 
-#### ObjectUtil 对象判空
+### ObjectUtil 对象判空
 
 ```java
 //兼容list、map、CharSequence(String)、Iterator、Iterable(可迭代的)判空
@@ -26,7 +26,7 @@ ObjectUtil.equals(bigNum1, bigNum2);
 ObjectUtil.isNotNull(Object);
 ```
 
-#### CglibUtil 拷贝
+### CglibUtil 拷贝
 
 ```xml
 <dependency>
@@ -47,7 +47,7 @@ List<User> userList = new ArrayList<>();
 List<User> users = CglibUtil.copyList(userList, User::new);
 ```
 
-#### CaptchaUtil 图像验证码
+### CaptchaUtil 图像验证码
 
 ```java
 //图像验证码
@@ -63,7 +63,7 @@ GifCaptcha gifCaptcha = CaptchaUtil.createGifCaptcha(250, 120);
 gifCaptcha.write("D://image.jpg");
 ```
 
-#### MailUtil 邮箱
+### MailUtil 邮箱
 
 ```properties
 #mail.setting
@@ -108,7 +108,7 @@ connectionTimeout = 0
 String sendText = MailUtil.sendText("1075335917@qq.com", "测试邮件", "这是正文");
 ```
 
-#### RadixUtil 进制转换
+### RadixUtil 进制转换
 
 ```java
 //012 表示 3进制；0-0,1-1,2-2
@@ -117,7 +117,7 @@ String encode = RadixUtil.encode("012", 10);
 String encode = RadixUtil.encode("ABC", 10);
 ```
 
-#### PinyinUtil拼音
+### PinyinUtil拼音
 
 ```xml
 <dependency>
@@ -127,7 +127,7 @@ String encode = RadixUtil.encode("ABC", 10);
 </dependency>
 ```
 
-### 常用工具类
+## 常用工具类
 
 | 类                                       | 类描述                                                       |
 | ---------------------------------------- | ------------------------------------------------------------ |
@@ -158,7 +158,7 @@ String encode = RadixUtil.encode("ABC", 10);
 | cn.hutool.core.convert.Convert           | 类型转换器（通用类型转换，可使用）                           |
 | cn.hutool.core.util.DesensitizedUtil     | 脱敏工具类                                                   |
 
-### 其他工具类
+## 其他工具类
 
 | 类                                           | 类描述                                                       |
 | -------------------------------------------- | ------------------------------------------------------------ |

@@ -1,6 +1,6 @@
-# JAVA-算法
+# 算法
 
-### 数据排名
+## 数据排名
 
 ```java
 /**
@@ -34,7 +34,7 @@ public static Map<BigDecimal, String> calculateRanks(List<BigDecimal> dataList) 
 }
 ```
 
-### 树数据
+## 树数据
 
 ```java
 public List<IndustryClassifyVO> buildTree(List<IndustryClassifyVO> nodes) {

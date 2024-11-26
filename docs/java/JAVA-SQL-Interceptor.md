@@ -1,6 +1,6 @@
-# JAVA-SQL拦截器
+# SQL拦截器
 
-### Executor query 方法
+## Executor query 方法
 
 ```java
 <E> List<E> query(
@@ -18,7 +18,7 @@
       ResultHandler resultHandler) throws SQLException;
 ```
 
-### 拦截器配置和调用顺序
+## 拦截器配置和调用顺序
 
 > 拦截不同对象
 
@@ -58,7 +58,7 @@ return result;
 
 
 
-### 分页插件 5.0 
+## 分页插件 5.0 
 
 > 顺序打乱-执行6参query方法
 
@@ -93,7 +93,7 @@ public class QueryInterceptor implements Interceptor {
 
 
 
-### 拦截 query 方法的规范
+## 拦截 query 方法的规范
 
 ```java
 //QueryInterceptor 的逻辑就是进去的是 4 个参数的方法，出去的是 6 个参数的方法。这种处理方法不仅仅不方便和一般的 Excutor 拦截器搭配使用， 当出现两个以上类似 QueryInterceptor 的插件时，由于接口变了，类似 QueryInterceptor 插件也无法连贯的执行下去。 因而有必要解决这个问题。解决的办法就是使用统一的规范。经过规范后 QueryInterceptor 如下：
@@ -140,7 +140,7 @@ public class QueryInterceptor implements Interceptor {
 
 
 
-### 注意
+## 注意
 
 ```
 1. 拦截query问题

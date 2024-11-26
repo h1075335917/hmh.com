@@ -1,6 +1,6 @@
-# JAVA-Maven
+# Maven
 
-### Maven
+## Maven
 
 Maven 是 Apache 软件基金会组织维护的一款专门为 Java 项目提供**构建**和**依赖**管理支持的工具。
 
@@ -8,7 +8,7 @@ Maven 是 Apache 软件基金会组织维护的一款专门为 Java 项目提供
 
 借助于maven使用统一的规范方式下载jar包，会将jar包保存在本地meven“仓库”中，不管在哪个项目只要使用引用即可就行。
 
-#### 目录
+### 目录
 
 Maven自动化构建是通过约定目录结构，如自动编译时，Maven需要先找到 Java 源文件，然后才能编译，而编译之后也需要有位置放字节码文件。 开发中如果需要让第三方工具或框架知道我们自己创建的资源在哪，那么基本上就是两种方式：
 
@@ -21,7 +21,7 @@ import mavenDirectoryStructure from '/img/docs/java/maven/Maven-目录结构.png
 <img src={mavenDirectoryStructure} alt="Maven-目录结构" width="50%" />
 ```
 
-#### 构建
+### 构建
 
 Java 项目开发过程中，构建指的是使用『**原材料生产产品**』的过程。
 
@@ -41,7 +41,7 @@ import mavenBuildProcess from '/img/docs/java/maven/Maven-构建环节.png';
 <img src={mavenBuildProcess} alt="Maven-构建环节" width="50%" />
 ```
 
-#### 依赖
+### 依赖
 
 Maven 中最关键的部分，我们使用 Maven 最主要的就是使用它的依赖管理功能。当 A jar 包用到了 B jar 包中的某些类时，A 就对 B 产生了依赖，那么我们就可以说 A 依赖 B。
 
@@ -53,18 +53,18 @@ Maven 中最关键的部分，我们使用 Maven 最主要的就是使用它的�
 
 ---
 
-### Maven-环境配置
+## Maven-环境配置
 
 [Maven下载地址](https://maven.apache.org/download.cgi)
 
-#### 指定本地仓库
+### 指定本地仓库
 
 ```xml
 <!--/conf/settings.xml-->
 <localRepository>D:\mavenRepository</localRepository>
 ```
 
-#### 配置镜像仓库
+### 配置镜像仓库
 
 ```xml
 <!--/conf/settings.xml:中证仓库-->
@@ -105,7 +105,7 @@ Maven 中最关键的部分，我们使用 Maven 最主要的就是使用它的�
 </mirrors>
 ```
 
-#### 仓库搜索顺序
+### 仓库搜索顺序
 
 在 `settings.xml` 文件中，你可以配置多个仓库。每个仓库由 `<repository>` 元素表示，并且包含 `id`、`name` 和 `url` 属性。
 
@@ -141,7 +141,7 @@ Maven 中最关键的部分，我们使用 Maven 最主要的就是使用它的�
 
 Maven 会按照 `<repositories>` 元素中列出的顺序搜索依赖项。这意味着 Maven 会先尝试从第一个仓库查找依赖，如果没有找到，则会继续在下一个仓库中查找，依此类推，直到所有仓库都被搜索过。
 
-#### 配置基础JDK版本
+### 配置基础JDK版本
 
 ```xml
 <!--/conf/settings.xml-->
@@ -159,7 +159,7 @@ Maven 会按照 `<repositories>` 元素中列出的顺序搜索依赖项。这�
 </profile>
 ```
 
-#### 配置环境变量
+### 配置环境变量
 
 Maven 是一个用 Java 语言开发的程序，它必须基于 JDK 来运行，需要通过 JAVA_HOME 来找到 JDK 的安装位置：
 
@@ -167,7 +167,7 @@ Maven 是一个用 Java 语言开发的程序，它必须基于 JDK 来运行，
 
 - 配置MAVEN_HOME和PATH
 
-#### mirrors和repositories 
+### mirrors和repositories 
 
 - **`repositories` 定义源**：`repositories` 指定了 Maven 应该从哪里获取构件。如果没有配置 `mirrors`，Maven 将直接访问这些仓库。
 - **`mirrors` 定义代理**：`mirrors` 定义了代理仓库，当 Maven 访问某个仓库时，会首先检查是否有相应的镜像配置。如果有，Maven 将通过镜像的 URL 访问仓库，而不是直接访问 `repositories` 中定义的 URL。
@@ -175,9 +175,9 @@ Maven 是一个用 Java 语言开发的程序，它必须基于 JDK 来运行，
 
 ---
 
-### Maven-使用
+## Maven-使用
 
-#### 坐标
+### 坐标
 
 Maven使用三个『向量』坐标在『Maven 的仓库』中定位到唯一的『jar』包：
 
@@ -192,7 +192,7 @@ Maven使用三个『向量』坐标在『Maven 的仓库』中定位到唯一的
 <version>1.0-SNAPSHOT</version>
 ```
 
-#### pom基础配置
+### pom基础配置
 
 Project Object Model，项目对象模型，模型化思想的具体体现。
 
@@ -230,7 +230,7 @@ POM 表示将工程抽象为一个模型，再用程序中的对象来描述这�
 </dependencies>
 ```
 
-#### 依赖范围
+### 依赖范围
 
 引入依赖存在一个范围，在实际开发中，我们常用的就是 `compile`、`test`、`provided` 。
 
@@ -248,14 +248,14 @@ POM 表示将工程抽象为一个模型，再用程序中的对象来描述这�
 | test     | ×    | √    | ×      | ×                 |
 | system   | √    | √    | ×      | √                 |
 
-#### 依赖传递
+### 依赖传递
 
 A 依赖 B，B 依赖 C， A 没有配置对 C 的依赖。在这前提下，C 是否能够传递到 A，取决于 B 依赖 C 时使用的依赖范围：
 
 - B 依赖 C 时使用 compile 范围：可以传递
 - B 依赖 C 时使用 test 或 provided 范围：不能传递，所以需要这样的 jar 包时，就必须在需要的地方明确配置依赖才可以。
 
-#### 依赖排除
+### 依赖排除
 
  A 依赖 B，B 依赖 C 并且 C 可以传递到 A 时，A 不想要 C，需要在 A 里面把 C 排除掉。这种情况一般是为了避免 jar 包之间的冲突：
 
@@ -275,7 +275,7 @@ A 依赖 B，B 依赖 C， A 没有配置对 C 的依赖。在这前提下，C �
 </dependency>
 ```
 
-#### 继承和聚合
+### 继承和聚合
 
 继承是在 Maven 项目之间共享配置的机制。通过继承，子项目可以继承父项目的配置，从而避免重复配置和保持一致性。使用继承的特点：
 
@@ -321,7 +321,7 @@ import mavenInheritanceAndAggregation from '/img/docs/java/maven/Maven-继承和
 
 ---
 
-### Maven-Build标签
+## Maven-Build标签
 
 build 标签有默认相关配置，我们可以通过配置 build 标签覆盖默认值或补充配置。通过打印有效 POM 查看：
 
@@ -335,7 +335,7 @@ build 标签的子标签大致包含三个主体部分：
 - 备用插件管理
 - 生命周期插件
 
-#### 定义约定的目录结构
+### 定义约定的目录结构
 
 ```xml
 <!-- 指定项目的主源码目录 -->
@@ -382,11 +382,11 @@ build 标签的子标签大致包含三个主体部分：
 <finalName>hmh-system</finalName>
 ```
 
-#### 备用插件管理
+### 备用插件管理
 
 通过 pluginManagement 标签管理起来的插件就像 dependencyManagement 一样，子工程使用时可以省略版本号，起到在父工程中统一管理版本的效果。
 
-#### 生命周期插件
+### 生命周期插件
 
 plugins 标签存放的是默认生命周期中实际会用到的插件。结构如下：
 
@@ -421,9 +421,9 @@ plugins 标签存放的是默认生命周期中实际会用到的插件。结构
 </plugins>
 ```
 
-#### 示例
+### 示例
 
-##### 典型应用：指定 JDK 版本
+#### 典型应用：指定 JDK 版本
 
 ```xml
 <!-- build 标签：意思是告诉 Maven，你的构建行为，我要开始定制了！ -->
@@ -483,7 +483,7 @@ AnnotationProcessorPaths工作机制
 2. **执行注解处理**：注解处理器会扫描源代码中的注解，根据注解的定义执行相应的处理逻辑，比如生成额外的源文件、验证注解使用等。
 3. **生成输出**：注解处理器可以生成源代码或其他文件，这些生成的文件会被编译插件继续处理。
 
-##### 典型应用：SpringBoot 定制化打包
+#### 典型应用：SpringBoot 定制化打包
 
 很显然 spring-boot-maven-plugin 并不是 Maven 自带的插件，而是 SpringBoot 提供用来改变 Maven 默认的构建行为，具体来说是改变打包的行为。默认情况下 Maven 调用 maven-jar-plugin 插件的 jar 目标，生成普通的 jar 包。
 
@@ -503,7 +503,7 @@ AnnotationProcessorPaths工作机制
 </build>
 ```
 
-##### 典型应用：资源插件
+#### 典型应用：资源插件
 
 ```xml
 <build>
@@ -522,7 +522,7 @@ AnnotationProcessorPaths工作机制
 </build>
 ```
 
-#### 依赖配置补充
+### 依赖配置补充
 
 import
 
@@ -555,7 +555,7 @@ import
 </dependencyManagement>
 ```
 
-### Maven-profile 配置
+## Maven-profile 配置
 
 project标签下除了modelVersion和坐标标签之外，其它标签都可以配置到 profile中。
 
@@ -567,7 +567,7 @@ project标签下除了modelVersion和坐标标签之外，其它标签都可以�
 <id>demo</id>
 ```
 
-#### 激活 profile
+### 激活 profile
 
 一个 profile 一旦被激活，那么它定义的所有配置都会覆盖原来 POM 中对应层次的元素。可参考下面的标签结构：
 
@@ -603,7 +603,7 @@ project标签下除了modelVersion和坐标标签之外，其它标签都可以�
 - Maven **3.2.2 之前**：遇到第一个满足的条件即可激活——**或**的关系。
 - Maven **3.2.2 开始**：各条件均需满足——**且**的关系。
 
-#### 多环境管理
+### 多环境管理
 
 利用 Maven 的 profile 来进行定义多个 profile，然后每个 profile 对应不同的激活条件和配置信息，从而达到不同环境使用不同配置信息的效果。
 
@@ -695,7 +695,7 @@ import mavenProfileProd from '/img/docs/java/maven/Maven-profile-prod.png';
 
 ---
 
-### Maven-依赖冲突
+## Maven-依赖冲突
 
 『冲突』体现在：若4.3.6 和 4.4 这两个版本的 jar 包都被框架所依赖的 jar 包给传递进来了，但是假设 Maven 根据**『版本仲裁』**规则实际采纳的是 4.3.6，而我们需要使用的是4.4特有的方法：
 
@@ -725,13 +725,13 @@ import mavenPathSameFirst from '/img/docs/java/maven/Maven-路径相同时先声
 
 ---
 
-### Maven-私服Nexus
+## Maven-私服Nexus
 
 ---
 
-### Maven-IDEA配置
+## Maven-IDEA配置
 
-#### DarchetypeCatalog
+### DarchetypeCatalog
 
 用于指定在创建新 Maven 项目时使用的原型（Archetype）目录的来源。原型是 Maven 项目模板，它们提供了一种快速创建项目结构的方式。
 
@@ -756,7 +756,7 @@ import mavenDarchetypeCatalog from '/img/docs/java/maven/Maven-DarchetypeCatalog
 <img src={mavenDarchetypeCatalog} alt="Maven-DarchetypeCatalog配置" width="50%" />
 ```
 
-### application读取
+## application读取
 
 ```xml
 spring boot支持外部application.yml  读取优先级为：
@@ -789,7 +789,7 @@ import mavenSpringBootConfig from '/img/docs/java/maven/Maven-SpringBoot-配置�
 <img src={mavenSpringBootConfig} alt="Maven-SpringBoot-配置文件加载优先级" width="50%" />
 ```
 
-### Maven-配置预览
+## Maven-配置预览
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1202,7 +1202,7 @@ import mavenSpringBootConfig from '/img/docs/java/maven/Maven-SpringBoot-配置�
 </project>
 ```
 
-### Maven-Gradle
+## Maven-Gradle
 
 Gradle官方文档：https://docs.gradle.org
 

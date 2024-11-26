@@ -1,4 +1,4 @@
-# JAVA-MybatisPlus
+# MybatisPlus
 
 ## Mybatis
 

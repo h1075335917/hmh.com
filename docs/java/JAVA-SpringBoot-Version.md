@@ -1,6 +1,6 @@
-# JAVA-SpringBoot版本
+# SpringBoot版本
 
-### 版本对应
+## 版本对应
 
 [Spring Boot](https://docs.spring.io/spring-boot/docs/)
 
@@ -136,9 +136,9 @@
 | 2.0.1.RELEASE         | Spring Framework 5.0.5.RELEASE  | 4           |                |                   |
 | 2.0.0.RELEASE         | Spring Framework 5.0.4.RELEASE  | 4           |                |                   |
 
-### 版本信息
+## 版本信息
 
-#### 3.1
+### 3.1
 
 ```sql
 -- 3.1.x 2023-05-18 ~ 2024-05-18 ~ 2025-08-18
@@ -234,7 +234,7 @@ ConnectionDetails Bean 提供了建立
 。
 ```
 
-#### 3.0
+### 3.0
 
 ```sql
 -- 3.0.x 2022-11-24 ~ 2023-11-24 ~ 2025-02-24
@@ -246,7 +246,7 @@ Maven 3.5+
 Gradle 7.5+
 ```
 
-#### 2.7
+### 2.7
 
 ```sql
 -- 2.7.x 2022-05-19 ~ 2023-11-18 ~ 2025-02-18

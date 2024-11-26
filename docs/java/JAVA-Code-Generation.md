@@ -1,6 +1,6 @@
-# JAVA-代码生成
+# 代码生成
 
-### mybatis-generator
+## mybatis-generator
 
 ```xml
 <!-- mybatis代码生成插件 -->
@@ -37,7 +37,7 @@
 </plugin>
 ```
 
-#### 配置文件头
+### 配置文件头
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -46,7 +46,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 ```
 
-#### 根节点
+### 根节点
 
 ```xml
 <generatorConfiguration>
@@ -54,7 +54,7 @@
 </generatorConfiguration>  
 ```
 
-#### 子元素
+### 子元素
 
 包含以下子元素（有严格的顺序）：
 
@@ -93,7 +93,7 @@ url：可以指定文件系统上的特定位置，例如file:///C:/myfolder/gen
     Ibatis2Java5 
 ```
 
-#### context子元素
+### context子元素
 
 MBG配置中的其他几个元素，基本上都是context的子元素，这些子元素（有严格的配置顺序）包括：
 
@@ -259,7 +259,7 @@ useCompoundPropertyNames:如果是true,那么MBG生成属性名的时候会将�
 -- -------------------------------------------------------------------------------
 ```
 
-#### table子元素
+### table子元素
 
 ```sql
 -- <generatedKey> (0个或1个)
@@ -359,7 +359,7 @@ column:要忽略的列名。
 delimitedColumnName:匹配列名的时候是否区分大小写。如果为true则区分。默认值为false，不区分大小写。
 ```
 
-#### 配置说明
+### 配置说明
 
 ```sql
 对一些配置看法列出如下几点：
@@ -384,7 +384,7 @@ delimitedColumnName:匹配列名的时候是否区分大小写。如果为true�
 10、建议尽可能在<table>中配置<generatedKey>，避免手工操作，以便于MBG重复执行代码生成。
 ```
 
-#### 简单配置
+### 简单配置
 
 ```xml
 <!--

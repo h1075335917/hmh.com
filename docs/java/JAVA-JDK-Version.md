@@ -1,4 +1,4 @@
-# JAVA-JDK版本
+# JDK
 
 ## [jEnv](https://github.com/jenv/jenv)
 

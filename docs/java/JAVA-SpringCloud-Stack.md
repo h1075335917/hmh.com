@@ -1,8 +1,8 @@
-# JAVA-SpringCloud技术栈
+# SpringCloud技术栈
 
-#### cloud-eureka
+## cloud-eureka
 
-##### 服务端
+### 服务端
 
 ```xml
 <!-- 依赖 -->
@@ -38,7 +38,7 @@ eureka:
 http://localhost:8001/
 ```
 
-##### 客户端
+### 客户端
 
 ```xml
 <dependency>
@@ -76,7 +76,7 @@ eureka:
 http://localhost:8001/
 ```
 
-##### 集群
+### 集群
 
 ```yaml
 # 给eureka-sever添加配置文件application-replica1.yml配置第一个注册中心
@@ -142,7 +142,7 @@ eureka:
       defaultZone: http://replica1:8002/eureka/,http://replica2:8003/eureka/ #同时注册到两个注册中心
 ```
 
-##### 添加认证
+### 添加认证
 
 ```xml
 <dependency>
@@ -209,7 +209,7 @@ eureka:
       defaultZone: http://macro:123456@localhost:8004/eureka/
 ```
 
-##### Eureka的常用配置
+### Eureka的常用配置
 
 ```yaml
 eureka:
@@ -231,7 +231,7 @@ eureka:
     enable-self-preservation: false #关闭eureka服务端的保护机制
 ```
 
-#### cloud-ribbon
+## cloud-ribbon
 
 ```sql
 -- Spring Cloud Ribbon 是Spring Cloud Netflix 子项目的核心组件之一，主要给服务间调用及API网关转发提供负载均衡的功能
@@ -239,7 +239,7 @@ eureka:
 -- RestTemplate是SpringMVC携带的工具
 ```
 
-##### 客户端1
+### 客户端1
 
 ```xml
 <dependency>
@@ -266,7 +266,7 @@ eureka:
       defaultZone: http://localhost:8001/eureka/
 ```
 
-##### ribbon负载客户端
+### ribbon负载客户端
 
 ```xml
 <dependency>
@@ -299,7 +299,7 @@ service-url:
   user-service: http://user-service
 ```
 
-###### 负载配置
+#### 负载配置
 
 ```java
 @Configuration
@@ -319,7 +319,7 @@ public class RibbonConfig {
 }
 ```
 
-###### 调用客户端
+#### 调用客户端
 
 ```java
 @RestController
@@ -337,7 +337,7 @@ public class UserRibbonController {
 }
 ```
 
-##### 演示
+### 演示
 
 ```sql
 1. 启动eureka-server于8001端口(服务端)
@@ -346,7 +346,7 @@ public class UserRibbonController {
 4. 启动ribbon-service，调用接口，会随机调用user-service其中一个
 ```
 
-##### ribbon常用配置
+### ribbon常用配置
 
 ```sql
 -- Ribbon的常用配置
@@ -368,7 +368,7 @@ com.netflix.loadbalancer.AvailabilityFilteringRule：先过滤掉故障实例，
 com.netflix.loadbalancer.ZoneAwareLoadBalancer：采用双重过滤，同时过滤不是同一区域的实例和故障实例，选择并发较小的实例
 ```
 
-#### cloud-hystrix
+## cloud-hystrix
 
 ```xml
 <dependency>
@@ -413,7 +413,7 @@ public class HystrixServiceApplication {
 }
 ```
 
-##### 服务降级
+### 服务降级
 
 ```java
 /**
@@ -430,7 +430,7 @@ public CommonResult getDefaultUser(@PathVariable Long id) {
 }
 ```
 
-###### @HystrixCommand常用参数
+#### @HystrixCommand常用参数
 
 ```sql
 fallbackMethod：指定服务降级处理方法；
@@ -440,9 +440,9 @@ groupKey：分组名称，Hystrix会根据不同的分组来统计命令的告�
 threadPoolKey：线程池名称，用于划分线程池
 ```
 
-##### 请求缓存
+### 请求缓存
 
-###### 相关注解
+#### 相关注解
 
 ```sql
 @CacheResult：开启缓存，默认所有参数作为缓存的key，cacheKeyMethod可以通过返回String类型的方法指定key；
@@ -502,9 +502,9 @@ public class HystrixRequestContextFilter implements Filter {
 }
 ```
 
-##### 请求合并
+### 请求合并
 
-###### @HystrixCollapser的常用属性
+#### @HystrixCollapser的常用属性
 
 ```sql
 batchMethod：用于设置请求合并的方法；
@@ -542,9 +542,9 @@ public List<User> getUserByIds(List<Long> ids) {
 }
 ```
 
-#####  Hystrix的常用配置
+###  Hystrix的常用配置
 
-###### 全局配置
+#### 全局配置
 
 ```yaml
 hystrix:
@@ -584,7 +584,7 @@ hystrix:
       queueSizeRejectionThreshold: 5 #用于设置线程池队列的拒绝阀值，由于LinkedBlockingQueue不能动态改版大小，使用时需要用该参数来控制线程数
 ```
 
-###### 实例配置
+#### 实例配置
 
 ```yaml
 # 配置文件中相关key的说明
@@ -605,7 +605,7 @@ hystrix:
       coreSize: 10
 ```
 
-#### cloud-feign
+## cloud-feign
 
 ```xml
 <dependency>
@@ -660,7 +660,7 @@ public class FeignServiceApplication {
 }
 ```
 
-##### feign接口
+### feign接口
 
 ```java
 //value：调用的服务。fallback：服务降级处理类（实现UserService）
@@ -671,7 +671,7 @@ public interface UserService {
 }
 ```
 
-##### 日志打印
+### 日志打印
 
 ```sql
 -- 日志级别
@@ -694,7 +694,7 @@ public class FeignConfig {
 }
 ```
 
-#### cloud-zuul
+## cloud-zuul
 
 ```xml
 <dependency>
@@ -760,7 +760,7 @@ public class ZuulProxyApplication {
 }
 ```
 
-##### 请求路由
+### 请求路由
 
 ```sql
 zuul:
@@ -781,7 +781,7 @@ zuul:
 访问http://localhost:8801/feign-service/user/1同样可以路由到了feign-service上了
 ```
 
-##### 查看路由信息
+### 查看路由信息
 
 ```xml
 <dependency>
@@ -805,7 +805,7 @@ http://localhost:8801/actuator/routes
 http://localhost:8801/actuator/routes/details
 ```
 
-##### 过滤器
+### 过滤器
 
 ```sql
 -- 过滤器类型
@@ -867,14 +867,14 @@ public class PreLogFilter extends ZuulFilter {
 }
 ```
 
-#### cloud-config
+## cloud-config
 
 ```sql
 -- Spring Cloud Config 需要一个存储配置信息的Git仓库
 如：https://gitee.com/macrozheng/springcloud-config
 ```
 
-##### 服务端
+### 服务端
 
 ```xml
 <dependency>
@@ -932,7 +932,7 @@ label：代表分支名称，对应配置文件中的spring.cloud.config.label�
 profile：代表环境名称，对应配置文件中的spring.cloud.config.profile
 ```
 
-##### 客户端
+### 客户端
 
 ```xml
 <dependency>
@@ -990,7 +990,7 @@ public class ConfigClientController {
 }
 ```
 
-##### 刷新配置
+### 刷新配置
 
 ```xml
 <dependency>
@@ -1030,7 +1030,7 @@ public class ConfigClientController {
 POST http://localhost:9001/actuator/refresh
 ```
 
-##### 安全认证
+### 安全认证
 
 ```xml
 <dependency>
@@ -1090,7 +1090,7 @@ spring:
       password: 123456
 ```
 
-##### 集群搭建
+### 集群搭建
 
 ```sql
 -- 启动多个服务端，连接同一个注册中心
@@ -1117,7 +1117,7 @@ eureka:
    defaultZone: http://localhost:8001/eureka/
 ```
 
-#### cloud-bus
+## cloud-bus
 
 ```sql
 -- Spring Cloud Bus 使用轻量级的消息代理来连接微服务架构中的各个服务，可以将其用于广播状态更改（例如配置中心配置更改）或其他管理指令
@@ -1127,9 +1127,9 @@ eureka:
 -- 启动rabbitMQ
 ```
 
-##### 动态刷新配置
+### 动态刷新配置
 
-###### 服务端
+#### 服务端
 
 ```xml
 <dependency>
@@ -1173,7 +1173,7 @@ management:
         include: 'bus-refresh'
 ```
 
-###### 客户端
+#### 客户端
 
 ```xml
 <dependency>
@@ -1212,7 +1212,7 @@ management:
         include: 'refresh'
 ```
 
-###### 演示
+#### 演示
 
 ```sql
 1. 启动eureka-server
@@ -1225,7 +1225,7 @@ management:
 http://localhost:8904/actuator/bus-refresh
 ```
 
-###### 配合WebHooks使用
+#### 配合WebHooks使用
 
 ```sql
 WebHooks相当于是一个钩子函数，我们可以配置当向Git仓库push代码时触发这个钩子函数，这里以Gitee为例来介绍下其使用方式，这里当我们向配置仓库push代码时就会自动刷新服务配置了
@@ -1236,7 +1236,7 @@ git管理
 --> 勾选PUSH添加
 ```
 
-#### cloud-sleuth
+## cloud-sleuth
 
 ```sql
 -- 需要链路追踪的服务都要配置下面信息
@@ -1258,7 +1258,7 @@ spring:
       probability: 1 #设置Sleuth的抽样收集概率0-1
 ```
 
-##### zipkin日志
+### zipkin日志
 
 ```sql
 -- Zipkin是Twitter的一个开源项目，可以用来获取和分析Spring Cloud Sleuth 中产生的请求链路跟踪日志，它提供了Web界面来帮助我们直观地查看请求链路跟踪信息
@@ -1273,7 +1273,7 @@ java -jar zipkin-server-2.12.9-exec.jar
 http://localhost:9411
 ```
 
-##### Elasticsearch存储日志
+### Elasticsearch存储日志
 
 ```sql
 -- zipkin-server启动命令
@@ -1281,7 +1281,7 @@ http://localhost:9411
 java -jar zipkin-server-2.12.9-exec.jar --STORAGE_TYPE=elasticsearch --ES_HOSTS=localhost:9200 
 ```
 
-#### cloud-consul
+## cloud-consul
 
 ```sql
 -- Spring Cloud Consul 具有特性：
@@ -1301,9 +1301,9 @@ consul agent -dev
 http://localhost:8500
 ```
 
-##### 注册中心
+### 注册中心
 
-###### 客户端负载
+#### 客户端负载
 
 ```xml
 <dependency>
@@ -1338,7 +1338,7 @@ service-url:
  consul-user-service: http://consul-user-service
 ```
 
-##### 配置中心
+### 配置中心
 
 ```xml
 <dependency>
@@ -1388,7 +1388,7 @@ config:
   info: "config info for dev"
 ```
 
-#### cloud-gateway
+## cloud-gateway
 
 ```sql
 -- Spring Cloud Gateway 特性
@@ -1446,7 +1446,7 @@ public class GatewayConfig {
 }
 ```
 
-##### 过滤器
+### 过滤器
 
 ```sql
 -- 在一个高的角度来看，Global filters会被应用到所有的路由上，而Gateway filter将应用到单个路由上或者一个分组的路由上
@@ -1483,7 +1483,7 @@ public class MyGlobalFilter implements GlobalFilter, Ordered {
 }
 ```
 
-##### 监控请求
+### 监控请求
 
 ```xml
 <dependency>
@@ -1519,7 +1519,7 @@ import monitoringRequests from '/img/docs/java/springcloud/SpringCloud-gateway�
 <img src={monitoringRequests} alt="SpringCloud-gateway监控请求" width="50%" />
 ```
 
-##### 工作原理
+### 工作原理
 
 ```sql
 客户端向Spring Cloud Gateway发出请求。
@@ -1536,9 +1536,9 @@ import gatewayWorkPrinciple from '/img/docs/java/springcloud/SpringCloud-gateway
 <img src={gatewayWorkPrinciple} alt="SpringCloud-gateway工作原理" width="50%" />
 ```
 
-#### cloud-nacos
+## cloud-nacos
 
-##### 注册中心
+### 注册中心
 
 ```xml
 <!-- 
@@ -1585,7 +1585,7 @@ management:
         include: '*'
 ```
 
-##### 配置中心
+### 配置中心
 
 ```xml
 <dependency>
@@ -1621,7 +1621,7 @@ spring:
         file-extension: yaml #这里我们获取的yaml格式的配置
 ```
 
-###### 配置文件加载顺序
+#### 配置文件加载顺序
 
 优先级
 
@@ -1676,7 +1676,7 @@ application.yml 会覆盖 bootstrap.yml 的参数配置。
 
 
 
-#### cloud-sentinel
+## cloud-sentinel
 
 ```sql
 -- Sentinel特性
@@ -1800,7 +1800,7 @@ spring:
       data-type: json
 ```
 
-##### 限流
+### 限流
 
 ```sql
 -- Sentinel Starter 默认为所有的 HTTP 服务提供了限流埋点，我们也可以通过使用@SentinelResource来自定义一些限流行为
@@ -1840,7 +1840,7 @@ public class RateLimitController {
 }
 ```
 
-###### 根据资源名称限流
+#### 根据资源名称限流
 
 ```sql
 -- 在Sentinel控制台配置流控规则，根据@SentinelResource注解的value值，如：
@@ -1857,7 +1857,7 @@ public class RateLimitController {
 ]
 ```
 
-###### 根据URL限流
+#### 根据URL限流
 
 ```sql
 -- 在Sentinel控制台配置流控规则，使用访问的URL，如：
@@ -1874,9 +1874,9 @@ public class RateLimitController {
 ]
 ```
 
-##### 熔断功能
+### 熔断功能
 
-###### RestTemplate调用方式
+#### RestTemplate调用方式
 
 ```java
 /**
@@ -1939,7 +1939,7 @@ public class CircleBreakerController {
 }
 ```
 
-###### feign调用方式
+#### feign调用方式
 
 ```xml
 <!-- 在启动类加Enable注解-->
@@ -2014,7 +2014,7 @@ public class UserFallbackService implements UserService {
 }
 ```
 
-#### cloud-seata
+## cloud-seata
 
 ```sql
 -- 在微服务架构中由于全局数据一致性没法保证产生的问题就是分布式事务问题。简单来说，一次业务操作需要操作多个数据源或需要进行远程调用，就会产生分布式事务问题
@@ -2034,7 +2034,7 @@ Resource Manager (RM)： 控制分支事务，负责分支注册、状态汇报�
 5、TC 调度 XID 下管辖的全部分支事务完成提交或回滚请求。
 ```
 
-##### 搭建seata服务端
+### 搭建seata服务端
 
 ```sql
 -- 下载地址
@@ -2097,7 +2097,7 @@ config {
 }
 ```
 
-##### 客户端
+### 客户端
 
 ```xml
 <properties>
@@ -2212,9 +2212,9 @@ seata:
 @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
 ```
 
-#### cloud-oauth2
+## cloud-oauth2
 
-##### OAuth2相关名词
+### OAuth2相关名词
 
 ```sql
 -- OAuth2相关名词解释
@@ -2232,9 +2232,9 @@ User Agent：用户代理，一般就是指的浏览器。
 Client Credentials（客户端模式）：客户端直接通过客户端认证（比如client_id和client_secret）从认证服务器获取访问令牌。
 ```
 
-##### 四种授权模式
+### 四种授权模式
 
-###### Authorization Code（授权码模式）
+#### Authorization Code（授权码模式）
 
 ```sql
 1、用户登录应用系统，请求跳转到认证服务器，并302返回登录认证页面；
@@ -2250,7 +2250,7 @@ import authorizationCode from '/img/docs/java/springcloud/SpringCloud-授权码�
 <img src={authorizationCode} alt="SpringCloud-授权码模式" width="50%" />
 ```
 
-###### Implicit（简化模式）
+#### Implicit（简化模式）
 
 ```sql
 省略掉了颁发授权码（Authorization Code）给客户端的过程，直接返回访问令牌和可选的刷新令牌。其适用于没有Server服务器来接受处理Authorization Code的第三方应用。适用于公开的浏览器单页应用
@@ -2262,7 +2262,7 @@ import implicit from '/img/docs/java/springcloud/SpringCloud-简化模式.png';
 <img src={implicit} alt="SpringCloud-简化模式" width="50%" />
 ```
 
-###### 密码模式
+#### 密码模式
 
 ```sql
 这种模式再一步简化，和Authorzation Code类型下重要的区分就是省略了Authorization Request和Authorization Response。而是Client直接使用Resource owner提供的username和password来直接请求access_token（直接发起Access Token Request然后返回Access Token Response信息）。这种模式一般适用于Resource server高度信任第三方Client的情况下 
@@ -2274,7 +2274,7 @@ import password from '/img/docs/java/springcloud/SpringCloud-密码模式.png';
 <img src={password} alt="SpringCloud-密码模式" width="50%" />
 ```
 
-###### Client Credentials（客户端模式）
+#### Client Credentials（客户端模式）
 
 ```sql
 Client直接以自己的名义而不是Resource owner的名义去要求访问Resource server的一些受保护资源 
@@ -2288,7 +2288,7 @@ import clientCredentials from '/img/docs/java/springcloud/SpringCloud-客户端�
 <img src={clientCredentials} alt="SpringCloud-客户端模式" width="50%" />
 ```
 
-###### 刷新令牌
+#### 刷新令牌
 
 ```sql
 以便在访问令牌过期失效的时候可以由客户端自动获取新的访问令牌，而不是让用户再次登录授权
@@ -2300,7 +2300,7 @@ import refreshToken from '/img/docs/java/springcloud/SpringCloud-刷新令牌.pn
 <img src={refreshToken} alt="SpringCloud-刷新令牌" width="50%" />
 ```
 
-##### 入门使用
+### 入门使用
 
 ```xml
 <dependency>
@@ -2496,9 +2496,9 @@ http://localhost:9401/user/getCurrentUser
 Authorization：bearer 访问令牌
 ```
 
-##### 存储令牌
+### 存储令牌
 
-###### 使用Redis存储令牌
+#### 使用Redis存储令牌
 
 ```xml
 <dependency>
@@ -2560,7 +2560,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 使用password方式获取令牌，访问http://localhost:9401/oauth/token
 ```
 
-###### 使用jwt存储令牌
+#### 使用jwt存储令牌
 
 ```java
 /**
@@ -2619,7 +2619,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 }
 ```
 
-###### 扩展jwt存储内容
+#### 扩展jwt存储内容
 
 ```java
 /**
@@ -2672,7 +2672,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 }
 ```
 
-###### 解析jwt
+#### 解析jwt
 
 ```xml
 <dependency>
@@ -2698,7 +2698,7 @@ public class UserController {
 }
 ```
 
-###### 刷新令牌
+#### 刷新令牌
 
 ```java
 /**
@@ -2728,7 +2728,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 携带参数grant_type=refresh_token & refresh_token={}
 ```
 
-##### 单点登录
+### 单点登录
 
 ```sql
 -- 单点登录（Single Sign On）指的是当有多个系统需要登录时，用户只需登录一个系统，就可以访问其他需要登录的系统而无需登录
@@ -2819,7 +2819,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 }
 ```
 
-###### 权限认证
+#### 权限认证
 
 ```java
 /**
@@ -2848,9 +2848,9 @@ public class UserController {
 }
 ```
 
-#### cloud-admin
+## cloud-admin
 
-##### 服务端
+### 服务端
 
 ```xml
 <dependency>
@@ -2881,7 +2881,7 @@ public class AdminServerApplication {
 }
 ```
 
-##### 客户端
+### 客户端
 
 ```xml
 <dependency>

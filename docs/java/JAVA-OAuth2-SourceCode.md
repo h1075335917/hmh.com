@@ -1,4 +1,4 @@
-# JAVA-oauth2源码解读
+# oauth2源码解读
 
 ## 请求token源码解读
 

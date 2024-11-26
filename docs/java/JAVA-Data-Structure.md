@@ -1,6 +1,6 @@
-# JAVA-数据结构
+# 数据结构
 
-#### 枚举（Enumeration）
+## 枚举（Enumeration）
 
 ```java
 /*
@@ -23,7 +23,7 @@ public static void main(String args[]) {
 }
 ```
 
-#### 位集合（BitSet）
+## 位集合（BitSet）
 
 ```java
  public static void main(String args[]) {
@@ -53,7 +53,7 @@ public static void main(String args[]) {
 }
 ```
 
-#### 向量（Vector）
+## 向量（Vector）
 
 ```java
 public static void main(String args[]) {
@@ -96,7 +96,7 @@ public static void main(String args[]) {
 }
 ```
 
-#### 栈（Stack）
+## 栈（Stack）
 
 ```java
 //栈是Vector的一个子类，它实现了一个标准的后进先出（LIFO）的栈。
@@ -135,20 +135,20 @@ public static void main(String args[]) {
 }
 ```
 
-#### 字典（Dictionary）(过时)
+## 字典（Dictionary）(过时)
 
 ```
 类似与map，键值对形式。以键取值。
 ```
 
-#### 哈希表（Hashtable）
+## 哈希表（Hashtable）
 
 ```
 Hashtable是原始的java.util的一部分， 是一个Dictionary具体的实现 。
 ava 2 重构的Hashtable实现了Map接口，因此，Hashtable现在集成到了集合框架中。它和HashMap类很相似，但是它支持同步。
 ```
 
-#### 属性（Properties）
+## 属性（Properties）
 
 ```java
 /*
