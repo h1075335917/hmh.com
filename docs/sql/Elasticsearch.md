@@ -2,94 +2,106 @@
 
 ## 部署
 
-```sql
 https://www.elastic.co/cn/downloads/past-releases/elasticsearch-7-17-3
-1、启动
-	./bin/elasticsearch.bat
-2、访问
-	localhost:9200
-3、安装成windows服务
-	elasticsearch-service.bat install
-    /*
-        install: 安装Elasticsearch服务
-        remove: 删除已安装的Elasticsearch服务（如果启动则停止服务）
-        start: 启动Elasticsearch服务（如果已安装）
-        stop: 停止服务（如果启动）
-        manager:启动GUI来管理已安装的服务
-    */
-4、关闭服务
-    netstat -ano | findstr 9200
-    taskkill -pid 25776 -f
-4、安装Elasticsearch-head
-	安装grunt环境 npm install -g grunt-cli
-5、启动
-	npm install
-6、安装kibana
-7、重置密码
-elasticsearch-reset-password -i -u elastic
 
-8、
-索引：index，相当于数据库中的database
-类型：type相当于数据库中的table
-主键：id相当于数据库中记录的主键，是唯一的
-文档：document 相当于一条数据
-```
+### 步骤
 
+1. 启动：`./bin/elasticsearch.bat`
+2. 访问：`localhost:9200`
+3. 安装成windows服务：`elasticsearch-service.bat install`
+   - install: 安装Elasticsearch服务
+   - remove: 删除已安装的Elasticsearch服务（如果启动则停止服务）
+   - start: 启动Elasticsearch服务（如果已安装）
+   - stop: 停止服务（如果启动）
+   - manager:启动GUI来管理已安装的服务
+4. 关闭服务
+  ```shell
+  netstat -ano | findstr 9200
+  taskkill -pid 25776 -f
+  ```
+5. 安装 Elasticsearch-head
+6. 安装 grunt 环境：`npm install -g grunt-cli`
+7. 启动：`npm install`
+8. 安装 kibana
+9. 重置密码：`elasticsearch-reset-password -i -u elastic`
+
+## 命令
+
+### 类比数据库
+
+- 索引：index 相当于数据库中的 database
+- 类型：type 相当于数据库中的 table
+- 主键：id 相当于数据库中记录的主键，是唯一的
+- 文档：document 相当于一条数据
+
+### 查看状态
+
+- 查看集群的健康状况：`http://localhost:9200/_cat`
+- 查看ES集群的master主节点状态：`http://10.0.8.47:9200/_cat/nodes?v`
+- 查看Elasticsearch健康状态：`http://localhost:9200/_cat/health?v`
+
+> v是用来要求在结果中返回表头
+
+### 索引操作
+
+查看所有索引
 ```sql
-v是用来要求在结果中返回表头
--- 查看集群的健康状况
-http://localhost:9200/_cat
--- 查看ES集群的master主节点状态
-http://10.0.8.47:9200/_cat/nodes?v
--- 查看Elasticsearch健康状态
-http://localhost:9200/_cat/health?v
-```
-
-## 索引操作
-
-```sql
--- 查看所有索引
 GET /_cat/indices?v
+```
 
--- 创建一个名为 customer 的索引。pretty要求返回一个漂亮的json 结果
+创建一个名为 customer 的索引。pretty要求返回一个漂亮的json 结果
+```sql
 PUT /customer?pretty
+```
 
--- 查看索引customer
+查看索引customer
+```sql
 GET /customer
+```
 
--- 删除索引customer
+删除索引customer
+```sql
 DELETE /customer
 ```
 
-## 类型操作
+### 类型操作
 
+查看文档的类型
 ```sql
--- 查看文档的类型
 GET /customer/_mapping
 ```
 
-## 文档操作
+### 文档操作
+
+添加文档
 
 ```sql
--- 添加文档
 PUT /customer/_doc/1
 {
   "name": "John Doe"
 }
+```
 
--- 查看customer主键为1的文档
+查看customer主键为1的文档
+```sql
 GET /customer/_doc/1
+```
 
--- 修改文档
+修改文档
+```sql
 POST /customer/_doc/1/_update
 {
   "doc": { "name": "Jane Doe" }
 }
+```
 
--- 删除文档
+删除文档
+```sql
 DELETE /customer/_doc/1
+```
 
--- 文档做批量操作
+文档做批量操作
+```sql
 POST /customer/_doc/_bulk
 {"index":{"_id":"1"}}
 {"name": "John Doe" }
@@ -97,38 +109,42 @@ POST /customer/_doc/_bulk
 {"name": "Jane Doe" }
 ```
 
-## 数据搜索
+### 数据搜索
 
-```sql
--- 测试数据地址:
+测试数据地址
 https://github.com/macrozheng/mall-learning/blob/master/document/json/accounts.json
-```
 
-## 简单搜索
+### 简单搜索
 
+搜索全部(默认分页10)
 ```sql
--- 搜索全部(默认分页10)
 GET /bank/_search
 {
   "query": { "match_all": {} }
 }
+```
 
--- 分页搜索：from表示偏移量，从0开始，size表示每页显示的数量
+分页搜索：`from`表示偏移量，从0开始，`size`表示每页显示的数量
+```sql
 GET /customer/_search
 {
   "query": { "match_all": {} },
   "from": 0,
   "size": 10
 }
+```
 
--- 搜索排序：使用sort表示，例如按balance字段降序排列
+搜索排序：使用`sort`表示，例如按`balance`字段降序排列
+```sql
 GET /customer/_search
 {
   "query": { "match_all": {} },
   "sort": { "balance": { "order": "desc" } }
 }
+```
 
--- 搜索并返回指定字段内容，使用_source表示，例如只返回account_number和balance两个字段内容
+搜索并返回指定字段内容，使用`_source`表示，例如只返回`account_number`和`balance`两个字段内容
+```sql
 GET /customer/_search
 {
   "query": { "match_all": {} },
@@ -136,10 +152,10 @@ GET /customer/_search
 }
 ```
 
-## 条件搜索
+### 条件搜索
 
+条件搜索：使用`match`表示匹配条件，例如搜索出`account_number`为20的文档
 ```sql
--- 条件搜索：使用match表示匹配条件，例如搜索出account_number为20的文档
 GET /customer/_search
 {
   "query": {
@@ -148,8 +164,10 @@ GET /customer/_search
     }
   }
 }
+```
 
--- 文本类型字段的条件搜索，例如搜索address字段中包含mill的文档，对于数值类型match操作使用的是精确匹配，对于文本类型使用的是模糊匹配
+文本类型字段的条件搜索，例如搜索`address`字段中包含`mill`的文档，对于数值类型`match`操作使用的是精确匹配，对于文本类型使用的是模糊匹配
+```sql
 GET /customer/_search
 {
   "query": {
@@ -162,8 +180,10 @@ GET /customer/_search
     "account_number"
   ]
 }
+```
 
--- 短语匹配搜索，使用match_phrase表示，例如搜索address字段中同时包含mill和lane的文档
+短语匹配搜索，使用`match_phrase`表示，例如搜索`address`字段中同时包含`mill`和`lane`的文档
+```sql
 GET /customer/_search
 {
   "query": {
@@ -174,10 +194,10 @@ GET /customer/_search
 }
 ```
 
-## 组合搜索
+### 组合搜索
 
+组合搜索，使用`bool`来进行组合，`must`表示同时满足，例如搜索`address`字段中同时包含`mill`和`lane`的文档
 ```sql
--- 组合搜索，使用bool来进行组合，must表示同时满足，例如搜索address字段中同时包含mill和lane的文档
 GET /customer/_search
 {
   "query": {
@@ -189,8 +209,10 @@ GET /customer/_search
     }
   }
 }
+```
 
--- 组合搜索，should表示满足其中任意一个，搜索address字段中包含mill或者lane的文档
+组合搜索，`should`表示满足其中任意一个，搜索`address`字段中包含`mill`或者`lane`的文档
+```sql
 GET /customer/_search
 {
   "query": {
@@ -202,8 +224,10 @@ GET /customer/_search
     }
   }
 }
+```
 
--- 组合搜索，must_not表示同时不满足，例如搜索address字段中不包含mill且不包含lane的文档
+组合搜索，`must_not`表示同时不满足，例如搜索`address`字段中不包含`mill`且不包含`lane`的文档
+```sql
 GET /customer/_search
 {
   "query": {
@@ -215,8 +239,10 @@ GET /customer/_search
     }
   }
 }
+```
 
--- 组合搜索，组合must和must_not，例如搜索age字段等于40且state字段不包含ID的文档
+组合搜索，组合`must`和`must_not`，例如搜索`age`字段等于40且`state`字段不包含`ID`的文档
+```sql
 GET /customer/_search
 {
   "query": {
@@ -232,10 +258,10 @@ GET /customer/_search
 }
 ```
 
-## 过滤搜索
+### 过滤搜索
 
+搜索过滤，使用`filter`来表示，例如过滤出`balance`字段在20000~30000的文档
 ```sql
--- 搜索过滤，使用filter来表示，例如过滤出balance字段在20000~30000的文档
 GET /customer/_search
 {
   "query": {
@@ -254,10 +280,10 @@ GET /customer/_search
 }
 ```
 
-## 搜索聚合
+### 搜索聚合
 
+对搜索结果进行聚合，使用`aggs`来表示，类似于MySql中的`group by`，例如对`state`字段进行聚合，统计出相同`state`的文档数量
 ```sql
--- 对搜索结果进行聚合，使用aggs来表示，类似于MySql中的group by，例如对state字段进行聚合，统计出相同state的文档数量
 GET /customer/_search
 {
   "size": 0,
@@ -269,8 +295,10 @@ GET /customer/_search
     }
   }
 }
+```
 
--- 嵌套聚合，例如对state字段进行聚合，统计出相同state的文档数量，再统计出balance的平均值
+嵌套聚合，例如对`state`字段进行聚合，统计出相同`state`的文档数量，再统计出`balance`的平均值
+```sql
 GET /customer/_search
 {
   "size": 0,
@@ -289,8 +317,10 @@ GET /customer/_search
     }
   }
 }
+```
 
--- 对聚合搜索的结果进行排序，例如按balance的平均值降序排列
+对聚合搜索的结果进行排序，例如按`balance`的平均值降序排列
+```sql
 GET /customer/_search
 {
   "size": 0,
@@ -312,8 +342,10 @@ GET /customer/_search
     }
   }
 }
+```
 
--- 按字段值的范围进行分段聚合，例如分段范围为age字段的[20,30] [30,40] [40,50]，之后按gender统计文档个数和balance的平均值
+按字段值的范围进行分段聚合，例如分段范围为`age`字段的[20,30] [30,40] [40,50]，之后按`gender`统计文档个数和`balance`的平均值
+```sql
 GET /customer/_search
 {
   "size": 0,
@@ -357,25 +389,29 @@ GET /customer/_search
 
 ## SpringBoot集成
 
-```sql
--- 常用注解
--- @Document
+### 常用注解
+
+#### `@Document`
+
 注解作用在类上，标记实体类为文档对象，指定实体类与索引对应关系。常用配置项有：
-indexName：索引名称
-type: 索引类型，默认为空
-shards: 主分片数量，默认5
-replicas：复制分片数量，默认1
-createIndex：创建索引，默认为true
--- @Id
+
+- indexName：索引名称
+- type: 索引类型，默认为空
+- shards: 主分片数量，默认5
+- replicas：复制分片数量，默认1
+- createIndex：创建索引，默认为true
+
+#### `@Id`
+
 指定文档ID，加上这个注解，文档的_id会与我们的数据ID是一致的，否则在不给定默认值的情况下，es会自动创建
--- @Field
-指定普通属性，标明这个是文档中的一个字段
-常用的配置项有：
-type： 对应Elasticsearch中属性类型。默认自动检测。使用FiledType枚举可以快速获取
-index：是否创建倒排索引，一般不需要分词的属性不需要创建索引
-analyzer：指定索引类型
-store：是否进行存储，默认不进行存储
-```
+
+#### `@Field`
+
+指定普通属性，标明这个是文档中的一个字段常用的配置项有：
+- type： 对应Elasticsearch中属性类型。默认自动检测。使用FiledType枚举可以快速获取
+- index：是否创建倒排索引，一般不需要分词的属性不需要创建索引
+- analyzer：指定索引类型
+- store：是否进行存储，默认不进行存储
 
 ### IK分词器
 
