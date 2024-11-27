@@ -9,6 +9,19 @@ sidebar_position: 1
 ### Snipaste
 https://zh.snipaste.com/
 
+### PixPin
+https://pixpinapp.com/
+
+## 搜索工具
+
+### Everything
+https://www.voidtools.com/zh-cn/
+
+## 浏览器
+
+### Arc
+https://arc.net/
+
 ## 抓包工具
 
 ### charles-proxy
@@ -141,6 +154,9 @@ https://www.typora.io/
 
 ### notion
 https://www.notion.so/
+
+### Obsidian
+https://obsidian.md/
 
 ### 印象笔记
 https://app.yinxiang.com/
