@@ -112,6 +112,15 @@ const sidebars: SidebarsConfig = {
   // But you can create a sidebar manually
   example: [
     {
+      type: 'html',
+      value: '<div>📺 多媒体示例</div>',
+      defaultStyle: true, // Use the default menu item styling
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+    },
+    {
       type: 'category',
       label: '示例',
       /**
@@ -129,15 +138,6 @@ const sidebars: SidebarsConfig = {
         id: 'example/EXAMPLE',
       },
       items: [
-        {
-          type: 'html',
-          value: '<div>📺 多媒体示例</div>',
-          defaultStyle: true
-        },
-        {
-          type: 'html',
-          value: '<hr/>',
-        },
         {
           type: 'doc',
           id: 'example/EXAMPLE-Video',
