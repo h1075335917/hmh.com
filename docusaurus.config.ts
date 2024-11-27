@@ -79,6 +79,8 @@ const config: Config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           sidebarPath: "./sidebars.ts",
+          // 面包屑：默认情况下，面包屑使用当前页面的“侧边栏路径”呈现在顶部。
+          breadcrumbs: true,
         },
         // 将传递给 @docusaurus/plugin-content-blog (false 禁用)
         blog: {
@@ -168,10 +170,13 @@ const config: Config = {
       ],
     },
     docs: {
+      // 版本持久化
       versionPersistence: "localStorage",
       sidebar: {
-        //可隐藏侧边栏
+        // 可隐藏侧边栏
         hideable: true,
+        // 展开一个类别时折叠所有同级类别
+        autoCollapseCategories: false,
       },
     },
     //目录层级
