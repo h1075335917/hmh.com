@@ -136,7 +136,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={`Hello from ${title}`}
+      title={`Hello from mhuahe's website`}
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader title={title} subtitle={subtitle} />

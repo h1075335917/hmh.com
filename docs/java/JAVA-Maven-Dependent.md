@@ -1,4 +1,4 @@
-# 依赖
+# Maven依赖
 
 ## maven-gpg-plugin
 
