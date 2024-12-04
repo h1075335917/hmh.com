@@ -25,3 +25,9 @@ import Copyright from '@site/src/components/Copyright';
 ```mdx-code-block
 <Copyright behavior="来源" description="【Esther_】Plasmo 快速入门" url="https://juejin.cn/post/7257520279312498748" />
 ```
+
+## Windows安装MySQL8.0
+
+```mdx-code-block
+<Copyright behavior="来源" description="【mobeicanyue】2024 年 MySQL 8.0 安装 配置 教程 最简易（保姆级）" url="https://blog.csdn.net/m0_52559040/article/details/121843945" />
+```

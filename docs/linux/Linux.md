@@ -931,6 +931,31 @@ $ git config --global --unset http.proxy
 $ git config --global --unset https.proxy
 ```
 
+## MySQL
+
+下载地址：https://dev.mysql.com/downloads/installer/
+
+### 安装
+
+教程：https://blog.csdn.net/m0_52559040/article/details/121843945
+
+### 登录
+
+```shell
+$ mysql -u root -p
+```
+
+### Windows忘记密码
+
+1. 停止mysql服务，`net stop MySQL80`
+2. 跳过密码认证：`mysqld --console --skip-grant-tables --shared-memory` 或者 `mysqld --skip-grant-tables`，该命令后不能关闭窗口。
+3. 切换新窗口，执行命令。
+4. 无密码登录：`mysql -u root`
+5. 刷新权限：`FLUSH PRIVILEGES;`
+6. 修改密码：`set password for 'root'@'localhost'='123456';`
+
+> 如果出现`Can‘t create test file`，删除data目录，执行`mysqld --initialize-insecure`
+
 ## github
 
 ### Github Pages
