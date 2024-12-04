@@ -43,10 +43,11 @@ https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechi
 - [Google Keep Chrome](https://chromewebstore.google.com/detail/google-keep-chrome-%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F/lpcaedmchfhocbbapmcbpinfpgnhiddi)
 - [Raindrop.io](https://chromewebstore.google.com/detail/raindropio/ldgfbffkinooeloadekpmfoklnobpien)
 - [Pintree](https://pintree.io/)
+- [Bookmarks clean up](https://chromewebstore.google.com/detail/bookmarks-clean-up/oncbjlgldmiagjophlhobkogeladjijl?pli=1)
 
 ### Nimbus | loom
-[Nimbus](https://chromewebstore.google.com/detail/nimble-capture/bpconcjcammlapcogcnnelfmaeghhagj)
-[Loom](https://chromewebstore.google.com/detail/loom-%E2%80%93-screen-recorder-sc/liecbddmkiiihnedobmlmillhodjkdmb)
+- [Nimbus](https://chromewebstore.google.com/detail/nimble-capture/bpconcjcammlapcogcnnelfmaeghhagj)
+- [Loom](https://chromewebstore.google.com/detail/loom-%E2%80%93-screen-recorder-sc/liecbddmkiiihnedobmlmillhodjkdmb)
 
 > 录屏。
 
@@ -61,8 +62,8 @@ https://chromewebstore.google.com/detail/%E7%B1%BB%E4%BC%BC%E7%9A%84%E7%BD%91%E7
 > 发现相似的网站。
 
 ### 视频下载器
-[CoCoCut](https://chromewebstore.google.com/detail/%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%99%A8-cococut/ekhbcipncbkfpkaianbjbcbmfehjflpf)
-[Video DownloadHelper](https://chromewebstore.google.com/detail/video-downloadhelper/lmjnegcaeklhafolokijcfjliaokphfk)
+- [CoCoCut](https://chromewebstore.google.com/detail/%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%99%A8-cococut/ekhbcipncbkfpkaianbjbcbmfehjflpf)
+- [Video DownloadHelper](https://chromewebstore.google.com/detail/video-downloadhelper/lmjnegcaeklhafolokijcfjliaokphfk)
 
 > 下载器。
 
@@ -136,9 +137,8 @@ https://chromewebstore.google.com/detail/burning-vocabulary-%E8%8B%B1%E6%96%87%E
 
 #### floccus
 
-[floccus bookmarks sync](https://chromewebstore.google.com/detail/floccus-bookmarks-sync/fnaicdffflnofjppbagibeoednhnbjhg)
-
-[跨浏览器书签同步（Floccus + WebDav）](https://blog.csdn.net/hitcp/article/details/130541582)
+- [floccus bookmarks sync](https://chromewebstore.google.com/detail/floccus-bookmarks-sync/fnaicdffflnofjppbagibeoednhnbjhg)
+- [跨浏览器书签同步（Floccus + WebDav）](https://blog.csdn.net/hitcp/article/details/130541582)
 
 ## Tampermonkey
 
