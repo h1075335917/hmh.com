@@ -126,6 +126,27 @@ https://www.jetbrains.com/toolbox-app/
 
 > 一个用于安装和管理JetBrains产品的工具
 
+### 反编译
+
+#### JAD
+https://varaneckas.com/jad/
+
+```shell
+$ jad -8 -o -r -sjava -d output_directory ./classes/**/*.class
+```
+
+- `-8` 指的是将Unicode字符转换为ANSI字符串，如果输出字符串是中文的话一定要加上这个参数才能正确显示。
+- `-o` 覆盖输出文件而不进行确认
+- `-r` 恢复软件包目录结构
+- `-s` 输出文件扩展名（默认：.jad）这里是 .java
+- `-d` 输出文件的目录
+
+#### JD-GUI
+https://java-decompiler.github.io/
+
+#### JADX
+https://github.com/skylot/jadx
+
 ## Shell工具
 
 ### Xshell

@@ -86,8 +86,8 @@ const rightItems: NavbarItem[] = [
   {
     to: "http://175.178.164.134:5244/",
     position: "right",
-    className: "navbar-cloud-link",
-    "aria-label": "网盘",
+    label: "AList",
+    target: "_blank",
   },
   {
     href: "https://github.com/mhuahe/mhuahe.com",
