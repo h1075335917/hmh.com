@@ -1,5 +1,21 @@
 # SpringBoot技术栈
 
+## ResponseBodyAdvice
+
+> ResponseBodyAdvice 是对 Controller 返回的内容在 HttpMessageConverter 进行类型转换之前拦截，进行相应的处理操作后，再将结果返回给客户端。那这样就可以把统一包装的工作放到这个类里面。
+
+```java
+public interface ResponseBodyAdvice<T> {
+    boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType);
+
+    @Nullable
+    T beforeBodyWrite(@Nullable T body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response);
+}
+```
+
+- supports：判断是否要交给 beforeBodyWrite 方法执行
+- beforeBodyWrite：对 response 进行具体的处理
+
 ## spring-boot-redis
 
 ### 启动命令
