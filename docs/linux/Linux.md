@@ -646,6 +646,16 @@ source /etc/profile
 - `useBodyEncodingForURI="true" ` ：设置POST和GET使用相同编码
 - `URIEncoding="UTF-8"` //对URI使用utf-8编码处理
 
+IDEA设置：
+- `Console` 设置参数为 `utf-8`；
+- `File Encodings` 设置参数为 `utf-8`；
+- 启动参数 `VM options` 设置参数 `-Dfile.encoding=UTF-8`
+
+tomcat的logging.properties
+- output：java.util.logging.ConsoleHandler.encoding
+- Tomcat Locathost Log：1catalina.org.apache.juli.AsyncFileHandler.encoding
+- Tomcat Catalina Log：2catalina.org.apache.juli.AsyncFileHandler.encoding
+
 ## Linux信息
 
 ```shell

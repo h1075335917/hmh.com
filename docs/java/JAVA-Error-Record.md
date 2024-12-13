@@ -1,17 +1,28 @@
 # 错误记录
 
-## Failed to start component [Connector[HTTP/1.1-8888]]
+## 端口问题
 
-端口占用
+### 端口占用
 
-## connect reset
+报错：Failed to start component [Connector[HTTP/1.1-8888]]
+
+## HTTP问题
+
+### connect reset
+
+报错：connect reset
 
 原因: http请求连接，发送请求到服务端 , 请求端还没获取到数据 , 服务端就离开连接 , 请求端就会报这个错
 
-## java.io.IOException: DerInputStream.getLength(): lengthTag=111, too big.
+## Maven问题
 
-这个插件的作用是在maven编译打包项目的时候忽略指定后缀的文件，秘钥如果不忽略就会被编译，编译后就会出问题
+### Maven编译文件过大
 
+报错：java.io.IOException: DerInputStream.getLength(): lengthTag=111, too big.
+
+原因：这个插件的作用是在maven编译打包项目的时候忽略指定后缀的文件，秘钥如果不忽略就会被编译，编译后就会出问题
+
+解决：添加忽略编译文件
 ```xml
 <build>
     <plugins>
@@ -32,8 +43,13 @@
 </build>
 ```
 
-## Shorten command line | Invalid bound statement (not found)
+## IDEA问题
 
+### classpath文件
+
+报错：Shorten command line | Invalid bound statement (not found)
+
+参数解释：
 - none(默认):不缩短JVM参数，直接把所有classpath作为JVM参数穿进去
 - JAR manifest：把所有classpath写入到临时的claapath.jar包中的manifest文件中，在manifest文件的Class-Path属性中指定所有的classpath。然后JVM参数中指定classpath参数为claapath.jar所在的绝对路径
 - classpath file：把所有的classpath写入到临时的文本文件中，然后把classpath设置到idea自定义的URLClassLoader中，然后使用自定义的URLClassLoader加载程序入口，反射调用main方法。main方法所在的类的ClassLoader就是idea自定义的URLClassLoader
@@ -288,3 +304,8 @@ maven配置
 尝试一：mvn reimport
 
 尝试二：删除仓库依赖，重新mvn clean install
+
+## 配置没问题，但一直提示数据库连接错误
+
+可能原因一：mysql-connector-java和本地数据库版本不兼容
+问题经历：本地数据库版本8.0.40，依赖jar包版本5.1.36。尝试将jar包版本换成8.0.28后，问题修复

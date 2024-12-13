@@ -216,6 +216,129 @@ IDEA的代码分析包含两个部分，Syntax(语法分析)和Inspections(语�
 
 在File|Settings|Version Control|Git中勾选Use credential helper（使用凭证助手）即可解决这个问题。
 
+## IDEA导入Eclipse项目
+
+### 导入项目
+
+1. 点击左上角的File → New → Project from Existing Sources。
+
+2. 选择要导入的Eclipse项目的文件夹路径，并点击“OK”。
+
+3. 先勾选Import project from external model，选择Eclipse项目，点击Next。
+
+4. 无需设置，直接点击Next。
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目1](/img/docs/tool/idea/IDEA-导入Eclipse项目1.png)
+</div>
+
+5. Select Eclipse projects to import，继续点击Next。
+
+6. Use default project code style，继续点击Next。
+
+7. select project SDK。之后点击Finish。
+
+8. 遇到上述所说问题，本Eclipse项目所用Java版本为1.6，而之前配置的是1.8版本，所以提示找不到对应的jdks，先点击ok进入，等待项目导入
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目2](/img/docs/tool/idea/IDEA-导入Eclipse项目2.png)
+</div>
+
+9. 现在我们来设置JDK版本，点击左上角的File→Project Structure。
+
+10. 在Project SDK中选择1.8版本，点击Apply，再点击OK。
+
+11. 接着点击左上角File→Settings。
+
+12. 在左上方搜索框内输入“compiler”（也可在左侧栏中直接找到Java compiler），选中Java compiler，点击Target bytecode version右侧的“+”号，之后选中tmanager（你的项目名）后 且 在下拉菜单中选择版本“8”，点击“ok”。
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目3](/img/docs/tool/idea/IDEA-导入Eclipse项目3.png)
+</div>
+
+### 导入依赖
+
+1. 在IDEA中，点击左上角的File→Project Structure。
+
+2. 选中左侧栏Modules，选中tmanager（你的项目名），在Module SDK处选择1.8版本并把右侧红名的依赖（eclipse相关）全部右键→remove。
+
+3. 然后点击如图所示的“+”号，点击JARs or directories。
+
+4. 找到你的lib包所在位置并选择它，然后点击ok。（如果你是Maven管理的项目，此步骤可跳过）
+
+5. 如果你的项目是web项目，则还需要手动定位web.xml。同样的窗口，在左侧栏选择Facets→“+”→Web。
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目4](/img/docs/tool/idea/IDEA-导入Eclipse项目4.png)
+</div>
+
+6. 之后选中如图所示的路径，点击右侧图书按钮，在中间框中点击“...”来编辑web.xml的路径。
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目5](/img/docs/tool/idea/IDEA-导入Eclipse项目5.png)
+</div>
+
+7. 添加Artifacts。
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目6](/img/docs/tool/idea/IDEA-导入Eclipse项目6.png)
+</div>
+
+### 配置服务器
+
+1. 点击右上角的“Add configuration”。
+
+2. 点击左上角“+”，选择Tomcat Server→Local。
+
+3. 之后点击右下角Fix。跳转到Deployment配置artifacts。
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目7](/img/docs/tool/idea/IDEA-导入Eclipse项目7.png)
+</div>
+
+4. 进入Project Structure，如图所示选择Modules→tmanager（你的项目名）→“+”。
+<div className="mdx-div-img-50">
+![IDEA导入Eclipse项目8](/img/docs/tool/idea/IDEA-导入Eclipse项目8.png)
+</div>
+
+5. 点击Library。选择配置好的tomcat版本，然后点击Add selected，点击ok保存。
+
+### 其它问题
+
+1. 如果IDEA日志不打印，则需要配置日志文件 log4j.properties。
+```properties
+# 配置参数：[level], appenderName1, appenderName2, ...
+# level：DEBUG, INFO, WARN, ERROR, FATAL
+log4j.rootLogger=info, stdout, info, error
+
+log4j.logger.org.hibernate=info, stdout, info, error
+log4j.logger.org.springframework=info, stdout, info, error
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.datePattern='.'yyyy-MM-dd'.log'
+log4j.appender.stdout.Threshold=DEBUG 
+log4j.appender.stdout.MaxFileSize=500MB
+log4j.appender.stdout.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss}] - %c - %p: %m%n
+
+log4j.logger.info=info
+log4j.appender.info=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.info.layout=org.apache.log4j.PatternLayout
+#log4j.appender.info.layout.ConversionPattern=[%-5p] [%d{HH:mm:ss}] %c - %m%n
+log4j.appender.info.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss}] - %c - %p: %m%n
+log4j.appender.info.DatePattern='.'yyyy-MM-dd'.log'
+log4j.appender.info.encoding=UTF-8
+log4j.appender.info.Threshold=INFO 
+log4j.appender.info.append=TRUE
+log4j.appender.info.ImmediateFlush=TRUE
+log4j.appender.info.File=${catalina.base}/logs/iptv5.log
+ 
+log4j.logger.error=info
+log4j.appender.error=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.error.layout=org.apache.log4j.PatternLayout
+#log4j.appender.error.layout.ConversionPattern=[%-5p] [%d{HH:mm:ss}] %c - %m%n
+log4j.appender.error.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss}] - %c - %p: %m%n
+log4j.appender.error.DatePattern='.'yyyy-MM-dd'.log'
+log4j.appender.error.encoding=UTF-8
+log4j.appender.error.Threshold=ERROR 
+log4j.appender.error.append=TRUE
+log4j.appender.error.ImmediateFlush=TRUE
+log4j.appender.error.File=${catalina.base}/logs/iptv5.log
+```
+
 ## QAPlug
 
 代码检测功能：QAPlug、QAPlug-Checkstyle、QAPlug-FindBugs、QAPlug-PMD
