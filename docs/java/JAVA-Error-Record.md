@@ -309,3 +309,12 @@ maven配置
 
 可能原因一：mysql-connector-java和本地数据库版本不兼容
 问题经历：本地数据库版本8.0.40，依赖jar包版本5.1.36。尝试将jar包版本换成8.0.28后，问题修复
+
+```shell
+[2024-12-13 17:12:57] - com.mchange.v2.async.ThreadPoolAsynchronousRunner - WARN: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@24f3122 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 3
+	Active Tasks: 
+[2024-12-13 17:13:06] - com.mchange.v2.resourcepool.BasicResourcePool - WARN: com.mchange.v2.resourcepool.BasicResourcePool$AcquireTask@7cb25a58 -- Acquisition Attempt Failed!!! Clearing pending acquires. While trying to acquire a needed new resource, we failed to succeed more than the maximum number of allowed acquisition attempts (30). Last acquisition attempt exception: 
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server.
+```
