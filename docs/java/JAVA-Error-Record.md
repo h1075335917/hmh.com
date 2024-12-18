@@ -310,6 +310,9 @@ maven配置
 可能原因一：mysql-connector-java和本地数据库版本不兼容
 问题经历：本地数据库版本8.0.40，依赖jar包版本5.1.36。尝试将jar包版本换成8.0.28后，问题修复
 
+可能原因二：druid和配置不兼容
+问题经历：已经替换了mysql-connector-java版本为8.0.28，但是还是报错。后将数据库配置driverClassName=com.mysql.jdbc.Driver改成com.mysql.cj.jdbc.Driver，问题修复
+
 ```shell
 [2024-12-13 17:12:57] - com.mchange.v2.async.ThreadPoolAsynchronousRunner - WARN: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@24f3122 -- APPARENT DEADLOCK!!! Complete Status: 
 	Managed Threads: 3

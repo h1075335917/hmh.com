@@ -4,6 +4,33 @@ sidebar_position: 1
 
 # MySQL
 
+## MySQL不同系统的区别
+
+### 默认Linux下区分大小写，Windows下不区分大小写
+
+问题：项目在本地测试阶段没有问题，当使用sit环境测试时系统始终运行不起来，查看日志报错找不到表，当时很奇怪，这些表在数据库中是存在的，而且本地测试也没有问题，后来找到了答案，是因为mysql在windows下是不区分大小写的，而linux下是区分大小写的。
+
+解决：修改linux的mysql的lower_case_table_names参数，为0时区分大小写，为1时不区分大小写。
+
+```sql
+show variables like 'lower%';
+
+-- lower_case_file_system是一个只读参数，无法被修改，这个参数是用来告诉你在当前的系统平台下，是否对文件名大小写敏感。
+-- lower_case_table_names为0时为大小写敏感，为1时为大小写不敏感。
+```
+
+```shell
+vim /etc/my.cnf
+```
+
+在这个文件中的[mysqld]的后面加 `lower_case_table_names=1`，然后重启mysql服务 `service mysql restart`。
+
+MySQL在Linux下数据库名、表名、列名、别名大小写规则是这样的
+- 数据库名与表名是严格区分大小写的；
+- 表的别名是严格区分大小写的；
+- 列名与列的别名在所有的情况下均是忽略大小写的；
+- 变量名也是严格区分大小写的；
+
 ## 笛卡尔积
 
 
