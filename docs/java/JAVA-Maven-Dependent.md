@@ -301,3 +301,65 @@ Byte Buddy 是一个强大的 Java 库，专门用于在运行时创建和操作
 </dependency>
 ```
 
+## Jackson系列
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+</dependency>
+```
+
+### jackson-core
+
+- 这是 Jackson 的核心包
+- 提供了最基础的 JSON 处理功能
+- 包含了 JSON 的底层流式处理 API（streaming API）
+- 负责 JSON 的解析和生成的基础工作
+
+### jackson-databind
+
+- 提供了数据绑定功能，是最常用的包
+- 可以实现 Java 对象与 JSON 之间的互相转换
+- 提供了 ObjectMapper 类，这是最常用的 JSON 处理类
+- 依赖于 jackson-core 和 jackson-annotations
+
+### jackson-annotations
+
+- 提供了一系列注解，用于控制 JSON 的序列化和反序列化行为
+- 常用注解包括：
+  - @JsonProperty: 指定字段名
+  - @JsonIgnore: 忽略某个字段
+  - @JsonFormat: 指定日期等格式
+  - @JsonSerialize: 自定义序列化
+  - @JsonDeserialize: 自定义反序列化
+
+```java
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class User {
+    @JsonProperty("user_name")
+    private String name;
+    
+    @JsonIgnore
+    private String password;
+}
+
+// 使用 ObjectMapper 进行转换
+ObjectMapper mapper = new ObjectMapper();
+String json = mapper.writeValueAsString(user);
+User user = mapper.readValue(json, User.class);
+```
+
+> 这三个依赖通常需要一起使用，因为它们相互依赖，共同提供了完整的 JSON 处理功能。如果只需要最基本的 JSON 处理，使用 jackson-core 就够了；但如果需要对象映射功能，则需要使用全部三个依赖。
+
+

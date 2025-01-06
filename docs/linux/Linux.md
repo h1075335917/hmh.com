@@ -934,6 +934,22 @@ $ git update-git-for-windows
 
 6. `git push origin master`
 
+### cherry-pick
+
+[git cherry-pick 教程](https://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
+
+```shell
+# 合并指定commit
+$ git cherry-pick commitId
+# 合并多个commit
+$ git cherry-pick commitId1 commitId2
+```
+
+场景：将一个分支A上的指定提交，合并到另一个分支B
+- 切换到分支A，确认指定提交的commitId
+- 切换到目标分支B
+- 执行`git cherry-pick commitId`
+
 ### git设置代理
 
 ```shell
