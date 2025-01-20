@@ -1,5 +1,38 @@
 # SpringBoot技术栈
 
+## 相关配置
+
+### spring.servlet.multipart
+
+`spring.servlet.multipart.max-file-size`
+
+单个文件上传大小限制，如果上传的单个文件超过 50MB，会抛出 MaxUploadSizeExceededException 异常，默认值是 1MB
+
+`spring.servlet.multipart.max-request-size`
+
+请求大小限制，包括所有文件和表单数据的总和，默认值是 10MB
+
+```java
+@PostMapping("/upload")
+public String handleFileUpload(@RequestParam("files") MultipartFile[] files) {
+    // 可以一次上传多个文件
+    // 每个文件最大 max-file-size
+    // 所有文件总大小不超过 max-request-size
+}
+```
+
+`spring.servlet.multipart.enabled`
+
+启用文件上传功能（默认为 true）
+
+`spring.servlet.multipart.file-size-threshold`
+
+文件写入磁盘的阈值（默认 0B）
+
+`spring.servlet.multipart.location`
+
+文件上传临时目录
+
 ## ResponseBodyAdvice
 
 > ResponseBodyAdvice 是对 Controller 返回的内容在 HttpMessageConverter 进行类型转换之前拦截，进行相应的处理操作后，再将结果返回给客户端。那这样就可以把统一包装的工作放到这个类里面。
